@@ -54,7 +54,7 @@ header{position:sticky;top:0;z-index:40;background:rgba(250,246,239,.94);backdro
 .lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:#fff}
 .lang button{border:0;background:transparent;font-family:var(--body);font-size:12.5px;font-weight:600;color:var(--muted);padding:8px 13px;cursor:pointer;transition:background .2s var(--ease),color .2s var(--ease)}
 .lang button[aria-pressed="true"]{background:var(--ink);color:#fff}
-.navcta{display:none}
+.nav .navcta{display:none}
 
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 25px;border-radius:999px;background:var(--terra);color:#fff;border:1px solid var(--terra);font-size:15px;font-weight:600;font-family:var(--body);text-decoration:none;cursor:pointer;transition:transform .16s var(--ease),background .2s var(--ease)}
 .btn:active{transform:scale(.97)}
@@ -146,7 +146,7 @@ footer{border-top:1px solid var(--line);padding:38px 0 calc(92px + env(safe-area
 }
 @media(min-width:1000px){
   .nav nav{display:flex}
-  .navcta{display:inline-flex}
+  .nav .navcta{display:inline-flex}
   .herogrid{grid-template-columns:1.02fr .98fr;gap:46px}
   .split{grid-template-columns:1.1fr .9fr;gap:42px}
   .foot{grid-template-columns:1.4fr 1fr 1fr}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://azzurrodigital.github.io/demo/selidbe-sibenik/sitemap.xml

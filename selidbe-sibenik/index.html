@@ -479,7 +479,7 @@ document.getElementById('upit').addEventListener('submit',function(e){
   L.push('Telefon: '+g('tel'));
   if(g('odakle')) L.push('Odakle: '+g('odakle'));
   if(g('kamo')) L.push('Kamo: '+g('kamo'));
-  var sel=document.getElementById('sto'); if(sel&&sel.value) L.push('Sto: '+sel.options[sel.selectedIndex].text);
+  var sel=document.getElementById('vrsta'); if(sel&&sel.value) L.push('Sto: '+sel.options[sel.selectedIndex].text);
   if(g('datum')) L.push('Datum: '+g('datum'));
   if(g('opis')) L.push('Opis: '+g('opis'));
   document.getElementById('sent').classList.add('show');

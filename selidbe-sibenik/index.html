@@ -82,6 +82,7 @@ header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.96);backdro
 
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 24px;border-radius:999px;background:var(--blue);color:#fff;border:1px solid var(--blue);font-size:15px;font-weight:600;text-decoration:none;cursor:pointer;transition:transform .16s var(--ease),background .2s var(--ease),box-shadow .2s var(--ease);box-shadow:0 6px 18px rgba(21,101,216,.18)}
 .btn:active{transform:scale(.97)}
+  .q summary:active,.nav nav a:active{opacity:.6}
 .btn.wa{background:#1fa855;border-color:#1fa855;box-shadow:0 6px 18px rgba(31,168,85,.18)}
 .btn.line{background:#fff;color:var(--ink);border-color:var(--line);box-shadow:none}
 @media(hover:hover) and (pointer:fine){
@@ -310,7 +311,7 @@ details.q .a a{color:var(--blue)}
     <div class="shots">
       <figure class="shot reveal"><img src="selidba-na-kat.webp" alt="Selidba na kat — nošenje zaštićenog namještaja niz stubište" width="760" height="560" loading="lazy" decoding="async"><figcaption>Nošenje i zaštita</figcaption></figure>
       <figure class="shot reveal" style="--i:1"><img src="utovar-u-kombi.webp" alt="Kombi prijevoz — kutije i zaštićeni namještaj složeni u kombiju" width="760" height="560" loading="lazy" decoding="async"><figcaption>Slaganje u kombi</figcaption></figure>
-      <figure class="shot reveal" style="--i:2"><img src="kombi-prijevoz-hrvatska.webp" alt="Kombi prijevoz po Hrvatskoj — vozilo na obalnoj cesti u Dalmaciji" width="760" height="560" loading="lazy" decoding="async"><figcaption>Prijevoz po Dalmaciji</figcaption></figure>
+      <figure class="shot reveal" style="--i:2"><img src="kombi-prijevoz-hrvatska.webp" alt="Kombi prijevoz po Dalmaciji — kombi obrta VITA-S uz more" width="720" height="540" loading="lazy" decoding="async"><figcaption>Prijevoz po Dalmaciji</figcaption></figure>
     </div>
   </div>
 </section>
@@ -469,10 +470,21 @@ details.q .a a{color:var(--blue)}
 })();
 document.getElementById('upit').addEventListener('submit',function(e){
   e.preventDefault();
+  var g=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
   var ime=document.getElementById('ime'),tel=document.getElementById('tel');
   if(!ime.value.trim()||!tel.value.trim()){(!ime.value.trim()?ime:tel).focus();return;}
+  var L=[];
+  L.push('Upit sa stranice');
+  L.push('Ime: '+g('ime'));
+  L.push('Telefon: '+g('tel'));
+  if(g('odakle')) L.push('Odakle: '+g('odakle'));
+  if(g('kamo')) L.push('Kamo: '+g('kamo'));
+  var sel=document.getElementById('sto'); if(sel&&sel.value) L.push('Sto: '+sel.options[sel.selectedIndex].text);
+  if(g('datum')) L.push('Datum: '+g('datum'));
+  if(g('opis')) L.push('Opis: '+g('opis'));
   document.getElementById('sent').classList.add('show');
-  this.querySelector('button[type=submit]').textContent='Upit poslan';
+  this.querySelector('button[type=submit]').textContent='Otvaram WhatsApp';
+  window.open('https://wa.me/385912546296?text='+encodeURIComponent(L.join('\n')),'_blank','noopener');
 });
 </script>
 </body>

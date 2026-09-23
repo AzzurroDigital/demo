@@ -6,146 +6,219 @@
 <title>Montaža industrijskih strojeva — KRIŽANEC-MONTAŽA</title>
 <meta name="description" content="Montaža, demontaža i selidba industrijskih strojeva i proizvodnih linija. Od 2014., ekipa od 14 ljudi, izlasci u Hrvatskoj i zemljama EU.">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#0E1116">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#0B0C0E">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0B0C0E">
 <meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
- --ink:#0E1116; --graphite:#171C23; --steel:#5C6773; --mute:#8B95A1;
- --line:#DFE3E8; --paper:#fff; --soft:#F4F6F8; --acc:#E2571F;
- --pad:clamp(20px,5vw,56px); --r:4px;
- --font:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+ --ink:#0B0C0E; --panel:#131519; --paper:#F2F1ED; --card:#FFFFFF;
+ --steel:#5E625F; --mute:#8D908B; --dim:#8A8F94;
+ --line:#D8D6CF; --dline:#23262B;
+ --acc:#FF4D14;
+ --pad:clamp(20px,4.5vw,64px); --r:2px;
+ --sans:"Archivo",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+ --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
  --ease:cubic-bezier(.16,1,.3,1);
 }
 html{-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%;overscroll-behavior:none;scroll-behavior:smooth}
-body{font-family:var(--font);color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.55;-webkit-font-smoothing:antialiased;font-size:16px}
 img{display:block;max-width:100%}
-a{color:inherit}
+a{color:inherit;text-decoration:none}
 button,a,[role=button]{touch-action:manipulation;user-select:none;-webkit-user-select:none}
 input,textarea,select{font-size:16px;font-family:inherit}
-.wrap{max-width:1180px;margin:0 auto;padding:0 var(--pad)}
-.eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--acc);font-weight:700}
-h1,h2,h3{line-height:1.08;letter-spacing:-.022em;font-weight:800}
-h1{font-size:clamp(34px,7.2vw,62px)}
-h2{font-size:clamp(26px,4.4vw,40px)}
-h3{font-size:17px;letter-spacing:-.01em;font-weight:700}
+::selection{background:var(--acc);color:#fff}
+
+.shell{max-width:1400px;margin:0 auto;padding:0 var(--pad)}
+.mono{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.17em;text-transform:uppercase}
+.acc{color:var(--acc)}
+
+h1,h2,h3{font-weight:600;letter-spacing:-.04em;line-height:.95}
+h1{font-size:clamp(36px,7.7vw,104px);letter-spacing:-.048em;line-height:.92}
+h2{font-size:clamp(30px,5.6vw,72px)}
+h3{font-size:clamp(19px,2.1vw,25px);letter-spacing:-.03em;line-height:1.14}
 p{color:var(--steel)}
-section{padding:clamp(56px,8vw,104px) 0}
-.alt{background:var(--soft);border-block:1px solid var(--line)}
-header{position:sticky;top:0;z-index:40;background:rgba(14,17,22,.97);backdrop-filter:blur(8px);padding-top:env(safe-area-inset-top,0px);transition:box-shadow .35s var(--ease)}
-header.sm{box-shadow:0 1px 0 #242B34}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px var(--pad) 15px;max-width:1180px;margin:0 auto;transition:padding .35s var(--ease)}
-header.sm .nav{padding:10px var(--pad) 10px}
-.logo{text-decoration:none;display:block;color:#fff}
-.logo b{display:block;font-size:15px;font-weight:800;letter-spacing:-.01em}
-.logo small{display:block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#7E8A97;margin-top:2px;transition:opacity .3s var(--ease),max-height .35s var(--ease),margin-top .35s var(--ease);max-height:20px}
+
+/* ---------- header ---------- */
+.banner{background:#1A0E07;color:#F0BFA0;padding:8px var(--pad);padding-top:calc(8px + env(safe-area-inset-top,0px));text-align:center;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;line-height:1.5}
+.banner b{color:#fff;font-weight:500}
+header{position:sticky;top:0;z-index:60;background:rgba(11,12,14,.92);backdrop-filter:saturate(150%) blur(10px);border-bottom:1px solid transparent;transition:border-color .35s var(--ease)}
+header.sm{border-bottom-color:var(--dline)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1400px;margin:0 auto;padding:18px var(--pad);transition:padding .35s var(--ease)}
+header.sm .nav{padding:11px var(--pad)}
+.logo{display:block;color:#fff}
+.logo b{display:block;font-size:14.5px;font-weight:600;letter-spacing:-.01em;line-height:1.1}
+.logo small{display:block;white-space:nowrap;font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#7A7F85;margin-top:4px;max-height:16px;opacity:1;overflow:hidden;transition:opacity .3s var(--ease),max-height .35s var(--ease),margin-top .35s var(--ease)}
 header.sm .logo small{opacity:0;max-height:0;margin-top:0}
-.langs{display:flex;gap:2px;border:1px solid #2A313A;border-radius:var(--r);overflow:hidden;position:relative}
-.pill{position:absolute;top:0;left:0;height:100%;background:var(--acc);border-radius:2px;transition:transform .34s var(--ease),width .34s var(--ease);z-index:0;pointer-events:none}
-.langs button{background:none;border:0;color:#8B95A1;font:inherit;font-size:12px;font-weight:700;letter-spacing:.06em;padding:7px 11px;cursor:pointer;transition:color .2s var(--ease);position:relative;z-index:1}
+.langs{display:flex;position:relative;border:1px solid var(--dline);border-radius:var(--r);overflow:hidden}
+.pill{position:absolute;top:0;left:0;height:100%;background:var(--acc);z-index:0;pointer-events:none;transition:transform .34s var(--ease),width .34s var(--ease)}
+.langs button{position:relative;z-index:1;background:none;border:0;color:#80858B;font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.12em;padding:8px 12px;cursor:pointer;transition:color .2s var(--ease)}
 .langs button[aria-pressed=true]{background:var(--acc);color:#fff}
 .js .langs button[aria-pressed=true]{background:none;color:#fff}
-.hero{background:var(--ink);color:#fff;padding:clamp(48px,7vw,86px) 0 0}
-.hero h1{color:#fff;max-width:16ch}
+
+/* ---------- hero ---------- */
+.hero{background:var(--ink);color:#fff;padding-top:clamp(48px,7vw,104px)}
+.hero h1{color:#fff;max-width:14ch;margin-top:22px}
 .hero h1 em{font-style:normal;color:var(--acc)}
-.hero .lead{color:#AAB4C0;font-size:clamp(16px,2.1vw,19px);max-width:56ch;margin-top:20px}
-.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
-.btn{display:inline-flex;align-items:center;gap:9px;padding:14px 22px;border-radius:var(--r);font-weight:700;font-size:15px;text-decoration:none;border:1px solid transparent;transition:transform .1s var(--ease),background .15s,border-color .15s;cursor:pointer;font-family:inherit}
-.btn:active{transform:scale(.98)}
+.herofoot{display:grid;gap:30px;margin-top:clamp(34px,4.5vw,60px);padding-bottom:clamp(40px,5vw,72px)}
+.lead{color:#A7ADB4;font-size:clamp(15.5px,1.45vw,19px);max-width:52ch;line-height:1.6}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 24px;border-radius:var(--r);font-weight:600;font-size:14.5px;letter-spacing:-.01em;border:1px solid transparent;cursor:pointer;font-family:inherit;transition:transform .12s var(--ease),background .2s var(--ease),border-color .2s var(--ease),color .2s var(--ease)}
+.btn:active{transform:scale(.975)}
 .btn.p{background:var(--acc);color:#fff}
 .btn.p::after{content:"\2192";display:inline-block;transition:transform .28s var(--ease)}
-.btn.g{border-color:#333B45;color:#fff}
-.meta{margin-top:18px;font-size:13.5px;color:#7E8A97}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#242B34;margin-top:clamp(36px,5vw,56px);border-top:1px solid #242B34}
-.stat{background:var(--ink);padding:22px 4px 26px;position:relative;overflow:hidden}
-.stat::before{content:"";position:absolute;left:0;top:0;height:2px;width:100%;background:var(--acc);transform:scaleX(0);transform-origin:left;transition:transform .8s var(--ease);transition-delay:calc(var(--s,0)*120ms + 260ms)}
-.stats.in .stat::before{transform:scaleX(1)}
-.stat b{display:block;font-size:clamp(28px,5vw,42px);font-weight:800;letter-spacing:-.03em;color:#fff;line-height:1}
-.stat span{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7E8A97;margin-top:8px}
-.heroimg{border-top:1px solid #242B34;overflow:hidden}
-.heroimg img{width:100%;height:auto;aspect-ratio:16/7;object-fit:cover;transform:scale(1.09);transition:transform 1.6s cubic-bezier(.16,.8,.24,1)}
+.btn.g{border-color:#30353B;color:#fff;font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;font-weight:500}
+.specbar{border-top:1px solid var(--dline);display:grid;grid-template-columns:repeat(3,1fr)}
+.spec{padding:20px var(--pad) 24px;border-right:1px solid var(--dline);position:relative;overflow:hidden}
+.spec:last-child{border-right:0}
+.spec::before{content:"";position:absolute;left:0;top:0;height:2px;width:100%;background:var(--acc);transform:scaleX(0);transform-origin:left;transition:transform .85s var(--ease);transition-delay:calc(var(--s,0)*130ms + 300ms)}
+.specbar.in .spec::before{transform:scaleX(1)}
+.spec b{display:block;font-size:clamp(26px,4.4vw,46px);font-weight:600;letter-spacing:-.045em;line-height:1;color:#fff}
+.spec span{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;color:#767B81;margin-top:10px}
+.heroimg{border-top:1px solid var(--dline);overflow:hidden;background:#101215}
+.heroimg img{width:100%;height:auto;aspect-ratio:16/8;object-fit:cover;filter:saturate(.82) contrast(1.06);transform:scale(1.09);transition:transform 1.7s cubic-bezier(.16,.8,.24,1)}
 .heroimg.in img{transform:scale(1)}
 .heroimg.par.in img{transform:scale(1.06)}
-.grid{display:grid;gap:14px;margin-top:38px;grid-template-columns:1fr}
-.card{border:1px solid var(--line);border-radius:var(--r);padding:22px;background:var(--paper);transition:transform .32s var(--ease),border-color .32s var(--ease),box-shadow .32s var(--ease)}
-.card .num{font-size:11px;letter-spacing:.12em;color:var(--acc);font-weight:700;transition:letter-spacing .32s var(--ease)}
-.card h3{margin:10px 0 7px}
-.card p{font-size:14.5px}
-.list{margin-top:26px;display:grid;gap:0;border-top:1px solid var(--line)}
-.li{display:flex;gap:14px;align-items:flex-start;padding:15px 0;border-bottom:1px solid var(--line);position:relative}
-.li::after{content:"";position:absolute;left:0;bottom:-1px;height:1px;width:100%;background:var(--line);transform:scaleX(0);transform-origin:left}
-.li.in::after{animation:draw .95s var(--ease) calc(var(--i,0)*90ms) forwards}
+.imgcap{background:var(--ink);color:#6E747A;font-family:var(--mono);font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;padding:11px var(--pad) 13px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* ---------- sections ---------- */
+.sec{padding:clamp(60px,8vw,128px) 0;border-top:1px solid var(--line)}
+.sec:first-of-type{border-top:0}
+.dark{background:var(--ink);color:#fff;border-top-color:var(--dline)}
+.dark p{color:#9AA0A7}
+.two{display:grid;gap:clamp(30px,4vw,56px)}
+.sechead .mono{display:block;margin-bottom:16px}
+.sechead h2{max-width:12ch}
+.dark .sechead h2{color:#fff}
+
+/* service rows */
+.rows{border-top:1px solid var(--line)}
+.dark .rows{border-top-color:var(--dline)}
+.row{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;padding:24px 0;border-bottom:1px solid var(--line);position:relative}
+.dark .row{border-bottom-color:var(--dline)}
+.row::after{content:"";position:absolute;left:0;bottom:-1px;height:1px;width:100%;background:var(--line);transform:scaleX(0);transform-origin:left}
+.dark .row::after{background:var(--dline)}
+.row.in::after{animation:draw 1s var(--ease) calc(var(--i,0)*80ms) forwards}
 @keyframes draw{0%{transform:scaleX(0);background:var(--acc)}55%{transform:scaleX(1);background:var(--acc)}100%{transform:scaleX(1);background:var(--line)}}
-.li b{font-size:15.5px;font-weight:700;display:block}
-.li p{font-size:14px;margin-top:3px}
-.li .k{color:var(--acc);font-weight:800;font-size:13px;min-width:26px;padding-top:2px;transition:transform .32s var(--ease)}
-.shots{display:grid;gap:12px;margin-top:34px;grid-template-columns:1fr}
-figure{margin:0;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--soft)}
-figure img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;transition:transform .75s var(--ease)}
-figcaption{font-size:12.5px;color:var(--mute);padding:10px 13px}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
-.chip{border:1px solid var(--line);border-radius:100px;padding:8px 14px;font-size:13.5px;color:var(--steel);background:var(--paper);transition:border-color .25s var(--ease),color .25s var(--ease),transform .25s var(--ease)}
+.idx{font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.14em;color:var(--acc);padding-top:7px;grid-row:span 2}
+.row h3{align-self:start}
+.row p{font-size:15px;max-width:52ch}
+.dark .row p{color:#9AA0A7}
+
+/* keyword line */
+.keys{margin-top:30px;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);display:flex;flex-wrap:wrap;gap:8px 0}
+.keys span{position:relative;padding-right:18px}
+.keys span::after{content:"/";position:absolute;right:6px;color:var(--acc);opacity:.55}
+.keys span:last-child{padding-right:0}
+.keys span:last-child::after{content:""}
+
+/* gallery */
+.shots{display:grid;gap:10px;margin-top:clamp(34px,4vw,56px)}
+figure{margin:0;overflow:hidden;background:#101215;position:relative}
+figure img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;filter:saturate(.82) contrast(1.06);transition:transform .8s var(--ease)}
+figcaption{position:absolute;left:0;bottom:0;right:0;padding:14px;font-family:var(--mono);font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;color:#fff;background:linear-gradient(to top,rgba(11,12,14,.82),rgba(11,12,14,0))}
+
+/* faq */
 .q{border-bottom:1px solid var(--line)}
-.q summary{cursor:pointer;list-style:none;padding:17px 34px 17px 0;font-weight:700;font-size:15.5px;position:relative}
+.q:first-of-type{border-top:1px solid var(--line)}
+.q summary{cursor:pointer;list-style:none;padding:22px 44px 22px 0;font-weight:600;font-size:clamp(17px,1.8vw,22px);letter-spacing:-.025em;line-height:1.25;position:relative}
 .q summary::-webkit-details-marker{display:none}
-.q summary::before,.q summary::after{content:"";position:absolute;right:5px;top:calc(50% - 1px);width:14px;height:2px;background:var(--acc);transition:transform .35s var(--ease)}
+.q summary::before,.q summary::after{content:"";position:absolute;right:4px;top:calc(50% - 1px);width:15px;height:1.5px;background:var(--acc);transition:transform .35s var(--ease)}
 .q summary::before{transform:rotate(90deg)}
 .q[open] summary::before{transform:rotate(0)}
-.js .q .ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .38s var(--ease),opacity .3s var(--ease);opacity:0}
+.q summary:active{opacity:.55}
+.js .q .ans{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .4s var(--ease),opacity .3s var(--ease)}
 .js .q .ans>p{overflow:hidden}
 .js .q.expanded .ans{grid-template-rows:1fr;opacity:1}
-.q .ans>p{padding:0 0 18px;font-size:14.5px}
-.q summary:active{opacity:.6}
-.cols{display:grid;gap:34px;grid-template-columns:1fr;margin-top:34px}
-.field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
-label{font-size:12.5px;font-weight:700;letter-spacing:.02em}
-input,textarea,select{border:1px solid var(--line);border-radius:var(--r);padding:12px 13px;background:var(--paper);color:var(--ink);transition:border-color .22s var(--ease),box-shadow .22s var(--ease)}
-input:focus,textarea:focus,select:focus{outline:none;border-color:var(--acc);box-shadow:0 0 0 3px rgba(226,87,31,.13)}
-.field label{transition:color .22s var(--ease)}
-.field:focus-within label{color:var(--acc)}
-textarea{min-height:110px;resize:vertical}
+.q .ans>p{padding:0 0 24px;font-size:15.5px;max-width:64ch}
+
+/* contact */
+.form{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:clamp(22px,3vw,38px)}
+.dark .form{background:var(--panel);border-color:var(--dline)}
 .pair{display:grid;gap:14px;grid-template-columns:1fr}
-.box{border:1px solid var(--line);border-radius:var(--r);background:var(--soft);padding:22px}
-.cl{display:block;padding:12px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.field{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
+label{font-family:var(--mono);font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--mute);transition:color .22s var(--ease)}
+.dark label{color:#7E838A}
+input,textarea{border:0;border-bottom:1px solid var(--line);border-radius:0;padding:9px 0;background:none;color:var(--ink);transition:border-color .22s var(--ease)}
+.dark input,.dark textarea{border-bottom-color:var(--dline);color:#fff}
+input:focus,textarea:focus{outline:none;border-bottom-color:var(--acc)}
+.field:focus-within label{color:var(--acc)}
+textarea{min-height:104px;resize:vertical}
+input::placeholder,textarea::placeholder{color:var(--mute)}
+.note{font-family:var(--mono);font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--mute);margin-top:16px;line-height:1.7}
+.cl{display:grid;grid-template-columns:1fr;gap:3px;padding:16px 0;border-bottom:1px solid var(--dline)}
 .cl:last-of-type{border-bottom:0}
-.cl b{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);font-weight:700;margin-bottom:3px}
-.cl span{font-size:15.5px;color:var(--ink);font-weight:600;transition:color .22s var(--ease)}
-footer{background:var(--ink);color:#fff;padding:clamp(44px,6vw,64px) 0 calc(28px + env(safe-area-inset-bottom,0px))}
-footer h4{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#7E8A97;margin-bottom:10px;font-weight:700}
-footer p,footer a{color:#AAB4C0;font-size:14.5px;text-decoration:none}
-.fgrid{display:grid;gap:26px;grid-template-columns:1fr}
-.credit{margin-top:30px;padding-top:18px;border-top:1px solid #242B34;font-size:12px;color:#6B7683;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.cl b{font-family:var(--mono);font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;color:#7E838A;font-weight:500}
+.cl span{font-size:16px;color:#fff;font-weight:500;transition:color .22s var(--ease)}
+
+/* footer */
+footer{background:var(--ink);color:#fff;border-top:1px solid var(--dline);padding-top:clamp(48px,6vw,86px);overflow:hidden}
+.fgrid{display:grid;gap:30px}
+footer h4{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#767B81;margin-bottom:12px;font-weight:500}
+footer p,footer a{color:#A7ADB4;font-size:14.5px}
+.bigmark{font-size:clamp(28px,8.1vw,116px);font-weight:600;letter-spacing:-.055em;line-height:.85;color:#15181C;margin-top:clamp(36px,5vw,72px);white-space:nowrap;user-select:none}
+.credit{border-top:1px solid var(--dline);margin-top:clamp(26px,3vw,40px);padding:18px 0 calc(24px + env(safe-area-inset-bottom,0px));font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#5F646A;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .madeby{display:inline-flex;align-items:center;line-height:0}
-.madeby img{height:30px;width:auto;opacity:.55;transition:opacity .2s}
-.demo{background:#2A1408;color:#F6C9A8;font-size:12px;line-height:1.5;padding:9px var(--pad);text-align:center;padding-top:calc(9px + env(safe-area-inset-top,0px))}
-.demo b{color:#fff;font-weight:700}
+.madeby img{height:26px;width:auto;opacity:.62;transition:opacity .25s var(--ease)}
+
 .skip{position:absolute;left:-9999px}
-.skip:focus{left:12px;top:12px;background:#fff;color:#000;padding:10px 14px;z-index:99;border-radius:var(--r)}
-.reveal{opacity:0;transform:translateY(14px);transition:opacity .55s var(--ease),transform .55s var(--ease);transition-delay:calc(var(--i,0)*70ms)}
-.reveal.split{opacity:1;transform:none;transition:none}
-.w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.06em;margin-bottom:-.06em}
-.w>i{display:inline-block;font-style:inherit;color:inherit;transform:translateY(106%);transition:transform .85s var(--ease);transition-delay:calc(var(--d,0)*42ms)}
-.split.in .w>i{transform:none}
+.skip:focus{left:12px;top:12px;background:#fff;color:#000;padding:10px 14px;z-index:99}
+
+/* motion */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease);transition-delay:calc(var(--i,0)*70ms)}
 .reveal.in{opacity:1;transform:none}
-@media(min-width:720px){.grid{grid-template-columns:repeat(3,1fr)}.shots{grid-template-columns:repeat(3,1fr)}.pair{grid-template-columns:1fr 1fr}.fgrid{grid-template-columns:2fr 1fr 1fr}}
-@media(min-width:960px){.cols{grid-template-columns:1.25fr .85fr;gap:48px}}
-@media(hover:hover) and (pointer:fine){
-.btn.p:hover{background:#C4471B}.btn.p:hover::after{transform:translateX(4px)}
-.btn.g:hover{border-color:#5C6773}.langs button:hover{color:#fff}.madeby:hover img{opacity:1}
-.card:hover{transform:translateY(-3px);border-color:#CBD2D9;box-shadow:0 14px 34px -22px rgba(14,17,22,.55)}
-.card:hover .num{letter-spacing:.22em}
-figure:hover img{transform:scale(1.045)}
-.chip:hover{border-color:var(--acc);color:var(--acc)}
-.li:hover .k{transform:translateX(4px)}
-.cl:hover span{color:var(--acc)}
-.q summary:hover::before,.q summary:hover::after{background:#C4471B}
+.reveal.split{opacity:1;transform:none;transition:none}
+.w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.08em;margin-bottom:-.08em}
+.w>i{display:inline-block;font-style:inherit;color:inherit;transform:translateY(108%);transition:transform .9s var(--ease);transition-delay:calc(var(--d,0)*45ms)}
+.split.in .w>i{transform:none}
+
+@media(max-width:520px){.logo small{font-size:8px;letter-spacing:.1em}}
+@media(min-width:760px){
+ .pair{grid-template-columns:1fr 1fr}
+ .row{grid-template-columns:64px minmax(0,1.05fr) minmax(0,1.25fr);gap:22px;padding:28px 0;align-items:start}
+ .idx{grid-row:auto;padding-top:5px}
+ .shots{grid-template-columns:repeat(3,1fr)}
+ .herofoot{grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:40px}
 }
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-delay:0s!important}.reveal{opacity:1;transform:none}.w>i{transform:none}.heroimg img{transform:none}.stats.in .stat::before,.li.in::after{transform:scaleX(1)}}
+@media(min-width:1000px){
+ .two{grid-template-columns:300px minmax(0,1fr);gap:72px;align-items:start}
+ .sechead{position:sticky;top:112px}
+ .shots{grid-template-columns:1.45fr 1fr}
+ .shots figure:first-child{grid-row:span 2}
+ .shots figure:first-child img{aspect-ratio:3/4}
+ .cols{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:56px;align-items:start}
+ .fgrid{grid-template-columns:2fr 1fr 1fr;gap:48px}
+}
+@media(hover:hover) and (pointer:fine){
+ .btn.p:hover{background:#E23E0A}
+ .btn.p:hover::after{transform:translateX(5px)}
+ .btn.g:hover{border-color:#5A6068}
+ .langs button:hover{color:#fff}
+ .madeby:hover img{opacity:1}
+ figure:hover img{transform:scale(1.05)}
+ .row:hover .idx{color:#fff}
+ .sec:not(.dark) .row:hover .idx{color:var(--ink)}
+ .cl:hover span{color:var(--acc)}
+ .q summary:hover::before,.q summary:hover::after{background:#E23E0A}
+ .keys span:hover{color:var(--ink)}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-delay:0s!important}
+ .reveal{opacity:1;transform:none}
+ .w>i{transform:none}
+ .heroimg img{transform:none}
+ .specbar.in .spec::before,.row.in::after{transform:scaleX(1)}
+}
 </style>
 </head>
 <body>
 <a class="skip" href="#sadrzaj" data-hr="Preskoči na sadržaj" data-de="Zum Inhalt springen" data-en="Skip to content">Preskoči na sadržaj</a>
-<div class="demo"><b data-hr="PRIJEDLOG STRANICE" data-de="SEITENENTWURF" data-en="DRAFT PAGE">PRIJEDLOG STRANICE</b> <span data-hr="— fotografije i dio tekstova su privremeni i mijenjaju se po dogovoru. Izradio Azzurro Digital." data-de="— Fotos und Teile der Texte sind vorläufig und werden nach Absprache ersetzt. Erstellt von Azzurro Digital." data-en="— photos and parts of the text are provisional and will be replaced as agreed. Made by Azzurro Digital.">— fotografije i dio tekstova su privremeni i mijenjaju se po dogovoru. Izradio Azzurro Digital.</span></div>
+
+<div class="banner"><b data-hr="Prijedlog stranice" data-de="Seitenentwurf" data-en="Draft page">Prijedlog stranice</b> <span data-hr="— fotografije i dio tekstova su privremeni i mijenjaju se po dogovoru. Izradio Azzurro Digital." data-de="— Fotos und Teile der Texte sind vorläufig und werden nach Absprache ersetzt. Erstellt von Azzurro Digital." data-en="— photos and parts of the text are provisional and will be replaced as agreed. Made by Azzurro Digital.">— fotografije i dio tekstova su privremeni i mijenjaju se po dogovoru. Izradio Azzurro Digital.</span></div>
+
 <header>
  <div class="nav">
   <a class="logo" href="#top"><b>KRIŽANEC-MONTAŽA</b><small data-hr="Industrijske montaže i servis" data-de="Industriemontage und Service" data-en="Industrial assembly and service">Industrijske montaže i servis</small></a>
@@ -156,53 +229,66 @@ figure:hover img{transform:scale(1.045)}
   </div>
  </div>
 </header>
+
 <main id="sadrzaj">
 <section class="hero" id="top">
- <div class="wrap">
-  <p class="eyebrow reveal" data-hr="Montaža industrijskih strojeva · od 2014." data-de="Industriemontage · seit 2014" data-en="Industrial machine assembly · since 2014">Montaža industrijskih strojeva · od 2014.</p>
-  <h1 class="reveal split" style="--i:1" data-hr="Montaža industrijskih strojeva <em>u cijeloj Europi</em>" data-de="Industriemontage <em>in ganz Europa</em>" data-en="Industrial machine assembly <em>across Europe</em>">Montaža industrijskih strojeva <em>u cijeloj Europi</em></h1>
-  <p class="lead reveal" style="--i:2" data-hr="Od 2014. montiramo, demontiramo i selimo proizvodne strojeve i cijele linije. Ekipa od 14 ljudi izlazi na lokaciju u Hrvatskoj i zemljama EU." data-de="Seit 2014 montieren, demontieren und verlagern wir Produktionsmaschinen und komplette Linien. Ein Team von 14 Monteuren reist zu Einsätzen in Kroatien und in der EU." data-en="Since 2014 we assemble, dismantle and relocate production machines and complete lines. A team of 14 travels to sites in Croatia and across the EU.">Od 2014. montiramo, demontiramo i selimo proizvodne strojeve i cijele linije. Ekipa od 14 ljudi izlazi na lokaciju u Hrvatskoj i zemljama EU.</p>
-  <div class="cta reveal" style="--i:3">
-   <a class="btn p" href="#kontakt" data-hr="Pošaljite upit" data-de="Anfrage senden" data-en="Send enquiry">Pošaljite upit</a>
-   <a class="btn g" href="tel:+385989352201">+385 98 935 22 01</a>
-  </div>
-  <p class="meta reveal" style="--i:4">KRIŽANEC-MONTAŽA j.d.o.o. · Donja Višnjica 105 d, 42250 Lepoglava · OIB HR35738468211</p>
-  <div class="stats reveal" style="--i:5">
-   <div class="stat" style="--s:0"><b>2014</b><span data-hr="Od godine" data-de="Seit" data-en="Since">Od godine</span></div>
-   <div class="stat" style="--s:1"><b data-count="14">14</b><span data-hr="Ljudi u ekipi" data-de="Monteure" data-en="People on the team">Ljudi u ekipi</span></div>
-   <div class="stat" style="--s:2"><b>EU</b><span data-hr="Područje rada" data-de="Einsatzgebiet" data-en="Area of work">Područje rada</span></div>
+ <div class="shell">
+  <p class="mono acc reveal" data-hr="Montaža industrijskih strojeva · od 2014." data-de="Industriemontage · seit 2014" data-en="Industrial machine assembly · since 2014">Montaža industrijskih strojeva · od 2014.</p>
+  <h1 class="reveal split" data-hr="Montaža industrijskih strojeva <em>u cijeloj Europi</em>" data-de="Industriemontage <em>in ganz Europa</em>" data-en="Industrial machine assembly <em>across Europe</em>">Montaža industrijskih strojeva <em>u cijeloj Europi</em></h1>
+  <div class="herofoot">
+   <p class="lead reveal" style="--i:2" data-hr="Od 2014. montiramo, demontiramo i selimo proizvodne strojeve i cijele linije. Ekipa od 14 ljudi izlazi na lokaciju u Hrvatskoj i zemljama EU." data-de="Seit 2014 montieren, demontieren und verlagern wir Produktionsmaschinen und komplette Linien. Ein Team von 14 Monteuren reist zu Einsätzen in Kroatien und in der EU." data-en="Since 2014 we assemble, dismantle and relocate production machines and complete lines. A team of 14 travels to sites in Croatia and across the EU.">Od 2014. montiramo, demontiramo i selimo proizvodne strojeve i cijele linije. Ekipa od 14 ljudi izlazi na lokaciju u Hrvatskoj i zemljama EU.</p>
+   <div class="cta reveal" style="--i:3">
+    <a class="btn p" href="#kontakt" data-hr="Pošaljite upit" data-de="Anfrage senden" data-en="Send enquiry">Pošaljite upit</a>
+    <a class="btn g" href="tel:+385989352201">+385 98 935 22 01</a>
+   </div>
   </div>
  </div>
- <div class="heroimg"><img src="montaza-hero.webp" alt="Montaža industrijskog stroja u proizvodnoj hali" width="1600" height="700" fetchpriority="high" decoding="async"></div>
+ <div class="specbar reveal">
+  <div class="spec" style="--s:0"><b>2014</b><span data-hr="Od godine" data-de="Seit" data-en="Since">Od godine</span></div>
+  <div class="spec" style="--s:1"><b data-count="14">14</b><span data-hr="Ljudi u ekipi" data-de="Monteure" data-en="People on the team">Ljudi u ekipi</span></div>
+  <div class="spec" style="--s:2"><b>EU</b><span data-hr="Područje rada" data-de="Einsatzgebiet" data-en="Area of work">Područje rada</span></div>
+ </div>
+ <div class="heroimg"><img src="montaza-hero.webp" alt="Montaža industrijskog stroja u proizvodnoj hali" width="1600" height="800" fetchpriority="high" decoding="async"></div>
+ <div class="imgcap"><span data-hr="Montaža proizvodne linije na lokaciji" data-de="Montage einer Produktionslinie vor Ort" data-en="Production line assembly on site">Montaža proizvodne linije na lokaciji</span><span>KRIŽANEC-MONTAŽA j.d.o.o. · OIB HR35738468211</span></div>
 </section>
-<section id="usluge">
- <div class="wrap">
-  <p class="eyebrow reveal" data-hr="Usluge" data-de="Leistungen" data-en="Services">Usluge</p>
-  <h2 class="reveal split" style="--i:1" data-hr="Što radimo" data-de="Was wir machen" data-en="What we do">Što radimo</h2>
-  <div class="grid">
-   <div class="card reveal"><div class="num">01</div><h3 data-hr="Montaža novih strojeva i linija" data-de="Montage neuer Maschinen und Linien" data-en="Assembly of new machines and lines">Montaža novih strojeva i linija</h3><p data-hr="Postavljanje, pozicioniranje i niveliranje po nacrtu proizvođača, do stanja spremnog za puštanje u rad." data-de="Aufstellen, Positionieren und Nivellieren nach Herstellerzeichnung, bis zur Inbetriebnahmebereitschaft." data-en="Positioning, alignment and levelling to the manufacturer&#39;s drawings, up to commissioning readiness.">Postavljanje, pozicioniranje i niveliranje po nacrtu proizvođača, do stanja spremnog za puštanje u rad.</p></div>
-   <div class="card reveal" style="--i:1"><div class="num">02</div><h3 data-hr="Demontaža i selidba proizvodnje" data-de="Demontage und Verlagerung" data-en="Dismantling and relocation">Demontaža i selidba proizvodnje</h3><p data-hr="Označavanje, demontaža, priprema za transport i ponovna montaža na novoj lokaciji." data-de="Kennzeichnung, Demontage, Transportvorbereitung und Wiederaufbau am neuen Standort." data-en="Tagging, dismantling, preparation for transport and reassembly at the new site.">Označavanje, demontaža, priprema za transport i ponovna montaža na novoj lokaciji.</p></div>
-   <div class="card reveal" style="--i:2"><div class="num">03</div><h3 data-hr="Mehanički radovi i priključci" data-de="Mechanische Arbeiten und Anschlüsse" data-en="Mechanical work and connections">Mehanički radovi i priključci</h3><p data-hr="Sklapanje podsklopova, cjevovodi, nosive konstrukcije i zahvati u planiranom zastoju." data-de="Baugruppenmontage, Rohrleitungen, Tragkonstruktionen und Arbeiten im geplanten Stillstand." data-en="Sub-assembly work, piping, supporting structures and planned-shutdown jobs.">Sklapanje podsklopova, cjevovodi, nosive konstrukcije i zahvati u planiranom zastoju.</p></div>
+
+<section class="sec" id="usluge">
+ <div class="shell two">
+  <div class="sechead">
+   <span class="mono acc reveal" data-hr="Usluge" data-de="Leistungen" data-en="Services">Usluge</span>
+   <h2 class="reveal split" data-hr="Što radimo" data-de="Was wir machen" data-en="What we do">Što radimo</h2>
   </div>
-  <div class="chips">
-   <span class="chip" data-hr="Proizvodne linije" data-de="Produktionslinien" data-en="Production lines">Proizvodne linije</span>
-   <span class="chip" data-hr="Transportni sustavi" data-de="Fördertechnik" data-en="Conveying systems">Transportni sustavi</span>
-   <span class="chip" data-hr="Pakirni strojevi" data-de="Verpackungsmaschinen" data-en="Packaging machines">Pakirni strojevi</span>
-   <span class="chip" data-hr="Obradni strojevi" data-de="Werkzeugmaschinen" data-en="Machine tools">Obradni strojevi</span>
-   <span class="chip" data-hr="Nosive konstrukcije" data-de="Stahlkonstruktionen" data-en="Steel structures">Nosive konstrukcije</span>
+  <div>
+   <div class="rows">
+    <article class="row reveal"><span class="idx">01</span><h3 data-hr="Montaža novih strojeva i linija" data-de="Montage neuer Maschinen und Linien" data-en="Assembly of new machines and lines">Montaža novih strojeva i linija</h3><p data-hr="Postavljanje, pozicioniranje i niveliranje po nacrtu proizvođača, do stanja spremnog za puštanje u rad." data-de="Aufstellen, Positionieren und Nivellieren nach Herstellerzeichnung, bis zur Inbetriebnahmebereitschaft." data-en="Positioning, alignment and levelling to the manufacturer&#39;s drawings, up to commissioning readiness.">Postavljanje, pozicioniranje i niveliranje po nacrtu proizvođača, do stanja spremnog za puštanje u rad.</p></article>
+    <article class="row reveal" style="--i:1"><span class="idx">02</span><h3 data-hr="Demontaža i selidba proizvodnje" data-de="Demontage und Verlagerung" data-en="Dismantling and relocation">Demontaža i selidba proizvodnje</h3><p data-hr="Označavanje, demontaža, priprema za transport i ponovna montaža na novoj lokaciji." data-de="Kennzeichnung, Demontage, Transportvorbereitung und Wiederaufbau am neuen Standort." data-en="Tagging, dismantling, preparation for transport and reassembly at the new site.">Označavanje, demontaža, priprema za transport i ponovna montaža na novoj lokaciji.</p></article>
+    <article class="row reveal" style="--i:2"><span class="idx">03</span><h3 data-hr="Mehanički radovi i priključci" data-de="Mechanische Arbeiten und Anschlüsse" data-en="Mechanical work and connections">Mehanički radovi i priključci</h3><p data-hr="Sklapanje podsklopova, cjevovodi, nosive konstrukcije i zahvati u planiranom zastoju." data-de="Baugruppenmontage, Rohrleitungen, Tragkonstruktionen und Arbeiten im geplanten Stillstand." data-en="Sub-assembly work, piping, supporting structures and planned-shutdown jobs.">Sklapanje podsklopova, cjevovodi, nosive konstrukcije i zahvati u planiranom zastoju.</p></article>
+   </div>
+   <div class="keys reveal">
+    <span data-hr="Proizvodne linije" data-de="Produktionslinien" data-en="Production lines">Proizvodne linije</span>
+    <span data-hr="Transportni sustavi" data-de="Fördertechnik" data-en="Conveying systems">Transportni sustavi</span>
+    <span data-hr="Pakirni strojevi" data-de="Verpackungsmaschinen" data-en="Packaging machines">Pakirni strojevi</span>
+    <span data-hr="Obradni strojevi" data-de="Werkzeugmaschinen" data-en="Machine tools">Obradni strojevi</span>
+    <span data-hr="Nosive konstrukcije" data-de="Stahlkonstruktionen" data-en="Steel structures">Nosive konstrukcije</span>
+   </div>
   </div>
  </div>
 </section>
-<section class="alt" id="kako">
- <div class="wrap">
-  <p class="eyebrow reveal" data-hr="Kako ide" data-de="Ablauf" data-en="How it works">Kako ide</p>
-  <h2 class="reveal split" style="--i:1" data-hr="Četiri koraka" data-de="Vier Schritte" data-en="Four steps">Četiri koraka</h2>
-  <div class="list">
-   <div class="li reveal"><span class="k">01</span><div><b data-hr="Upit s popisom strojeva ili nacrtom" data-de="Anfrage mit Maschinenliste oder Zeichnung" data-en="Enquiry with machine list or drawing">Upit s popisom strojeva ili nacrtom</b><p data-hr="Dovoljan je popis opreme, nacrt ili fotografije lokacije." data-de="Eine Geräteliste, eine Zeichnung oder Fotos des Standorts genügen." data-en="An equipment list, a drawing or site photos are enough.">Dovoljan je popis opreme, nacrt ili fotografije lokacije.</p></div></div>
-   <div class="li reveal" style="--i:1"><span class="k">02</span><div><b data-hr="Ponuda i termin izlaska" data-de="Angebot und Einsatztermin" data-en="Quote and site date">Ponuda i termin izlaska</b><p data-hr="Dogovaramo opseg, broj ljudi i trajanje prije početka." data-de="Umfang, Teamgröße und Dauer werden vor Beginn festgelegt." data-en="Scope, crew size and duration are agreed before we start.">Dogovaramo opseg, broj ljudi i trajanje prije početka.</p></div></div>
-   <div class="li reveal" style="--i:2"><span class="k">03</span><div><b data-hr="Montaža na lokaciji" data-de="Montage vor Ort" data-en="Assembly on site">Montaža na lokaciji</b><p data-hr="Ekipa dolazi s alatom i radi po nacrtu i uputama proizvođača." data-de="Das Team kommt mit eigenem Werkzeug und arbeitet nach Zeichnung und Herstellervorgaben." data-en="The crew arrives with its own tools and works to the drawings and OEM instructions.">Ekipa dolazi s alatom i radi po nacrtu i uputama proizvođača.</p></div></div>
-   <div class="li reveal" style="--i:3"><span class="k">04</span><div><b data-hr="Primopredaja" data-de="Übergabe" data-en="Handover">Primopredaja</b><p data-hr="Pregled odrađenog s naručiteljem i zapisnik o predaji." data-de="Gemeinsame Abnahme mit dem Auftraggeber und Übergabeprotokoll." data-en="Joint walk-through with the client and a handover record.">Pregled odrađenog s naručiteljem i zapisnik o predaji.</p></div></div>
+
+<section class="sec dark" id="kako">
+ <div class="shell two">
+  <div class="sechead">
+   <span class="mono acc reveal" data-hr="Kako ide" data-de="Ablauf" data-en="How it works">Kako ide</span>
+   <h2 class="reveal split" data-hr="Četiri koraka" data-de="Vier Schritte" data-en="Four steps">Četiri koraka</h2>
   </div>
+  <div class="rows">
+   <article class="row reveal"><span class="idx">01</span><h3 data-hr="Upit s popisom strojeva ili nacrtom" data-de="Anfrage mit Maschinenliste oder Zeichnung" data-en="Enquiry with machine list or drawing">Upit s popisom strojeva ili nacrtom</h3><p data-hr="Dovoljan je popis opreme, nacrt ili fotografije lokacije." data-de="Eine Geräteliste, eine Zeichnung oder Fotos des Standorts genügen." data-en="An equipment list, a drawing or site photos are enough.">Dovoljan je popis opreme, nacrt ili fotografije lokacije.</p></article>
+   <article class="row reveal" style="--i:1"><span class="idx">02</span><h3 data-hr="Ponuda i termin izlaska" data-de="Angebot und Einsatztermin" data-en="Quote and site date">Ponuda i termin izlaska</h3><p data-hr="Dogovaramo opseg, broj ljudi i trajanje prije početka." data-de="Umfang, Teamgröße und Dauer werden vor Beginn festgelegt." data-en="Scope, crew size and duration are agreed before we start.">Dogovaramo opseg, broj ljudi i trajanje prije početka.</p></article>
+   <article class="row reveal" style="--i:2"><span class="idx">03</span><h3 data-hr="Montaža na lokaciji" data-de="Montage vor Ort" data-en="Assembly on site">Montaža na lokaciji</h3><p data-hr="Ekipa dolazi s alatom i radi po nacrtu i uputama proizvođača." data-de="Das Team kommt mit eigenem Werkzeug und arbeitet nach Zeichnung und Herstellervorgaben." data-en="The crew arrives with its own tools and works to the drawings and OEM instructions.">Ekipa dolazi s alatom i radi po nacrtu i uputama proizvođača.</p></article>
+   <article class="row reveal" style="--i:3"><span class="idx">04</span><h3 data-hr="Primopredaja" data-de="Übergabe" data-en="Handover">Primopredaja</h3><p data-hr="Pregled odrađenog s naručiteljem i zapisnik o predaji." data-de="Gemeinsame Abnahme mit dem Auftraggeber und Übergabeprotokoll." data-en="Joint walk-through with the client and a handover record.">Pregled odrađenog s naručiteljem i zapisnik o predaji.</p></article>
+  </div>
+ </div>
+ <div class="shell">
   <div class="shots">
    <figure class="reveal"><img src="montaza-1.webp" alt="Provjera niveliranja stroja libelom" width="800" height="600" loading="lazy" decoding="async"><figcaption data-hr="Pozicioniranje i niveliranje" data-de="Positionieren und Nivellieren" data-en="Positioning and levelling">Pozicioniranje i niveliranje</figcaption></figure>
    <figure class="reveal" style="--i:1"><img src="montaza-2.webp" alt="Pritezanje prirubnice momentnim ključem" width="800" height="600" loading="lazy" decoding="async"><figcaption data-hr="Mehanički spojevi" data-de="Mechanische Verbindungen" data-en="Mechanical connections">Mehanički spojevi</figcaption></figure>
@@ -210,11 +296,14 @@ figure:hover img{transform:scale(1.045)}
   </div>
  </div>
 </section>
-<section id="pitanja">
- <div class="wrap">
-  <p class="eyebrow reveal" data-hr="Česta pitanja" data-de="Häufige Fragen" data-en="Common questions">Česta pitanja</p>
-  <h2 class="reveal split" style="--i:1" data-hr="Što naručitelji najčešće pitaju" data-de="Was Auftraggeber am häufigsten fragen" data-en="What clients ask most">Što naručitelji najčešće pitaju</h2>
-  <div style="margin-top:28px">
+
+<section class="sec" id="pitanja">
+ <div class="shell two">
+  <div class="sechead">
+   <span class="mono acc reveal" data-hr="Česta pitanja" data-de="Häufige Fragen" data-en="Common questions">Česta pitanja</span>
+   <h2 class="reveal split" data-hr="Što naručitelji pitaju" data-de="Was Auftraggeber fragen" data-en="What clients ask">Što naručitelji pitaju</h2>
+  </div>
+  <div>
    <details class="q reveal"><summary data-hr="Izlazite li izvan Hrvatske?" data-de="Arbeiten Sie auch außerhalb Kroatiens?" data-en="Do you work outside Croatia?">Izlazite li izvan Hrvatske?</summary><div class="ans"><p data-hr="Da. Ekipa radi na lokacijama u Hrvatskoj i u zemljama Europske unije." data-de="Ja. Unser Team arbeitet an Standorten in Kroatien und in Ländern der Europäischen Union." data-en="Yes. The team works at sites in Croatia and in European Union countries.">Da. Ekipa radi na lokacijama u Hrvatskoj i u zemljama Europske unije.</p></div></details>
    <details class="q reveal" style="--i:1"><summary data-hr="Koliko vas dolazi na montažu?" data-de="Wie viele Monteure kommen?" data-en="How many people come to a job?">Koliko vas dolazi na montažu?</summary><div class="ans"><p data-hr="Ovisi o opsegu. Ekipa broji 14 ljudi, a broj montera po zahvatu dogovara se uz ponudu." data-de="Je nach Umfang. Das Team umfasst 14 Personen; die Monteurzahl pro Einsatz wird mit dem Angebot festgelegt." data-en="It depends on scope. The team is 14 people; the crew size per job is agreed with the quote.">Ovisi o opsegu. Ekipa broji 14 ljudi, a broj montera po zahvatu dogovara se uz ponudu.</p></div></details>
    <details class="q reveal" style="--i:2"><summary data-hr="Radite li demontažu i selidbu cijele proizvodnje?" data-de="Übernehmen Sie Demontage und Verlagerung einer kompletten Produktion?" data-en="Do you handle dismantling and relocating a whole production?">Radite li demontažu i selidbu cijele proizvodnje?</summary><div class="ans"><p data-hr="Da. Označavanje, demontaža, priprema za transport i ponovna montaža na novoj lokaciji." data-de="Ja. Kennzeichnung, Demontage, Transportvorbereitung und Wiederaufbau am neuen Standort." data-en="Yes. Tagging, dismantling, preparation for transport and reassembly at the new site.">Da. Označavanje, demontaža, priprema za transport i ponovna montaža na novoj lokaciji.</p></div></details>
@@ -222,29 +311,30 @@ figure:hover img{transform:scale(1.045)}
   </div>
  </div>
 </section>
-<section class="alt" id="kontakt">
- <div class="wrap">
-  <p class="eyebrow reveal" data-hr="Kontakt" data-de="Kontakt" data-en="Contact">Kontakt</p>
-  <h2 class="reveal split" style="--i:1" data-hr="Pošaljite upit" data-de="Anfrage senden" data-en="Send an enquiry">Pošaljite upit</h2>
+
+<section class="sec dark" id="kontakt">
+ <div class="shell">
+  <span class="mono acc reveal" data-hr="Kontakt" data-de="Kontakt" data-en="Contact">Kontakt</span>
+  <h2 class="reveal split" style="margin:16px 0 clamp(30px,4vw,54px)" data-hr="Pošaljite upit" data-de="Anfrage senden" data-en="Send an enquiry">Pošaljite upit</h2>
   <div class="cols">
-   <form id="upit" novalidate class="reveal" style="--i:2">
+   <form id="upit" novalidate class="form reveal" style="--i:1">
     <div class="pair">
      <div class="field"><label for="tvrtka" data-hr="Tvrtka" data-de="Firma" data-en="Company">Tvrtka</label><input id="tvrtka" type="text" autocomplete="organization"></div>
      <div class="field"><label for="ime" data-hr="Ime i prezime" data-de="Name" data-en="Name">Ime i prezime</label><input id="ime" type="text" autocomplete="name"></div>
     </div>
     <div class="pair">
-     <div class="field"><label for="mail" data-hr="E-mail" data-de="E-Mail" data-en="Email">E-mail</label><input id="mail" type="email" autocomplete="email" inputmode="email"></div>
+     <div class="field"><label for="mail" data-hr="E-mail" data-de="E-Mail" data-en="Email">E-mail</label><input id="mail" type="email" autocomplete="email" inputmode="email" autocapitalize="none" autocorrect="off"></div>
      <div class="field"><label for="tel" data-hr="Telefon" data-de="Telefon" data-en="Phone">Telefon</label><input id="tel" type="tel" autocomplete="tel" inputmode="tel"></div>
     </div>
     <div class="pair">
      <div class="field"><label for="lok" data-hr="Lokacija montaže" data-de="Einsatzort" data-en="Site location">Lokacija montaže</label><input id="lok" type="text" placeholder="npr. Graz, AT"></div>
      <div class="field"><label for="rok" data-hr="Željeni termin" data-de="Wunschtermin" data-en="Preferred date">Željeni termin</label><input id="rok" type="text" placeholder="npr. 11/2026"></div>
     </div>
-    <div class="field"><label for="opis" data-hr="Strojevi i opseg posla" data-de="Maschinen und Umfang" data-en="Machines and scope">Strojevi i opseg posla</label><textarea id="opis"></textarea></div>
+    <div class="field"><label for="opis" data-hr="Strojevi i opseg posla" data-de="Maschinen und Umfang" data-en="Machines and scope">Strojevi i opseg posla</label><textarea id="opis" enterkeyhint="done"></textarea></div>
     <button class="btn p" type="submit" data-hr="Pošalji upit" data-de="Anfrage senden" data-en="Send enquiry">Pošalji upit</button>
-    <p style="font-size:13px;margin-top:12px" data-hr="Obrazac otvara vaš program za e-poštu s ispunjenim upitom." data-de="Das Formular öffnet Ihr E-Mail-Programm mit der ausgefüllten Anfrage." data-en="The form opens your email client with the enquiry filled in.">Obrazac otvara vaš program za e-poštu s ispunjenim upitom.</p>
+    <p class="note" data-hr="Obrazac otvara vaš program za e-poštu s ispunjenim upitom." data-de="Das Formular öffnet Ihr E-Mail-Programm mit der ausgefüllten Anfrage." data-en="The form opens your email client with the enquiry filled in.">Obrazac otvara vaš program za e-poštu s ispunjenim upitom.</p>
    </form>
-   <div class="box reveal" style="--i:3">
+   <div class="reveal" style="--i:2">
     <a class="cl" href="tel:+385989352201"><b data-hr="Telefon" data-de="Telefon" data-en="Phone">Telefon</b><span>+385 98 935 22 01</span></a>
     <a class="cl" href="mailto:krizanec.montaza@gmail.com"><b>E-mail</b><span>krizanec.montaza@gmail.com</span></a>
     <div class="cl"><b data-hr="Adresa" data-de="Adresse" data-en="Address">Adresa</b><span>Donja Višnjica 105 d<br>42250 Lepoglava</span></div>
@@ -255,28 +345,29 @@ figure:hover img{transform:scale(1.045)}
  </div>
 </section>
 </main>
+
 <footer>
- <div class="wrap">
+ <div class="shell">
   <div class="fgrid">
    <div><h4>KRIŽANEC-MONTAŽA j.d.o.o.</h4><p data-hr="Montaža, demontaža i selidba industrijskih strojeva i proizvodnih linija. Hrvatska i EU." data-de="Montage, Demontage und Verlagerung von Industriemaschinen und Produktionslinien. Kroatien und EU." data-en="Assembly, dismantling and relocation of industrial machines and production lines. Croatia and the EU.">Montaža, demontaža i selidba industrijskih strojeva i proizvodnih linija. Hrvatska i EU.</p></div>
    <div><h4 data-hr="Kontakt" data-de="Kontakt" data-en="Contact">Kontakt</h4><p><a href="tel:+385989352201">+385 98 935 22 01</a><br><a href="mailto:krizanec.montaza@gmail.com">krizanec.montaza@gmail.com</a></p></div>
    <div><h4 data-hr="Adresa" data-de="Adresse" data-en="Address">Adresa</h4><p>Donja Višnjica 105 d<br>42250 Lepoglava<br>OIB HR35738468211</p></div>
   </div>
-  <p class="credit"><span data-hr="Izrada:" data-de="Umsetzung:" data-en="Built by:">Izrada:</span> <a class="madeby" href="https://www.azzurrodigital.hr" target="_blank" rel="noopener" aria-label="Azzurro Digital"><img src="azzurro-digital.png" alt="Azzurro Digital" width="640" height="169" loading="lazy" decoding="async"></a></p>
+  <div class="bigmark" aria-hidden="true">KRIŽANEC-MONTAŽA</div>
+  <p class="credit"><span data-hr="Izrada" data-de="Umsetzung" data-en="Built by">Izrada</span> <a class="madeby" href="https://www.azzurrodigital.hr" target="_blank" rel="noopener" aria-label="Azzurro Digital"><img src="azzurro-digital.png" alt="Azzurro Digital" width="640" height="169" loading="lazy" decoding="async"></a></p>
  </div>
 </footer>
+
 <script>
 (function(){
  var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
  document.documentElement.classList.add('js');
 
- /* --- word-mask split for headings --- */
  function splitWords(el){
   if(RM) return;
   var i=0;
   (function walk(node){
-   var kids=[].slice.call(node.childNodes);
-   kids.forEach(function(n){
+   [].slice.call(node.childNodes).forEach(function(n){
     if(n.nodeType===3){
      var parts=n.nodeValue.split(/(\s+)/), frag=document.createDocumentFragment();
      parts.forEach(function(t){
@@ -326,26 +417,17 @@ figure:hover img{transform:scale(1.045)}
  var saved=null; try{saved=localStorage.getItem('km-lang')}catch(e){}
  if(!saved){ var n=(navigator.language||'').slice(0,2).toLowerCase(); if(n==='de') saved='de'; }
  if(saved&&saved!=='hr') set(saved);
- applySplits(false); movePill();
+
+ applySplits(false);
+ movePill();
  window.addEventListener('resize',movePill);
+ if(document.fonts&&document.fonts.ready) document.fonts.ready.then(movePill);
 
- var els=[].slice.call(document.querySelectorAll('.reveal, .heroimg'));
- function activate(el){
-  el.classList.add('in');
-  var c=el.querySelector('[data-count]');
-  if(c) countUp(c);
- }
- if('IntersectionObserver' in window){
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){activate(e.target);io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
-  els.forEach(function(e){io.observe(e)});
- } else els.forEach(activate);
-
- /* --- number count-up --- */
  function countUp(el){
   var target=parseInt(el.getAttribute('data-count'),10);
   if(isNaN(target)||RM||el.dataset.done) return;
   el.dataset.done='1';
-  var t0=null, dur=1000;
+  var t0=null, dur=1100;
   function step(t){
    if(t0===null) t0=t;
    var k=Math.min((t-t0)/dur,1), e=1-Math.pow(1-k,3);
@@ -354,19 +436,26 @@ figure:hover img{transform:scale(1.045)}
   }
   el.textContent='0'; requestAnimationFrame(step);
  }
-
- /* --- header condense --- */
- var hdr=document.querySelector('header'), last=null;
- function onScroll(){
-  var y=window.pageYOffset||document.documentElement.scrollTop, sm=y>90;
-  if(sm!==last){ hdr.classList.toggle('sm',sm); last=sm; }
-  if(px) parallax();
+ function activate(el){
+  el.classList.add('in');
+  var c=el.querySelector('[data-count]');
+  if(c) countUp(c);
  }
+ var els=[].slice.call(document.querySelectorAll('.reveal, .heroimg'));
+ if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){activate(e.target);io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(e){io.observe(e)});
+ } else els.forEach(activate);
 
- /* --- hero parallax (pointer:fine, wide screens only) --- */
+ var hdr=document.querySelector('header'), last=null;
  var heroImg=document.querySelector('.heroimg img'), heroBox=document.querySelector('.heroimg');
  var px=!RM && heroImg && window.matchMedia('(min-width:900px) and (pointer:fine)').matches;
- var ticking=false, baseScale=1;
+ var pxReady=false, ticking=false;
+ if(px){
+  heroBox.classList.add('par');
+  heroImg.addEventListener('transitionend',function(){pxReady=true;heroImg.style.willChange='transform';onScroll()},{once:true});
+  setTimeout(function(){pxReady=true},2400);
+ }
  function parallax(){
   if(ticking||!pxReady) return; ticking=true;
   requestAnimationFrame(function(){
@@ -374,21 +463,19 @@ figure:hover img{transform:scale(1.045)}
    if(r.bottom>0 && r.top<innerHeight){
     var prog=(innerHeight-r.top)/(innerHeight+r.height);
     heroImg.style.transition='none';
-    heroImg.style.transform='scale(1.06) translate3d(0,'+((prog-.5)*-40).toFixed(2)+'px,0)';
+    heroImg.style.transform='scale(1.06) translate3d(0,'+((prog-.5)*-42).toFixed(2)+'px,0)';
    }
    ticking=false;
   });
  }
- var pxReady=false;
- if(px){
-  heroBox.classList.add('par');
-  heroImg.addEventListener('transitionend',function(){pxReady=true;heroImg.style.willChange='transform';onScroll()},{once:true});
-  setTimeout(function(){pxReady=true},2200);
+ function onScroll(){
+  var y=window.pageYOffset||document.documentElement.scrollTop, sm=y>80;
+  if(sm!==last){ hdr.classList.toggle('sm',sm); last=sm; }
+  if(px) parallax();
  }
  window.addEventListener('scroll',onScroll,{passive:true});
  onScroll();
 
- /* --- FAQ smooth open --- */
  [].forEach.call(document.querySelectorAll('.q'),function(d){
   var sm=d.querySelector('summary'), timer;
   if(d.open) d.classList.add('expanded');
@@ -397,13 +484,14 @@ figure:hover img{transform:scale(1.045)}
    clearTimeout(timer);
    if(d.classList.contains('expanded')){
     d.classList.remove('expanded');
-    timer=setTimeout(function(){d.open=false},RM?0:380);
+    timer=setTimeout(function(){d.open=false},RM?0:400);
    } else {
     d.open=true;
     requestAnimationFrame(function(){requestAnimationFrame(function(){d.classList.add('expanded')})});
    }
   });
  });
+
  document.getElementById('upit').addEventListener('submit',function(e){
   e.preventDefault();
   var g=function(id){var el=document.getElementById(id);return el?el.value.trim():''};

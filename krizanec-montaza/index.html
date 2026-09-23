@@ -248,7 +248,7 @@ footer p,footer a{color:#AAB4C0;font-size:14.5px;text-decoration:none}
   b.addEventListener('click',function(){set(b.getAttribute('data-lang'))});
  });
  var saved=null; try{saved=localStorage.getItem('km-lang')}catch(e){}
- if(!saved){ var n=(navigator.language||'').slice(0,2).toLowerCase(); if(n==='de'||n==='en') saved=n; }
+ if(!saved){ var n=(navigator.language||'').slice(0,2).toLowerCase(); if(n==='de') saved='de'; }
  if(saved&&saved!=='hr') set(saved);
  var els=[].slice.call(document.querySelectorAll('.reveal'));
  if('IntersectionObserver' in window){

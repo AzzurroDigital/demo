@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+<title>Stolarija i adaptacije, Poreč i Istra — TD MONT</title>
+<meta name="description" content="TD MONT, Kosinožići kod Poreča. Građevinska stolarija, prozori i vrata, fasade, adaptacije stanova, keramika i suha gradnja na području Poreča i cijele Istre.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#14261F">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#14261F">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+ --paper:#F5F3EE; --ink:#1A1C19; --deep:#14261F; --acc:#1F4D3D;
+ --stone:#E8E4DB; --line:#DDD8CD; --dline:#2C3F36;
+ --muted:#5F6359; --dim:#A8B0A8;
+ --pad:clamp(20px,4.5vw,64px); --r:2px;
+ --serif:"Fraunces",Georgia,"Times New Roman",serif;
+ --sans:"Instrument Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+ --ease:cubic-bezier(.16,1,.3,1);
+}
+html{-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%;overscroll-behavior:none;scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.55;-webkit-font-smoothing:antialiased;font-size:16px}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,a,[role=button]{touch-action:manipulation;user-select:none;-webkit-user-select:none}
+input,textarea,select{font-size:16px;font-family:inherit}
+::selection{background:var(--acc);color:#fff}
+
+.shell{max-width:1380px;margin:0 auto;padding:0 var(--pad)}
+.lbl{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--acc)}
+.dark .lbl{color:#9ED0B8}
+
+h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-.02em;line-height:1.02}
+h1{font-size:clamp(38px,6.4vw,84px);line-height:.98}
+h2{font-size:clamp(29px,4.4vw,58px)}
+h3{font-size:clamp(20px,2vw,27px);line-height:1.12}
+p{color:var(--muted)}
+
+/* header */
+.banner{background:var(--deep);color:#A8C7B6;padding:9px var(--pad);padding-top:calc(9px + env(safe-area-inset-top,0px));text-align:center;font-size:11.5px;letter-spacing:.06em;line-height:1.5}
+.banner b{color:#fff;font-weight:600}
+header{position:sticky;top:0;z-index:60;background:rgba(245,243,238,.93);backdrop-filter:saturate(150%) blur(10px);border-bottom:1px solid transparent;transition:border-color .35s var(--ease)}
+header.sm{border-bottom-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1380px;margin:0 auto;padding:17px var(--pad);transition:padding .35s var(--ease)}
+header.sm .nav{padding:10px var(--pad)}
+.logo{display:block;padding:4px 0;margin:-4px 0}
+.logo b{display:block;font-family:var(--serif);font-size:19px;font-weight:600;letter-spacing:-.02em;line-height:1}
+.logo small{display:block;white-space:nowrap;font-size:10px;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-top:5px;max-height:16px;opacity:1;overflow:hidden;transition:opacity .3s var(--ease),max-height .35s var(--ease),margin-top .35s var(--ease)}
+header.sm .logo small{opacity:0;max-height:0;margin-top:0}
+.langs{display:flex;position:relative;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:#fff}
+.pill{position:absolute;top:0;left:0;height:100%;background:var(--acc);z-index:0;pointer-events:none;transition:transform .34s var(--ease),width .34s var(--ease)}
+.langs button{position:relative;z-index:1;display:inline-flex;align-items:center;min-height:44px;background:none;border:0;color:var(--muted);font:inherit;font-size:11px;font-weight:600;letter-spacing:.11em;padding:0 14px;cursor:pointer;transition:color .2s var(--ease)}
+.langs button[aria-pressed=true]{background:var(--acc);color:#fff}
+.js .langs button[aria-pressed=true]{background:none;color:#fff}
+
+/* hero */
+.hero{padding:clamp(34px,4vw,58px) 0 0}
+.hero h1{max-width:13ch;margin-top:20px}
+.hero h1 em{font-style:italic;color:var(--acc)}
+.lead{font-size:clamp(16px,1.35vw,19.5px);max-width:46ch;margin-top:24px;line-height:1.6}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:14px 24px;border-radius:var(--r);font-weight:600;font-size:14.5px;border:1px solid transparent;cursor:pointer;font-family:inherit;transition:transform .12s var(--ease),background .2s var(--ease),border-color .2s var(--ease),color .2s var(--ease)}
+.btn:active{transform:scale(.975)}
+.btn.p{background:var(--acc);color:#fff}
+.btn.p::after{content:"\2192";display:inline-block;transition:transform .28s var(--ease)}
+.btn.g{border-color:var(--line);background:#fff;color:var(--ink)}
+.heroimg{overflow:hidden;background:var(--stone);margin-top:clamp(30px,4vw,0px)}
+.heroimg img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;transition:transform 1.7s cubic-bezier(.16,.8,.24,1)}
+.js .heroimg img{transform:scale(1.07)}
+.heroimg.in img{transform:scale(1)}
+
+/* reference band */
+.refs{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:clamp(44px,6vw,86px);padding:clamp(26px,3.4vw,44px) 0}
+.refs .lbl{display:block;margin-bottom:18px}
+.reflist{display:flex;flex-wrap:wrap;gap:10px 0}
+.reflist span{font-family:var(--serif);font-size:clamp(17px,1.9vw,25px);font-weight:400;letter-spacing:-.015em;position:relative;padding-right:22px}
+.reflist span::after{content:"";position:absolute;right:9px;top:50%;width:4px;height:4px;border-radius:50%;background:var(--acc);transform:translateY(-50%)}
+.reflist span:last-child{padding-right:0}
+.reflist span:last-child::after{display:none}
+.refnote{margin-top:16px;font-size:13px;color:var(--muted)}
+
+/* sections */
+.sec{padding:clamp(58px,7.5vw,118px) 0}
+.dark{background:var(--deep);color:#fff}
+.dark p{color:var(--dim)}
+.dark h2,.dark h3{color:#fff}
+.two{display:grid;gap:clamp(28px,3.6vw,52px)}
+.sechead h2{max-width:11ch}
+.sechead .lbl{display:block;margin-bottom:14px}
+
+/* service blocks */
+.blocks{display:grid;gap:clamp(30px,4vw,56px);margin-top:clamp(26px,3vw,40px)}
+.block figure{margin:0;overflow:hidden;background:var(--stone)}
+.block figure img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;transition:transform .8s var(--ease)}
+.block h3{margin:20px 0 10px}
+.block p{font-size:15px;max-width:44ch}
+.ul{list-style:none;margin-top:18px;border-top:1px solid var(--line)}
+.dark .ul{border-top-color:var(--dline)}
+.ul li{padding:11px 0 11px 22px;border-bottom:1px solid var(--line);font-size:14.5px;position:relative}
+.dark .ul li{border-bottom-color:var(--dline);color:var(--dim)}
+.ul li::before{content:"";position:absolute;left:2px;top:19px;width:8px;height:1px;background:var(--acc)}
+.dark .ul li::before{background:#6FAE8E}
+
+/* steps */
+.steps{border-top:1px solid var(--dline);margin-top:clamp(24px,3vw,38px)}
+.step{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;padding:22px 0;border-bottom:1px solid var(--dline);position:relative}
+.step::after{content:"";position:absolute;left:0;bottom:-1px;height:1px;width:100%;background:var(--dline);transform:scaleX(0);transform-origin:left}
+.step.in::after{animation:draw 1s var(--ease) calc(var(--i,0)*80ms) forwards}
+@keyframes draw{0%{transform:scaleX(0);background:#6FAE8E}55%{transform:scaleX(1);background:#6FAE8E}100%{transform:scaleX(1);background:var(--dline)}}
+.step .n{font-family:var(--serif);font-size:15px;color:#9ED0B8;padding-top:5px;grid-row:span 2}
+.step p{font-size:14.5px;max-width:50ch}
+
+/* gallery */
+.shots{display:grid;gap:10px;margin-top:clamp(30px,4vw,52px)}
+.shots figure{margin:0;overflow:hidden;background:var(--stone);position:relative}
+.shots figure img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;transition:transform .8s var(--ease)}
+figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 14px;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:linear-gradient(to top,rgba(20,38,31,.95) 0%,rgba(20,38,31,.88) 52%,rgba(20,38,31,0) 100%)}
+
+/* faq */
+.q{border-bottom:1px solid var(--line)}
+.q:first-of-type{border-top:1px solid var(--line)}
+.q summary{cursor:pointer;list-style:none;user-select:none;-webkit-user-select:none;padding:21px 44px 21px 0;font-family:var(--serif);font-weight:500;font-size:clamp(18px,1.8vw,23px);line-height:1.2;position:relative}
+.q summary::-webkit-details-marker{display:none}
+.q summary::before,.q summary::after{content:"";position:absolute;right:4px;top:calc(50% - 1px);width:15px;height:1.5px;background:var(--acc);transition:transform .35s var(--ease)}
+.q summary::before{transform:rotate(90deg)}
+.q[open] summary::before{transform:rotate(0)}
+.q summary:active{opacity:.55}
+.js .q .ans{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .4s var(--ease),opacity .3s var(--ease)}
+.js .q .ans>p{overflow:hidden}
+.js .q.expanded .ans{grid-template-rows:1fr;opacity:1}
+.q .ans>p{padding:0 0 22px;font-size:15.5px;max-width:62ch}
+
+/* form */
+.cols{display:grid;gap:clamp(28px,3.6vw,52px)}
+.form{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:clamp(22px,3vw,38px)}
+.pair{display:grid;gap:14px;grid-template-columns:1fr}
+.field{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
+label{font-size:10.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);transition:color .22s var(--ease)}
+input,textarea,select{border:0;border-bottom:1px solid var(--line);border-radius:0;padding:12px 0;min-height:44px;background:none;color:var(--ink);transition:border-color .22s var(--ease)}
+select{-webkit-appearance:none;appearance:none;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8'><path d='M1 1l5 5 5-5' fill='none' stroke='%231F4D3D' stroke-width='1.6'/></svg>") right center no-repeat}
+input:focus,textarea:focus,select:focus{outline:none;border-bottom-color:var(--acc)}
+.field:focus-within label{color:var(--acc)}
+textarea{min-height:100px;resize:vertical}
+input::placeholder,textarea::placeholder{color:#9A9E94}
+.note{font-size:12.5px;color:var(--muted);margin-top:16px;line-height:1.65}
+.card{background:var(--stone);border-radius:var(--r);padding:clamp(22px,3vw,32px)}
+.cl{display:grid;gap:3px;padding:15px 0;border-bottom:1px solid #D5D0C4}
+.cl:last-of-type{border-bottom:0}
+.cl b{font-size:10.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.cl span{font-size:16px;font-weight:500;transition:color .22s var(--ease)}
+
+/* footer */
+footer{background:var(--deep);color:#fff;padding-top:clamp(46px,6vw,80px);overflow:hidden}
+.fgrid{display:grid;gap:30px}
+footer h4{font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#7E9A8C;margin-bottom:12px}
+footer p,footer a{color:var(--dim);font-size:14.5px}
+footer p a{display:inline-block;padding:6px 0}
+.bigmark{font-family:var(--serif);font-size:clamp(46px,15.5vw,224px);font-weight:500;letter-spacing:-.045em;line-height:.85;color:#1B3129;margin-top:clamp(34px,4.5vw,66px);white-space:nowrap;user-select:none}
+.credit{border-top:1px solid var(--dline);margin-top:clamp(24px,3vw,38px);padding:18px 0 calc(24px + env(safe-area-inset-bottom,0px));font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7E9A8C;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.madeby{display:inline-flex;align-items:center;line-height:0}
+.madeby img{height:26px;width:auto;opacity:.6;transition:opacity .25s var(--ease)}
+
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:12px;top:12px;background:#fff;color:#000;padding:10px 14px;z-index:99}
+
+/* focus */
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:2px}
+.dark :focus-visible,footer :focus-visible,.banner :focus-visible{outline-color:#9ED0B8}
+
+/* motion */
+.js .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease);transition-delay:calc(var(--i,0)*70ms)}
+.reveal.in{opacity:1;transform:none}
+.js .reveal.split{opacity:1;transform:none;transition:none}
+.w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.1em;margin-bottom:-.1em}
+.w>i{display:inline-block;font-style:inherit;color:inherit;transform:translateY(110%);transition:transform .9s var(--ease);transition-delay:calc(var(--d,0)*45ms)}
+.split.in .w>i{transform:none}
+
+@media(max-width:520px){.logo small{font-size:9px;letter-spacing:.08em}}
+@media(min-width:760px){
+ .pair{grid-template-columns:1fr 1fr}
+ .blocks{grid-template-columns:1fr 1fr}
+ .shots{grid-template-columns:repeat(3,1fr)}
+ .step{grid-template-columns:52px minmax(0,1fr) minmax(0,1.3fr);gap:20px;align-items:start}
+ .step .n{grid-row:auto}
+}
+@media(min-width:1000px){
+ .herogrid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.92fr);gap:clamp(40px,5vw,80px);align-items:center}
+ .heroimg{margin-top:0}
+ .two{grid-template-columns:300px minmax(0,1fr);gap:70px;align-items:start}
+ .sechead{position:sticky;top:112px}
+ .cols{grid-template-columns:minmax(0,1.32fr) minmax(0,.68fr);gap:54px;align-items:start}
+ .fgrid{grid-template-columns:2fr 1fr 1fr;gap:48px}
+}
+@media(hover:hover) and (pointer:fine){
+ .btn.p:hover{background:#173D30}
+ .btn.p:hover::after{transform:translateX(5px)}
+ .btn.g:hover{border-color:#C6BFB0}
+ .langs button:hover{color:var(--ink)}
+ .madeby:hover img{opacity:1}
+ .block figure:hover img,.shots figure:hover img{transform:scale(1.045)}
+ .cl:hover span{color:var(--acc)}
+ .q summary:hover::before,.q summary:hover::after{background:#173D30}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-delay:0s!important}
+ .reveal{opacity:1;transform:none}
+ .w>i{transform:none}
+ .js .heroimg img{transform:none}
+ .step.in::after{transform:scaleX(1)}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#sadrzaj" data-hr="Preskoči na sadržaj" data-de="Zum Inhalt springen" data-it="Vai al contenuto">Preskoči na sadržaj</a>
+
+<div class="banner"><b data-hr="Prijedlog stranice" data-de="Seitenentwurf" data-it="Bozza del sito">Prijedlog stranice</b> <span data-hr="— fotografije i dio tekstova su privremeni i mijenjaju se po dogovoru. Izradio Azzurro Digital." data-de="— Fotos und Teile der Texte sind vorläufig und werden nach Absprache ersetzt. Erstellt von Azzurro Digital." data-it="— le fotografie e parte dei testi sono provvisori e verranno sostituiti d'accordo. Realizzato da Azzurro Digital.">— fotografije i dio tekstova su privremeni i mijenjaju se po dogovoru. Izradio Azzurro Digital.</span></div>
+
+<header>
+ <div class="nav">
+  <a class="logo" href="#top"><b>TD MONT</b><small data-hr="Obrt za montažu stolarije · Poreč" data-de="Tischlerei-Montage · Poreč" data-it="Montaggio serramenti · Parenzo">Obrt za montažu stolarije · Poreč</small></a>
+  <div class="langs" role="group" aria-label="Jezik / Sprache / Lingua">
+   <button type="button" data-lang="hr" aria-pressed="true">HR</button>
+   <button type="button" data-lang="de" aria-pressed="false">DE</button>
+   <button type="button" data-lang="it" aria-pressed="false">IT</button>
+  </div>
+ </div>
+</header>
+
+<main id="sadrzaj">
+<section class="hero" id="top">
+ <div class="shell">
+  <div class="herogrid">
+   <div>
+    <p class="lbl reveal" data-hr="Poreč · Parenzo · Istra" data-de="Poreč · Parenzo · Istrien" data-it="Poreč · Parenzo · Istria">Poreč · Parenzo · Istra</p>
+    <h1 class="reveal split" data-hr="Stolarija i <em>adaptacije</em> za Poreč i Istru" data-de="Fenster, Türen und <em>Renovierungen</em> für Poreč und Istrien" data-it="Serramenti e <em>ristrutturazioni</em> per Parenzo e l'Istria">Stolarija i <em>adaptacije</em> za Poreč i Istru</h1>
+    <p class="lead reveal" style="--i:2" data-hr="Izrađujemo i ugrađujemo građevinsku stolariju, a izvodimo i fasade, adaptacije stanova, keramičarske radove i suhu gradnju. Radimo na području grada Poreča i cijele Istre." data-de="Wir fertigen und montieren Bauelemente aus Holz, PVC und Aluminium und führen ausserdem Fassaden, Wohnungsrenovierungen, Fliesenarbeiten und Trockenbau aus. Tätig in Poreč und in ganz Istrien." data-it="Produciamo e installiamo serramenti e realizziamo anche facciate, ristrutturazioni di appartamenti, opere in ceramica e cartongesso. Operiamo a Parenzo e in tutta l'Istria.">Izrađujemo i ugrađujemo građevinsku stolariju, a izvodimo i fasade, adaptacije stanova, keramičarske radove i suhu gradnju. Radimo na području grada Poreča i cijele Istre.</p>
+    <div class="cta reveal" style="--i:3">
+     <a class="btn p" href="#upit" data-hr="Zatražite izmjeru i ponudu" data-de="Aufmass und Angebot anfragen" data-it="Richiedi rilievo e preventivo">Zatražite izmjeru i ponudu</a>
+     <a class="btn g" href="mailto:dino19171@gmail.com">dino19171@gmail.com</a>
+    </div>
+   </div>
+   <div class="heroimg"><img src="tdmont-hero.webp" alt="Obnovljena istarska kamena kuća s ugrađenom bijelom stolarijom i zelenim škurama" width="1000" height="1250" fetchpriority="high" decoding="async"></div>
+  </div>
+
+  <div class="refs reveal">
+   <span class="lbl" data-hr="Izvedeni objekti" data-de="Ausgeführte Objekte" data-it="Opere realizzate">Izvedeni objekti</span>
+   <div class="reflist">
+    <span>Društveni dom Dračevac</span>
+    <span>Spomen dom Rusnjak</span>
+    <span data-hr="Jaslice u Kašteliru" data-de="Kinderkrippe in Kaštelir" data-it="Asilo nido a Castelliere">Jaslice u Kašteliru</span>
+    <span data-hr="Područna škola Nova Vas" data-de="Schule Nova Vas" data-it="Scuola di Villanova">Područna škola Nova Vas</span>
+    <span data-hr="Pročelje županijske zgrade Poreč-Parenzo" data-de="Fassade des Gespanschaftsgebäudes Poreč-Parenzo" data-it="Facciata del palazzo regionale Poreč-Parenzo">Pročelje županijske zgrade Poreč-Parenzo</span>
+   </div>
+   <p class="refnote" data-hr="Objekti koje TD MONT navodi među svojim izvedenim radovima." data-de="Objekte, die TD MONT unter seinen ausgeführten Arbeiten anführt." data-it="Opere che TD MONT indica tra i lavori realizzati.">Objekti koje TD MONT navodi među svojim izvedenim radovima.</p>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="usluge">
+ <div class="shell two">
+  <div class="sechead">
+   <span class="lbl reveal" data-hr="Usluge" data-de="Leistungen" data-it="Servizi">Usluge</span>
+   <h2 class="reveal split" data-hr="Dvije strane posla" data-de="Zwei Standbeine" data-it="Due rami di attività">Dvije strane posla</h2>
+  </div>
+  <div class="blocks">
+   <div class="block reveal">
+    <figure><img src="tdmont-1.webp" alt="Klizna ALU stijena otvorena prema kamenoj terasi" width="1000" height="750" loading="lazy" decoding="async"></figure>
+    <h3 data-hr="Građevinska stolarija" data-de="Fenster und Türen" data-it="Serramenti">Građevinska stolarija</h3>
+    <p data-hr="Izrada, isporuka i ugradnja. Izlazak na izmjeru prije svake ponude." data-de="Fertigung, Lieferung und Montage. Vor jedem Angebot wird vor Ort aufgemessen." data-it="Produzione, fornitura e posa. Rilievo in loco prima di ogni preventivo.">Izrada, isporuka i ugradnja. Izlazak na izmjeru prije svake ponude.</p>
+    <ul class="ul">
+     <li data-hr="Prozori — PVC i ALU" data-de="Fenster — PVC und Aluminium" data-it="Finestre — PVC e alluminio">Prozori — PVC i ALU</li>
+     <li data-hr="Vrata — ulazna i unutarnja" data-de="Türen — Haus- und Innentüren" data-it="Porte — d'ingresso e interne">Vrata — ulazna i unutarnja</li>
+     <li data-hr="Klizne stijene" data-de="Schiebeelemente" data-it="Pareti scorrevoli">Klizne stijene</li>
+    </ul>
+   </div>
+   <div class="block reveal" style="--i:1">
+    <figure><img src="tdmont-3.webp" alt="Obnovljeno pročelje javne zgrade sa skelom" width="1000" height="750" loading="lazy" decoding="async"></figure>
+    <h3 data-hr="Građevinski i adaptacijski radovi" data-de="Bau- und Renovierungsarbeiten" data-it="Opere edili e di ristrutturazione">Građevinski i adaptacijski radovi</h3>
+    <p data-hr="Od pročelja do gotovog stana. Jedan izvođač za cijeli zahvat." data-de="Von der Fassade bis zur fertigen Wohnung. Ein Ausführender für das ganze Vorhaben." data-it="Dalla facciata all'appartamento finito. Un unico esecutore per l'intero intervento.">Od pročelja do gotovog stana. Jedan izvođač za cijeli zahvat.</p>
+    <ul class="ul">
+     <li data-hr="Fasade" data-de="Fassaden" data-it="Facciate">Fasade</li>
+     <li data-hr="Adaptacija stana" data-de="Wohnungsrenovierung" data-it="Ristrutturazione di appartamenti">Adaptacija stana</li>
+     <li data-hr="Keramičarski radovi" data-de="Fliesenarbeiten" data-it="Opere in ceramica">Keramičarski radovi</li>
+     <li data-hr="Suha gradnja (knauf)" data-de="Trockenbau" data-it="Cartongesso">Suha gradnja (knauf)</li>
+     <li data-hr="Uređenje okućnice" data-de="Aussenanlagen" data-it="Sistemazione esterni">Uređenje okućnice</li>
+    </ul>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="sec dark" id="kako">
+ <div class="shell two">
+  <div class="sechead">
+   <span class="lbl reveal" data-hr="Kako ide" data-de="Ablauf" data-it="Come funziona">Kako ide</span>
+   <h2 class="reveal split" data-hr="Od izmjere do primopredaje" data-de="Vom Aufmass bis zur Übergabe" data-it="Dal rilievo alla consegna">Od izmjere do primopredaje</h2>
+  </div>
+  <div class="steps">
+   <article class="step reveal"><span class="n">01</span><h3 data-hr="Izlazak i izmjera" data-de="Termin und Aufmass" data-it="Sopralluogo e rilievo">Izlazak i izmjera</h3><p data-hr="Dolazimo na objekt, mjerimo otvore i dogovaramo opseg radova." data-de="Wir kommen zum Objekt, messen die Öffnungen und stimmen den Umfang ab." data-it="Veniamo sul posto, rileviamo le aperture e concordiamo l'intervento.">Dolazimo na objekt, mjerimo otvore i dogovaramo opseg radova.</p></article>
+   <article class="step reveal" style="--i:1"><span class="n">02</span><h3 data-hr="Ponuda s rokom" data-de="Angebot mit Termin" data-it="Preventivo con tempi">Ponuda s rokom</h3><p data-hr="Pisana ponuda po stavkama, s rokom izrade i ugradnje." data-de="Schriftliches Angebot nach Positionen, mit Liefer- und Montagetermin." data-it="Preventivo scritto per voci, con tempi di produzione e posa.">Pisana ponuda po stavkama, s rokom izrade i ugradnje.</p></article>
+   <article class="step reveal" style="--i:2"><span class="n">03</span><h3 data-hr="Izrada i ugradnja" data-de="Fertigung und Montage" data-it="Produzione e posa">Izrada i ugradnja</h3><p data-hr="Izrada stolarije i ugradnja na objektu, uz ostale dogovorene radove." data-de="Fertigung der Elemente und Montage vor Ort, samt der übrigen vereinbarten Arbeiten." data-it="Produzione dei serramenti e posa in opera, insieme agli altri lavori concordati.">Izrada stolarije i ugradnja na objektu, uz ostale dogovorene radove.</p></article>
+   <article class="step reveal" style="--i:3"><span class="n">04</span><h3 data-hr="Primopredaja" data-de="Übergabe" data-it="Consegna">Primopredaja</h3><p data-hr="Zajednički pregled izvedenog i čišćenje radnog prostora." data-de="Gemeinsame Abnahme und Reinigung des Arbeitsbereichs." data-it="Verifica congiunta del lavoro e pulizia dell'area.">Zajednički pregled izvedenog i čišćenje radnog prostora.</p></article>
+  </div>
+ </div>
+</section>
+
+<section class="sec">
+ <div class="shell">
+  <div class="shots">
+   <figure class="reveal"><img src="tdmont-1.webp" alt="Klizna ALU stijena prema terasi" width="1000" height="750" loading="lazy" decoding="async"><figcaption data-hr="Klizne stijene" data-de="Schiebeelemente" data-it="Pareti scorrevoli">Klizne stijene</figcaption></figure>
+   <figure class="reveal" style="--i:1"><img src="tdmont-2.webp" alt="Izmjera otvora laserom i metrom prije ugradnje" width="1000" height="750" loading="lazy" decoding="async"><figcaption data-hr="Izmjera otvora" data-de="Aufmass" data-it="Rilievo delle aperture">Izmjera otvora</figcaption></figure>
+   <figure class="reveal" style="--i:2"><img src="tdmont-3.webp" alt="Obnovljeno pročelje javne zgrade" width="1000" height="750" loading="lazy" decoding="async"><figcaption data-hr="Fasade i pročelja" data-de="Fassaden" data-it="Facciate">Fasade i pročelja</figcaption></figure>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="pitanja">
+ <div class="shell two">
+  <div class="sechead">
+   <span class="lbl reveal" data-hr="Česta pitanja" data-de="Häufige Fragen" data-it="Domande frequenti">Česta pitanja</span>
+   <h2 class="reveal split" data-hr="Što naručitelji pitaju" data-de="Was Auftraggeber fragen" data-it="Cosa chiedono i committenti">Što naručitelji pitaju</h2>
+  </div>
+  <div>
+   <details class="q reveal"><summary data-hr="Radite li izvan Poreča?" data-de="Arbeiten Sie auch ausserhalb von Poreč?" data-it="Lavorate anche fuori Parenzo?">Radite li izvan Poreča?</summary><div class="ans"><p data-hr="Da. Radimo na području grada Poreča i cijele Istre." data-de="Ja. Wir arbeiten in Poreč und in ganz Istrien." data-it="Sì. Operiamo a Parenzo e in tutta l'Istria.">Da. Radimo na području grada Poreča i cijele Istre.</p></div></details>
+   <details class="q reveal" style="--i:1"><summary data-hr="Radite li samo stolariju ili i ostale radove?" data-de="Machen Sie nur Fenster und Türen oder auch andere Arbeiten?" data-it="Fate solo serramenti o anche altri lavori?">Radite li samo stolariju ili i ostale radove?</summary><div class="ans"><p data-hr="Oboje. Uz stolariju izvodimo fasade, adaptacije stanova, keramiku, suhu gradnju i uređenje okućnice, pa cijeli zahvat može ići preko jednog izvođača." data-de="Beides. Neben Fenstern und Türen führen wir Fassaden, Wohnungsrenovierungen, Fliesenarbeiten, Trockenbau und Aussenanlagen aus — das ganze Vorhaben aus einer Hand." data-it="Entrambi. Oltre ai serramenti realizziamo facciate, ristrutturazioni, ceramica, cartongesso e sistemazione esterni: l'intero intervento con un solo esecutore.">Oboje. Uz stolariju izvodimo fasade, adaptacije stanova, keramiku, suhu gradnju i uređenje okućnice, pa cijeli zahvat može ići preko jednog izvođača.</p></div></details>
+   <details class="q reveal" style="--i:2"><summary data-hr="Radite li PVC i aluminij?" data-de="Arbeiten Sie mit PVC und Aluminium?" data-it="Lavorate PVC e alluminio?">Radite li PVC i aluminij?</summary><div class="ans"><p data-hr="Da, prozore i vrata radimo u PVC-u i aluminiju, a izvodimo i klizne stijene." data-de="Ja, Fenster und Türen in PVC und Aluminium, ebenso Schiebeelemente." data-it="Sì, finestre e porte in PVC e alluminio, oltre alle pareti scorrevoli.">Da, prozore i vrata radimo u PVC-u i aluminiju, a izvodimo i klizne stijene.</p></div></details>
+   <details class="q reveal" style="--i:3"><summary data-hr="Kako dobiti ponudu?" data-de="Wie bekomme ich ein Angebot?" data-it="Come ottengo un preventivo?">Kako dobiti ponudu?</summary><div class="ans"><p data-hr="Pošaljite upit s lokacijom i okvirnim mjerama otvora. Dogovaramo izlazak na izmjeru, a ponuda ide nakon toga." data-de="Senden Sie eine Anfrage mit Standort und ungefähren Massen. Wir vereinbaren einen Aufmasstermin, das Angebot folgt danach." data-it="Inviate una richiesta con la località e le misure indicative. Fissiamo il rilievo e il preventivo segue.">Pošaljite upit s lokacijom i okvirnim mjerama otvora. Dogovaramo izlazak na izmjeru, a ponuda ide nakon toga.</p></div></details>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="upit" style="background:var(--stone)">
+ <div class="shell">
+  <span class="lbl reveal" data-hr="Upit" data-de="Anfrage" data-it="Richiesta">Upit</span>
+  <h2 class="reveal split" style="margin:14px 0 clamp(26px,3.4vw,46px)" data-hr="Pošaljite mjere i lokaciju" data-de="Masse und Standort senden" data-it="Inviate misure e località">Pošaljite mjere i lokaciju</h2>
+  <div class="cols">
+   <form id="frm" novalidate class="form reveal" style="--i:1">
+    <div class="pair">
+     <div class="field"><label for="ime" data-hr="Ime i prezime" data-de="Name" data-it="Nome e cognome">Ime i prezime</label><input id="ime" type="text" autocomplete="name"></div>
+     <div class="field"><label for="tel" data-hr="Telefon" data-de="Telefon" data-it="Telefono">Telefon</label><input id="tel" type="tel" autocomplete="tel" inputmode="tel"></div>
+    </div>
+    <div class="pair">
+     <div class="field"><label for="mail" data-hr="E-mail" data-de="E-Mail" data-it="E-mail">E-mail</label><input id="mail" type="email" autocomplete="email" inputmode="email" autocapitalize="none" autocorrect="off"></div>
+     <div class="field"><label for="lok" data-hr="Lokacija objekta" data-de="Standort des Objekts" data-it="Località dell'immobile">Lokacija objekta</label><input id="lok" type="text" placeholder="npr. Poreč, Funtana"></div>
+    </div>
+    <div class="pair">
+     <div class="field"><label for="vrsta" data-hr="Vrsta radova" data-de="Art der Arbeiten" data-it="Tipo di lavori">Vrsta radova</label>
+      <select id="vrsta">
+       <option data-hr="Prozori" data-de="Fenster" data-it="Finestre">Prozori</option>
+       <option data-hr="Vrata" data-de="Türen" data-it="Porte">Vrata</option>
+       <option data-hr="Klizne stijene" data-de="Schiebeelemente" data-it="Pareti scorrevoli">Klizne stijene</option>
+       <option data-hr="Fasada" data-de="Fassade" data-it="Facciata">Fasada</option>
+       <option data-hr="Adaptacija stana" data-de="Wohnungsrenovierung" data-it="Ristrutturazione">Adaptacija stana</option>
+       <option data-hr="Keramika" data-de="Fliesenarbeiten" data-it="Ceramica">Keramika</option>
+       <option data-hr="Suha gradnja" data-de="Trockenbau" data-it="Cartongesso">Suha gradnja</option>
+       <option data-hr="Više vrsta radova" data-de="Mehrere Gewerke" data-it="Più tipi di lavori">Više vrsta radova</option>
+      </select>
+     </div>
+     <div class="field"><label for="broj" data-hr="Broj otvora" data-de="Anzahl der Öffnungen" data-it="Numero di aperture">Broj otvora</label><input id="broj" type="text" inputmode="numeric" placeholder="npr. 6"></div>
+    </div>
+    <div class="field"><label for="mjere" data-hr="Okvirne mjere otvora" data-de="Ungefähre Masse" data-it="Misure indicative">Okvirne mjere otvora</label><textarea id="mjere" placeholder="npr. 4 × 120/140, 1 × balkonska vrata 90/220, 1 × klizna stijena 300/220"></textarea></div>
+    <div class="pair">
+     <div class="field"><label for="rok" data-hr="Željeni termin" data-de="Wunschtermin" data-it="Periodo desiderato">Željeni termin</label><input id="rok" type="text" placeholder="npr. proljeće 2027."></div>
+     <div class="field"><label for="nap" data-hr="Napomena" data-de="Anmerkung" data-it="Nota">Napomena</label><input id="nap" type="text" enterkeyhint="done"></div>
+    </div>
+    <button class="btn p" type="submit" data-hr="Pošalji upit" data-de="Anfrage senden" data-it="Invia richiesta">Pošalji upit</button>
+    <p class="note" data-hr="Obrazac otvara vaš program za e-poštu s već ispunjenim upitom." data-de="Das Formular öffnet Ihr E-Mail-Programm mit der ausgefüllten Anfrage." data-it="Il modulo apre il vostro programma di posta con la richiesta già compilata.">Obrazac otvara vaš program za e-poštu s već ispunjenim upitom.</p>
+   </form>
+   <div class="card reveal" style="--i:2">
+    <a class="cl" href="mailto:dino19171@gmail.com"><b>E-mail</b><span>dino19171@gmail.com</span></a>
+    <div class="cl"><b data-hr="Telefon" data-de="Telefon" data-it="Telefono">Telefon</b><span data-hr="upisati" data-de="einzutragen" data-it="da inserire">upisati</span></div>
+    <div class="cl"><b data-hr="Adresa" data-de="Adresse" data-it="Indirizzo">Adresa</b><span>Kosinožići 32<br>52449 Poreč</span></div>
+    <div class="cl"><b data-hr="Područje rada" data-de="Einsatzgebiet" data-it="Area di attività">Područje rada</b><span data-hr="Poreč i cijela Istra" data-de="Poreč und ganz Istrien" data-it="Parenzo e tutta l'Istria">Poreč i cijela Istra</span></div>
+    <div class="cl"><b>MBO</b><span>98131966</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="shell">
+  <div class="fgrid">
+   <div><h4>TD MONT, obrt za montažu stolarije, vl. Jelena Varga</h4><p data-hr="Građevinska stolarija, fasade, adaptacije stanova, keramičarski radovi i suha gradnja. Poreč i Istra." data-de="Fenster und Türen, Fassaden, Wohnungsrenovierungen, Fliesenarbeiten und Trockenbau. Poreč und Istrien." data-it="Serramenti, facciate, ristrutturazioni, opere in ceramica e cartongesso. Parenzo e Istria.">Građevinska stolarija, fasade, adaptacije stanova, keramičarski radovi i suha gradnja. Poreč i Istra.</p></div>
+   <div><h4 data-hr="Kontakt" data-de="Kontakt" data-it="Contatti">Kontakt</h4><p><a href="mailto:dino19171@gmail.com">dino19171@gmail.com</a></p></div>
+   <div><h4 data-hr="Sjedište" data-de="Sitz" data-it="Sede">Sjedište</h4><p>Kosinožići 32<br>52449 Poreč<br>MBO 98131966</p></div>
+  </div>
+  <div class="bigmark" aria-hidden="true">TD MONT</div>
+  <p class="credit"><span data-hr="Izrada" data-de="Umsetzung" data-it="Realizzazione">Izrada</span> <a class="madeby" href="https://www.azzurrodigital.hr" target="_blank" rel="noopener" aria-label="Azzurro Digital"><img src="azzurro-digital.png" alt="Azzurro Digital" width="640" height="169" loading="lazy" decoding="async"></a></p>
+ </div>
+</footer>
+
+<script>
+(function(){
+ var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+ document.documentElement.classList.add('js');
+
+ function splitWords(el){
+  if(RM) return;
+  var i=0;
+  (function walk(node){
+   [].slice.call(node.childNodes).forEach(function(n){
+    if(n.nodeType===3){
+     var parts=n.nodeValue.split(/(\s+)/), frag=document.createDocumentFragment();
+     parts.forEach(function(t){
+      if(!t) return;
+      if(/^\s+$/.test(t)){ frag.appendChild(document.createTextNode(t)); return; }
+      var w=document.createElement('span'); w.className='w';
+      var inner=document.createElement('i'); inner.style.setProperty('--d',i++); inner.textContent=t;
+      w.appendChild(inner); frag.appendChild(w);
+     });
+     node.replaceChild(frag,n);
+    } else if(n.nodeType===1 && n.className!=='w'){ walk(n); }
+   });
+  })(el);
+ }
+ function applySplits(animate){
+  [].forEach.call(document.querySelectorAll('.split'),function(el){
+   splitWords(el);
+   if(animate && el.classList.contains('in')){
+    el.classList.remove('in'); void el.offsetWidth; el.classList.add('in');
+   }
+  });
+ }
+
+ var L=['hr','de','it'], cur='hr';
+ var nodes=[].slice.call(document.querySelectorAll('[data-hr]'));
+ function set(l){
+  if(L.indexOf(l)<0) l='hr';
+  cur=l; document.documentElement.lang=l;
+  nodes.forEach(function(n){ var v=n.getAttribute('data-'+l); if(v!=null) n.innerHTML=v; });
+  [].forEach.call(document.querySelectorAll('.langs button'),function(b){
+   b.setAttribute('aria-pressed', String(b.getAttribute('data-lang')===l));
+  });
+  applySplits(true); movePill();
+  try{localStorage.setItem('td-lang',l)}catch(e){}
+ }
+ function movePill(){
+  var box=document.querySelector('.langs'); if(!box) return;
+  var p=box.querySelector('.pill');
+  if(!p){ p=document.createElement('span'); p.className='pill'; box.insertBefore(p,box.firstChild); }
+  var a=box.querySelector('button[aria-pressed=true]'); if(!a) return;
+  p.style.width=a.offsetWidth+'px';
+  p.style.transform='translateX('+a.offsetLeft+'px)';
+ }
+ [].forEach.call(document.querySelectorAll('.langs button'),function(b){
+  b.addEventListener('click',function(){set(b.getAttribute('data-lang'))});
+ });
+ var saved=null; try{saved=localStorage.getItem('td-lang')}catch(e){}
+ if(!saved){ var n=(navigator.language||'').slice(0,2).toLowerCase(); if(n==='de'||n==='it') saved=n; }
+ if(saved&&saved!=='hr') set(saved);
+
+ applySplits(false);
+ movePill();
+ window.addEventListener('resize',movePill);
+ if(document.fonts&&document.fonts.ready) document.fonts.ready.then(movePill);
+
+ var els=[].slice.call(document.querySelectorAll('.reveal, .heroimg'));
+ if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+   if(e.isIntersecting || e.boundingClientRect.top < 0){ e.target.classList.add('in'); io.unobserve(e.target); }
+  })},{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(e){io.observe(e)});
+ } else els.forEach(function(e){e.classList.add('in')});
+
+ var hdr=document.querySelector('header'), last=null;
+ window.addEventListener('scroll',function(){
+  var y=window.pageYOffset||document.documentElement.scrollTop, sm=y>80;
+  if(sm!==last){ hdr.classList.toggle('sm',sm); last=sm; }
+ },{passive:true});
+
+ [].forEach.call(document.querySelectorAll('.q'),function(d){
+  var sm=d.querySelector('summary'), timer;
+  if(d.open) d.classList.add('expanded');
+  sm.addEventListener('click',function(ev){
+   ev.preventDefault();
+   clearTimeout(timer);
+   if(d.classList.contains('expanded')){
+    d.classList.remove('expanded');
+    timer=setTimeout(function(){d.open=false},RM?0:400);
+   } else {
+    d.open=true;
+    requestAnimationFrame(function(){requestAnimationFrame(function(){d.classList.add('expanded')})});
+   }
+  });
+ });
+
+ document.getElementById('frm').addEventListener('submit',function(e){
+  e.preventDefault();
+  var g=function(id){var el=document.getElementById(id);return el?el.value.trim():''};
+  var T={hr:{s:'Upit za stolariju i radove',f:['Ime','Telefon','E-mail','Lokacija','Vrsta radova','Broj otvora','Mjere','Termin','Napomena']},
+         de:{s:'Anfrage Fenster und Bauarbeiten',f:['Name','Telefon','E-Mail','Standort','Art der Arbeiten','Anzahl Öffnungen','Masse','Termin','Anmerkung']},
+         it:{s:'Richiesta serramenti e lavori',f:['Nome','Telefono','E-mail','Località','Tipo di lavori','Numero aperture','Misure','Periodo','Nota']}}[cur];
+  var v=[g('ime'),g('tel'),g('mail'),g('lok'),g('vrsta'),g('broj'),g('mjere'),g('rok'),g('nap')];
+  var body=T.f.map(function(k,i){return v[i]?k+': '+v[i]:null}).filter(Boolean).join('\n');
+  window.location.href='mailto:dino19171@gmail.com?subject='+encodeURIComponent(T.s)+'&body='+encodeURIComponent(body);
+ });
+})();
+</script>
+</body>
+</html>

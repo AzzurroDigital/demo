@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+<title>Strojne glazure, Zagreb — FIDA.GLAZURE</title>
+<meta name="description" content="FIDA.GLAZURE j.d.o.o., Sesvete. Strojne cementne glazure za stanove, kuće, poslovne i trgovačke prostore te hale na zagrebačkom području.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#16171A">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#16171A">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%;overscroll-behavior:none;scroll-behavior:smooth}
+body{line-height:1.55;-webkit-font-smoothing:antialiased;font-size:16px}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,a,[role=button]{touch-action:manipulation;user-select:none;-webkit-user-select:none}
+input,textarea,select{font-size:16px;font-family:inherit}
+.shell{max-width:1360px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:12px;top:12px;background:#fff;color:#000;padding:10px 14px;z-index:99}
+
+header{position:sticky;top:0;z-index:60;border-bottom:1px solid transparent;transition:border-color .35s var(--ease),box-shadow .35s var(--ease)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:14px;max-width:1360px;margin:0 auto;padding:15px var(--pad);transition:padding .35s var(--ease)}
+header.sm .nav{padding:9px var(--pad)}
+.logo{display:block;padding:4px 0;margin:-4px 0;min-width:0}
+.logo small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-height:18px;opacity:1;transition:opacity .3s var(--ease),max-height .35s var(--ease),margin-top .35s var(--ease)}
+header.sm .logo small{opacity:0;max-height:0;margin-top:0!important}
+.call{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border-radius:var(--r);font-weight:600;font-size:14px;white-space:nowrap;flex-shrink:0;transition:transform .12s var(--ease),background .2s var(--ease)}
+.call:active{transform:scale(.97)}
+.call svg{width:16px;height:16px;flex-shrink:0}
+
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:14px 24px;border-radius:var(--r);font-weight:600;font-size:15px;border:1px solid transparent;cursor:pointer;font-family:inherit;transition:transform .12s var(--ease),background .2s var(--ease),border-color .2s var(--ease)}
+.btn:active{transform:scale(.975)}
+.btn.p::after{content:"\2192";display:inline-block;transition:transform .28s var(--ease)}
+
+.q summary{cursor:pointer;list-style:none;user-select:none;-webkit-user-select:none;position:relative;padding:20px 44px 20px 0}
+.q summary::-webkit-details-marker{display:none}
+.q summary::before,.q summary::after{content:"";position:absolute;right:4px;top:calc(50% - 1px);width:15px;height:2px;transition:transform .35s var(--ease)}
+.q summary::before{transform:rotate(90deg)}
+.q[open] summary::before{transform:rotate(0)}
+.q summary:active{opacity:.55}
+.js .q .ans{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .4s var(--ease),opacity .3s var(--ease)}
+.js .q .ans>p{overflow:hidden}
+.js .q.expanded .ans{grid-template-rows:1fr;opacity:1}
+.q .ans>p{padding:0 0 22px;max-width:62ch}
+
+.pair{display:grid;gap:14px;grid-template-columns:1fr}
+.field{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
+label{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;transition:color .22s var(--ease)}
+input,textarea,select{border:0;border-bottom:1px solid var(--line);border-radius:0;padding:12px 0;min-height:44px;background:none;color:var(--ink);transition:border-color .22s var(--ease)}
+select{-webkit-appearance:none;appearance:none;padding-right:22px;background-repeat:no-repeat;background-position:right center}
+input:focus,textarea:focus,select:focus{outline:none}
+textarea{min-height:96px;resize:vertical}
+.note{font-size:12.5px;margin-top:16px;line-height:1.65}
+
+.madeby{display:inline-flex;align-items:center;line-height:0}
+.madeby img{height:26px;width:auto;opacity:.62;filter:invert(1);transition:opacity .25s var(--ease)}
+footer p a,footer .fl a{display:inline-block;padding:6px 0}
+
+:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:2px}
+
+.js .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease);transition-delay:calc(var(--i,0)*70ms)}
+.reveal.in{opacity:1;transform:none}
+.js .reveal.split{opacity:1;transform:none;transition:none}
+.w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.1em;margin-bottom:-.1em}
+.w>i{display:inline-block;font-style:inherit;color:inherit;transform:translateY(110%);transition:transform .9s var(--ease);transition-delay:calc(var(--d,0)*45ms)}
+.split.in .w>i{transform:none}
+
+@media(min-width:760px){.pair{grid-template-columns:1fr 1fr}}
+@media(hover:hover) and (pointer:fine){
+ .btn.p:hover::after{transform:translateX(5px)}
+ .madeby:hover img{opacity:1}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-delay:0s!important}
+ .reveal{opacity:1;transform:none}
+ .w>i{transform:none}
+}
+
+:root{
+ --paper:#EDECE8; --ink:#16171A; --slab:#1E2024; --concrete:#DEDCD6; --line:#CFCCC4; --dline:#2E3137;
+ --laser:#D7261E; --laser-t:#B81C15; --laser-d:#FF6A5C;
+ --muted:#595A5C; --dim:#9A9CA1;
+ --pad:clamp(20px,4.5vw,64px); --r:2px; --focus:#B81C15;
+ --disp:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+ --sans:"Barlow",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+ --ease:cubic-bezier(.16,1,.3,1);
+}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper)}
+p{color:var(--muted)}
+h1,h2,h3{font-family:var(--disp);font-weight:700;text-transform:uppercase;letter-spacing:-.005em;line-height:.92}
+h1{font-size:clamp(46px,8.6vw,122px)}
+h2{font-size:clamp(34px,5.4vw,74px)}
+h3{font-size:clamp(22px,2.3vw,30px);line-height:1}
+.tag{font-family:var(--disp);font-size:14px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--laser-t)}
+.dark .tag,.hero .tag{color:var(--laser-d)}
+
+.banner{background:#0F1012;color:#B7B9BD;padding:9px var(--pad);padding-top:calc(9px + env(safe-area-inset-top,0px));text-align:center;font-size:12px;letter-spacing:.03em;line-height:1.5}
+.banner b{color:#fff;font-weight:600}
+header{background:rgba(22,23,26,.95);backdrop-filter:blur(10px)}
+header.sm{border-bottom-color:var(--dline)}
+.logo b{display:block;font-family:var(--disp);font-size:24px;font-weight:700;letter-spacing:.01em;line-height:1;color:#fff}
+.logo b span{color:var(--laser-d)}
+.logo small{font-family:var(--disp);font-size:12.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-top:4px}
+.call{background:var(--laser-t);color:#fff}
+
+/* hero: full bleed, laser line switches on */
+.hero{position:relative;background:var(--ink);color:#fff;overflow:hidden}
+.hero figure{position:relative;margin:0}
+.hero figure img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;min-height:540px;filter:saturate(.9) contrast(1.04)}
+.hero figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,23,26,.2) 0%,rgba(22,23,26,.25) 40%,rgba(22,23,26,.92) 100%)}
+.laser{position:absolute;left:0;right:0;top:-1px;height:2px;background:var(--laser);box-shadow:0 0 12px 1px rgba(255,60,40,.75),0 0 2px rgba(255,90,70,1);transform:scaleX(1);transform-origin:left;z-index:2}
+.js .laser{transform:scaleX(0);transition:transform 1.4s cubic-bezier(.65,0,.35,1) .35s}
+.laser.in{transform:scaleX(1)}
+.laser::before{content:"";position:absolute;left:0;top:-4px;width:10px;height:10px;border-radius:50%;background:#FF5A48;box-shadow:0 0 14px 4px rgba(255,70,50,.8)}
+.herotext{position:absolute;left:0;right:0;bottom:0;z-index:3;padding-bottom:clamp(30px,4.5vw,64px)}
+.hero h1{max-width:11ch;margin-top:14px}
+.hero .lead{color:#C9CBCF;font-size:clamp(16px,1.4vw,19.5px);max-width:50ch;margin-top:20px;line-height:1.55}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.btn.p{background:var(--laser-t);color:#fff}
+.btn.g{border-color:#4A4E55;color:#fff;background:rgba(22,23,26,.35)}
+
+/* object strip */
+.objs{display:grid;grid-template-columns:1fr;background:var(--slab);color:#fff;position:relative}
+.obj{padding:22px var(--pad);border-top:1px solid var(--dline);display:flex;align-items:baseline;gap:14px}
+.obj .n{font-family:var(--disp);font-size:14px;font-weight:600;color:var(--laser-d);letter-spacing:.1em}
+.obj b{font-family:var(--disp);font-size:clamp(20px,2vw,26px);font-weight:600;text-transform:uppercase;letter-spacing:.01em}
+
+.sec{padding:clamp(60px,7.5vw,116px) 0}
+.dark{background:var(--ink);color:#fff}
+.dark p{color:var(--dim)}
+.dark h2,.dark h3{color:#fff}
+.hr{height:1px;background:var(--line);position:relative;margin:0}
+.hr::after{content:"";position:absolute;left:0;top:-.5px;height:2px;width:100%;background:var(--laser);transform:scaleX(0);transform-origin:left;transition:transform 1.2s cubic-bezier(.65,0,.35,1)}
+.hr.in::after{transform:scaleX(.18)}
+
+/* two kinds of job */
+.kinds{display:grid;gap:clamp(30px,3.5vw,48px);margin-top:clamp(30px,4vw,54px)}
+.kind figure{margin:0;overflow:hidden;background:var(--concrete)}
+.kind figure img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;transition:transform .8s var(--ease)}
+.kind h3{margin:22px 0 12px}
+.kind blockquote{font-size:clamp(17px,1.5vw,20px);line-height:1.5;color:var(--ink);border-left:2px solid var(--laser);padding-left:18px;margin:0 0 18px}
+.kind ul{list-style:none;border-top:1px solid var(--line)}
+.kind li{padding:12px 0 12px 22px;border-bottom:1px solid var(--line);position:relative;font-size:15.5px}
+.kind li::before{content:"";position:absolute;left:0;top:21px;width:10px;height:2px;background:var(--laser)}
+
+/* steps */
+.steps{display:grid;gap:0;margin-top:clamp(28px,3.5vw,46px);border-top:1px solid var(--dline)}
+.step{display:grid;grid-template-columns:auto 1fr;gap:4px 18px;padding:22px 0;border-bottom:1px solid var(--dline)}
+.step .n{font-family:var(--disp);font-size:clamp(38px,4vw,54px);font-weight:700;line-height:.9;color:var(--laser-d);grid-row:span 2;min-width:54px}
+.step p{font-size:15px;max-width:52ch}
+
+/* gallery */
+.shots{display:grid;gap:10px;margin-top:clamp(30px,4vw,52px)}
+.shots figure{margin:0;overflow:hidden;background:var(--concrete);position:relative}
+.shots img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;transition:transform .8s var(--ease)}
+.shots figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 14px 12px;font-family:var(--disp);font-size:14px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:linear-gradient(to top,rgba(22,23,26,.95) 0%,rgba(22,23,26,.86) 50%,rgba(22,23,26,0) 100%)}
+
+/* hiring */
+.hire{background:var(--laser-t);color:#fff}
+.hire .shell{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;padding-top:28px;padding-bottom:28px}
+.hire b{font-family:var(--disp);font-size:clamp(24px,2.8vw,36px);font-weight:700;text-transform:uppercase;line-height:1}
+.hire p{color:#FFE3DF;margin-top:6px;font-size:15px}
+.hire a{display:inline-flex;align-items:center;min-height:48px;padding:0 22px;border:1px solid rgba(255,255,255,.7);border-radius:var(--r);font-weight:600;color:#fff}
+
+/* faq */
+.q{border-bottom:1px solid var(--line)}
+.q:first-of-type{border-top:1px solid var(--line)}
+.q summary{font-family:var(--disp);font-weight:600;font-size:clamp(20px,2vw,26px);text-transform:uppercase;letter-spacing:.01em;line-height:1.1}
+.q summary::before,.q summary::after{background:var(--laser-t)}
+.q .ans>p{font-size:16px}
+
+/* form */
+.cols{display:grid;gap:clamp(28px,3.6vw,52px)}
+.form{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:clamp(22px,3vw,38px)}
+label{color:var(--muted)}
+.field:focus-within label{color:var(--laser-t)}
+input:focus,textarea:focus,select:focus{border-bottom-color:var(--laser-t)}
+select{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8'><path d='M1 1l5 5 5-5' fill='none' stroke='%23B81C15' stroke-width='1.6'/></svg>")}
+input::placeholder,textarea::placeholder{color:#8D8E90}
+.note{color:var(--muted)}
+.card{background:var(--ink);color:#fff;border-radius:var(--r);padding:clamp(22px,3vw,32px)}
+.cl{display:grid;gap:3px;padding:15px 0;border-bottom:1px solid var(--dline)}
+.cl:last-child{border-bottom:0}
+.cl b{font-family:var(--disp);font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+.cl span{font-size:17px;font-weight:500;transition:color .2s var(--ease)}
+
+footer{background:#0F1012;color:#fff;padding-top:clamp(46px,6vw,78px);overflow:hidden}
+.fgrid{display:grid;gap:28px}
+footer h4{font-family:var(--disp);font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#7C7F85;margin-bottom:10px}
+footer p,footer a{color:#B7B9BD;font-size:15px}
+.bigmark{font-family:var(--disp);font-size:clamp(52px,14.5vw,210px);font-weight:700;line-height:.82;color:#1C1E22;margin-top:clamp(34px,4.5vw,64px);white-space:nowrap;user-select:none;text-transform:uppercase}
+.credit{border-top:1px solid var(--dline);margin-top:clamp(22px,3vw,34px);padding:18px 0 calc(24px + env(safe-area-inset-bottom,0px));font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#7C7F85;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+
+.dark :focus-visible,footer :focus-visible,header :focus-visible,.hero :focus-visible,.hire :focus-visible{outline-color:#fff}
+
+@media(max-width:520px){.logo small{font-size:11px;letter-spacing:.08em}.call .t{display:none}.call{padding:0 14px}}
+@media(max-width:759px){.hero figure img{min-height:620px}}
+@media(min-width:760px){
+ .objs{grid-template-columns:repeat(3,1fr)}
+ .obj{border-top:0;border-right:1px solid var(--dline);padding:26px var(--pad)}
+ .obj:last-child{border-right:0}
+ .kinds{grid-template-columns:1fr 1fr}
+ .shots{grid-template-columns:repeat(3,1fr)}
+ .step{grid-template-columns:90px minmax(0,1fr) minmax(0,1.3fr);gap:24px;align-items:start}
+ .step .n{grid-row:auto}
+}
+@media(min-width:1000px){
+ .two{display:grid;grid-template-columns:320px minmax(0,1fr);gap:70px;align-items:start}
+ .two .head{position:sticky;top:104px}
+ .cols{grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);align-items:start}
+ .fgrid{grid-template-columns:2fr 1fr 1fr;gap:48px}
+}
+@media(hover:hover) and (pointer:fine){
+ .btn.p:hover,.call:hover{background:#A51A14}
+ .btn.g:hover{border-color:#80858C}
+ .kind figure:hover img,.shots figure:hover img{transform:scale(1.045)}
+ .cl:hover span{color:var(--laser-d)}
+ .hire a:hover{background:rgba(255,255,255,.12)}
+}
+@media(prefers-reduced-motion:reduce){.js .laser{transform:scaleX(1)}.hr.in::after{transform:scaleX(.18)}}
+</style>
+</head>
+<body>
+<a class="skip" href="#sadrzaj">Preskoči na sadržaj</a>
+<div class="banner"><b>Prijedlog stranice</b> — fotografije i dio tekstova su privremeni i mijenjaju se po dogovoru. Izradio Azzurro Digital.</div>
+
+<header>
+ <div class="nav">
+  <a class="logo" href="#top"><b>FIDA<span>.</span>GLAZURE</b><small>Strojne glazure · Zagreb</small></a>
+  <a class="call" href="tel:+385922976690"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span class="t">092 297 6690</span></a>
+ </div>
+</header>
+
+<main id="sadrzaj">
+<section class="hero" id="top">
+ <figure><img src="fida-hero.webp" alt="Svježe strojno položena cementna glazura u novom stanu, s crvenom linijom laserske libele" width="1600" height="900" fetchpriority="high" decoding="async"></figure>
+ <div class="herotext">
+  <div class="shell">
+   <p class="tag reveal">Stanovi · kuće · poslovni prostori · hale</p>
+   <h1 class="reveal split">Strojne glazure za ravan pod</h1>
+   <p class="lead reveal" style="--i:2">Strojno postavljamo cementne glazure u stanovima, obiteljskim kućama, poslovnim i trgovačkim prostorima te halama na zagrebačkom području.</p>
+   <div class="cta reveal" style="--i:3">
+    <a class="btn p" href="#upit">Pošaljite kvadraturu</a>
+    <a class="btn g" href="tel:+385915610373">091 561 0373</a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<div class="objs">
+ <div class="laser" data-io aria-hidden="true"></div>
+ <div class="obj reveal"><span class="n">01</span><b>Stanovi i kuće</b></div>
+ <div class="obj reveal" style="--i:1"><span class="n">02</span><b>Poslovni i trgovački prostori</b></div>
+ <div class="obj reveal" style="--i:2"><span class="n">03</span><b>Hale i skladišta</b></div>
+</div>
+
+<section class="sec" id="usluge">
+ <div class="shell">
+  <p class="tag reveal">Usluge</p>
+  <h2 class="reveal split" style="margin-top:12px;max-width:14ch">Isti pod, dva različita razloga</h2>
+  <div class="kinds">
+   <div class="kind reveal">
+    <figure><img src="fida-2.webp" alt="Crijevo pumpe za glazuru na gradilištu stambenog objekta" width="1000" height="750" loading="lazy" decoding="async"></figure>
+    <h3>Stambeni objekti</h3>
+    <blockquote>Ako uređuješ stan ili gradiš novi dom, znaš koliko je važno imati savršeno ravan i kvalitetan pod.</blockquote>
+    <ul>
+     <li>Strojne cementne glazure za stanove</li>
+     <li>Obiteljske kuće i novogradnja</li>
+     <li>Adaptacije i uređenje stana</li>
+    </ul>
+   </div>
+   <div class="kind reveal" style="--i:1">
+    <figure><img src="fida-4.webp" alt="Prazan trgovački prostor sa svježe dovršenom cementnom glazurom" width="1000" height="750" loading="lazy" decoding="async"></figure>
+    <h3>Poslovni i trgovački objekti</h3>
+    <blockquote>Kupci možda neće svjesno gledati u pod, ali će ga itekako osjetiti.</blockquote>
+    <ul>
+     <li>Trgovine i trgovački centri</li>
+     <li>Uredski i poslovni prostori</li>
+     <li>Industrijske cementne glazure za hale i skladišta</li>
+    </ul>
+   </div>
+  </div>
+ </div>
+</section>
+
+<div class="shell"><div class="hr" data-io></div></div>
+
+<section class="sec dark" id="kako">
+ <div class="shell two">
+  <div class="head">
+   <p class="tag reveal">Kako ide</p>
+   <h2 class="reveal split" style="margin-top:12px">Od kvadrature do suhog poda</h2>
+  </div>
+  <div class="steps">
+   <article class="step reveal"><span class="n">01</span><h3>Kvadratura i ponuda</h3><p>Pošaljete lokaciju i površinu, a ponudu radimo po kvadratu.</p></article>
+   <article class="step reveal" style="--i:1"><span class="n">02</span><h3>Priprema podloge</h3><p>Podloga se očisti i pripremi, postave se izolacija i rubne trake.</p></article>
+   <article class="step reveal" style="--i:2"><span class="n">03</span><h3>Strojno nanošenje</h3><p>Glazura se pumpom dovodi na mjesto i poravnava na zadanu visinu.</p></article>
+   <article class="step reveal" style="--i:3"><span class="n">04</span><h3>Sušenje i predaja</h3><p>Pod ostaje ravan i spreman za daljnje radove.</p></article>
+  </div>
+ </div>
+</section>
+
+<section class="sec">
+ <div class="shell">
+  <p class="tag reveal">S gradilišta</p>
+  <div class="shots">
+   <figure class="reveal"><img src="fida-5.webp" alt="Rotacijska laserska libela na stativu iznad svježe glazure" width="1000" height="750" loading="lazy" decoding="async"><figcaption>Zadana visina</figcaption></figure>
+   <figure class="reveal" style="--i:1"><img src="fida-3.webp" alt="Poravnavanje svježe glazure aluminijskom letvom" width="1000" height="750" loading="lazy" decoding="async"><figcaption>Poravnavanje</figcaption></figure>
+   <figure class="reveal" style="--i:2"><img src="fida-6.webp" alt="Gotova ravna glazura u velikoj hali" width="1000" height="750" loading="lazy" decoding="async"><figcaption>Hala</figcaption></figure>
+  </div>
+ </div>
+</section>
+
+<div class="hire">
+ <div class="shell">
+  <div><b>Zapošljavamo</b><p>Tražimo radnike za strojne glazure.</p></div>
+  <a href="tel:+385922976690">Javite se na 092 297 6690</a>
+ </div>
+</div>
+
+<section class="sec" id="pitanja">
+ <div class="shell two">
+  <div class="head">
+   <p class="tag reveal">Česta pitanja</p>
+   <h2 class="reveal split" style="margin-top:12px">Što nas pitaju</h2>
+  </div>
+  <div>
+   <details class="q reveal"><summary>Radite li i poslovne prostore i hale?</summary><div class="ans"><p>Da. Uz stanove i kuće radimo glazure za poslovne i trgovačke prostore te industrijske hale i skladišta.</p></div></details>
+   <details class="q reveal" style="--i:1"><summary>Na kojem području radite?</summary><div class="ans"><p>Na zagrebačkom području. Sjedište nam je u Sesvetama.</p></div></details>
+   <details class="q reveal" style="--i:2"><summary>Kako dobiti ponudu?</summary><div class="ans"><p>Pošaljite lokaciju, vrstu objekta i okvirnu kvadraturu, ili nazovite. Ponudu radimo po kvadratu.</p></div></details>
+   <details class="q reveal" style="--i:3"><summary>Radite li subotom?</summary><div class="ans"><p>Da. Radno vrijeme je ponedjeljak do petak od 8 do 16 sati, a subotom od 8 do 14.</p></div></details>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="upit" style="background:var(--concrete)">
+ <div class="shell">
+  <p class="tag reveal">Upit</p>
+  <h2 class="reveal split" style="margin:12px 0 clamp(26px,3.4vw,44px)">Pošaljite kvadraturu</h2>
+  <div class="cols">
+   <form id="frm" class="form reveal" novalidate data-to="fidaglazure@gmail.com" data-subject="Upit za strojnu glazuru">
+    <div class="pair">
+     <div class="field"><label for="ime">Ime i prezime</label><input id="ime" type="text" autocomplete="name" data-label="Ime"></div>
+     <div class="field"><label for="tel">Telefon</label><input id="tel" type="tel" autocomplete="tel" inputmode="tel" data-label="Telefon"></div>
+    </div>
+    <div class="pair">
+     <div class="field"><label for="mail">E-mail</label><input id="mail" type="email" autocomplete="email" inputmode="email" autocapitalize="none" autocorrect="off" data-label="E-mail"></div>
+     <div class="field"><label for="lok">Lokacija</label><input id="lok" type="text" placeholder="npr. Dubrava, Zagreb" data-label="Lokacija"></div>
+    </div>
+    <div class="pair">
+     <div class="field"><label for="obj">Vrsta objekta</label>
+      <select id="obj" data-label="Vrsta objekta"><option>Stan</option><option>Obiteljska kuća</option><option>Poslovni prostor</option><option>Trgovački objekt</option><option>Hala ili skladište</option></select></div>
+     <div class="field"><label for="m2">Površina (m²)</label><input id="m2" type="text" inputmode="decimal" placeholder="npr. 85" data-label="Površina m2"></div>
+    </div>
+    <div class="pair">
+     <div class="field"><label for="rok">Željeni termin</label><input id="rok" type="text" placeholder="npr. sredina listopada" data-label="Termin"></div>
+     <div class="field"><label for="nap">Napomena</label><input id="nap" type="text" enterkeyhint="done" data-label="Napomena"></div>
+    </div>
+    <button class="btn p" type="submit">Pošalji upit</button>
+    <p class="note">Obrazac otvara vaš program za e-poštu s već ispunjenim upitom.</p>
+   </form>
+   <div class="card reveal" style="--i:1">
+    <a class="cl" href="tel:+385922976690"><b>Telefon</b><span>092 297 6690</span></a>
+    <a class="cl" href="tel:+385915610373"><b>Telefon</b><span>091 561 0373</span></a>
+    <a class="cl" href="mailto:fidaglazure@gmail.com"><b>E-mail</b><span>fidaglazure@gmail.com</span></a>
+    <div class="cl"><b>Adresa</b><span>Kašinska cesta 115A<br>10360 Sesvete</span></div>
+    <div class="cl"><b>Radno vrijeme</b><span>Pon — pet 08 — 16<br>Sub 08 — 14</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="shell">
+  <div class="fgrid">
+   <div><h4>FIDA.GLAZURE j.d.o.o.</h4><p>Strojne cementne glazure za stanove, kuće, poslovne i trgovačke prostore te hale. Zagreb i okolica.</p></div>
+   <div><h4>Kontakt</h4><p><a href="tel:+385922976690">092 297 6690</a><br><a href="tel:+385915610373">091 561 0373</a><br><a href="mailto:fidaglazure@gmail.com">fidaglazure@gmail.com</a></p></div>
+   <div><h4>Adresa</h4><p>Kašinska cesta 115A<br>10360 Sesvete</p></div>
+  </div>
+  <div class="bigmark" aria-hidden="true">Fida.glazure</div>
+  <p class="credit"><span>Izrada</span> <a class="madeby" href="https://www.azzurrodigital.hr" target="_blank" rel="noopener" aria-label="Azzurro Digital"><img src="azzurro-digital.png" alt="Azzurro Digital" width="640" height="169" loading="lazy" decoding="async"></a></p>
+ </div>
+</footer>
+
+<script>
+(function(){
+ var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+ document.documentElement.classList.add('js');
+
+ function splitWords(el){
+  if(RM) return;
+  var i=0;
+  (function walk(node){
+   [].slice.call(node.childNodes).forEach(function(n){
+    if(n.nodeType===3){
+     var parts=n.nodeValue.split(/(\s+)/), frag=document.createDocumentFragment();
+     parts.forEach(function(t){
+      if(!t) return;
+      if(/^\s+$/.test(t)){ frag.appendChild(document.createTextNode(t)); return; }
+      var w=document.createElement('span'); w.className='w';
+      var inner=document.createElement('i'); inner.style.setProperty('--d',i++); inner.textContent=t;
+      w.appendChild(inner); frag.appendChild(w);
+     });
+     node.replaceChild(frag,n);
+    } else if(n.nodeType===1 && n.className!=='w'){ walk(n); }
+   });
+  })(el);
+ }
+ [].forEach.call(document.querySelectorAll('.split'),splitWords);
+
+ var els=[].slice.call(document.querySelectorAll('.reveal, [data-io]'));
+ function on(el){ el.classList.add('in'); }
+ if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+   /* also reveal anything already scrolled past: deep links and restored
+      scroll positions would otherwise leave sections hidden for good */
+   if(e.isIntersecting || e.boundingClientRect.top < 0){ on(e.target); io.unobserve(e.target); }
+  })},{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(e){io.observe(e)});
+ } else els.forEach(on);
+
+ var hdr=document.querySelector('header'), last=null;
+ function sc(){
+  var y=window.pageYOffset||document.documentElement.scrollTop, sm=y>70;
+  if(sm!==last){ hdr.classList.toggle('sm',sm); last=sm; }
+ }
+ window.addEventListener('scroll',sc,{passive:true}); sc();
+
+ [].forEach.call(document.querySelectorAll('.q'),function(d){
+  var s=d.querySelector('summary'), t;
+  if(d.open) d.classList.add('expanded');
+  s.addEventListener('click',function(ev){
+   ev.preventDefault(); clearTimeout(t);
+   if(d.classList.contains('expanded')){
+    d.classList.remove('expanded');
+    t=setTimeout(function(){d.open=false},RM?0:400);
+   } else {
+    d.open=true;
+    requestAnimationFrame(function(){requestAnimationFrame(function(){d.classList.add('expanded')})});
+   }
+  });
+ });
+
+ var f=document.getElementById('frm');
+ if(f) f.addEventListener('submit',function(e){
+  e.preventDefault();
+  var lines=[];
+  [].forEach.call(f.querySelectorAll('[data-label]'),function(el){
+   var v=(el.value||'').trim(); if(v) lines.push(el.getAttribute('data-label')+': '+v);
+  });
+  window.location.href='mailto:'+f.getAttribute('data-to')+'?subject='+encodeURIComponent(f.getAttribute('data-subject'))+'&body='+encodeURIComponent(lines.join('\n'));
+ });
+})();
+</script>
+</body>
+</html>

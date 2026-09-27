@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+<title>Uređenje i održavanje dvorišta, Zagreb — Kozić dom i vrt servis</title>
+<meta name="description" content="Kozić dom i vrt servis, Zagreb. Uređenje okućnice, krajobrazno uređenje, sadnja, košnja travnjaka, orezivanje živice i redovito održavanje dvorišta.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#F4F2E9">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#F4F2E9">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&display=swap">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%;overscroll-behavior:none;scroll-behavior:smooth}
+body{line-height:1.55;-webkit-font-smoothing:antialiased;font-size:16px}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,a,[role=button]{touch-action:manipulation;user-select:none;-webkit-user-select:none}
+input,textarea,select{font-size:16px;font-family:inherit}
+.shell{max-width:1360px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:12px;top:12px;background:#fff;color:#000;padding:10px 14px;z-index:99}
+
+header{position:sticky;top:0;z-index:60;border-bottom:1px solid transparent;transition:border-color .35s var(--ease),box-shadow .35s var(--ease)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:14px;max-width:1360px;margin:0 auto;padding:15px var(--pad);transition:padding .35s var(--ease)}
+header.sm .nav{padding:9px var(--pad)}
+.logo{display:block;padding:4px 0;margin:-4px 0;min-width:0}
+.logo small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-height:18px;opacity:1;transition:opacity .3s var(--ease),max-height .35s var(--ease),margin-top .35s var(--ease)}
+header.sm .logo small{opacity:0;max-height:0;margin-top:0!important}
+.call{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border-radius:var(--r);font-weight:600;font-size:14px;white-space:nowrap;flex-shrink:0;transition:transform .12s var(--ease),background .2s var(--ease)}
+.call:active{transform:scale(.97)}
+.call svg{width:16px;height:16px;flex-shrink:0}
+
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:14px 24px;border-radius:var(--r);font-weight:600;font-size:15px;border:1px solid transparent;cursor:pointer;font-family:inherit;transition:transform .12s var(--ease),background .2s var(--ease),border-color .2s var(--ease)}
+.btn:active{transform:scale(.975)}
+.btn.p::after{content:"\2192";display:inline-block;transition:transform .28s var(--ease)}
+
+.q summary{cursor:pointer;list-style:none;user-select:none;-webkit-user-select:none;position:relative;padding:20px 44px 20px 0}
+.q summary::-webkit-details-marker{display:none}
+.q summary::before,.q summary::after{content:"";position:absolute;right:4px;top:calc(50% - 1px);width:15px;height:2px;transition:transform .35s var(--ease)}
+.q summary::before{transform:rotate(90deg)}
+.q[open] summary::before{transform:rotate(0)}
+.q summary:active{opacity:.55}
+.js .q .ans{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .4s var(--ease),opacity .3s var(--ease)}
+.js .q .ans>p{overflow:hidden}
+.js .q.expanded .ans{grid-template-rows:1fr;opacity:1}
+.q .ans>p{padding:0 0 22px;max-width:62ch}
+
+.pair{display:grid;gap:14px;grid-template-columns:1fr}
+.field{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
+label{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;transition:color .22s var(--ease)}
+input,textarea,select{border:0;border-bottom:1px solid var(--line);border-radius:0;padding:12px 0;min-height:44px;background:none;color:var(--ink);transition:border-color .22s var(--ease)}
+select{-webkit-appearance:none;appearance:none;padding-right:22px;background-repeat:no-repeat;background-position:right center}
+input:focus,textarea:focus,select:focus{outline:none}
+textarea{min-height:96px;resize:vertical}
+.note{font-size:12.5px;margin-top:16px;line-height:1.65}
+
+.madeby{display:inline-flex;align-items:center;line-height:0}
+.madeby img{height:26px;width:auto;opacity:.62;filter:invert(1);transition:opacity .25s var(--ease)}
+footer p a,footer .fl a{display:inline-block;padding:6px 0}
+
+:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:2px}
+
+.js .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease);transition-delay:calc(var(--i,0)*70ms)}
+.reveal.in{opacity:1;transform:none}
+.js .reveal.split{opacity:1;transform:none;transition:none}
+.w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.1em;margin-bottom:-.1em}
+.w>i{display:inline-block;font-style:inherit;color:inherit;transform:translateY(110%);transition:transform .9s var(--ease);transition-delay:calc(var(--d,0)*45ms)}
+.split.in .w>i{transform:none}
+
+@media(min-width:760px){.pair{grid-template-columns:1fr 1fr}}
+@media(hover:hover) and (pointer:fine){
+ .btn.p:hover::after{transform:translateX(5px)}
+ .madeby:hover img{opacity:1}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-delay:0s!important}
+ .reveal{opacity:1;transform:none}
+ .w>i{transform:none}
+}
+
+:root{
+ --paper:#F4F2E9; --ink:#1D261B; --deep:#1D261B; --leaf:#356330; --leaf-b:#4E8A3E; --sage:#E4EAD6; --cream:#FBFAF4;
+ --line:#DAD8CB; --dline:#34412F; --muted:#5B6255; --light:#A9C79E;
+ --pad:clamp(20px,4.5vw,64px); --r:18px; --focus:#356330;
+ --sans:"Bricolage Grotesque",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+ --ease:cubic-bezier(.16,1,.3,1);
+}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper)}
+p{color:var(--muted)}
+h1,h2,h3{font-weight:700;letter-spacing:-.035em;line-height:.98}
+h1{font-size:clamp(40px,6.6vw,88px);font-variation-settings:"wdth" 90}
+h2{font-size:clamp(31px,4.6vw,60px);font-variation-settings:"wdth" 92}
+h3{font-size:clamp(21px,2vw,27px);letter-spacing:-.02em;line-height:1.1}
+.tag{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--leaf);background:var(--sage);border-radius:100px;padding:7px 14px}
+.tag::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--leaf-b)}
+.dark .tag{background:#2A3627;color:var(--light)}
+.dark .tag::before{background:var(--light)}
+
+.banner{background:var(--deep);color:#B9CCB0;padding:9px var(--pad);padding-top:calc(9px + env(safe-area-inset-top,0px));text-align:center;font-size:12px;line-height:1.5}
+.banner b{color:#fff;font-weight:600}
+header{background:rgba(244,242,233,.92);backdrop-filter:blur(10px)}
+header.sm{border-bottom-color:var(--line)}
+.logo b{display:flex;align-items:center;gap:10px;font-size:21px;font-weight:800;letter-spacing:-.03em;line-height:1}
+.logo b i{display:inline-block;width:26px;height:26px;border-radius:50% 50% 50% 4px;background:var(--leaf-b);transform:rotate(-45deg);flex-shrink:0}
+.logo small{font-size:12.5px;font-weight:500;color:var(--muted);margin-top:4px;padding-left:36px}
+.call{background:var(--leaf);color:#fff;border-radius:100px}
+
+.hero{padding:clamp(26px,3.6vw,54px) 0 0}
+.herogrid{display:grid;gap:clamp(26px,3vw,40px)}
+.hero h1{max-width:11ch;margin-top:18px}
+.hero h1 em{font-style:normal;color:var(--leaf)}
+.lead{font-size:clamp(16.5px,1.4vw,20px);max-width:46ch;margin-top:20px;line-height:1.55}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.btn{border-radius:100px}
+.btn.p{background:var(--leaf);color:#fff}
+.btn.g{background:#fff;border-color:var(--line);color:var(--ink)}
+.heroimg{border-radius:var(--r);overflow:hidden;background:var(--sage);position:relative}
+.heroimg img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;transition:transform 1.7s cubic-bezier(.16,.8,.24,1)}
+.js .heroimg img{transform:scale(1.07)}
+.heroimg.in img{transform:scale(1)}
+.chip{position:absolute;left:14px;bottom:14px;background:rgba(251,250,244,.94);backdrop-filter:blur(6px);border-radius:14px;padding:12px 16px;font-size:14px;line-height:1.35;color:var(--ink);max-width:78%}
+.chip b{display:block;font-size:15px}
+
+.sec{padding:clamp(60px,7.5vw,116px) 0}
+.dark{background:var(--deep);color:#fff}
+.dark p{color:var(--light)}
+.dark h2,.dark h3{color:#fff}
+
+/* two modes */
+.modes{display:grid;gap:14px;margin-top:clamp(28px,3.5vw,46px)}
+.mode{background:var(--cream);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.mode figure{margin:0;overflow:hidden;background:var(--sage)}
+.mode figure img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;transition:transform .8s var(--ease)}
+.mode .in-{padding:clamp(20px,2.4vw,30px)}
+.mode .k{font-size:13px;font-weight:600;color:var(--leaf);letter-spacing:.02em}
+.mode h3{margin:8px 0 10px}
+.mode p{font-size:15.5px}
+.mode ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.mode li{font-size:14px;background:var(--sage);color:var(--ink);border-radius:100px;padding:7px 13px}
+
+/* seasons */
+.seasons{display:grid;gap:12px;margin-top:clamp(28px,3.5vw,46px)}
+.season{background:#263223;border-radius:var(--r);padding:clamp(20px,2.2vw,28px);position:relative;overflow:hidden}
+.season .s{font-size:13px;font-weight:600;color:var(--light);letter-spacing:.02em}
+.season h3{margin:10px 0 14px;font-size:clamp(24px,2.3vw,30px)}
+.season ul{list-style:none}
+.season li{font-size:15px;color:#D7E4D0;padding:7px 0 7px 18px;position:relative;border-top:1px solid var(--dline)}
+.season li::before{content:"";position:absolute;left:0;top:15px;width:7px;height:7px;border-radius:50%;background:var(--leaf-b)}
+.season .bar{position:absolute;left:0;top:0;height:4px;width:100%;transform:scaleX(0);transform-origin:left;transition:transform .9s var(--ease);transition-delay:calc(var(--i,0)*110ms + 200ms)}
+.season.in .bar{transform:scaleX(1)}
+.sp .bar{background:#9CCB6B}.su .bar{background:#E7C24B}.au .bar{background:#D88A3C}.wi .bar{background:#9FB7C9}
+.seasonnote{margin-top:18px;font-size:13.5px;color:var(--light)}
+
+/* gallery */
+.shots{display:grid;gap:12px;margin-top:clamp(28px,3.5vw,46px)}
+.shots figure{margin:0;border-radius:var(--r);overflow:hidden;background:var(--sage);position:relative}
+.shots img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;transition:transform .8s var(--ease)}
+.shots figcaption{position:absolute;left:12px;bottom:12px;background:rgba(251,250,244,.94);border-radius:100px;padding:7px 14px;font-size:13.5px;font-weight:600;color:var(--ink)}
+
+/* faq */
+.q{border-bottom:1px solid var(--line)}
+.q:first-of-type{border-top:1px solid var(--line)}
+.q summary{font-weight:600;font-size:clamp(18px,1.7vw,22px);letter-spacing:-.015em;line-height:1.25}
+.q summary::before,.q summary::after{background:var(--leaf)}
+.q .ans>p{font-size:16px}
+
+/* form */
+.cols{display:grid;gap:clamp(24px,3vw,44px)}
+.form{background:var(--cream);border:1px solid var(--line);border-radius:var(--r);padding:clamp(22px,3vw,38px)}
+label{color:var(--muted)}
+.field:focus-within label{color:var(--leaf)}
+input:focus,textarea:focus,select:focus{border-bottom-color:var(--leaf)}
+select{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8'><path d='M1 1l5 5 5-5' fill='none' stroke='%23356330' stroke-width='1.6'/></svg>")}
+input::placeholder,textarea::placeholder{color:#8F9588}
+.note{color:var(--muted)}
+.card{background:var(--sage);border-radius:var(--r);padding:clamp(22px,3vw,32px)}
+.cl{display:grid;gap:3px;padding:14px 0;border-bottom:1px solid #CFD8BF}
+.cl:last-child{border-bottom:0}
+.cl b{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.cl span{font-size:17px;font-weight:600;transition:color .2s var(--ease)}
+
+footer{background:var(--deep);color:#fff;padding-top:clamp(46px,6vw,78px);overflow:hidden}
+.fgrid{display:grid;gap:28px}
+footer h4{font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:#8FA686;margin-bottom:10px}
+footer p,footer a{color:#C5D3BE;font-size:15px}
+.bigmark{font-size:clamp(50px,15vw,220px);font-weight:800;letter-spacing:-.05em;line-height:.84;color:#243021;margin-top:clamp(32px,4.5vw,62px);white-space:nowrap;user-select:none;font-variation-settings:"wdth" 88}
+.credit{border-top:1px solid var(--dline);margin-top:clamp(22px,3vw,34px);padding:18px 0 calc(24px + env(safe-area-inset-bottom,0px));font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#8FA686;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+
+.dark :focus-visible,footer :focus-visible{outline-color:#fff}
+
+@media(max-width:520px){.logo small{font-size:11px}.call .t{display:none}.call{padding:0 14px}}
+@media(min-width:700px){.seasons{grid-template-columns:1fr 1fr}.shots{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:900px){.modes{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){
+ .herogrid{grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);align-items:center;gap:clamp(40px,5vw,80px)}
+ .seasons{grid-template-columns:repeat(4,1fr)}
+ .cols{grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);align-items:start}
+ .fgrid{grid-template-columns:2fr 1fr 1fr;gap:48px}
+}
+@media(hover:hover) and (pointer:fine){
+ .btn.p:hover,.call:hover{background:#2A4F26}
+ .btn.g:hover{border-color:#BDB9A8}
+ .mode:hover{transform:translateY(-3px);box-shadow:0 18px 40px -26px rgba(29,38,27,.45)}
+ .mode:hover figure img,.shots figure:hover img{transform:scale(1.045)}
+ .cl:hover span{color:var(--leaf)}
+}
+@media(prefers-reduced-motion:reduce){.js .heroimg img{transform:none}.season.in .bar{transform:scaleX(1)}}
+</style>
+</head>
+<body>
+<a class="skip" href="#sadrzaj">Preskoči na sadržaj</a>
+<div class="banner"><b>Prijedlog stranice</b> — fotografije i dio tekstova su privremeni i mijenjaju se po dogovoru. Izradio Azzurro Digital.</div>
+
+<header>
+ <div class="nav">
+  <a class="logo" href="#top"><b><i aria-hidden="true"></i>Kozić</b><small>Dom i vrt servis · Zagreb</small></a>
+  <a class="call" href="tel:+385917347906"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span class="t">091 734 7906</span></a>
+ </div>
+</header>
+
+<main id="sadrzaj">
+<section class="hero" id="top">
+ <div class="shell herogrid">
+  <div>
+   <span class="tag reveal">Uređenje i održavanje dvorišta · Zagreb</span>
+   <h1 class="reveal split">Uredno dvorište <em>cijele godine</em></h1>
+   <p class="lead reveal" style="--i:2">Uređujemo i održavamo dvorišta, vrtove i okućnice u Zagrebu. Od potpuno novog uređenja do redovite košnje i orezivanja živice.</p>
+   <div class="cta reveal" style="--i:3">
+    <a class="btn p" href="#upit">Zatražite ponudu</a>
+    <a class="btn g" href="tel:+385917347906">Nazovite 091 734 7906</a>
+   </div>
+  </div>
+  <div class="heroimg" data-io>
+   <img src="kozic-hero.webp" alt="Uređeno dvorište obiteljske kuće s pokošenim travnjakom i orezanom živicom" width="1000" height="1250" fetchpriority="high" decoding="async">
+   <div class="chip"><b>Jednokratno ili redovito</b>Novo uređenje ili stalna briga o okućnici</div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="usluge">
+ <div class="shell">
+  <span class="tag reveal">Usluge</span>
+  <h2 class="reveal split" style="margin-top:16px;max-width:15ch">Novo dvorište ili dvorište koje netko održava</h2>
+  <div class="modes">
+   <article class="mode reveal">
+    <figure><img src="kozic-3.webp" alt="Nova gredica s ukrasnim grmljem, lavandom i malčem" width="1000" height="750" loading="lazy" decoding="async"></figure>
+    <div class="in-">
+     <span class="k">Jednom, kako treba</span>
+     <h3>Novo uređenje</h3>
+     <p>Kad okućnicu treba urediti od početka: od ideje i rasporeda do sadnje i travnjaka.</p>
+     <ul><li>Uređenje okućnice</li><li>Krajobrazno uređenje</li><li>Projektiranje i dizajn vrta</li><li>Sadnja ukrasnog bilja</li><li>Uređenje travnjaka</li></ul>
+    </div>
+   </article>
+   <article class="mode reveal" style="--i:1">
+    <figure><img src="kozic-2.webp" alt="Orezivanje visoke živice škarama za živicu" width="1000" height="750" loading="lazy" decoding="async"></figure>
+    <div class="in-">
+     <span class="k">Stalno, bez vaše brige</span>
+     <h3>Redovito održavanje</h3>
+     <p>Kad želite da dvorište bude uredno, a da vi ne morate razmišljati o košnji i orezivanju.</p>
+     <ul><li>Košnja travnjaka</li><li>Orezivanje živice</li><li>Orezivanje drveća i grmlja</li><li>Njega i održavanje vrta</li><li>Sezonsko održavanje dvorišta</li></ul>
+    </div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="sec dark" id="sezone">
+ <div class="shell">
+  <span class="tag reveal">Kroz godinu</span>
+  <h2 class="reveal split" style="margin-top:16px;max-width:14ch">Što se radi kada</h2>
+  <div class="seasons">
+   <div class="season sp reveal"><span class="bar"></span><span class="s">Ožujak — svibanj</span><h3>Proljeće</h3><ul><li>Sadnja ukrasnog bilja</li><li>Uređenje travnjaka</li><li>Projektiranje vrta</li></ul></div>
+   <div class="season su reveal" style="--i:1"><span class="bar"></span><span class="s">Lipanj — kolovoz</span><h3>Ljeto</h3><ul><li>Redovita košnja travnjaka</li><li>Njega i održavanje vrta</li></ul></div>
+   <div class="season au reveal" style="--i:2"><span class="bar"></span><span class="s">Rujan — studeni</span><h3>Jesen</h3><ul><li>Orezivanje živice</li><li>Sezonsko održavanje dvorišta</li></ul></div>
+   <div class="season wi reveal" style="--i:3"><span class="bar"></span><span class="s">Prosinac — veljača</span><h3>Zima</h3><ul><li>Orezivanje drveća i grmlja</li><li>Planiranje uređenja za proljeće</li></ul></div>
+  </div>
+  <p class="seasonnote reveal">Raspored je okviran i ovisi o vremenu i o tome što vaše dvorište treba.</p>
+ </div>
+</section>
+
+<section class="sec">
+ <div class="shell">
+  <span class="tag reveal">Dvorišta</span>
+  <div class="shots">
+   <figure class="reveal"><img src="kozic-5.webp" alt="Košnja travnjaka u dvorištu obiteljske kuće" width="1000" height="750" loading="lazy" decoding="async"><figcaption>Košnja</figcaption></figure>
+   <figure class="reveal" style="--i:1"><img src="kozic-6.webp" alt="Novo uređen vrt s kamenom stazom i mladim grmljem" width="1000" height="750" loading="lazy" decoding="async"><figcaption>Novo uređenje</figcaption></figure>
+   <figure class="reveal" style="--i:2"><img src="kozic-4.webp" alt="Jesensko čišćenje lišća na travnjaku" width="1000" height="750" loading="lazy" decoding="async"><figcaption>Jesensko održavanje</figcaption></figure>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="pitanja" style="padding-top:0">
+ <div class="shell">
+  <span class="tag reveal">Česta pitanja</span>
+  <h2 class="reveal split" style="margin:16px 0 clamp(20px,2.6vw,34px)">Što nas pitaju</h2>
+  <details class="q reveal"><summary>Radite li jednokratno ili samo redovito?</summary><div class="ans"><p>Oboje. Možemo jednom urediti okućnicu, a možemo i redovito dolaziti na košnju, orezivanje i ostalo održavanje.</p></div></details>
+  <details class="q reveal" style="--i:1"><summary>Gdje radite?</summary><div class="ans"><p>Na području Zagreba.</p></div></details>
+  <details class="q reveal" style="--i:2"><summary>Kako dobiti ponudu?</summary><div class="ans"><p>Pošaljite što vam treba, okvirnu veličinu dvorišta i koliko često želite da dolazimo. Javljamo se s ponudom.</p></div></details>
+ </div>
+</section>
+
+<section class="sec" id="upit" style="background:var(--sage)">
+ <div class="shell">
+  <span class="tag reveal" style="background:#fff">Upit</span>
+  <h2 class="reveal split" style="margin:16px 0 clamp(24px,3vw,40px)">Recite nam što dvorište treba</h2>
+  <div class="cols">
+   <form id="frm" class="form reveal" novalidate data-to="infokozicservis@gmail.com" data-subject="Upit za uređenje dvorišta">
+    <div class="pair">
+     <div class="field"><label for="ime">Ime i prezime</label><input id="ime" type="text" autocomplete="name" data-label="Ime"></div>
+     <div class="field"><label for="tel">Telefon</label><input id="tel" type="tel" autocomplete="tel" inputmode="tel" data-label="Telefon"></div>
+    </div>
+    <div class="pair">
+     <div class="field"><label for="mail">E-mail</label><input id="mail" type="email" autocomplete="email" inputmode="email" autocapitalize="none" autocorrect="off" data-label="E-mail"></div>
+     <div class="field"><label for="kvart">Kvart ili adresa</label><input id="kvart" type="text" placeholder="npr. Trešnjevka" data-label="Kvart"></div>
+    </div>
+    <div class="pair">
+     <div class="field"><label for="sto">Što vam treba</label>
+      <select id="sto" data-label="Usluga"><option>Novo uređenje dvorišta</option><option>Redovito održavanje</option><option>Košnja travnjaka</option><option>Orezivanje živice</option><option>Orezivanje drveća i grmlja</option><option>Sadnja</option><option>Nešto drugo</option></select></div>
+     <div class="field"><label for="cesto">Koliko često</label>
+      <select id="cesto" data-label="Učestalost"><option>Jednokratno</option><option>Svaki tjedan</option><option>Svaka dva tjedna</option><option>Jednom mjesečno</option><option>Nisam siguran</option></select></div>
+    </div>
+    <div class="pair">
+     <div class="field"><label for="m2">Okvirna veličina dvorišta (m²)</label><input id="m2" type="text" inputmode="decimal" placeholder="npr. 300" data-label="Površina m2"></div>
+     <div class="field"><label for="nap">Napomena</label><input id="nap" type="text" enterkeyhint="done" data-label="Napomena"></div>
+    </div>
+    <button class="btn p" type="submit">Pošalji upit</button>
+    <p class="note">Obrazac otvara vaš program za e-poštu s već ispunjenim upitom.</p>
+   </form>
+   <div class="card reveal" style="--i:1">
+    <a class="cl" href="tel:+385917347906"><b>Telefon</b><span>091 734 7906</span></a>
+    <a class="cl" href="mailto:infokozicservis@gmail.com"><b>E-mail</b><span>infokozicservis@gmail.com</span></a>
+    <div class="cl"><b>Adresa</b><span>Ulica Ante Jakšića 57<br>10000 Zagreb</span></div>
+    <div class="cl"><b>Područje</b><span>Zagreb</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="shell">
+  <div class="fgrid">
+   <div><h4>Kozić dom i vrt servis</h4><p>Uređenje i održavanje dvorišta, vrtova i okućnica u Zagrebu.</p></div>
+   <div><h4>Kontakt</h4><p><a href="tel:+385917347906">091 734 7906</a><br><a href="mailto:infokozicservis@gmail.com">infokozicservis@gmail.com</a></p></div>
+   <div><h4>Adresa</h4><p>Ulica Ante Jakšića 57<br>10000 Zagreb</p></div>
+  </div>
+  <div class="bigmark" aria-hidden="true">Kozić</div>
+  <p class="credit"><span>Izrada</span> <a class="madeby" href="https://www.azzurrodigital.hr" target="_blank" rel="noopener" aria-label="Azzurro Digital"><img src="azzurro-digital.png" alt="Azzurro Digital" width="640" height="169" loading="lazy" decoding="async"></a></p>
+ </div>
+</footer>
+
+<script>
+(function(){
+ var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+ document.documentElement.classList.add('js');
+
+ function splitWords(el){
+  if(RM) return;
+  var i=0;
+  (function walk(node){
+   [].slice.call(node.childNodes).forEach(function(n){
+    if(n.nodeType===3){
+     var parts=n.nodeValue.split(/(\s+)/), frag=document.createDocumentFragment();
+     parts.forEach(function(t){
+      if(!t) return;
+      if(/^\s+$/.test(t)){ frag.appendChild(document.createTextNode(t)); return; }
+      var w=document.createElement('span'); w.className='w';
+      var inner=document.createElement('i'); inner.style.setProperty('--d',i++); inner.textContent=t;
+      w.appendChild(inner); frag.appendChild(w);
+     });
+     node.replaceChild(frag,n);
+    } else if(n.nodeType===1 && n.className!=='w'){ walk(n); }
+   });
+  })(el);
+ }
+ [].forEach.call(document.querySelectorAll('.split'),splitWords);
+
+ var els=[].slice.call(document.querySelectorAll('.reveal, [data-io]'));
+ function on(el){ el.classList.add('in'); }
+ if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+   /* also reveal anything already scrolled past: deep links and restored
+      scroll positions would otherwise leave sections hidden for good */
+   if(e.isIntersecting || e.boundingClientRect.top < 0){ on(e.target); io.unobserve(e.target); }
+  })},{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(e){io.observe(e)});
+ } else els.forEach(on);
+
+ var hdr=document.querySelector('header'), last=null;
+ function sc(){
+  var y=window.pageYOffset||document.documentElement.scrollTop, sm=y>70;
+  if(sm!==last){ hdr.classList.toggle('sm',sm); last=sm; }
+ }
+ window.addEventListener('scroll',sc,{passive:true}); sc();
+
+ [].forEach.call(document.querySelectorAll('.q'),function(d){
+  var s=d.querySelector('summary'), t;
+  if(d.open) d.classList.add('expanded');
+  s.addEventListener('click',function(ev){
+   ev.preventDefault(); clearTimeout(t);
+   if(d.classList.contains('expanded')){
+    d.classList.remove('expanded');
+    t=setTimeout(function(){d.open=false},RM?0:400);
+   } else {
+    d.open=true;
+    requestAnimationFrame(function(){requestAnimationFrame(function(){d.classList.add('expanded')})});
+   }
+  });
+ });
+
+ var f=document.getElementById('frm');
+ if(f) f.addEventListener('submit',function(e){
+  e.preventDefault();
+  var lines=[];
+  [].forEach.call(f.querySelectorAll('[data-label]'),function(el){
+   var v=(el.value||'').trim(); if(v) lines.push(el.getAttribute('data-label')+': '+v);
+  });
+  window.location.href='mailto:'+f.getAttribute('data-to')+'?subject='+encodeURIComponent(f.getAttribute('data-subject'))+'&body='+encodeURIComponent(lines.join('\n'));
+ });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+<title>Pranje i poliranje brodova, Dubrovnik — JL Detailing Service</title>
+<meta name="description" content="JL Detailing Service, Ston. Pranje, poliranje i detailing plovila, od manjih brodica do luksuznih jahti, za područje Dubrovnika. Mobilna usluga.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#F5F7F8">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#F5F7F8">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%;overscroll-behavior:none;scroll-behavior:smooth}
+body{line-height:1.55;-webkit-font-smoothing:antialiased;font-size:16px}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,a,[role=button]{touch-action:manipulation;user-select:none;-webkit-user-select:none}
+input,textarea,select{font-size:16px;font-family:inherit}
+.shell{max-width:1360px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:12px;top:12px;background:#fff;color:#000;padding:10px 14px;z-index:99}
+
+header{position:sticky;top:0;z-index:60;border-bottom:1px solid transparent;transition:border-color .35s var(--ease),box-shadow .35s var(--ease)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:14px;max-width:1360px;margin:0 auto;padding:15px var(--pad);transition:padding .35s var(--ease)}
+header.sm .nav{padding:9px var(--pad)}
+.logo{display:block;padding:4px 0;margin:-4px 0;min-width:0}
+.logo small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-height:18px;opacity:1;transition:opacity .3s var(--ease),max-height .35s var(--ease),margin-top .35s var(--ease)}
+header.sm .logo small{opacity:0;max-height:0;margin-top:0!important}
+.call{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border-radius:var(--r);font-weight:600;font-size:14px;white-space:nowrap;flex-shrink:0;transition:transform .12s var(--ease),background .2s var(--ease)}
+.call:active{transform:scale(.97)}
+.call svg{width:16px;height:16px;flex-shrink:0}
+
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:14px 24px;border-radius:var(--r);font-weight:600;font-size:15px;border:1px solid transparent;cursor:pointer;font-family:inherit;transition:transform .12s var(--ease),background .2s var(--ease),border-color .2s var(--ease)}
+.btn:active{transform:scale(.975)}
+.btn.p::after{content:"\2192";display:inline-block;transition:transform .28s var(--ease)}
+
+.q summary{cursor:pointer;list-style:none;user-select:none;-webkit-user-select:none;position:relative;padding:20px 44px 20px 0}
+.q summary::-webkit-details-marker{display:none}
+.q summary::before,.q summary::after{content:"";position:absolute;right:4px;top:calc(50% - 1px);width:15px;height:2px;transition:transform .35s var(--ease)}
+.q summary::before{transform:rotate(90deg)}
+.q[open] summary::before{transform:rotate(0)}
+.q summary:active{opacity:.55}
+.js .q .ans{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .4s var(--ease),opacity .3s var(--ease)}
+.js .q .ans>p{overflow:hidden}
+.js .q.expanded .ans{grid-template-rows:1fr;opacity:1}
+.q .ans>p{padding:0 0 22px;max-width:62ch}
+
+.pair{display:grid;gap:14px;grid-template-columns:1fr}
+.field{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
+label{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;transition:color .22s var(--ease)}
+input,textarea,select{border:0;border-bottom:1px solid var(--line);border-radius:0;padding:12px 0;min-height:44px;background:none;color:var(--ink);transition:border-color .22s var(--ease)}
+select{-webkit-appearance:none;appearance:none;padding-right:22px;background-repeat:no-repeat;background-position:right center}
+input:focus,textarea:focus,select:focus{outline:none}
+textarea{min-height:96px;resize:vertical}
+.note{font-size:12.5px;margin-top:16px;line-height:1.65}
+
+.madeby{display:inline-flex;align-items:center;line-height:0}
+.madeby img{height:26px;width:auto;opacity:.62;filter:invert(1);transition:opacity .25s var(--ease)}
+footer p a,footer .fl a{display:inline-block;padding:6px 0}
+
+:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:2px}
+
+.js .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease);transition-delay:calc(var(--i,0)*70ms)}
+.reveal.in{opacity:1;transform:none}
+.js .reveal.split{opacity:1;transform:none;transition:none}
+.w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.1em;margin-bottom:-.1em;padding-top:.16em;margin-top:-.16em}
+.w>i{display:inline-block;font-style:inherit;color:inherit;transform:translateY(110%);transition:transform .9s var(--ease);transition-delay:calc(var(--d,0)*45ms)}
+.split.in .w>i{transform:none}
+
+@media(min-width:760px){.pair{grid-template-columns:1fr 1fr}}
+@media(hover:hover) and (pointer:fine){
+ .btn.p:hover::after{transform:translateX(5px)}
+ .madeby:hover img{opacity:1}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-delay:0s!important}
+ .reveal{opacity:1;transform:none}
+ .w>i{transform:none}
+}
+
+:root{
+ --paper:#F5F7F8; --paper2:#E6ECEF; --ink:#0A2130; --white:#FFFFFF; --line:#D3DDE2; --dline:#1E3A4B;
+ --sea:#0B6A80; --sea-b:#1F9BB5; --sea-l:#8ED6E6; --sun:#E0662E;
+ --muted:#475A66; --dim:#A6BAC5;
+ --pad:clamp(20px,4.5vw,64px); --r:14px; --focus:#0B6A80;
+ --sans:"Sora",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+ --ease:cubic-bezier(.16,1,.3,1);
+}
+.en{display:none}
+html.l-en .hr{display:none}
+html.l-en .en{display:inline}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper)}
+p{color:var(--muted)}
+h1,h2,h3{font-weight:700;letter-spacing:-.045em;line-height:1}
+h1{font-size:clamp(40px,6.4vw,94px)}
+h2{font-size:clamp(31px,4.3vw,60px)}
+h3{font-size:clamp(19px,1.7vw,23px);letter-spacing:-.02em;line-height:1.15}
+.tag{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--sea)}
+.tag::before{content:"";width:22px;height:2px;background:var(--sun)}
+.dark .tag{color:var(--sea-l)}
+
+.banner{background:var(--ink);color:#AFC2CC;padding:9px var(--pad);padding-top:calc(9px + env(safe-area-inset-top,0px));text-align:center;font-size:12px;line-height:1.5}
+.banner b{color:#fff;font-weight:600}
+header{background:rgba(245,247,248,.94);backdrop-filter:blur(10px)}
+header.sm{border-bottom-color:var(--line)}
+.logo b{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:700;letter-spacing:-.03em;line-height:1}
+.logo b i{width:28px;height:28px;border-radius:50%;flex-shrink:0;background:linear-gradient(180deg,var(--white) 0 52%,var(--sea) 52% 100%);box-shadow:inset 0 0 0 2px var(--ink)}
+.logo small{font-size:12px;font-weight:500;color:var(--muted);margin-top:4px;padding-left:38px}
+.hact{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.lang{min-height:44px;min-width:44px;padding:0 12px;border-radius:100px;border:1px solid var(--line);background:var(--white);color:var(--ink);font:600 13px var(--sans);letter-spacing:.06em;cursor:pointer}
+.call{background:var(--ink);color:#fff;border-radius:100px}
+
+/* hero */
+.hero{padding:clamp(24px,3.4vw,54px) 0 clamp(44px,5vw,78px)}
+.herogrid{display:grid;gap:clamp(28px,3vw,44px)}
+.hero h1{max-width:11ch;margin-top:18px}
+.hero h1 em{font-style:normal;color:var(--sea)}
+.lead{font-size:clamp(16.5px,1.35vw,19px);max-width:44ch;margin-top:22px;line-height:1.65}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.btn{border-radius:100px}
+.btn.p{background:var(--sea);color:#fff}
+.btn.g{background:var(--white);border-color:var(--line);color:var(--ink)}
+.mob{display:flex;align-items:center;gap:12px;margin-top:30px;padding-top:22px;border-top:1px solid var(--line);font-size:14.5px;font-weight:500;color:var(--ink);max-width:44ch}
+.mob svg{width:22px;height:22px;flex-shrink:0;color:var(--sun)}
+.heroimg{position:relative;border-radius:var(--r);overflow:hidden;background:var(--paper2)}
+.heroimg img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;transition:transform 1.7s cubic-bezier(.16,.8,.24,1)}
+.js .heroimg img{transform:scale(1.07)}
+.heroimg.in img{transform:scale(1)}
+.area{position:absolute;left:14px;bottom:14px;display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.95);border-radius:100px;padding:10px 16px;font-size:13.5px;font-weight:600;color:var(--ink)}
+.area i{width:9px;height:9px;border-radius:50%;background:var(--sea-b);flex-shrink:0}
+
+.sec{padding:clamp(64px,8vw,120px) 0}
+.dark{background:var(--ink);color:#fff}
+.dark p{color:var(--dim)}
+.dark h2,.dark h3{color:#fff}
+
+/* before / after */
+.bagrid{display:grid;gap:clamp(28px,4vw,64px);margin-top:clamp(30px,3.6vw,50px);align-items:center}
+.ba{position:relative;border-radius:var(--r);overflow:hidden;background:#123041;aspect-ratio:3/2;--x:50%;user-select:none;-webkit-user-select:none}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.ba .after{clip-path:inset(0 0 0 var(--x))}
+.ba .bar{position:absolute;top:0;bottom:0;left:var(--x);width:2px;margin-left:-1px;background:#fff;pointer-events:none}
+.ba .knob{position:absolute;top:50%;left:var(--x);width:48px;height:48px;margin:-24px 0 0 -24px;border-radius:50%;background:#fff;box-shadow:0 6px 24px rgba(0,0,0,.28);display:grid;place-items:center;pointer-events:none;transition:transform .2s var(--ease)}
+.ba .knob svg{width:24px;height:24px;color:var(--ink)}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0;border:0;padding:0;-webkit-appearance:none;appearance:none;touch-action:pan-y}
+.ba input:focus-visible~.knob{outline:3px solid var(--sun);outline-offset:3px}
+.ba input:active~.knob{transform:scale(1.08)}
+.chip{position:absolute;top:14px;padding:7px 12px;border-radius:100px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;pointer-events:none}
+.chip.b{left:14px;background:rgba(10,33,48,.82);color:#fff}
+.chip.a{right:14px;background:#fff;color:var(--ink)}
+.hint{display:flex;align-items:center;gap:8px;margin-top:14px;font-size:13px;color:var(--dim)}
+.hint svg{width:18px;height:18px}
+.bl{list-style:none;margin-top:24px}
+.bl li{position:relative;padding:14px 0 14px 34px;border-top:1px solid var(--dline);font-size:16px;color:#E3ECF0}
+.bl li:last-child{border-bottom:1px solid var(--dline)}
+.bl li::before{content:"";position:absolute;left:4px;top:21px;width:12px;height:7px;border-left:2px solid var(--sea-l);border-bottom:2px solid var(--sea-l);transform:rotate(-45deg)}
+
+/* services */
+.svhead{display:grid;gap:18px}
+.svc{display:grid;gap:clamp(14px,1.6vw,20px);margin-top:clamp(30px,3.6vw,50px)}
+.sv{background:var(--white);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.sv figure{margin:0;overflow:hidden;background:var(--paper2)}
+.sv figure img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;transition:transform .8s var(--ease)}
+.sv .in-{padding:clamp(20px,2.2vw,28px)}
+.sv h3{margin-bottom:10px}
+.sv p{font-size:15px;max-width:46ch}
+.more{display:grid;gap:0;margin-top:clamp(14px,1.6vw,20px);background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:6px clamp(20px,2.2vw,28px)}
+.mi{display:grid;grid-template-columns:44px 1fr;gap:4px 14px;padding:18px 0;border-bottom:1px solid var(--line)}
+.mi:last-child{border-bottom:0}
+.mi .n{grid-row:span 2;font-size:13px;font-weight:600;color:#B04A1B;padding-top:3px}
+.mi p{font-size:15px}
+
+/* why */
+.why{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:clamp(30px,3.6vw,50px)}
+.wy{background:var(--paper);padding:clamp(20px,2.4vw,30px)}
+.wy h3{font-size:clamp(18px,1.5vw,21px)}
+.wy p{font-size:15px;margin-top:8px}
+
+/* wide */
+.wide{position:relative;border-radius:var(--r);overflow:hidden;min-height:clamp(360px,44vw,560px);display:flex;align-items:flex-end;background:var(--ink)}
+.wide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.wide::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,33,48,0) 15%,rgba(10,33,48,.55) 50%,rgba(10,33,48,.92) 100%);z-index:1}
+.wide .wc{position:relative;z-index:2;padding:clamp(22px,3.4vw,48px);display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px;width:100%}
+.wide blockquote{font-size:clamp(22px,2.6vw,36px);font-weight:600;letter-spacing:-.03em;line-height:1.2;color:#fff;max-width:24ch}
+.soc{display:flex;gap:10px;flex-wrap:wrap}
+.soc a{display:inline-flex;align-items:center;gap:9px;min-height:46px;padding:0 18px;border-radius:100px;background:rgba(10,33,48,.6);border:1px solid rgba(255,255,255,.4);color:#fff;font-size:14px;font-weight:600;backdrop-filter:blur(6px);transition:background .2s var(--ease)}
+.soc svg{width:18px;height:18px}
+
+/* faq */
+.fq{display:grid;gap:clamp(20px,3vw,48px)}
+.q{border-bottom:1px solid var(--line)}
+.q:first-of-type{border-top:1px solid var(--line)}
+.q summary{font-weight:600;font-size:clamp(17px,1.6vw,21px);letter-spacing:-.02em;line-height:1.3}
+.q summary::before,.q summary::after{background:var(--sea)}
+.q .ans>p{font-size:15.5px}
+
+/* form */
+.cols{display:grid;gap:clamp(24px,3vw,44px)}
+.form{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:clamp(22px,3vw,38px)}
+label{color:var(--muted)}
+.field:focus-within label{color:var(--sea)}
+input:focus,textarea:focus,select:focus{border-bottom-color:var(--sea)}
+select{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8'><path d='M1 1l5 5 5-5' fill='none' stroke='%230B6A80' stroke-width='1.6'/></svg>")}
+input::placeholder,textarea::placeholder{color:#7F8F98}
+.note{color:var(--muted)}
+.card{background:var(--ink);color:#fff;border-radius:var(--r);padding:clamp(22px,3vw,32px)}
+.cl{display:grid;gap:3px;padding:14px 0;border-bottom:1px solid var(--dline)}
+.cl:last-child{border-bottom:0}
+.cl b{font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.cl>span{font-size:16.5px;font-weight:500;transition:color .2s var(--ease);overflow-wrap:anywhere}
+
+footer{background:var(--ink);color:#fff;padding-top:clamp(46px,6vw,78px);overflow:hidden}
+.fgrid{display:grid;gap:28px}
+footer h4{font-size:11.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:#8FA6B2;margin-bottom:10px}
+footer p,footer a{color:#C3D3DB;font-size:15px}
+.bigmark{font-size:clamp(56px,14vw,210px);font-weight:700;letter-spacing:-.06em;line-height:.84;color:#132F40;margin-top:clamp(32px,4.5vw,62px);white-space:nowrap;user-select:none}
+.credit{border-top:1px solid var(--dline);margin-top:clamp(22px,3vw,34px);padding:18px 0 calc(24px + env(safe-area-inset-bottom,0px));font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#8FA6B2;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+
+.dark :focus-visible,footer :focus-visible,.card :focus-visible,.wide :focus-visible{outline-color:#fff}
+
+@media(max-width:520px){.logo b{font-size:17px}.logo small{font-size:11px}.call .t{display:none}.call{padding:0 14px}.logo b i{width:24px;height:24px}.logo small{padding-left:34px}}
+@media(min-width:700px){.why{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.svc{grid-template-columns:repeat(3,1fr)}.more{grid-template-columns:1fr 1fr;column-gap:40px}.mi:nth-last-child(2){border-bottom:0}}
+@media(min-width:1000px){
+ .herogrid{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:center;gap:clamp(40px,5vw,84px)}
+ .bagrid{grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr)}
+ .svhead{grid-template-columns:1fr 1fr;align-items:end}
+ .why{grid-template-columns:repeat(3,1fr)}
+ .fq{grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr)}
+ .cols{grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);align-items:start}
+ .fgrid{grid-template-columns:2fr 1fr 1fr;gap:48px}
+}
+@media(hover:hover) and (pointer:fine){
+ .btn.p:hover{background:#085466}
+ .btn.g:hover{border-color:#A5B6BE}
+ .call:hover{background:#17384A}
+ .lang:hover{border-color:#A5B6BE}
+ .sv figure:hover img{transform:scale(1.045)}
+ .cl:hover>span{color:var(--sea-l)}
+ .soc a:hover{background:rgba(10,33,48,.85)}
+}
+@media(prefers-reduced-motion:reduce){.js .heroimg img{transform:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#sadrzaj">Preskoči na sadržaj</a>
+<div class="banner"><b>Prijedlog stranice</b> — fotografije i dio tekstova su privremeni i mijenjaju se po dogovoru. Izradio Azzurro Digital.</div>
+
+<header>
+ <div class="nav">
+  <a class="logo" href="#top"><b><i aria-hidden="true"></i>JL Detailing</b><small><span class="hr">Pranje i poliranje brodova · Ston, Dubrovnik</span><span class="en" lang="en">Boat washing & polishing · Ston, Dubrovnik</span></small></a>
+  <div class="hact">
+   <button class="lang" type="button" aria-label="Switch to English" data-title-en="Boat washing and polishing, Dubrovnik — JL Detailing Service">EN</button>
+   <a class="call" href="tel:+38598227612"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span class="t">098 227 612</span></a>
+  </div>
+ </div>
+</header>
+
+<main id="sadrzaj">
+<section class="hero" id="top">
+ <div class="shell herogrid">
+  <div>
+   <p class="tag reveal"><span class="hr">Detailing i održavanje plovila</span><span class="en" lang="en">Boat detailing and care</span></p>
+   <h1 class="reveal split"><span class="hr">Vaš brod <em>kao nov,</em> spreman za sezonu</span><span class="en" lang="en">Your boat <em>like new,</em> ready for the season</span></h1>
+   <p class="lead reveal" style="--i:2"><span class="hr">Pranje, poliranje i detailing za sve vrste plovila, od manjih brodica do luksuznih jahti. Iz Stona, za cijelo područje Dubrovnika.</span><span class="en" lang="en">Washing, polishing and detailing for every kind of vessel, from small boats to luxury yachts. Based in Ston, covering the whole Dubrovnik area.</span></p>
+   <div class="cta reveal" style="--i:3">
+    <a class="btn p" href="#upit"><span class="hr">Pošaljite upit</span><span class="en" lang="en">Send an enquiry</span></a>
+    <a class="btn g" href="#prije-poslije"><span class="hr">Prije i poslije</span><span class="en" lang="en">Before and after</span></a>
+   </div>
+   <p class="mob reveal" style="--i:4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg><span class="hr">Mobilna usluga: dolazimo na vašu lokaciju, na vez ili u marinu.</span><span class="en" lang="en">Mobile service: we come to your location, berth or marina.</span></p>
+  </div>
+  <div class="heroimg" data-io>
+   <img src="jl-hero.webp" alt="Poliranje trupa motornog broda u luci" data-en-alt="Polishing the hull of a motorboat in the harbour" width="1000" height="1250" fetchpriority="high" decoding="async">
+   <div class="area"><i aria-hidden="true"></i>Ston · Dubrovnik</div>
+  </div>
+ </div>
+</section>
+
+<section class="sec dark" id="prije-poslije">
+ <div class="shell">
+  <p class="tag reveal"><span class="hr">Prije i poslije</span><span class="en" lang="en">Before and after</span></p>
+  <h2 class="reveal split" style="margin-top:14px;max-width:15ch"><span class="hr">Sjaj koji je sol i sunce odnijelo</span><span class="en" lang="en">The shine that salt and sun took away</span></h2>
+  <div class="bagrid">
+   <div class="reveal">
+    <div class="ba">
+     <img src="jl-before.webp" alt="Oksidirani gelcoat prije poliranja" data-en-alt="Oxidised gelcoat before polishing" width="1200" height="800" loading="lazy" decoding="async">
+     <img class="after" src="jl-after.webp" alt="Isti trup nakon poliranja" data-en-alt="The same hull after polishing" width="1200" height="800" loading="lazy" decoding="async">
+     <span class="chip b"><span class="hr">Prije</span><span class="en" lang="en">Before</span></span><span class="chip a"><span class="hr">Poslije</span><span class="en" lang="en">After</span></span>
+     <input type="range" min="0" max="100" value="50" aria-label="Usporedba prije i poslije" data-en-aria-label="Before and after comparison">
+     <span class="bar" aria-hidden="true"></span><span class="knob" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span>
+    </div>
+    <p class="hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg><span class="hr">Povucite za usporedbu</span><span class="en" lang="en">Drag to compare</span></p>
+   </div>
+   <div class="reveal" style="--i:1">
+    <p style="font-size:clamp(16px,1.3vw,18px);line-height:1.65;max-width:46ch"><span class="hr">S vremenom brodske površine gube sjaj zbog soli, sunca i vremenskih uvjeta. Poliranje gelcoata:</span><span class="en" lang="en">Over time, boat surfaces lose their shine to salt, sun and weather. Gelcoat polishing:</span></p>
+    <ul class="bl">
+     <li><span class="hr">uklanja ogrebotine i oksidaciju</span><span class="en" lang="en">removes scratches and oxidation</span></li>
+     <li><span class="hr">vraća originalni sjaj</span><span class="en" lang="en">brings back the original shine</span></li>
+     <li><span class="hr">štiti površinu od daljnjih oštećenja</span><span class="en" lang="en">protects the surface from further damage</span></li>
+     <li><span class="hr">produžuje vijek trajanja plovila</span><span class="en" lang="en">extends the life of the vessel</span></li>
+    </ul>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="usluge">
+ <div class="shell">
+  <div class="svhead">
+   <div>
+    <p class="tag reveal"><span class="hr">Usluge</span><span class="en" lang="en">Services</span></p>
+    <h2 class="reveal split" style="margin-top:14px;max-width:13ch"><span class="hr">Njega plovila, unutra i vani</span><span class="en" lang="en">Boat care, inside and out</span></h2>
+   </div>
+   <p class="reveal" style="max-width:46ch;font-size:16px"><span class="hr">Profesionalna oprema i kvalitetna sredstva, uz individualni pristup svakom plovilu.</span><span class="en" lang="en">Professional equipment and quality products, with an individual approach to every vessel.</span></p>
+  </div>
+  <div class="svc">
+   <article class="sv reveal">
+    <figure><img src="jl-2.webp" alt="Pranje palube motorne jahte četkom" data-en-alt="Washing the deck of a motor yacht with a brush" width="1000" height="750" loading="lazy" decoding="async"></figure>
+    <div class="in-"><h3><span class="hr">Pranje brodova</span><span class="en" lang="en">Boat washing</span></h3><p><span class="hr">Temeljito čišćenje plovila od soli, prljavštine i naslaga.</span><span class="en" lang="en">Thorough cleaning of salt, dirt and deposits.</span></p></div>
+   </article>
+   <article class="sv reveal" style="--i:1">
+    <figure><img src="jl-3.webp" alt="Čišćenje sjedala i kormila u kokpitu" data-en-alt="Cleaning the cockpit seats and helm" width="1000" height="750" loading="lazy" decoding="async"></figure>
+    <div class="in-"><h3><span class="hr">Detailing brodova</span><span class="en" lang="en">Boat detailing</span></h3><p><span class="hr">Dubinsko čišćenje svih dijelova plovila, unutarnjih i vanjskih.</span><span class="en" lang="en">Deep cleaning of every part of the vessel, inside and out.</span></p></div>
+   </article>
+   <article class="sv reveal" style="--i:2">
+    <figure><img src="jl-4.webp" alt="Nanošenje zaštitnog sloja na pramac brodice" data-en-alt="Applying a protective coat to the bow of a small boat" width="1000" height="750" loading="lazy" decoding="async"></figure>
+    <div class="in-"><h3><span class="hr">Zaštita površina</span><span class="en" lang="en">Surface protection</span></h3><p><span class="hr">Zaštitni slojevi protiv UV zračenja i habanja.</span><span class="en" lang="en">Protective coatings against UV and wear.</span></p></div>
+   </article>
+  </div>
+  <div class="more reveal">
+   <div class="mi"><span class="n">04</span><h3><span class="hr">Poliranje brodskih površina</span><span class="en" lang="en">Hull and surface polishing</span></h3><p><span class="hr">Profesionalno poliranje gelcoata za vraćanje sjaja.</span><span class="en" lang="en">Professional gelcoat polishing to bring back the shine.</span></p></div>
+   <div class="mi"><span class="n">05</span><h3><span class="hr">Uklanjanje oksidacije</span><span class="en" lang="en">Oxidation removal</span></h3><p><span class="hr">Obnova oštećenih i izblijedjelih površina.</span><span class="en" lang="en">Restoring damaged and faded surfaces.</span></p></div>
+   <div class="mi"><span class="n">06</span><h3><span class="hr">Čišćenje jahti</span><span class="en" lang="en">Yacht cleaning</span></h3><p><span class="hr">Premium usluga za luksuzna plovila.</span><span class="en" lang="en">A premium service for luxury yachts.</span></p></div>
+   <div class="mi"><span class="n">07</span><h3><span class="hr">Održavanje brodova</span><span class="en" lang="en">Boat maintenance</span></h3><p><span class="hr">Redovita njega i priprema za sezonu.</span><span class="en" lang="en">Regular care and preparation for the season.</span></p></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" style="padding-top:0">
+ <div class="shell">
+  <figure class="wide reveal">
+   <img src="jl-5.webp" alt="Uglačana motorna jahta u uvali ispod stonskih zidina" data-en-alt="A polished motor yacht in the bay below the walls of Ston" width="1600" height="900" loading="lazy" decoding="async">
+   <div class="wc">
+    <blockquote><span class="hr">Svaki rad snimam prije i poslije. Pogledajte ih na Instagramu i Facebooku.</span><span class="en" lang="en">I photograph every job before and after. See them on Instagram and Facebook.</span></blockquote>
+    <div class="soc">
+     <a href="https://www.instagram.com/jl.detailingservice/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>@jl.detailingservice</a>
+     <a href="https://www.facebook.com/people/JL-detailing-service/61574721646814/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8.5a.5.5 0 0 1 .5-.5z"/></svg>Facebook</a>
+    </div>
+   </div>
+  </figure>
+ </div>
+</section>
+
+<section class="sec" id="zasto" style="padding-top:0">
+ <div class="shell">
+  <p class="tag reveal"><span class="hr">Zašto JL Detailing</span><span class="en" lang="en">Why JL Detailing</span></p>
+  <h2 class="reveal split" style="margin-top:14px;max-width:16ch"><span class="hr">Svakom brodu s maksimalnom pažnjom</span><span class="en" lang="en">Every boat, handled with full attention</span></h2>
+  <div class="why reveal">
+   <div class="wy"><h3><span class="hr">Oprema i sredstva</span><span class="en" lang="en">Equipment and products</span></h3><p><span class="hr">Profesionalna oprema i vrhunski proizvodi za njegu plovila.</span><span class="en" lang="en">Professional equipment and top products for boat care.</span></p></div>
+   <div class="wy"><h3><span class="hr">Iskustvo i preciznost</span><span class="en" lang="en">Experience and precision</span></h3><p><span class="hr">Svakom brodu pristupamo s maksimalnom pažnjom.</span><span class="en" lang="en">We approach every boat with full attention.</span></p></div>
+   <div class="wy"><h3><span class="hr">Dugotrajan sjaj</span><span class="en" lang="en">Lasting shine</span></h3><p><span class="hr">Rezultati koji traju i štite površine.</span><span class="en" lang="en">Results that last and protect the surfaces.</span></p></div>
+   <div class="wy"><h3><span class="hr">Individualni pristup</span><span class="en" lang="en">Individual approach</span></h3><p><span class="hr">Usluge prilagođene vašem plovilu.</span><span class="en" lang="en">Services tailored to your vessel.</span></p></div>
+   <div class="wy"><h3><span class="hr">Mobilna usluga</span><span class="en" lang="en">Mobile service</span></h3><p><span class="hr">Dolazimo na vašu lokaciju.</span><span class="en" lang="en">We come to your location.</span></p></div>
+   <div class="wy"><h3><span class="hr">Pouzdanost i kvaliteta</span><span class="en" lang="en">Reliability and quality</span></h3><p><span class="hr">Garancija zadovoljstva.</span><span class="en" lang="en">Satisfaction guaranteed.</span></p></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="pitanja" style="padding-top:0">
+ <div class="shell fq">
+  <div>
+   <p class="tag reveal"><span class="hr">Česta pitanja</span><span class="en" lang="en">FAQ</span></p>
+   <h2 class="reveal split" style="margin-top:14px"><span class="hr">Što nas pitaju</span><span class="en" lang="en">What people ask</span></h2>
+  </div>
+  <div>
+   <details class="q reveal"><summary><span class="hr">Dolazite li na vez ili u marinu?</span><span class="en" lang="en">Do you come to the berth or marina?</span></summary><div class="ans"><p><span class="hr">Da, usluga je mobilna. Dolazimo na vašu lokaciju na području Stona i Dubrovnika.</span><span class="en" lang="en">Yes, the service is mobile. We come to your location in the Ston and Dubrovnik area.</span></p></div></details>
+   <details class="q reveal" style="--i:1"><summary><span class="hr">Koja plovila održavate?</span><span class="en" lang="en">Which vessels do you work on?</span></summary><div class="ans"><p><span class="hr">Sve vrste plovila, od manjih brodica do luksuznih jahti.</span><span class="en" lang="en">Every kind of vessel, from small boats to luxury yachts.</span></p></div></details>
+   <details class="q reveal" style="--i:2"><summary><span class="hr">Kada je dobro polirati brod?</span><span class="en" lang="en">When is a good time to polish a boat?</span></summary><div class="ans"><p><span class="hr">Kad gelcoat izgubi sjaj ili se pojavi oksidacija, i kao priprema za sezonu, da brod bude spreman za plovidbu.</span><span class="en" lang="en">When the gelcoat loses its shine or oxidation appears, and as preparation for the season, so the boat is ready to sail.</span></p></div></details>
+   <details class="q reveal" style="--i:3"><summary><span class="hr">Kako dobiti ponudu?</span><span class="en" lang="en">How do I get a quote?</span></summary><div class="ans"><p><span class="hr">Nazovite 098 227 612 ili pošaljite upit s vrstom i duljinom plovila i mjestom gdje se nalazi.</span><span class="en" lang="en">Call +385 98 227 612 or send an enquiry with the type and length of the vessel and where it is moored.</span></p></div></details>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="upit" style="background:var(--paper2)">
+ <div class="shell">
+  <p class="tag reveal"><span class="hr">Upit</span><span class="en" lang="en">Enquiry</span></p>
+  <h2 class="reveal split" style="margin:14px 0 clamp(24px,3vw,40px)"><span class="hr">Koje plovilo sređujemo?</span><span class="en" lang="en">Which boat are we working on?</span></h2>
+  <div class="cols">
+   <form id="frm" class="form reveal" novalidate data-to="jozoleho@gmail.com" data-subject="Upit — pranje i poliranje broda">
+    <div class="pair">
+     <div class="field"><label for="ime"><span class="hr">Ime i prezime</span><span class="en" lang="en">Name</span></label><input id="ime" type="text" autocomplete="name" data-label="Ime"></div>
+     <div class="field"><label for="tel"><span class="hr">Telefon</span><span class="en" lang="en">Phone</span></label><input id="tel" type="tel" autocomplete="tel" inputmode="tel" data-label="Telefon"></div>
+    </div>
+    <div class="pair">
+     <div class="field"><label for="usl"><span class="hr">Usluga</span><span class="en" lang="en">Service</span></label>
+      <select id="usl" data-label="Usluga"><option data-en-text="Washing">Pranje</option><option data-en-text="Polishing and oxidation removal">Poliranje i uklanjanje oksidacije</option><option data-en-text="Full detailing">Kompletan detailing</option><option data-en-text="Season preparation">Priprema za sezonu</option><option data-en-text="Something else">Nešto drugo</option></select></div>
+     <div class="field"><label for="plo"><span class="hr">Plovilo</span><span class="en" lang="en">Vessel</span></label><input id="plo" type="text" placeholder="npr. gliser 7 m" data-en-placeholder="e.g. motorboat, 7 m" data-label="Plovilo"></div>
+    </div>
+    <div class="field"><label for="lok"><span class="hr">Gdje se nalazi</span><span class="en" lang="en">Location</span></label><input id="lok" type="text" placeholder="npr. marina Komolac, vez u Stonu" data-en-placeholder="e.g. ACI Marina Dubrovnik, berth in Ston" data-label="Lokacija"></div>
+    <div class="field"><label for="nap"><span class="hr">Napomena</span><span class="en" lang="en">Notes</span></label><textarea id="nap" placeholder="npr. trup je izblijedio, treba prije sezone" data-en-placeholder="e.g. the hull has faded, needed before the season" data-label="Napomena"></textarea></div>
+    <button class="btn p" type="submit"><span class="hr">Pošalji upit</span><span class="en" lang="en">Send enquiry</span></button>
+    <p class="note"><span class="hr">Obrazac otvara vaš program za e-poštu s već ispunjenim upitom.</span><span class="en" lang="en">The form opens your e-mail app with the enquiry already filled in.</span></p>
+   </form>
+   <div class="card reveal" style="--i:1">
+    <a class="cl" href="tel:+38598227612"><b><span class="hr">Telefon</span><span class="en" lang="en">Phone</span></b><span>098 227 612</span></a>
+    <a class="cl" href="mailto:jozoleho@gmail.com"><b>E-mail</b><span>jozoleho@gmail.com</span></a>
+    <a class="cl" href="https://www.instagram.com/jl.detailingservice/" target="_blank" rel="noopener"><b>Instagram</b><span>@jl.detailingservice</span></a>
+    <div class="cl"><b><span class="hr">Adresa</span><span class="en" lang="en">Address</span></b><span>Put braće Mihanović 29<br>20230 Ston</span></div>
+    <div class="cl"><b><span class="hr">Područje</span><span class="en" lang="en">Area</span></b><span><span class="hr">Ston i Dubrovnik</span><span class="en" lang="en">Ston and Dubrovnik</span></span></div>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="shell">
+  <div class="fgrid">
+   <div><h4>JL Detailing Service</h4><p><span class="hr">Pranje, poliranje i detailing plovila, od manjih brodica do luksuznih jahti. Ston i područje Dubrovnika.</span><span class="en" lang="en">Washing, polishing and detailing, from small boats to luxury yachts. Ston and the Dubrovnik area.</span></p></div>
+   <div><h4><span class="hr">Kontakt</span><span class="en" lang="en">Contact</span></h4><p><a href="tel:+38598227612">098 227 612</a><br><a href="mailto:jozoleho@gmail.com">jozoleho@gmail.com</a><br><a href="https://www.instagram.com/jl.detailingservice/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/people/JL-detailing-service/61574721646814/" target="_blank" rel="noopener">Facebook</a></p></div>
+   <div><h4><span class="hr">Adresa</span><span class="en" lang="en">Address</span></h4><p>Put braće Mihanović 29<br>20230 Ston</p></div>
+  </div>
+  <div class="bigmark" aria-hidden="true">JL Detailing</div>
+  <p class="credit"><span>Izrada</span> <a class="madeby" href="https://www.azzurrodigital.hr" target="_blank" rel="noopener" aria-label="Azzurro Digital"><img src="azzurro-digital.png" alt="Azzurro Digital" width="640" height="169" loading="lazy" decoding="async"></a></p>
+ </div>
+</footer>
+<script>
+(function(){
+ var ba=document.querySelector('.ba'), r=ba&&ba.querySelector('input');
+ if(r){ var set=function(){ba.style.setProperty('--x',r.value+'%')}; r.addEventListener('input',set); set(); }
+
+ var root=document.documentElement, btn=document.querySelector('.lang');
+ var titles={hr:document.title,en:btn.getAttribute('data-title-en')};
+ function swap(el,attr,l){
+  var k='data-'+attr+'-hr', e=el.getAttribute('data-en-'+attr);
+  if(!el.hasAttribute(k)) el.setAttribute(k, attr==='text'?el.textContent:el.getAttribute(attr)||'');
+  var v=l==='en'?e:el.getAttribute(k);
+  if(attr==='text') el.textContent=v; else el.setAttribute(attr,v);
+ }
+ function apply(l){
+  root.classList.toggle('l-en',l==='en'); root.lang=l;
+  document.title=titles[l];
+  btn.textContent=l==='en'?'HR':'EN';
+  btn.setAttribute('aria-label',l==='en'?'Prebaci na hrvatski':'Switch to English');
+  ['placeholder','alt','aria-label','text'].forEach(function(a){
+   [].forEach.call(document.querySelectorAll('[data-en-'+a+']'),function(el){swap(el,a,l)});
+  });
+  var f=document.getElementById('frm'); if(f) f.setAttribute('data-subject',l==='en'?'Enquiry — boat detailing':'Upit — pranje i poliranje broda');
+ }
+ var cur=/[?&]lang=en/.test(location.search)?'en':'hr'; if(cur==='en') apply('en');
+ btn.addEventListener('click',function(){
+  cur=cur==='en'?'hr':'en'; apply(cur);
+  try{history.replaceState(null,'',location.pathname+(cur==='en'?'?lang=en':'')+location.hash)}catch(e){}
+ });
+})();
+</script>
+
+<script>
+(function(){
+ var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+ document.documentElement.classList.add('js');
+
+ function splitWords(el){
+  if(RM) return;
+  var i=0;
+  (function walk(node){
+   [].slice.call(node.childNodes).forEach(function(n){
+    if(n.nodeType===3){
+     var parts=n.nodeValue.split(/(\s+)/), frag=document.createDocumentFragment();
+     parts.forEach(function(t){
+      if(!t) return;
+      if(/^\s+$/.test(t)){ frag.appendChild(document.createTextNode(t)); return; }
+      var w=document.createElement('span'); w.className='w';
+      var inner=document.createElement('i'); inner.style.setProperty('--d',i++); inner.textContent=t;
+      w.appendChild(inner); frag.appendChild(w);
+     });
+     node.replaceChild(frag,n);
+    } else if(n.nodeType===1 && n.className!=='w'){ walk(n); }
+   });
+  })(el);
+ }
+ [].forEach.call(document.querySelectorAll('.split'),splitWords);
+
+ var els=[].slice.call(document.querySelectorAll('.reveal, [data-io]'));
+ function on(el){ el.classList.add('in'); }
+ if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+   /* also reveal anything already scrolled past: deep links and restored
+      scroll positions would otherwise leave sections hidden for good */
+   if(e.isIntersecting || e.boundingClientRect.top < 0){ on(e.target); io.unobserve(e.target); }
+  })},{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(e){io.observe(e)});
+ } else els.forEach(on);
+
+ var hdr=document.querySelector('header'), last=null;
+ function sc(){
+  var y=window.pageYOffset||document.documentElement.scrollTop, sm=y>70;
+  if(sm!==last){ hdr.classList.toggle('sm',sm); last=sm; }
+ }
+ window.addEventListener('scroll',sc,{passive:true}); sc();
+
+ [].forEach.call(document.querySelectorAll('.q'),function(d){
+  var s=d.querySelector('summary'), t;
+  if(d.open) d.classList.add('expanded');
+  s.addEventListener('click',function(ev){
+   ev.preventDefault(); clearTimeout(t);
+   if(d.classList.contains('expanded')){
+    d.classList.remove('expanded');
+    t=setTimeout(function(){d.open=false},RM?0:400);
+   } else {
+    d.open=true;
+    requestAnimationFrame(function(){requestAnimationFrame(function(){d.classList.add('expanded')})});
+   }
+  });
+ });
+
+ var f=document.getElementById('frm');
+ if(f) f.addEventListener('submit',function(e){
+  e.preventDefault();
+  var lines=[];
+  [].forEach.call(f.querySelectorAll('[data-label]'),function(el){
+   var v=(el.value||'').trim(); if(v) lines.push(el.getAttribute('data-label')+': '+v);
+  });
+  window.location.href='mailto:'+f.getAttribute('data-to')+'?subject='+encodeURIComponent(f.getAttribute('data-subject'))+'&body='+encodeURIComponent(lines.join('\n'));
+ });
+})();
+</script>
+</body>
+</html>

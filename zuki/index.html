@@ -151,6 +151,16 @@ header.sm{border-bottom-color:var(--line)}
 .lane li{padding:12px 0 12px 22px;border-top:1px solid var(--line);font-size:15.5px;color:var(--ink);position:relative}
 .lane li::before{content:"";position:absolute;left:0;top:19px;width:10px;height:3px;background:var(--sea)}
 
+
+/* gallery */
+.gal{display:grid;gap:clamp(12px,1.4vw,18px);margin-top:clamp(28px,3.4vw,46px)}
+.gal figure{margin:0;border-radius:var(--r);overflow:hidden;background:var(--paper2);position:relative}
+.gal img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;transition:transform .8s var(--ease)}
+.gal figcaption{position:absolute;left:0;bottom:0;background:var(--ink);color:#fff;padding:9px 14px;font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+@media(min-width:620px){.gal{grid-template-columns:1fr 1fr}.gal figure:first-child{grid-column:1/-1}.gal figure:first-child img{aspect-ratio:16/9}}
+@media(min-width:1000px){.gal{grid-template-columns:repeat(3,1fr)}.gal figure:first-child{grid-column:auto}.gal figure:first-child img{aspect-ratio:4/3}}
+@media(hover:hover) and (pointer:fine){.gal figure:hover img{transform:scale(1.045)}}
+
 /* road band */
 .road{position:relative;overflow:hidden}
 .road .grid{display:grid;gap:clamp(24px,3vw,48px);align-items:center}
@@ -265,7 +275,7 @@ footer p,footer a{color:#BFCBD5;font-size:15px}
   <h2 class="reveal split" style="margin-top:14px;max-width:12ch">Na cesti i na moru</h2>
   <div class="lanes">
    <article class="lane reveal">
-    <figure><img src="zuki-2.webp" alt="Servis kočnica na podignutom automobilu" width="1000" height="750" loading="lazy" decoding="async"></figure>
+    <figure><img src="zuki-car.webp" alt="Crni Ford Mustang podignut na dizalici ispred radionice" width="1200" height="750" loading="lazy" decoding="async"></figure>
     <div class="in-">
      <span class="k">Automobili</span>
      <h3>Popravak i servis</h3>
@@ -281,18 +291,30 @@ footer p,footer a{color:#BFCBD5;font-size:15px}
     </div>
    </article>
    <article class="lane reveal" style="--i:1">
-    <figure><img src="zuki-1.webp" alt="Popravak vanbrodskog motora u dvorištu radionice" width="1000" height="750" loading="lazy" decoding="async"></figure>
+    <figure><img src="zuki-boat.webp" alt="Gumenjak s motorom Yamaha 90 na kamionu s dizalicom u marini" width="1200" height="750" loading="lazy" decoding="async"></figure>
     <div class="in-">
      <span class="k">Brodovi</span>
      <h3>Motori i dizalica</h3>
-     <p>Brodske motore popravljamo i održavamo, a brod spuštamo u more i dižemo iz mora autodizalicom.</p>
+     <p>Brodske motore popravljamo i održavamo, a brodice do 1.800&nbsp;kg spuštamo u more i dižemo iz mora autodizalicom.</p>
      <ul>
       <li>Popravak brodskih motora</li>
       <li>Servisi i održavanje</li>
-      <li>Spuštanje u more i dizanje iz mora autodizalicom</li>
+      <li>Spuštanje u more i dizanje iz mora autodizalicom, brodice do 1.800&nbsp;kg</li>
      </ul>
     </div>
    </article>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="radionica" style="padding-top:0">
+ <div class="shell">
+  <p class="tag reveal">Iz radionice</p>
+  <h2 class="reveal split" style="margin-top:14px;max-width:14ch">Od svakodnevnih auta do klasika</h2>
+  <div class="gal">
+   <figure class="reveal"><img src="zuki-g2.webp" alt="Kromirani motorni prostor Ford Mustanga s motorom 289" width="1000" height="750" loading="lazy" decoding="async"><figcaption>Ford Mustang 289</figcaption></figure>
+   <figure class="reveal" style="--i:1"><img src="zuki-g1.webp" alt="Otvoren motorni prostor Mercedes-Benza u radionici" width="1000" height="750" loading="lazy" decoding="async"><figcaption>Mercedes-Benz</figcaption></figure>
+   <figure class="reveal" style="--i:2"><img src="zuki-g3.webp" alt="Audi A6 Avant na dizalici pod nadstrešnicom radionice" width="1000" height="750" loading="lazy" decoding="async"><figcaption>Audi A6 Avant</figcaption></figure>
   </div>
  </div>
 </section>
@@ -345,7 +367,7 @@ footer p,footer a{color:#BFCBD5;font-size:15px}
    <h2 class="reveal split" style="margin-top:14px">Što nas pitaju</h2>
   </div>
   <div>
-   <details class="q reveal"><summary>Popravljate li i brodske motore?</summary><div class="ans"><p>Da. Popravak brodskih motora, servisi i održavanje, a brod možemo spustiti u more i dignuti iz mora autodizalicom. Javite o kakvom se motoru radi pa se dogovorimo.</p></div></details>
+   <details class="q reveal"><summary>Popravljate li i brodske motore?</summary><div class="ans"><p>Da. Popravak brodskih motora, servisi i održavanje, a brodice do 1.800&nbsp;kg možemo spustiti u more i dignuti iz mora autodizalicom. Javite o kakvom se motoru radi pa se dogovorimo.</p></div></details>
    <details class="q reveal" style="--i:1"><summary>Na odmoru sam i auto mi se pokvario. Možete li pomoći?</summary><div class="ans"><p>Nazovite 099 737 5771. Kao lokalni servis u Pirovcu često pomažemo i gostima, a manji kvarovi i zamjene potrošnih dijelova rješavaju se brzo. Za razgovor na engleskom nazovite 091 736 4335.</p></div></details>
    <details class="q reveal" style="--i:2"><summary>Imate li dijelove na stanju?</summary><div class="ans"><p>U sklopu radionice imamo malu prodavaonicu auto dijelova.</p></div></details>
    <details class="q reveal" style="--i:3"><summary>Kako znam koliko će popravak koštati?</summary><div class="ans"><p>Nema skrivenih troškova. Prije svakog zahvata objašnjavamo što treba napraviti i zašto.</p></div></details>

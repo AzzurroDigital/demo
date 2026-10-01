@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Villa Bribir — vila s grijanim unutarnjim bazenom kod Crikvenice</title>
+<meta name="description" content="Vila u Bribiru s grijanim unutarnjim bazenom, jacuzzijem i saunom. 6 spavaćih soba, do 11 gostiju, 6 km od plaža Crikvenice.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#141B24">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap">
+<link rel="preload" as="image" href="vb-exterior.webp" fetchpriority="high">
+<style>
+:root{
+ --paper:#F6F2EA; --paper2:#ECE5D9; --white:#FFFDF8; --ink:#1F2A37; --ink2:#141B24; --muted:#5A6470; --line:#DDD4C6;
+ --sand:#7A5A33; --pool:#1A6A86; --dim:#A9B4BF; --dline:#2E3A48;
+ --pad:clamp(20px,4.5vw,64px); --r:4px;
+ --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+ --sans:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+ --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent;scroll-behavior:smooth;scroll-padding-top:72px}
+html,body{overflow-x:clip}
+body{font-family:var(--sans);font-size:17px;line-height:1.6;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;touch-action:manipulation}
+input,select,textarea{font:inherit;font-size:16px;color:inherit}
+.skip{position:absolute;left:-9999px}.skip:focus{left:12px;top:12px;z-index:200;background:#fff;color:#000;padding:10px 14px}
+:focus-visible{outline:2px solid var(--pool);outline-offset:3px}
+.shell{max-width:1320px;margin:0 auto;padding:0 var(--pad)}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--sand)}
+.dark .eyebrow{color:#D3B78E}
+h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;line-height:1.02}
+h2{font-size:clamp(40px,5.4vw,76px);margin-top:14px}
+h3{font-size:clamp(26px,2.2vw,32px);line-height:1.1}
+p{color:var(--muted)}
+.dark{background:var(--ink2);color:#F3EEE5}.dark p{color:var(--dim)}
+.sec{padding:clamp(72px,9vw,140px) 0}
+
+.banner{background:var(--ink2);color:#AAB5C0;font-size:12px;text-align:center;padding:8px var(--pad);padding-top:calc(8px + env(safe-area-inset-top,0px));line-height:1.5}
+.banner b{color:#fff}
+
+/* header */
+header{position:sticky;top:0;height:72px;z-index:80;transition:background .4s var(--ease),box-shadow .4s var(--ease),transform .4s var(--ease)}
+.nav{display:flex;align-items:center;gap:20px;max-width:1320px;margin:0 auto;padding:0 var(--pad);height:72px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;margin-right:auto}
+.logo img{width:40px;height:40px;border-radius:50%}
+.logo b{font-family:var(--serif);font-weight:400;font-size:26px;letter-spacing:.01em;line-height:1}
+.menu{display:none;gap:26px}
+.menu a{font-size:14px;font-weight:600;color:#fff;text-decoration:none;padding:10px 0;opacity:.88}
+.langs{display:flex;border:1px solid rgba(255,255,255,.4);border-radius:100px;overflow:hidden}
+.langs button{min-width:44px;min-height:40px;font-size:12px;font-weight:700;letter-spacing:.08em;color:#fff}
+.langs button[aria-pressed=true]{background:#fff;color:var(--ink)}
+.cta-top{display:none;min-height:44px;align-items:center;padding:0 20px;border-radius:100px;background:#fff;color:var(--ink);font-size:14px;font-weight:700;text-decoration:none}
+header.solid{background:rgba(246,242,234,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
+header.solid .logo,header.solid .menu a{color:var(--ink)}
+header.solid .langs{border-color:var(--line)}
+header.solid .langs button{color:var(--ink)}
+header.solid .langs button[aria-pressed=true]{background:var(--ink);color:#fff}
+header.solid .cta-top{background:var(--ink);color:#fff}
+
+/* hero */
+.hero{position:relative;margin-top:-72px;min-height:calc(100svh - var(--bh,0px));display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:var(--ink2)}
+.hero picture,.hero>img{position:absolute;inset:0}
+.hero img.bg{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.js .hero img.bg{transform:scale(1.08);transition:transform 2.6s cubic-bezier(.2,.7,.2,1)}
+.hero.in img.bg{transform:scale(1)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,19,26,.55) 0%,rgba(14,19,26,.05) 26%,rgba(14,19,26,.25) 55%,rgba(14,19,26,.85) 100%),linear-gradient(90deg,rgba(14,19,26,.55) 0%,rgba(14,19,26,0) 60%)}
+.hero .shell{position:relative;z-index:2;width:100%;padding-top:140px;padding-bottom:clamp(26px,4vw,48px)}
+.hero .eyebrow{color:#E8D3B2}
+.hero .eyebrow,.hero .lead,.hero h1{text-shadow:0 1px 14px rgba(0,0,0,.45)}
+.hero h1{font-size:clamp(48px,7vw,108px);max-width:14ch;margin-top:16px}
+.hero h1 em{font-style:italic}
+.hero .lead{color:rgba(255,255,255,.86);font-size:clamp(16.5px,1.35vw,19px);max-width:52ch;margin-top:20px}
+.bar{margin-top:clamp(26px,3.4vw,44px);display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.28);border-radius:var(--r);overflow:hidden;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);max-width:860px}
+.bar label{display:flex;flex-direction:column;gap:4px;padding:12px 16px;background:rgba(14,19,26,.42);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+.bar input,.bar select{background:none;border:0;color:#fff;min-height:30px;font-weight:600;letter-spacing:0;text-transform:none;color-scheme:dark;width:100%}
+.bar select option{color:#000}
+.bar label:nth-child(3){grid-column:1/-1}
+.bar .go{grid-column:1/-1;min-height:56px;background:#fff;color:var(--ink);font-weight:800;font-size:15px;letter-spacing:.02em;display:flex;align-items:center;justify-content:center;gap:10px;text-decoration:none}
+.bar .go::after{content:"\2192";transition:transform .3s var(--ease)}
+
+/* keys */
+.keys{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}
+.key{padding:clamp(22px,3vw,40px) var(--pad);border-top:1px solid var(--line)}
+.key:nth-child(odd){border-right:1px solid var(--line)}
+.key b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(48px,6vw,88px);line-height:.9;color:var(--ink)}
+.key span{display:block;margin-top:10px;font-size:14px;color:var(--muted);max-width:22ch}
+
+/* about */
+.about{display:grid;gap:clamp(30px,4vw,64px)}
+.about .txt p{font-size:clamp(17px,1.3vw,19px);max-width:46ch;margin-top:20px}
+.stack{position:relative}
+.stack .a{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+.stack .b{position:absolute;right:-8px;bottom:-14%;width:42%;aspect-ratio:4/5;object-fit:cover;border:8px solid var(--paper);border-radius:var(--r)}
+
+/* wellness */
+.spa .wide{position:relative;margin-top:clamp(30px,4vw,56px);border-radius:var(--r);overflow:hidden}
+.spa .wide img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.spa .grid{display:grid;gap:clamp(28px,3vw,48px);margin-top:clamp(30px,4vw,56px)}
+.spa .items{display:grid;gap:0}
+.it{display:grid;grid-template-columns:52px 1fr;gap:16px;padding:22px 0;border-top:1px solid var(--dline)}
+.it i{font-style:normal;font-family:var(--serif);font-size:32px;color:#D3B78E;line-height:1}
+.it p{font-size:15.5px;margin-top:6px}
+.spa .side img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+
+/* gallery */
+.ghead{display:grid;gap:18px;align-items:end}
+.ghead p{max-width:48ch}
+.track{list-style:none;display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:clamp(28px,3.5vw,48px) var(--pad) 8px;scroll-padding-left:var(--pad);-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;scrollbar-width:none}
+.track::-webkit-scrollbar{display:none}
+.slide{flex:0 0 clamp(240px,27vw,380px);scroll-snap-align:start}
+.ph{display:block;width:100%;border-radius:var(--r);overflow:hidden;background:var(--paper2)}
+.ph img{width:100%;aspect-ratio:3/4;object-fit:cover;transition:transform .9s var(--ease)}
+.cap{display:block;margin-top:12px;font-size:14px;font-weight:600}
+.gfoot{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:18px}
+.gfoot small{font-size:13px;color:var(--muted)}
+.arrows{display:flex;gap:8px}
+.arrows button{width:48px;height:48px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;font-size:18px}
+
+/* outdoor */
+.outd{display:grid;gap:clamp(28px,4vw,64px);align-items:center}
+.outd .pics{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.outd .pics img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r)}
+.outd .pics figure:last-child{margin-top:clamp(30px,5vw,80px)}
+.outd figcaption{font-size:13px;color:var(--muted);margin-top:10px}
+.outd .txt p{font-size:clamp(17px,1.3vw,19px);max-width:44ch;margin-top:20px}
+
+/* location */
+.loc .img{position:relative;margin-top:clamp(30px,4vw,56px);border-radius:var(--r);overflow:hidden}
+.loc .img img{width:100%;aspect-ratio:21/9;object-fit:cover;min-height:240px}
+.loc .pin{position:absolute;left:clamp(14px,3vw,32px);bottom:clamp(14px,3vw,32px);background:var(--white);border-radius:100px;padding:10px 18px 10px 14px;font-size:14px;font-weight:700;display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.loc .pin::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--pool);box-shadow:0 0 0 5px rgba(26,106,134,.2)}
+.cols3{display:grid;gap:clamp(24px,3vw,48px);margin-top:clamp(30px,4vw,56px)}
+.cols3 h3{font-size:24px;margin-bottom:8px}
+.dl{list-style:none}
+.dl li{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-top:1px solid var(--line);font-size:15.5px}
+.dl li span:last-child{font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
+
+/* faq */
+.faq{display:grid;gap:clamp(24px,3vw,48px)}
+.q{border-top:1px solid var(--line)}
+.q:last-child{border-bottom:1px solid var(--line)}
+.q summary{list-style:none;cursor:pointer;padding:22px 44px 22px 0;position:relative;font-family:var(--serif);font-size:clamp(22px,1.9vw,27px);line-height:1.2}
+.q summary::-webkit-details-marker{display:none}
+.q summary::after{content:"+";position:absolute;right:6px;top:18px;font-family:var(--sans);font-size:24px;font-weight:300;transition:transform .35s var(--ease)}
+.q[open] summary::after{transform:rotate(45deg)}
+.q p{padding:0 0 24px;max-width:60ch}
+
+/* booking */
+.book{display:grid;gap:clamp(28px,4vw,56px)}
+.form{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:clamp(22px,3vw,40px)}
+.row{display:grid;gap:14px}
+.fld{display:flex;flex-direction:column;gap:6px;margin-bottom:18px}
+.fld label{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.fld input,.fld select,.fld textarea{border:0;border-bottom:1px solid var(--line);border-radius:0;background:none;min-height:46px;padding:10px 0}
+.fld textarea{min-height:90px;resize:vertical}
+.fld input:focus,.fld select:focus,.fld textarea:focus{outline:none;border-bottom-color:var(--ink)}
+.nights{font-size:14px;color:var(--pool);font-weight:700;min-height:22px;margin:-6px 0 14px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:100px;font-weight:700;font-size:15px;text-decoration:none;border:1px solid var(--ink)}
+.btn.p{background:var(--ink);color:#fff}
+.btn.g{background:none;color:var(--ink)}
+.note{font-size:13px;margin-top:14px}
+.card{background:var(--ink2);color:#fff;border-radius:var(--r);padding:clamp(22px,3vw,34px)}
+.card img{width:64px;height:64px;border-radius:50%;margin-bottom:18px}
+.cl{display:grid;gap:2px;padding:14px 0;border-top:1px solid var(--dline);text-decoration:none}
+.cl b{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+.cl span{font-size:17px}
+
+footer{background:var(--ink2);color:#F3EEE5;padding:clamp(48px,6vw,80px) 0 0;overflow:hidden}
+.fgrid{display:grid;gap:24px}
+footer p,footer a{color:var(--dim);font-size:15px}
+footer h4{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8592A0;margin-bottom:10px}
+footer a{display:inline-block;padding:10px 0;text-decoration:none}
+.big{font-family:var(--serif);font-size:clamp(70px,17vw,260px);line-height:.85;color:#1F2833;margin-top:clamp(28px,4vw,60px);white-space:nowrap;user-select:none}
+.credit{border-top:1px solid var(--dline);margin-top:clamp(20px,3vw,34px);padding:18px 0 calc(90px + env(safe-area-inset-bottom,0px));font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#8592A0;display:flex;align-items:center;gap:12px}
+.credit a{padding:8px 0}.credit img{height:24px;width:auto;filter:invert(1);opacity:.6}
+
+/* mobile sticky */
+.mbar{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;gap:8px;transform:translateY(140%);transition:transform .45s var(--ease)}
+.mbar.on{transform:none}
+.mbar a{flex:1;min-height:52px;border-radius:100px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;text-decoration:none;box-shadow:0 14px 30px -12px rgba(14,19,26,.6)}
+.mbar .p{background:var(--ink);color:#fff}
+.mbar .g{background:var(--white);color:var(--ink);flex:0 0 auto;padding:0 20px}
+
+/* lightbox */
+dialog.lb{border:0;padding:0;background:transparent;max-width:100vw;max-height:100vh;width:100vw;height:100vh;margin:0}
+dialog.lb::backdrop{background:rgba(10,13,18,.94)}
+.lbw{position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+.lbw img{max-width:min(92vw,900px);max-height:84vh;object-fit:contain;border-radius:2px}
+.lbw button{position:absolute;width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;font-size:22px;display:grid;place-items:center}
+.lbw .x{top:calc(16px + env(safe-area-inset-top,0px));right:16px}
+.lbw .pv{left:12px;top:50%;transform:translateY(-50%)}
+.lbw .nx{right:12px;top:50%;transform:translateY(-50%)}
+.lbw .ct{position:absolute;bottom:calc(20px + env(safe-area-inset-bottom,0px));left:0;right:0;text-align:center;color:#C9D1D9;font-size:14px}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:calc(var(--i,0)*80ms)}
+.rv.in{opacity:1;transform:none}
+
+@media(min-width:720px){
+ .bar{grid-template-columns:1fr 1fr .8fr auto}
+ .bar label:nth-child(3){grid-column:auto}
+ .bar .go{grid-column:auto;padding:0 28px}
+ .row{grid-template-columns:1fr 1fr}
+ .keys{grid-template-columns:repeat(4,1fr)}
+ .key{border-right:1px solid var(--line)}.key:last-child{border-right:0}
+ .cols3{grid-template-columns:repeat(3,1fr)}
+}
+@media(min-width:1000px){
+ .stack .b{right:-6%}
+ .menu{display:flex}.cta-top{display:inline-flex}
+ .about{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:center}
+ .spa .grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center}
+ .ghead{grid-template-columns:1fr 1fr}
+ .outd{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+ .faq{grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr)}
+ .book{grid-template-columns:minmax(0,1.4fr) minmax(0,.6fr);align-items:start}
+ .fgrid{grid-template-columns:2fr 1fr 1fr}
+ .mbar{display:none}
+ .credit{padding-bottom:calc(26px + env(safe-area-inset-bottom,0px))}
+}
+@media(hover:hover) and (pointer:fine){
+ .ph:hover img{transform:scale(1.04)}
+ .menu a:hover{opacity:1}
+ .bar .go:hover::after{transform:translateX(5px)}
+ .arrows button:hover{border-color:var(--ink)}
+ .btn.g:hover{background:var(--ink);color:#fff}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}
+ .js .rv{opacity:1;transform:none}.js .hero img.bg{transform:none}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#sadrzaj">Preskoči na sadržaj</a>
+<div class="banner" data-ih="banner"><b>Prijedlog stranice</b> — izradio Azzurro Digital s tekstovima i fotografijama sa stranice villabribir.com.</div>
+<header id="hdr">
+ <div class="nav">
+  <a class="logo" href="#top" aria-label="Villa Bribir"><img src="vb-logo.png" alt="" width="40" height="40"><b>Villa Bribir</b></a>
+  <nav class="menu" aria-label="Glavni izbornik">
+   <a href="#vila" data-i="nav_villa">Vila</a><a href="#wellness" data-i="nav_spa">Wellness</a><a href="#unutra" data-i="nav_rooms">Unutra</a><a href="#lokacija" data-i="nav_loc">Lokacija</a><a href="#pitanja" data-i="nav_faq">Pitanja</a>
+  </nav>
+  <div class="langs" role="group" aria-label="Jezik / Language">
+   <button type="button" data-l="hr" aria-pressed="true">HR</button><button type="button" data-l="en" aria-pressed="false">EN</button><button type="button" data-l="de" aria-pressed="false">DE</button>
+  </div>
+  <a class="cta-top" href="#upit" data-i="nav_book">Upit</a>
+ </div>
+</header>
+
+<main id="sadrzaj">
+<section class="hero" id="top" data-io>
+ <img class="bg" src="vb-exterior.webp" alt="Villa Bribir, moderna vila na terasama s pogledom na brda Vinodola" width="1400" height="1050" fetchpriority="high">
+ <div class="shell">
+  <p class="eyebrow rv" data-i="eyebrow">Bribir · Vinodolska dolina · 6 km do mora</p>
+  <h1 class="rv" style="--i:1" data-i="h1">Vaš grijani bazen, cijele godine</h1>
+  <p class="lead rv" style="--i:2" data-i="lead">Vila s grijanim unutarnjim bazenom, jacuzzijem i saunom, šest spavaćih soba i mjesta za do 11 gostiju. Mirno, privatno i nekoliko minuta vožnje od plaža Crikvenice i Selca.</p>
+  <form class="bar rv" style="--i:3" id="quick" action="#upit">
+   <label><span data-i="f_in">Dolazak</span><input type="date" id="qin" name="in"></label>
+   <label><span data-i="f_out">Odlazak</span><input type="date" id="qout" name="out"></label>
+   <label><span data-i="f_guests">Gosti</span><select id="qg" name="g"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option selected>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option></select></label>
+   <a class="go" href="#upit" id="qgo" data-i="f_check">Provjeri termin</a>
+  </form>
+ </div>
+</section>
+
+<div class="keys">
+ <div class="key rv"><b>6</b><span data-i="k1">spavaćih soba</span></div>
+ <div class="key rv" style="--i:1"><b>11</b><span data-i="k2">gostiju</span></div>
+ <div class="key rv" style="--i:2"><b>6 km</b><span data-i="k3">do plaža Crikvenice</span></div>
+ <div class="key rv" style="--i:3"><b>365</b><span data-i="k4">dana grijani bazen</span></div>
+</div>
+
+<section class="sec" id="vila">
+ <div class="shell about">
+  <div class="txt">
+   <p class="eyebrow rv" data-i="about_t">O vili</p>
+   <h2 class="rv" data-i="about_h">Mjesta za cijelu ekipu, mira za svakoga</h2>
+   <p class="rv" style="--i:1" data-i="about_p1">Smještena u mirnom okruženju Bribira, vila je osmišljena za goste koji cijene privatnost, udobnost i suvremeni dizajn. Kvalitetni materijali i funkcionalan raspored daju kući osjećaj mira i lakoće.</p>
+   <p class="rv" style="--i:2" data-i="about_p2">Idealna je za obiteljska okupljanja, boravak s prijateljima ili miran odmor daleko od svakodnevice.</p>
+  </div>
+  <div class="stack rv" style="--i:1">
+   <img class="a" src="vb-pool2.webp" alt="Unutarnji bazen s ležaljkama i staklenim stijenama prema terasi" width="1200" height="900" loading="lazy" decoding="async">
+   <img class="b" src="vb-facade.webp" alt="Pročelje vile s terasama i staklenim ogradama" width="900" height="1087" loading="lazy" decoding="async">
+  </div>
+ </div>
+</section>
+
+<section class="sec dark spa" id="wellness">
+ <div class="shell">
+  <p class="eyebrow rv" data-i="spa_t">Wellness</p>
+  <h2 class="rv" style="max-width:15ch" data-i="spa_h">Bazen, jacuzzi i sauna samo za vas</h2>
+  <div class="wide rv"><img src="vb-hero-d.webp" alt="Grijani unutarnji bazen obasjan suncem kroz staklene stijene" width="1600" height="900" loading="lazy" decoding="async"></div>
+  <div class="grid">
+   <div>
+    <p class="rv" style="font-size:clamp(17px,1.3vw,19px);max-width:44ch" data-i="spa_p">Privatna wellness zona srce je vile. Unutarnji bazen je grijan i dostupan gostima tijekom cijele godine, pa sezona kod vas zapravo nikad ne završava.</p>
+    <div class="items" style="margin-top:24px">
+     <div class="it rv"><i>01</i><div><h3 data-i="s1">Grijani unutarnji bazen</h3><p data-i="s1p">Privatan i dostupan cijele godine, s velikim staklenim vratima prema terasi.</p></div></div>
+     <div class="it rv" style="--i:1"><i>02</i><div><h3 data-i="s2">Jacuzzi</h3><p data-i="s2p">Odmah uz bazen, za večeri nakon izleta.</p></div></div>
+     <div class="it rv" style="--i:2"><i>03</i><div><h3 data-i="s3">Sauna</h3><p data-i="s3p">U istom wellness prostoru, uz bazen i jacuzzi.</p></div></div>
+    </div>
+   </div>
+   <div class="side rv" style="--i:1"><img src="vb-spa.webp" alt="Sauna i jacuzzi uz rub unutarnjeg bazena" width="1200" height="900" loading="lazy" decoding="async"></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="unutra" style="padding-bottom:clamp(40px,5vw,80px)">
+ <div class="shell ghead">
+  <div><p class="eyebrow rv" data-i="in_t">Unutra</p><h2 class="rv" data-i="in_h">Šest soba, jedan veliki stol</h2></div>
+  <p class="rv" style="--i:1" data-i="in_p">Prostrana blagovaona i dnevni prostor za zajedničko druženje, i moderna, potpuno opremljena kuhinja za svakodnevne obroke ili posebne prigode.</p>
+ </div>
+ <ul class="track" id="track"><li class="slide"><button type="button" class="ph" data-full="g-living.webp" aria-label="Dnevni boravak s kutnom garniturom"><img src="g-living.webp" alt="Dnevni boravak s kutnom garniturom" width="720" height="960" loading="lazy" decoding="async"></button><span class="cap" data-i="c_living">Dnevni boravak</span></li><li class="slide"><button type="button" class="ph" data-full="g-kitchen.webp" aria-label="Moderna, potpuno opremljena kuhinja"><img src="g-kitchen.webp" alt="Moderna, potpuno opremljena kuhinja" width="720" height="960" loading="lazy" decoding="async"></button><span class="cap" data-i="c_kitchen">Kuhinja</span></li><li class="slide"><button type="button" class="ph" data-full="g-dining.webp" aria-label="Blagovaona s velikim stolom"><img src="g-dining.webp" alt="Blagovaona s velikim stolom" width="720" height="960" loading="lazy" decoding="async"></button><span class="cap" data-i="c_dining">Blagovaona</span></li><li class="slide"><button type="button" class="ph" data-full="g-lounge.webp" aria-label="Dnevni prostor s pogledom na blagovaonu"><img src="g-lounge.webp" alt="Dnevni prostor s pogledom na blagovaonu" width="720" height="960" loading="lazy" decoding="async"></button><span class="cap" data-i="c_lounge">Salon</span></li><li class="slide"><button type="button" class="ph" data-full="g-bed1.webp" aria-label="Spavaća soba s bračnim krevetom"><img src="g-bed1.webp" alt="Spavaća soba s bračnim krevetom" width="720" height="960" loading="lazy" decoding="async"></button><span class="cap" data-i="c_bed">Spavaća soba</span></li><li class="slide"><button type="button" class="ph" data-full="g-bed2.webp" aria-label="Svijetla spavaća soba"><img src="g-bed2.webp" alt="Svijetla spavaća soba" width="720" height="960" loading="lazy" decoding="async"></button><span class="cap" data-i="c_bed">Spavaća soba</span></li><li class="slide"><button type="button" class="ph" data-full="g-bed3.webp" aria-label="Spavaća soba s ormarom"><img src="g-bed3.webp" alt="Spavaća soba s ormarom" width="720" height="960" loading="lazy" decoding="async"></button><span class="cap" data-i="c_bed">Spavaća soba</span></li><li class="slide"><button type="button" class="ph" data-full="g-bath1.webp" aria-label="Kupaonica s tušem"><img src="g-bath1.webp" alt="Kupaonica s tušem" width="720" height="960" loading="lazy" decoding="async"></button><span class="cap" data-i="c_bath">Kupaonica</span></li><li class="slide"><button type="button" class="ph" data-full="g-bath2.webp" aria-label="Kupaonica u mramornim pločicama"><img src="g-bath2.webp" alt="Kupaonica u mramornim pločicama" width="720" height="960" loading="lazy" decoding="async"></button><span class="cap" data-i="c_bath">Kupaonica</span></li></ul>
+ <div class="shell gfoot"><small data-i="swipe">Povucite ili dodirnite fotografiju za uvećanje</small><div class="arrows"><button type="button" id="gp" aria-label="Prethodne fotografije">&larr;</button><button type="button" id="gn" aria-label="Sljedeće fotografije">&rarr;</button></div></div>
+</section>
+
+<section class="sec" style="padding-top:clamp(40px,5vw,80px);background:var(--paper2)">
+ <div class="shell outd">
+  <div class="pics">
+   <figure class="rv"><img src="vb-bbq.webp" alt="Terasa s roštiljem i umjetnom travom" width="900" height="1050" loading="lazy" decoding="async"></figure>
+   <figure class="rv" style="--i:1"><img src="vb-view.webp" alt="Pogled s vile na Vinodolsku dolinu i more" width="900" height="1125" loading="lazy" decoding="async"><figcaption data-i="view_c">Pogled s vile prema Vinodolskoj dolini i moru</figcaption></figure>
+  </div>
+  <div class="txt">
+   <p class="eyebrow rv" data-i="out_t">Vani</p>
+   <h2 class="rv" data-i="out_h">Duge večeri uz roštilj</h2>
+   <p class="rv" style="--i:1" data-i="out_p">Vanjski prostor osmišljen je za opuštena druženja i obroke na svježem zraku, s roštiljem, blagovaonskim stolom i privatnim parkingom u sklopu vile.</p>
+  </div>
+ </div>
+</section>
+
+<section class="sec loc" id="lokacija">
+ <div class="shell">
+  <p class="eyebrow rv" data-i="loc_t">Lokacija</p>
+  <h2 class="rv" style="max-width:16ch" data-i="loc_h">Mirni Bribir, a sve je blizu</h2>
+  <div class="img rv"><img src="vb-aerial.webp" alt="Pogled iz zraka na Bribir i Vinodolsku dolinu" width="1600" height="898" loading="lazy" decoding="async"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Ugrini+21a%2C+51253+Bribir" target="_blank" rel="noopener">Ugrini 21a, Bribir</a></div>
+  <div class="cols3">
+   <div class="rv"><h3 data-i="l1">Svakodnevne potrebe</h3><ul class="dl"><li><span data-i="l1a">Centar Bribira</span><span>1 km</span></li><li><span data-i="l1b">Trgovina / supermarket</span><span>1,5 km</span></li><li><span data-i="l1c">Restorani i konobe</span><span>1–2 km</span></li></ul></div>
+   <div class="rv" style="--i:1"><h3 data-i="l2">Plaže i more</h3><ul class="dl"><li><span data-i="l2a">Plaže Crikvenice</span><span>6 km</span></li><li><span data-i="l2b">Plaže Selca</span><span>7 km</span></li><li><span data-i="l2c">Novi Vinodolski</span><span>6 km</span></li></ul></div>
+   <div class="rv" style="--i:2"><h3 data-i="l3">Priroda i šetnje</h3><ul class="dl"><li><span data-i="l3a">Šetnice oko Bribira</span><span data-i="near">odmah uz vilu</span></li><li><span data-i="l3b">Vinodolska dolina</span><span data-i="close">u blizini</span></li><li><span data-i="l3c">NP Risnjak</span><span>40 km</span></li><li><span data-i="l3d">PP Učka</span><span>70 km</span></li></ul></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="pitanja" style="padding-top:0">
+ <div class="shell faq">
+  <div><p class="eyebrow rv" data-i="faq_t">Pitanja</p><h2 class="rv" data-i="faq_h">Dobro je znati</h2></div>
+  <div class="rv" style="--i:1">
+   <details class="q"><summary data-i="q1">Kada je prijava i odjava?</summary><p data-i="a1">Prijava je moguća od 15:00, a odjava do 10:00.</p></details>
+   <details class="q"><summary data-i="q2">Koliko gostiju vila prima?</summary><p data-i="a2">Vila može ugostiti do 11 osoba u šest spavaćih soba.</p></details>
+   <details class="q"><summary data-i="q3">Je li bazen grijan i dostupan cijele godine?</summary><p data-i="a3">Da. Unutarnji bazen je grijan i gostima je dostupan tijekom cijele godine.</p></details>
+   <details class="q"><summary data-i="q4">Je li vila pogodna za obitelji s djecom?</summary><p data-i="a4">Da. Ima dovoljno prostora za obitelji i grupe, i za zajednički boravak i za privatnost.</p></details>
+   <details class="q"><summary data-i="q5">Ima li parkinga?</summary><p data-i="a5">Da, gostima je na raspolaganju privatni parking u sklopu vile.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="upit" style="background:var(--paper2)">
+ <div class="shell">
+  <p class="eyebrow rv" data-i="book_t">Upit</p>
+  <h2 class="rv" style="max-width:15ch" data-i="book_h">Pošaljite upit za svoj termin</h2>
+  <p class="rv" style="--i:1;margin:16px 0 clamp(26px,3.4vw,44px);max-width:52ch" data-i="book_p">Upišite datume i broj gostiju, a mi vam odgovaramo s dostupnošću i cijenom.</p>
+  <div class="book">
+   <form class="form rv" id="frm" novalidate>
+    <div class="row">
+     <div class="fld"><label for="bin" data-i="f_in">Dolazak</label><input id="bin" type="date"></div>
+     <div class="fld"><label for="bout" data-i="f_out">Odlazak</label><input id="bout" type="date"></div>
+    </div>
+    <p class="nights" id="nights" aria-live="polite"></p>
+    <div class="row">
+     <div class="fld"><label for="bg" data-i="f_guests">Gosti</label><select id="bg"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option selected>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option></select></div>
+     <div class="fld"><label for="bn" data-i="b_name">Ime i prezime</label><input id="bn" type="text" autocomplete="name"></div>
+    </div>
+    <div class="fld"><label for="bm" data-i="b_mail">E-mail ili telefon</label><input id="bm" type="text" autocomplete="email" autocapitalize="none"></div>
+    <div class="fld"><label for="bt" data-i="b_msg">Poruka</label><textarea id="bt" data-iph="b_msg_ph" placeholder="npr. dvije obitelji s djecom, dolazimo autom"></textarea></div>
+    <div class="btns"><button class="btn p" type="submit" data-i="b_send">Pošalji e-mailom</button><button class="btn g" type="button" id="wa" data-i="b_wa">Pošalji na WhatsApp</button></div>
+    <p class="note" data-i="b_note">Obrazac otvara vaš e-mail ili WhatsApp s već ispunjenim upitom.</p>
+   </form>
+   <div class="card rv" style="--i:1">
+    <img src="vb-logo.png" alt="" width="64" height="64">
+    <a class="cl" href="tel:+38598321641"><b data-i="c_phone">Telefon</b><span>+385 98 321 641</span></a>
+    <a class="cl" href="mailto:franjoburulic48@gmail.com"><b data-i="c_mail">E-mail</b><span style="word-break:break-all">franjoburulic48@gmail.com</span></a>
+    <a class="cl" href="https://www.google.com/maps/search/?api=1&query=Ugrini+21a%2C+51253+Bribir" target="_blank" rel="noopener"><b data-i="c_addr">Adresa</b><span>Ugrini 21a, Bribir</span></a>
+    <div class="cl"><b data-i="c_times">Prijava / odjava</b><span>15:00 / 10:00</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="shell">
+  <div class="fgrid">
+   <div><h4>Villa Bribir</h4><p data-i="foot">Vila s grijanim unutarnjim bazenom, jacuzzijem i saunom za do 11 gostiju. Bribir, Vinodolska dolina.</p></div>
+   <div><h4 data-i="c_phone">Kontakt</h4><p><a href="tel:+38598321641">+385 98 321 641</a><br><a href="mailto:franjoburulic48@gmail.com">franjoburulic48@gmail.com</a></p></div>
+   <div><h4 data-i="c_addr">Adresa</h4><p><a href="https://www.google.com/maps/search/?api=1&query=Ugrini+21a%2C+51253+Bribir" target="_blank" rel="noopener">Ugrini 21a, Bribir</a></p></div>
+  </div>
+  <div class="big" aria-hidden="true">Villa Bribir</div>
+  <p class="credit"><span>Izrada</span> <a href="https://www.azzurrodigital.hr" target="_blank" rel="noopener" aria-label="Azzurro Digital"><img src="azzurro-digital.png" alt="Azzurro Digital" width="640" height="169" loading="lazy"></a></p>
+ </div>
+</footer>
+
+<div class="mbar" id="mbar"><a class="p" href="#upit" data-i="nav_book">Upit</a><a class="g" href="tel:+38598321641" aria-label="Nazovite">098 321 641</a></div>
+
+<dialog class="lb" id="lb" aria-label="Galerija">
+ <div class="lbw"><img id="lbi" alt=""><button type="button" class="x" id="lbx" aria-label="Zatvori">&times;</button><button type="button" class="pv" id="lbp" aria-label="Prethodna">&larr;</button><button type="button" class="nx" id="lbn" aria-label="Sljedeća">&rarr;</button><div class="ct" id="lbc"></div></div>
+</dialog>
+
+<script>
+(function(){
+ var D=document, R=D.documentElement, RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+ R.classList.add('js');
+ var bn=D.querySelector('.banner'); function bh(){R.style.setProperty('--bh',bn.offsetHeight+'px')} bh(); addEventListener('resize',bh);
+ var T={en:{"nav_villa": "The villa", "nav_spa": "Wellness", "nav_rooms": "Interior", "nav_loc": "Location", "nav_faq": "FAQ", "nav_book": "Enquire", "eyebrow": "Bribir · Vinodol Valley · 6 km to the sea", "h1": "Your own heated pool, all year round", "lead": "Villa with a heated indoor pool, jacuzzi and sauna, six bedrooms and room for up to 11 guests. Quiet, private, and a short drive from the beaches of Crikvenica and Selce.", "f_in": "Check-in", "f_out": "Check-out", "f_guests": "Guests", "f_check": "Check dates", "k1": "bedrooms", "k2": "guests", "k3": "to the beaches of Crikvenica", "k4": "heated pool, every season", "k4v": "365", "about_t": "About the villa", "about_h": "Space for the whole group, privacy for everyone", "about_p1": "Set in the quiet surroundings of Bribir, the villa is made for guests who value privacy, comfort and contemporary design. Quality materials and a practical layout give the house a calm, easy feel.", "about_p2": "Ideal for family gatherings, a stay with friends, or a quiet break from everyday life.", "spa_t": "Wellness", "spa_h": "Pool, jacuzzi and sauna, just for you", "spa_p": "The private wellness area is the heart of the villa. The indoor pool is heated and open to guests all year, so the season never really ends.", "s1": "Heated indoor pool", "s1p": "Private and available all year, with big glass doors onto the terrace.", "s2": "Jacuzzi", "s2p": "Right next to the pool, for the evenings after a day out.", "s3": "Sauna", "s3p": "In the same wellness area, next to the pool and jacuzzi.", "in_t": "Inside", "in_h": "Six bedrooms, one big table", "in_p": "A spacious living and dining area for time together, and a modern, fully equipped kitchen for everyday meals or special occasions.", "c_living": "Living room", "c_kitchen": "Kitchen", "c_dining": "Dining area", "c_lounge": "Lounge", "c_bed": "Bedroom", "c_bath": "Bathroom", "swipe": "Swipe or tap a photo to enlarge", "out_t": "Outside", "out_h": "Long evenings by the grill", "out_p": "The outdoor area is made for relaxed gatherings and meals in the fresh air, with a barbecue, a dining table and private parking on the property.", "view_c": "The view from the villa towards the Vinodol Valley and the sea", "loc_t": "Location", "loc_h": "Quiet Bribir, everything close by", "l1": "Everyday needs", "l1a": "Bribir centre", "l1b": "Shop / supermarket", "l1c": "Restaurants and taverns", "l2": "Beaches and sea", "l2a": "Crikvenica beaches", "l2b": "Selce beaches", "l2c": "Novi Vinodolski", "l3": "Nature and walks", "l3a": "Trails around Bribir", "l3b": "Vinodol Valley", "l3c": "Risnjak National Park", "l3d": "Učka Nature Park", "near": "right nearby", "close": "nearby", "maps": "Open in Google Maps", "faq_t": "FAQ", "faq_h": "Good to know", "q1": "What are the check-in and check-out times?", "a1": "Check-in is from 3:00 PM and check-out is until 10:00 AM.", "q2": "How many guests can stay?", "a2": "The villa sleeps up to 11 guests in six bedrooms.", "q3": "Is the pool heated and open all year?", "a3": "Yes. The indoor pool is heated and available to guests all year round.", "q4": "Is the villa suitable for families with children?", "a4": "Yes. There is plenty of room for families and groups, with space to be together and space to be alone.", "q5": "Is there parking?", "a5": "Yes, there is private parking on the villa's property.", "book_t": "Enquiry", "book_h": "Send an enquiry for your dates", "book_p": "Tell us your dates and number of guests and we will reply with availability and the price.", "b_name": "Name", "b_mail": "E-mail or phone", "b_msg": "Message", "b_msg_ph": "e.g. two families with children, arriving by car", "b_send": "Send by e-mail", "b_wa": "Send via WhatsApp", "b_note": "The form opens your e-mail or WhatsApp with the enquiry already filled in.", "nights1": "night", "nights": "nights", "c_phone": "Phone", "c_mail": "E-mail", "c_addr": "Address", "c_times": "Check-in / out", "foot": "Villa with a heated indoor pool, jacuzzi and sauna for up to 11 guests. Bribir, Vinodol Valley.", "banner": "<b>Website proposal</b> — prepared by Azzurro Digital using the texts and photos from villabribir.com."},de:{"nav_villa": "Die Villa", "nav_spa": "Wellness", "nav_rooms": "Innen", "nav_loc": "Lage", "nav_faq": "Fragen", "nav_book": "Anfrage", "eyebrow": "Bribir · Vinodol-Tal · 6 km zum Meer", "h1": "Ihr eigener beheizter Pool, das ganze Jahr", "lead": "Villa mit beheiztem Innenpool, Whirlpool und Sauna, sechs Schlafzimmern und Platz für bis zu 11 Gäste. Ruhig, privat und nur wenige Minuten von den Stränden von Crikvenica und Selce entfernt.", "f_in": "Anreise", "f_out": "Abreise", "f_guests": "Gäste", "f_check": "Termin anfragen", "k1": "Schlafzimmer", "k2": "Gäste", "k3": "zu den Stränden von Crikvenica", "k4": "beheizter Pool, jede Saison", "k4v": "365", "about_t": "Über die Villa", "about_h": "Platz für die ganze Gruppe, Ruhe für jeden", "about_p1": "In der ruhigen Umgebung von Bribir gelegen, ist die Villa für Gäste gemacht, die Privatsphäre, Komfort und modernes Design schätzen. Hochwertige Materialien und ein durchdachter Grundriss sorgen für eine entspannte Atmosphäre.", "about_p2": "Ideal für Familientreffen, einen Urlaub mit Freunden oder eine ruhige Auszeit vom Alltag.", "spa_t": "Wellness", "spa_h": "Pool, Whirlpool und Sauna, nur für Sie", "spa_p": "Der private Wellnessbereich ist das Herz der Villa. Der Innenpool ist beheizt und das ganze Jahr für die Gäste geöffnet.", "s1": "Beheizter Innenpool", "s1p": "Privat und ganzjährig nutzbar, mit großen Glastüren zur Terrasse.", "s2": "Whirlpool", "s2p": "Direkt neben dem Pool, für die Abende nach einem Ausflug.", "s3": "Sauna", "s3p": "Im selben Wellnessbereich, neben Pool und Whirlpool.", "in_t": "Innen", "in_h": "Sechs Schlafzimmer, ein großer Tisch", "in_p": "Ein großzügiger Wohn- und Essbereich für gemeinsame Stunden und eine moderne, voll ausgestattete Küche für den Alltag oder besondere Anlässe.", "c_living": "Wohnzimmer", "c_kitchen": "Küche", "c_dining": "Essbereich", "c_lounge": "Lounge", "c_bed": "Schlafzimmer", "c_bath": "Badezimmer", "swipe": "Wischen oder Foto antippen zum Vergrößern", "out_t": "Draußen", "out_h": "Lange Abende am Grill", "out_p": "Der Außenbereich ist für entspannte Treffen und Essen an der frischen Luft gemacht, mit Grill, Esstisch und privatem Parkplatz auf dem Grundstück.", "view_c": "Blick von der Villa auf das Vinodol-Tal und das Meer", "loc_t": "Lage", "loc_h": "Ruhiges Bribir, alles in der Nähe", "l1": "Alltag", "l1a": "Zentrum Bribir", "l1b": "Geschäft / Supermarkt", "l1c": "Restaurants und Konobas", "l2": "Strände und Meer", "l2a": "Strände Crikvenica", "l2b": "Strände Selce", "l2c": "Novi Vinodolski", "l3": "Natur und Wandern", "l3a": "Wege rund um Bribir", "l3b": "Vinodol-Tal", "l3c": "Nationalpark Risnjak", "l3d": "Naturpark Učka", "near": "gleich nebenan", "close": "in der Nähe", "maps": "In Google Maps öffnen", "faq_t": "Fragen", "faq_h": "Gut zu wissen", "q1": "Wann sind An- und Abreise?", "a1": "Anreise ab 15:00 Uhr, Abreise bis 10:00 Uhr.", "q2": "Wie viele Gäste haben Platz?", "a2": "Die Villa bietet Platz für bis zu 11 Gäste in sechs Schlafzimmern.", "q3": "Ist der Pool beheizt und ganzjährig geöffnet?", "a3": "Ja. Der Innenpool ist beheizt und steht den Gästen das ganze Jahr zur Verfügung.", "q4": "Ist die Villa für Familien mit Kindern geeignet?", "a4": "Ja. Es gibt viel Platz für Familien und Gruppen, gemeinsam und für sich.", "q5": "Gibt es einen Parkplatz?", "a5": "Ja, ein privater Parkplatz befindet sich auf dem Grundstück der Villa.", "book_t": "Anfrage", "book_h": "Anfrage für Ihren Termin", "book_p": "Nennen Sie uns Ihre Daten und die Anzahl der Gäste, wir antworten mit Verfügbarkeit und Preis.", "b_name": "Name", "b_mail": "E-Mail oder Telefon", "b_msg": "Nachricht", "b_msg_ph": "z. B. zwei Familien mit Kindern, Anreise mit dem Auto", "b_send": "Per E-Mail senden", "b_wa": "Per WhatsApp senden", "b_note": "Das Formular öffnet Ihr E-Mail-Programm oder WhatsApp mit der ausgefüllten Anfrage.", "nights1": "Nacht", "nights": "Nächte", "c_phone": "Telefon", "c_mail": "E-Mail", "c_addr": "Adresse", "c_times": "An- / Abreise", "foot": "Villa mit beheiztem Innenpool, Whirlpool und Sauna für bis zu 11 Gäste. Bribir, Vinodol-Tal.", "banner": "<b>Website-Vorschlag</b> — erstellt von Azzurro Digital mit den Texten und Fotos von villabribir.com."}}, TT={"hr": "Villa Bribir — vila s grijanim unutarnjim bazenom kod Crikvenice", "en": "Villa Bribir — villa with heated indoor pool near Crikvenica", "de": "Villa Bribir — Villa mit beheiztem Innenpool bei Crikvenica"}, HR={}, cur='hr';
+ D.querySelectorAll('[data-i]').forEach(function(e){HR[e.getAttribute('data-i')]=e.textContent});
+ D.querySelectorAll('[data-ih]').forEach(function(e){HR['@'+e.getAttribute('data-ih')]=e.innerHTML});
+ D.querySelectorAll('[data-iph]').forEach(function(e){HR['ph:'+e.getAttribute('data-iph')]=e.placeholder});
+ function t(k){return cur==='hr'?HR[k]:(T[cur][k]||HR[k])}
+ function apply(l){
+  cur=l; R.lang=l; D.title=TT[l];
+  D.querySelectorAll('[data-i]').forEach(function(e){var k=e.getAttribute('data-i'); e.textContent=cur==='hr'?HR[k]:(T[cur][k]||HR[k])});
+  D.querySelectorAll('[data-ih]').forEach(function(e){var k=e.getAttribute('data-ih'); e.innerHTML=cur==='hr'?HR['@'+k]:(T[cur][k]||HR['@'+k])});
+  D.querySelectorAll('[data-iph]').forEach(function(e){var k=e.getAttribute('data-iph'); e.placeholder=cur==='hr'?HR['ph:'+k]:(T[cur][k]||HR['ph:'+k])});
+  D.querySelectorAll('.langs button').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-l')===l)});
+  nights();
+ }
+ D.querySelectorAll('.langs button').forEach(function(b){b.addEventListener('click',function(){
+  var l=b.getAttribute('data-l'); apply(l);
+  try{history.replaceState(null,'',location.pathname+(l==='hr'?'':'?lang='+l)+location.hash)}catch(e){}
+ })});
+ var m=location.search.match(/[?&]lang=(en|de)/); if(m) apply(m[1]);
+
+ /* header */
+ var h=D.getElementById('hdr'), mb=D.getElementById('mbar'), hero=D.querySelector('.hero');
+ function sc(){var y=pageYOffset; h.classList.toggle('solid',y>40); mb.classList.toggle('on',y>innerHeight*.7 && !nearForm())}
+ function nearForm(){var f=D.getElementById('upit').getBoundingClientRect(); return f.top<innerHeight && f.bottom>0}
+ addEventListener('scroll',sc,{passive:true}); sc();
+
+ /* reveal */
+ D.querySelectorAll('.hero .rv').forEach(function(e){requestAnimationFrame(function(){e.classList.add('in')})});
+ var els=[].slice.call(D.querySelectorAll('.rv,[data-io]'));
+ if('IntersectionObserver' in window && !RM){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting||e.boundingClientRect.top<0){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(e){io.observe(e)});
+ } else els.forEach(function(e){e.classList.add('in')});
+
+ /* dates */
+ function iso(d){return d.toISOString().slice(0,10)}
+ var today=iso(new Date());
+ ['qin','qout','bin','bout'].forEach(function(id){D.getElementById(id).min=today});
+ function link(a,b){var A=D.getElementById(a),B=D.getElementById(b); A.addEventListener('change',function(){B.min=A.value||today; if(B.value&&B.value<=A.value){var d=new Date(A.value);d.setDate(d.getDate()+1);B.value=iso(d)} nights()}); B.addEventListener('change',nights)}
+ link('qin','qout'); link('bin','bout');
+ function nights(){
+  var a=D.getElementById('bin').value,b=D.getElementById('bout').value,o=D.getElementById('nights');
+  if(a&&b&&b>a){var n=Math.round((new Date(b)-new Date(a))/864e5); o.textContent=n+' '+(n===1?t('nights1')||'noćenje':(t('nights')||'noćenja'))} else o.textContent='';
+ }
+ HR.nights1='noćenje'; HR.nights='noćenja';
+ D.getElementById('qgo').addEventListener('click',function(){
+  D.getElementById('bin').value=D.getElementById('qin').value;
+  D.getElementById('bout').value=D.getElementById('qout').value;
+  D.getElementById('bg').value=D.getElementById('qg').value; nights();
+ });
+
+ /* enquiry */
+ function msg(){
+  var g=function(id){return (D.getElementById(id).value||'').trim()};
+  var L={hr:['Upit za Villa Bribir','Dolazak','Odlazak','Gosti','Ime','Kontakt'],en:['Enquiry for Villa Bribir','Check-in','Check-out','Guests','Name','Contact'],de:['Anfrage Villa Bribir','Anreise','Abreise','Gäste','Name','Kontakt']}[cur];
+  var s=[L[0]]; if(g('bin'))s.push(L[1]+': '+g('bin')); if(g('bout'))s.push(L[2]+': '+g('bout')); s.push(L[3]+': '+g('bg'));
+  if(g('bn'))s.push(L[4]+': '+g('bn')); if(g('bm'))s.push(L[5]+': '+g('bm')); if(g('bt'))s.push('',g('bt'));
+  return {sub:L[0],body:s.join('\n')};
+ }
+ D.getElementById('frm').addEventListener('submit',function(e){e.preventDefault();var m=msg();location.href='mailto:franjoburulic48@gmail.com?subject='+encodeURIComponent(m.sub)+'&body='+encodeURIComponent(m.body)});
+ D.getElementById('wa').addEventListener('click',function(){window.open('https://wa.me/38598321641?text='+encodeURIComponent(msg().body),'_blank','noopener')});
+
+ /* gallery */
+ var tr=D.getElementById('track');
+ function step(d){var s=tr.querySelector('.slide'); tr.scrollBy({left:d*(s.offsetWidth+14)*(innerWidth>900?2:1),behavior:RM?'auto':'smooth'})}
+ D.getElementById('gp').addEventListener('click',function(){step(-1)}); D.getElementById('gn').addEventListener('click',function(){step(1)});
+ var lb=D.getElementById('lb'), li=D.getElementById('lbi'), lc=D.getElementById('lbc'), ph=[].slice.call(D.querySelectorAll('.ph')), k=0;
+ function show(i){k=(i+ph.length)%ph.length; var im=ph[k].querySelector('img'); li.src=ph[k].getAttribute('data-full'); li.alt=im.alt; lc.textContent=(k+1)+' / '+ph.length+' · '+ph[k].nextElementSibling.textContent}
+ ph.forEach(function(p,i){p.addEventListener('click',function(){show(i); if(lb.showModal){lb.showModal()} else {window.open(p.getAttribute('data-full'),'_blank')}})});
+ D.getElementById('lbx').addEventListener('click',function(){lb.close()});
+ D.getElementById('lbp').addEventListener('click',function(){show(k-1)}); D.getElementById('lbn').addEventListener('click',function(){show(k+1)});
+ lb.addEventListener('click',function(e){if(e.target===lb||e.target.classList.contains('lbw'))lb.close()});
+ lb.addEventListener('keydown',function(e){if(e.key==='ArrowLeft')show(k-1); if(e.key==='ArrowRight')show(k+1)});
+ var sx=0; lb.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
+ lb.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-sx; if(Math.abs(dx)>50)show(k+(dx<0?1:-1))});
+})();
+</script>
+</body>
+</html>

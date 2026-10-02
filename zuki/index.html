@@ -237,6 +237,14 @@ input:focus,textarea:focus,select:focus{border-bottom-color:var(--sea)}
 select{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8'><path d='M1 1l5 5 5-5' fill='none' stroke='%2313466B' stroke-width='1.6'/></svg>")}
 input::placeholder,textarea::placeholder{color:#848B90}
 .note{color:var(--muted)}
+.hp{position:absolute!important;left:-5000px;width:1px;height:1px;opacity:0}
+.er{font-size:13px;font-weight:500;color:#B42318}
+.er:empty{display:none}
+.fmsg{margin-top:16px;padding:13px 15px;border-radius:var(--r);font-size:15px;line-height:1.5;font-weight:500}
+.fmsg.ok{background:#E3F3E8;color:#14532D}
+.fmsg.bad{background:#FCE8E6;color:#7A1C14}
+.fmsg a{color:inherit;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.btn[disabled]{opacity:.6;pointer-events:none}
 .card{background:var(--ink);color:#fff;border-radius:var(--r);padding:clamp(22px,3vw,32px)}
 .cl{display:grid;gap:3px;padding:14px 0;border-bottom:1px solid var(--dline)}
 .cl:last-child{border-bottom:0}
@@ -420,10 +428,10 @@ footer p,footer a{color:#BFCBD5;font-size:15px}
   <p class="tag reveal">Upit</p>
   <h2 class="reveal split" style="margin:14px 0 clamp(24px,3vw,40px)">Što treba popraviti?</h2>
   <div class="cols">
-   <form id="frm" class="form reveal" novalidate data-to="erak.renato@gmail.com" data-subject="Upit — radionica Žuki">
+   <form id="zfrm" class="form reveal" novalidate action="https://formsubmit.co/ajax/erak.renato@gmail.com" method="POST" data-mail="erak.renato@gmail.com" data-tel="+385997375771" data-telt="099 737 5771" data-demo="Prijedlog stranice: u ovoj verziji obrazac ne šalje ništa.">
     <div class="pair">
      <div class="field"><label for="ime">Ime i prezime</label><input id="ime" type="text" autocomplete="name" data-label="Ime"></div>
-     <div class="field"><label for="tel">Telefon</label><input id="tel" type="tel" autocomplete="tel" inputmode="tel" data-label="Telefon"></div>
+     <div class="field"><label for="tel">Telefon</label><input id="tel" type="tel" autocomplete="tel" inputmode="tel" required aria-describedby="er-tel" data-label="Telefon"><span class="er" id="er-tel" role="alert"></span></div>
     </div>
     <div class="pair">
      <div class="field"><label for="sto">Za što</label>
@@ -431,8 +439,10 @@ footer p,footer a{color:#BFCBD5;font-size:15px}
      <div class="field"><label for="voz">Vozilo ili motor</label><input id="voz" type="text" placeholder="npr. Golf 7, 2016. ili vanbrodski 40 KS" data-label="Vozilo"></div>
     </div>
     <div class="field"><label for="nap">Opis kvara</label><textarea id="nap" placeholder="npr. škripe kočnice, treba mali servis" data-label="Opis"></textarea></div>
+    <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
     <button class="btn p" type="submit">Pošalji upit</button>
-    <p class="note">Obrazac otvara vaš program za e-poštu s već ispunjenim upitom. Za hitno nazovite.</p>
+    <p class="fmsg" id="fmsg" role="status" tabindex="-1" hidden></p>
+    <p class="note">Upit stiže radionici na e-mail. Za hitno nazovite 099 737 5771.</p>
    </form>
    <div class="card reveal" style="--i:1">
     <a class="cl" href="tel:+385997375771"><b>Narudžbe uz dogovor</b><span>099 737 5771</span></a>
@@ -474,6 +484,35 @@ footer p,footer a{color:#BFCBD5;font-size:15px}
   b.querySelector('span').textContent=txt; b.classList.toggle('on',on); b.hidden=false;
   var row=document.querySelector('.hours li[data-d="'+d+'"]'); if(row) row.classList.add('today');
  }catch(e){}
+})();
+</script>
+
+
+<script>
+(function(){
+ var f=document.getElementById('zfrm'); if(!f) return;
+ var out=document.getElementById('fmsg'), tel=document.getElementById('tel'), et=document.getElementById('er-tel');
+ function lines(){ var a=[]; [].forEach.call(f.querySelectorAll('[data-label]'),function(el){ var v=(el.value||'').trim(); if(v) a.push([el.getAttribute('data-label'),v]); }); return a; }
+ function show(cls,html){ out.className='fmsg '+cls; out.innerHTML=html; out.hidden=false; out.focus(); }
+ function fail(){
+  var body=lines().map(function(x){return x[0]+': '+x[1]}).join('\n');
+  var m=f.getAttribute('data-mail');
+  show('bad','Upit nije poslan. Nazovite <a href="tel:'+f.getAttribute('data-tel')+'">'+f.getAttribute('data-telt')+'</a> ili ga <a href="mailto:'+m+'?subject='+encodeURIComponent('Upit — radionica Žuki')+'&body='+encodeURIComponent(body)+'">pošaljite iz svoje e-pošte</a>.');
+ }
+ f.addEventListener('submit',function(e){
+  e.preventDefault(); out.hidden=true; et.textContent='';
+  if((tel.value||'').replace(/\D/g,'').length<6){ et.textContent='Upišite broj telefona da vam se radionica može javiti.'; tel.setAttribute('aria-invalid','true'); tel.focus(); return; }
+  tel.removeAttribute('aria-invalid');
+  if(f.querySelector('[name=_honey]').value) return;
+  if(f.getAttribute('data-demo')){ show('ok',f.getAttribute('data-demo')); return; }
+  var data={_subject:'Upit sa stranice zuki-mehanicar.com',_template:'table',_captcha:'false'};
+  lines().forEach(function(x){ data[x[0]]=x[1]; });
+  var btn=f.querySelector('button[type=submit]'), lbl=btn.innerHTML; btn.disabled=true; btn.textContent='Šaljem…';
+  fetch(f.action,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
+   .then(function(r){return r.json()}).then(function(j){ if(String(j.success)!=='true') throw 0; f.reset(); show('ok','Hvala, upit je poslan radionici.'); })
+   .catch(fail)
+   .then(function(){ btn.disabled=false; btn.innerHTML=lbl; });
+ });
 })();
 </script>
 

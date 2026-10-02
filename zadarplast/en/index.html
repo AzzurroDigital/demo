@@ -65,16 +65,29 @@ p{color:var(--muted)}
 .demo b{color:#fff}
 
 /* header */
-.hdr{position:fixed;left:0;right:0;top:0;z-index:100;transition:background .4s var(--ease),box-shadow .4s var(--ease),color .3s,transform .45s var(--ease)}
-.has-demo .hdr{top:34px}
+.hdr{position:fixed;left:0;right:0;top:var(--dt,0px);z-index:100;transition:background .4s var(--ease),box-shadow .4s var(--ease),color .3s,transform .45s var(--ease)}
+.has-demo{--dt:34px}
 .hdr .in{display:flex;align-items:center;gap:18px;max-width:1440px;margin:0 auto;padding:14px var(--pad)}
 .hdr.sm{background:rgba(244,241,234,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
 .hdr.over{color:#fff}
-.hdr.hide{transform:translateY(-110%)}
+.hdr.hide{transform:translateY(calc(-100% - var(--dt,0px) - 2px))}
+.burger{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:46px;height:46px;flex-shrink:0;border-radius:50%;border:1px solid currentColor;background:none;color:inherit;cursor:pointer}
+.burger i{display:block;width:18px;height:1.5px;background:currentColor;transition:transform .3s var(--ease)}
+.hdr.open .burger i:first-child{transform:translateY(3.25px) rotate(45deg)}
+.hdr.open .burger i:last-child{transform:translateY(-3.25px) rotate(-45deg)}
+.mnav{display:none;flex-direction:column;max-width:1440px;margin:0 auto;padding:4px var(--pad) 20px}
+.hdr.open .mnav{display:flex}
+.mnav a{display:flex;align-items:center;justify-content:space-between;min-height:56px;font-size:22px;font-weight:500;letter-spacing:-.02em;border-top:1px solid var(--line)}
+.mnav a.lg{font-size:15px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.hdr.open{background:#F4F1EA;color:var(--ink);box-shadow:0 1px 0 var(--line)}
+.hdr .lang{display:none}
+.no-js .burger{display:none}
 .brand{display:block;line-height:0;padding:6px 0;margin-right:auto}
 .brand img{height:44px;width:auto}
 .brand .l{display:none}
 .hdr.over .brand .d{display:none}.hdr.over .brand .l{display:block}
+.hdr.open .brand .d{display:block}.hdr.open .brand .l{display:none}
+@media(max-width:399px){.hdr .in{gap:10px}.brand img{height:40px}}
 .menu{display:none;gap:4px}
 .menu a{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;font-size:15px;font-weight:500;border-radius:100px;transition:background .25s var(--ease)}
 .lang{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;font-size:13px;font-weight:600;letter-spacing:.08em;border:1px solid currentColor;border-radius:100px;opacity:.8}
@@ -104,6 +117,8 @@ p{color:var(--muted)}
 .badge{position:absolute;z-index:2;right:var(--pad);top:clamp(110px,16vh,170px);display:grid;place-items:center;width:132px;height:132px;border-radius:50%;border:1px solid rgba(255,255,255,.55);text-align:center;line-height:1.1;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);background:rgba(3,24,54,.18)}
 .badge b{display:block;font-family:var(--serif);font-style:italic;font-weight:400;font-size:46px;letter-spacing:-.02em}
 .badge span{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+@media(max-width:639px){.badge{width:104px;height:104px;top:104px}.badge b{font-size:36px}.badge span{font-size:10px}}
+@media(max-width:639px) and (max-height:760px){.badge{display:none}}
 .js .reveal{opacity:0;transform:translateY(22px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:calc(var(--i,0)*80ms)}
 .reveal.in{opacity:1;transform:none}
 .js .hero .reveal{transition-delay:calc(.7s + var(--i,0)*110ms)}
@@ -251,7 +266,7 @@ dialog.lb::backdrop{background:rgba(3,14,28,.96)}
 
 @media(min-width:640px){.pair{grid-template-columns:1fr 1fr}.who .panels{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}}
 @media(min-width:900px){
- .menu{display:flex}.hdr .pill.call .t{display:inline}.hdr .pill.call{padding:0 20px}
+ .menu{display:flex}.hdr .lang{display:inline-flex}.burger,.hdr .mnav{display:none!important}.hdr .pill.call .t{display:inline}.hdr .pill.call{padding:0 20px}
  .agrid{grid-template-columns:.9fr .55fr .75fr}.agrid .a2{margin-bottom:12%}
  .phead{grid-template-columns:1.3fr .7fr}
  .why .wgrid{grid-template-columns:.9fr 1.1fr;align-items:end}
@@ -295,7 +310,7 @@ dialog.lb::backdrop{background:rgba(3,14,28,.96)}
 </head>
 <body class="has-demo">
 <a class="skip" href="#main">Skip to content</a>
-<div class="demo"><b>Prijedlog nove stranice</b> · obrazac isključen</div>
+<div class="demo"><span><b>Prijedlog nove stranice</b> · obrazac isključen</span></div>
 <header class="hdr over">
  <div class="in">
   <a class="brand" href="./" aria-label="Zadarplast tende">
@@ -305,7 +320,9 @@ dialog.lb::backdrop{background:rgba(3,14,28,.96)}
   <nav class="menu" aria-label="Main menu"><a href="#products">Products</a><a href="#about">About</a><a href="#who">Who for</a><a href="#contact">Contact</a></nav>
   <a class="lang" href="../" hreflang="hr" lang="hr" aria-label="Hrvatski">HR</a>
   <a class="pill solid call" href="tel:+385956106532"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span class="t">095 610 6532</span><span class="skip">Call</span></a>
+  <button class="burger" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Menu"><i></i><i></i></button>
  </div>
+ <nav class="mnav" id="mnav" aria-label="Menu"><a href="#products">Products</a><a href="#about">About</a><a href="#who">Who for</a><a href="#contact">Contact</a><a class="lg" href="../" hreflang="hr" lang="hr">Hrvatski</a></nav>
 </header>
 
 <main id="main">
@@ -453,7 +470,8 @@ dialog.lb::backdrop{background:rgba(3,14,28,.96)}
   var y=window.pageYOffset, vh=window.innerHeight, hb=hero?hero.offsetHeight:0;
   hdr.classList.toggle('sm', y>40);
   hdr.classList.toggle('over', y < hb-90);
-  hdr.classList.toggle('hide', y>lastY && y>hb && y-lastY>2 && !hdr.contains(d.activeElement));
+  var dm=d.querySelector('.demo'); if(dm) d.body.style.setProperty('--dt', Math.max(0, dm.offsetHeight-y)+'px');
+  hdr.classList.toggle('hide', y>lastY && y>hb && y-lastY>2 && !hdr.contains(d.activeElement) && !hdr.classList.contains('open'));
   if(y<lastY-2) hdr.classList.remove('hide');
   d.documentElement.style.setProperty('--navtop', hdr.classList.contains('hide') ? '0px' : (hdr.offsetTop+hdr.offsetHeight)+'px');
   lastY=y;
@@ -468,6 +486,15 @@ dialog.lb::backdrop{background:rgba(3,14,28,.96)}
  window.addEventListener('scroll',function(){ if(!ticking){ticking=true;requestAnimationFrame(frame);} },{passive:true});
  window.addEventListener('resize',frame); frame();
  hdr.addEventListener('focusin',function(){hdr.classList.remove('hide');});
+ var bg=hdr.querySelector('.burger');
+ function menu(o){ hdr.classList.toggle('open',o); bg.setAttribute('aria-expanded',o?'true':'false'); if(o) hdr.classList.remove('hide'); }
+ if(bg){
+  bg.addEventListener('click',function(){ menu(!hdr.classList.contains('open')); });
+  [].forEach.call(hdr.querySelectorAll('.mnav a'),function(a){ a.addEventListener('click',function(){ menu(false); }); });
+  d.addEventListener('keydown',function(e){ if(e.key==='Escape' && hdr.classList.contains('open')){ menu(false); bg.focus(); } });
+  d.addEventListener('click',function(e){ if(hdr.classList.contains('open') && !hdr.contains(e.target)) menu(false); });
+  window.addEventListener('resize',function(){ if(window.innerWidth>=900) menu(false); });
+ }
 
  /* reveal: hero on load, the rest on scroll */
  [].forEach.call(d.querySelectorAll('.hero .reveal'),function(el){el.classList.add('in')});

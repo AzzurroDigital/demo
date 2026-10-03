@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Servis Bosch pumpi Osijek — Autocentar Jugović, Cret Bizovački</title>
+<meta name="description" content="Autocentar Jugović, Cret Bizovački: servis i popravak Bosch pumpi, visokotlačnih pumpi i pumpi goriva, dijagnostika sustava ubrizgavanja za osječko područje.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1B2328">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+ --ink:#1B2328; --oil:#26323A; --steel:#EEF0F1; --line:#CDD3D6; --mute:#55626A; --white:#fff;
+ --amber:#E3A21A; --amberlo:#5A4512; --dash:#141B1F; --dline:#34424A;
+ --pad:clamp(20px,5vw,72px);
+ --cond:"Barlow Condensed","Arial Narrow",sans-serif;
+ --sans:"Barlow",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);font-size:17.5px;line-height:1.6;color:var(--ink);background:var(--steel);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 var(--pad)}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+h1,h2,h3{font-family:var(--cond);font-weight:700;line-height:1.02;letter-spacing:-.005em}
+.banner{background:var(--dash);color:#9FAAB0;font-size:12.5px;text-align:center;padding:9px var(--pad);padding-top:calc(9px + env(safe-area-inset-top,0px))}
+.banner b{color:#fff;font-weight:600}
+header{position:sticky;top:0;z-index:50;background:rgba(238,240,241,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:16px;max-width:1180px;margin:0 auto;padding:12px var(--pad)}
+.brand{text-decoration:none;line-height:1.05}
+.brand b{display:block;font-family:var(--cond);font-weight:700;font-size:25px}
+.brand small{font-size:13px;color:var(--mute)}
+.call{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:4px;background:var(--ink);color:#fff;text-decoration:none;font-weight:600;font-size:15px;white-space:nowrap}
+.call svg{width:16px;height:16px}
+
+/* hero: the dashboard symptom picker is the one loud element */
+.hero{padding:clamp(34px,6vw,80px) 0 clamp(44px,6vw,84px)}
+.hg{display:grid;gap:clamp(28px,4vw,56px);align-items:center}
+.hero h1{font-size:clamp(44px,7vw,90px);max-width:13ch}
+.lead{color:var(--mute);font-size:clamp(17px,1.5vw,19.5px);max-width:46ch;margin-top:20px}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;min-height:50px;padding:0 24px;border-radius:4px;font-weight:600;font-size:16px;text-decoration:none;border:1.5px solid transparent;font-family:inherit;cursor:pointer}
+.btn.p{background:var(--amber);color:var(--ink)}
+.btn.g{border-color:var(--ink);color:var(--ink);background:transparent}
+.dash{background:var(--dash);color:#fff;border-radius:14px;padding:clamp(20px,2.6vw,32px);box-shadow:inset 0 0 0 1px var(--dline)}
+.dash h2{font-size:clamp(26px,2.6vw,32px);font-weight:600}
+.dash p{color:#9FAAB0;font-size:15px;margin-top:6px}
+.lamps{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.lamp{display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:0 14px 0 12px;border-radius:999px;border:1px solid var(--dline);background:transparent;color:#C9D1D5;font:inherit;font-size:15px;cursor:pointer;transition:background .2s,color .2s,border-color .2s,box-shadow .2s}
+.lamp i{width:10px;height:10px;border-radius:50%;background:var(--amberlo);flex-shrink:0;transition:background .2s,box-shadow .2s}
+.lamp[aria-pressed="true"]{color:#fff;border-color:var(--amber);background:#2A2414}
+.lamp[aria-pressed="true"] i{background:var(--amber);box-shadow:0 0 10px 2px rgba(227,162,26,.7)}
+.dfoot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;margin-top:20px;padding-top:16px;border-top:1px solid var(--dline)}
+.dfoot span{font-size:14px;color:#9FAAB0}
+.dfoot .btn{min-height:44px;font-size:15px}
+
+section{padding:clamp(56px,8vw,108px) 0}
+h2{font-size:clamp(34px,4.6vw,56px);max-width:18ch}
+.intro{color:var(--mute);max-width:58ch;margin-top:14px}
+
+.svc{background:var(--white)}
+.list{list-style:none;display:grid;margin-top:clamp(26px,4vw,44px);border-top:2px solid var(--ink)}
+.list li{padding:16px 0;border-bottom:1px solid var(--line);font-family:var(--cond);font-weight:600;font-size:23px;display:flex;gap:14px;align-items:baseline}
+.list li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--amber);flex-shrink:0;transform:translateY(-3px)}
+
+.rule{background:var(--ink);color:#fff}
+.rule h2{color:#fff;max-width:20ch}
+.rule p{color:#AEB8BD;max-width:60ch;margin-top:18px;font-size:18px}
+
+.steps{list-style:none;display:grid;gap:14px;margin-top:clamp(26px,4vw,44px);counter-reset:s}
+.steps li{counter-increment:s;padding-top:16px;border-top:2px solid var(--ink)}
+.steps li::before{content:counter(s);font-family:var(--cond);font-weight:700;font-size:32px;color:var(--amber)}
+.steps h3{font-size:23px;margin-top:2px}
+.steps p{color:var(--mute);font-size:16px;margin-top:4px}
+
+.find{background:var(--white)}
+.fcols{display:grid;gap:clamp(22px,3vw,40px);margin-top:clamp(26px,4vw,44px)}
+.map{border-radius:10px;overflow:hidden;border:1px solid var(--line);min-height:300px;background:var(--steel)}
+.map iframe{display:block;width:100%;height:100%;min-height:300px;border:0}
+.hours{list-style:none}
+.hours li{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--line)}
+.hours li span:last-child{font-weight:600}
+.hours .off span:last-child{color:var(--mute);font-weight:400}
+.addr{margin-top:20px;font-size:18px}
+
+.ask{background:var(--steel)}
+.cols{display:grid;gap:clamp(22px,3vw,40px);margin-top:clamp(26px,4vw,44px)}
+form{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:clamp(22px,3vw,38px)}
+.pair{display:grid;gap:0 18px}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:18px}
+label{font-size:14px;font-weight:600;color:var(--mute)}
+input,textarea{font:inherit;font-size:16px;color:var(--ink);border:1px solid var(--line);border-radius:4px;padding:12px 14px;min-height:48px;background:var(--steel);width:100%}
+input:focus,textarea:focus{outline:none;border-color:var(--amber);background:#fff}
+textarea{min-height:100px;resize:vertical}
+.note{font-size:13px;color:var(--mute);margin-top:14px}
+.card{background:var(--ink);color:#fff;border-radius:10px;padding:clamp(22px,3vw,34px);align-self:start}
+.card a,.card div{display:block;padding:14px 0;border-bottom:1px solid var(--dline);text-decoration:none}
+.card :last-child{border-bottom:0}
+.card b{display:block;font-size:13px;font-weight:600;color:#93A0A6}
+.card span{font-size:18px;font-weight:500}
+
+footer{background:var(--dash);color:#9FAAB0;padding:clamp(40px,6vw,70px) 0 calc(26px + env(safe-area-inset-bottom,0px));font-size:15px}
+.fg{display:grid;gap:24px}
+footer h4{color:#fff;font-family:var(--cond);font-weight:600;font-size:20px;margin-bottom:6px}
+footer a{text-decoration:none}
+.credit{display:flex;align-items:center;gap:12px;border-top:1px solid var(--dline);margin-top:34px;padding-top:18px;font-size:13px}
+.credit img{height:24px;width:auto;filter:invert(1);opacity:.7}
+
+@media(min-width:720px){.pair{grid-template-columns:1fr 1fr}.list{grid-template-columns:1fr 1fr;column-gap:40px}}
+@media(min-width:960px){.hg{grid-template-columns:1.1fr .9fr}.steps{grid-template-columns:repeat(4,1fr)}.fcols{grid-template-columns:1.3fr .7fr}.cols{grid-template-columns:1.4fr .6fr}.fg{grid-template-columns:2fr 1fr 1fr}}
+@media(max-width:520px){.call .t{display:none}.call{padding:0 14px}}
+@media(hover:hover){.btn.p:hover{background:#F0B53A}.btn.g:hover{background:var(--ink);color:#fff}.lamp:hover{border-color:#5A6A72}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="banner"><b>Prijedlog stranice</b> za Autocentar Jugović. Tekstovi su složeni s vašeg profila i mijenjaju se po dogovoru, a fotografije radionice dodajemo kad ih pošaljete. Izradio Azzurro Digital.</div>
+<header><div class="nav">
+ <a class="brand" href="#top"><b>Autocentar Jugović</b><small>Bosch pumpe i sustav goriva, Cret Bizovački</small></a>
+ <a class="call" href="tel:+385915125735" aria-label="Nazovite 091 512 5735"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span class="t">091 512 5735</span></a>
+</div></header>
+
+<main id="top">
+<section class="hero">
+ <div class="wrap hg">
+  <div>
+   <h1>Servis Bosch pumpi za osječko područje</h1>
+   <p class="lead">Servisiramo i popravljamo Bosch pumpe, visokotlačne pumpe i pumpe goriva u Cretu Bizovačkom. Prije svakog popravka radimo dijagnostiku, da se ne mijenja ono što nije pokvareno.</p>
+   <div class="cta"><a class="btn p" href="#upit">Pošaljite upit</a><a class="btn g" href="tel:+385915125735">Nazovite 091 512 5735</a></div>
+  </div>
+  <div class="dash">
+   <h2>Što vam auto radi?</h2>
+   <p>Označite što primjećujete, a mi to upišemo u upit.</p>
+   <div class="lamps" id="lamps">
+    <button type="button" class="lamp" aria-pressed="false"><i></i>Teško se pali</button>
+    <button type="button" class="lamp" aria-pressed="false"><i></i>Gasi se u vožnji</button>
+    <button type="button" class="lamp" aria-pressed="false"><i></i>Gubi snagu</button>
+    <button type="button" class="lamp" aria-pressed="false"><i></i>Trza pri ubrzanju</button>
+    <button type="button" class="lamp" aria-pressed="false"><i></i>Dimi iz auspuha</button>
+    <button type="button" class="lamp" aria-pressed="false"><i></i>Troši više goriva</button>
+    <button type="button" class="lamp" aria-pressed="false"><i></i>Svijetli lampica motora</button>
+    <button type="button" class="lamp" aria-pressed="false"><i></i>Neravnomjerno radi u leru</button>
+   </div>
+   <div class="dfoot"><span id="cnt">Ništa nije označeno</span><a class="btn p" href="#upit">Nastavi na upit</a></div>
+  </div>
+ </div>
+</section>
+
+<section class="svc">
+ <div class="wrap">
+  <h2>Usluge</h2>
+  <p class="intro">Što točno treba napraviti, odlučujemo tek kad pregledamo vozilo.</p>
+  <ul class="list">
+   <li>Servis Bosch pumpi</li><li>Popravak Bosch pumpi</li>
+   <li>Servis visokotlačnih pumpi</li><li>Servis pumpi goriva</li>
+   <li>Dijagnostika Bosch pumpi</li><li>Pregled sustava ubrizgavanja</li>
+   <li>Dijagnostika sustava goriva</li><li>Servis komponenti sustava ubrizgavanja</li>
+  </ul>
+ </div>
+</section>
+
+<section class="rule">
+ <div class="wrap">
+  <h2>Prvo dijagnostika, onda popravak</h2>
+  <p>Isti simptom može imati više uzroka. Auto koji se teško pali ne znači uvijek da je pumpa neispravna. Zato najprije pregledamo cijeli sustav goriva i tek onda predložimo popravak, umjesto da mijenjamo dijelove na pretpostavku.</p>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <h2>Kako teče servis</h2>
+  <ol class="steps">
+   <li><h3>Upit</h3><p>Javite marku, model i što primjećujete.</p></li>
+   <li><h3>Dijagnostika</h3><p>Pregledamo sustav goriva i ubrizgavanja.</p></li>
+   <li><h3>Dogovor</h3><p>Objasnimo što je kvar i koliko košta popravak.</p></li>
+   <li><h3>Popravak</h3><p>Popravimo i provjerimo rad motora prije predaje.</p></li>
+  </ol>
+ </div>
+</section>
+
+<section class="find">
+ <div class="wrap">
+  <h2>Kako do nas</h2>
+  <div class="fcols">
+   <div class="map"><iframe title="Karta: Matije Gupca 35, Cret Bizovački" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Matije%20Gupca%2035%2C%2031222%20Cret%20Bizova%C4%8Dki&amp;z=15&amp;output=embed"></iframe></div>
+   <div>
+    <ul class="hours">
+     <li><span>Ponedjeljak</span><span>8 do 16 h</span></li>
+     <li><span>Utorak</span><span>8 do 16 h</span></li>
+     <li><span>Srijeda</span><span>8 do 16 h</span></li>
+     <li><span>Četvrtak</span><span>8 do 16 h</span></li>
+     <li><span>Petak</span><span>8 do 16 h</span></li>
+     <li class="off"><span>Subota i nedjelja</span><span>zatvoreno</span></li>
+    </ul>
+    <p class="addr">Matije Gupca 35<br>31222 Cret Bizovački</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="ask" id="upit">
+ <div class="wrap">
+  <h2>Pošaljite upit</h2>
+  <div class="cols">
+   <form id="frm" novalidate data-to="acjugovic@gmail.com" data-subject="Upit za servis — Autocentar Jugović">
+    <div class="pair">
+     <div class="field"><label for="ime">Ime i prezime</label><input id="ime" autocomplete="name" data-label="Ime"></div>
+     <div class="field"><label for="tel">Telefon</label><input id="tel" type="tel" inputmode="tel" autocomplete="tel" data-label="Telefon"></div>
+    </div>
+    <div class="pair">
+     <div class="field"><label for="vozilo">Marka i model</label><input id="vozilo" placeholder="npr. VW Golf 6" data-label="Vozilo"></div>
+     <div class="field"><label for="god">Godište i motor</label><input id="god" placeholder="npr. 2011., 1.6 TDI" data-label="Godište i motor"></div>
+    </div>
+    <div class="field"><label for="simp">Što primjećujete</label><textarea id="simp" placeholder="npr. teško se pali na hladno, gubi snagu na autocesti" data-label="Simptomi"></textarea></div>
+    <button class="btn p" type="submit">Pošalji upit</button>
+    <p class="note">Obrazac otvara vaš program za e-poštu s već ispunjenim upitom.</p>
+   </form>
+   <div class="card">
+    <a href="tel:+385915125735"><b>Telefon</b><span>091 512 5735</span></a>
+    <a href="mailto:acjugovic@gmail.com"><b>E-pošta</b><span>acjugovic@gmail.com</span></a>
+    <div><b>Adresa</b><span>Matije Gupca 35, Cret Bizovački</span></div>
+    <div><b>Radno vrijeme</b><span>Ponedjeljak do petak, 8 do 16 h</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div class="fg">
+   <div><h4>Autocentar Jugović</h4><p>Servis i popravak Bosch pumpi, visokotlačnih pumpi i pumpi goriva, dijagnostika sustava ubrizgavanja. Cret Bizovački, osječko područje.</p></div>
+   <div><h4>Kontakt</h4><p><a href="tel:+385915125735">091 512 5735</a><br><a href="mailto:acjugovic@gmail.com">acjugovic@gmail.com</a></p></div>
+   <div><h4>Adresa</h4><p>Matije Gupca 35<br>31222 Cret Bizovački</p></div>
+  </div>
+  <p class="credit"><span>Izrada</span><a href="https://www.azzurrodigital.hr" target="_blank" rel="noopener"><img src="https://azzurrodigital.github.io/demo/zare-gradnja/azzurro-digital.png" alt="Azzurro Digital" width="640" height="169"></a></p>
+ </div>
+</footer>
+<script>
+(function(){
+ var lamps=[].slice.call(document.querySelectorAll('.lamp')),simp=document.getElementById('simp'),cnt=document.getElementById('cnt');
+ function sync(){var on=lamps.filter(function(b){return b.getAttribute('aria-pressed')==='true'}).map(function(b){return b.textContent.trim().toLowerCase()});
+  cnt.textContent=on.length?('Označeno: '+on.length):'Ništa nije označeno';
+  if(!simp.dataset.typed){simp.value=on.length?on.join(', ').replace(/^./,function(c){return c.toUpperCase()}):''}}
+ lamps.forEach(function(b){b.addEventListener('click',function(){b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')==='true'?'false':'true');sync()})});
+ simp.addEventListener('input',function(){simp.dataset.typed='1'});
+ var f=document.getElementById('frm');
+ f.addEventListener('submit',function(e){e.preventDefault();var l=[];
+  [].forEach.call(f.querySelectorAll('[data-label]'),function(el){var v=(el.value||'').trim();if(v)l.push(el.getAttribute('data-label')+': '+v)});
+  location.href='mailto:'+f.dataset.to+'?subject='+encodeURIComponent(f.dataset.subject)+'&body='+encodeURIComponent(l.join('\n'));});
+})();
+</script>
+</body>
+</html>

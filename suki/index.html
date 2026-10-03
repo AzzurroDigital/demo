@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Montaža i servis klima uređaja Vodice — SUKI</title>
+<meta name="description" content="SUKI, Vodice: montaža split i multisplit klima uređaja, inverter sustavi, servis i čišćenje klima za kuće, apartmane i poslovne prostore.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0F2F3D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+ --deep:#0F2F3D; --sea:#14596E; --ice:#E3F1F4; --frost:#F6FBFC; --line:#C9DDE2;
+ --cold:#2BA3C6; --heat:#E8813A; --muted:#47606A; --white:#fff;
+ --pad:clamp(20px,5vw,72px); --ease:cubic-bezier(.2,.8,.2,1);
+ --f:"Archivo",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--f);font-stretch:100%;color:var(--deep);background:var(--frost);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{display:block;max-width:100%}
+.wrap{max-width:1200px;margin:0 auto;padding:0 var(--pad)}
+:focus-visible{outline:2px solid var(--cold);outline-offset:3px}
+.banner{background:var(--deep);color:#A9C6CF;font-size:12.5px;text-align:center;padding:9px var(--pad);padding-top:calc(9px + env(safe-area-inset-top,0px))}
+.banner b{color:#fff;font-weight:600}
+header{position:sticky;top:0;z-index:50;background:rgba(246,251,252,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px var(--pad);max-width:1200px;margin:0 auto}
+.brand{font-weight:800;font-stretch:125%;font-size:26px;letter-spacing:.02em;text-decoration:none;line-height:1}
+.brand small{display:block;font-stretch:100%;font-weight:500;font-size:12.5px;letter-spacing:0;color:var(--muted);margin-top:3px}
+.call{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;background:var(--deep);color:#fff;text-decoration:none;font-weight:600;font-size:15px;white-space:nowrap}
+.call svg{width:16px;height:16px}
+
+/* hero: the temperature drop is the one loud element */
+.hero{padding:clamp(36px,6vw,84px) 0 clamp(40px,6vw,80px)}
+.hero h1{font-weight:800;font-stretch:112%;font-size:clamp(42px,6.6vw,88px);line-height:.98;letter-spacing:-.015em;max-width:12ch}
+.lead{font-size:clamp(17px,1.5vw,20px);color:var(--muted);max-width:48ch;margin-top:22px}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;min-height:50px;padding:0 26px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;border:1.5px solid transparent;cursor:pointer;font-family:inherit}
+.btn.p{background:var(--cold);color:#fff}
+.btn.g{border-color:var(--deep);color:var(--deep);background:none}
+.hg{display:grid;gap:0;align-items:center}
+.temp{margin-top:clamp(40px,6vw,72px);display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:clamp(14px,2vw,28px)}
+.deg{font-weight:800;font-stretch:125%;font-size:clamp(56px,11vw,150px);line-height:.85;letter-spacing:-.03em}
+.deg.h{color:var(--heat)}
+.deg.c{color:var(--cold)}
+.deg sup{font-size:.4em;vertical-align:.9em;font-stretch:100%}
+.bar{height:clamp(14px,1.6vw,20px);border-radius:999px;background:linear-gradient(90deg,var(--heat),#F0C27A 30%,#BFE3EC 62%,var(--cold));position:relative;overflow:hidden}
+.bar::after{content:"";position:absolute;inset:0;background:var(--frost);transform-origin:right;transition:transform 1.6s var(--ease) .3s}
+.js .bar::after{transform:scaleX(1)}
+.in .bar::after{transform:scaleX(0)}
+.tcap{grid-column:1/-1;display:flex;justify-content:space-between;font-size:14px;color:var(--muted);margin-top:-4px}
+
+section{padding:clamp(56px,8vw,112px) 0}
+h2{font-weight:800;font-stretch:112%;font-size:clamp(32px,4.6vw,58px);line-height:1;letter-spacing:-.01em;max-width:16ch}
+.intro{color:var(--muted);max-width:56ch;margin-top:16px}
+.two{display:grid;gap:clamp(18px,2.4vw,28px);margin-top:clamp(28px,4vw,48px)}
+.panel{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:clamp(22px,3vw,40px)}
+.panel h3{font-weight:700;font-stretch:110%;font-size:clamp(22px,2.2vw,28px);line-height:1.15}
+.panel p{color:var(--muted);margin-top:10px}
+.panel ul{list-style:none;margin-top:18px}
+.panel li{padding:11px 0 11px 28px;border-top:1px solid var(--line);position:relative}
+.panel li::before{content:"";position:absolute;left:2px;top:19px;width:12px;height:2px;background:var(--cold);box-shadow:0 5px 0 var(--cold),0 -5px 0 var(--cold);transform:scaleX(.9)}
+.panel.serv li::before{background:var(--heat);box-shadow:0 5px 0 var(--heat),0 -5px 0 var(--heat)}
+
+.where{background:var(--ice)}
+.places{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.places span{background:var(--white);border:1px solid var(--line);border-radius:999px;padding:9px 18px;font-weight:500}
+.types{display:grid;gap:0;margin-top:clamp(28px,4vw,44px);border-top:1px solid var(--line)}
+.types div{display:grid;grid-template-columns:1fr;gap:4px;padding:18px 0;border-bottom:1px solid var(--line)}
+.types b{font-weight:700;font-stretch:110%;font-size:20px}
+.types span{color:var(--muted)}
+
+.quote{background:var(--deep);color:#fff}
+.quote blockquote{font-weight:600;font-stretch:105%;font-size:clamp(26px,3.6vw,46px);line-height:1.18;max-width:24ch;letter-spacing:-.01em}
+.quote cite{display:block;font-style:normal;color:#9FC1CB;margin-top:22px;font-size:16px}
+.stars{color:#F4C35A;font-size:22px;letter-spacing:4px;margin-bottom:20px}
+
+.steps{display:grid;gap:14px;margin-top:clamp(28px,4vw,46px);counter-reset:s}
+.step{padding:22px 0 0;border-top:2px solid var(--deep);counter-increment:s}
+.step::before{content:counter(s);font-weight:800;font-stretch:125%;font-size:30px;color:var(--cold)}
+.step h3{font-weight:700;font-stretch:110%;font-size:21px;margin-top:6px}
+.step p{color:var(--muted);margin-top:6px;font-size:16px}
+
+.ask{background:var(--ice)}
+.cols{display:grid;gap:clamp(22px,3vw,40px);margin-top:clamp(28px,4vw,44px)}
+form{background:var(--white);border-radius:18px;border:1px solid var(--line);padding:clamp(22px,3vw,40px)}
+.pair{display:grid;gap:0 18px}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:18px}
+label{font-size:14px;font-weight:600;color:var(--muted)}
+input,select,textarea{font:inherit;font-size:16px;color:var(--deep);border:1px solid var(--line);border-radius:10px;padding:12px 14px;min-height:48px;background:var(--frost);width:100%}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--cold);background:#fff}
+textarea{min-height:100px;resize:vertical}
+.rooms{display:flex;align-items:center;gap:10px}
+.rooms button{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:var(--frost);font:inherit;font-size:22px;color:var(--deep);cursor:pointer;flex-shrink:0}
+.rooms output{min-width:3ch;text-align:center;font-weight:800;font-stretch:125%;font-size:30px}
+.rooms small{color:var(--muted);font-size:14px}
+.note{font-size:13px;color:var(--muted);margin-top:14px}
+.card{background:var(--deep);color:#fff;border-radius:18px;padding:clamp(22px,3vw,36px);align-self:start}
+.card a,.card div{display:block;padding:15px 0;border-bottom:1px solid #24485A;text-decoration:none}
+.card :last-child{border-bottom:0}
+.card b{display:block;font-size:13px;font-weight:600;color:#8FB4BF;margin-bottom:2px}
+.card span{font-size:18px;font-weight:600}
+
+footer{background:var(--deep);color:#A9C6CF;padding:clamp(40px,6vw,70px) 0 calc(26px + env(safe-area-inset-bottom,0px));font-size:15px}
+.fg{display:grid;gap:24px}
+footer h4{color:#fff;font-weight:700;font-stretch:110%;font-size:18px;margin-bottom:6px}
+footer a{text-decoration:none}
+.big{font-weight:800;font-stretch:125%;font-size:clamp(70px,19vw,250px);line-height:.8;color:#163E50;margin-top:clamp(30px,5vw,60px);letter-spacing:-.02em;user-select:none}
+.credit{display:flex;align-items:center;gap:12px;border-top:1px solid #24485A;margin-top:24px;padding-top:18px;font-size:13px}
+.credit img{height:24px;width:auto;filter:invert(1);opacity:.7}
+
+@media(min-width:720px){.two{grid-template-columns:1fr 1fr}.pair{grid-template-columns:1fr 1fr}.types div{grid-template-columns:.8fr 1.2fr;align-items:baseline}}
+@media(min-width:960px){.hg{grid-template-columns:1.25fr .75fr;gap:56px}.hg .temp{margin-top:0}.hg .deg{font-size:clamp(80px,9vw,130px)}.hg .temp{grid-template-columns:1fr 1fr;row-gap:22px}.hg .bar{grid-column:1/-1;grid-row:2}.hg .deg.c{justify-self:end}.hg .tcap{grid-row:3;margin-top:-10px}.steps{grid-template-columns:repeat(4,1fr)}.cols{grid-template-columns:1.4fr .6fr}.fg{grid-template-columns:2fr 1fr 1fr}}
+@media(max-width:520px){.call .t{display:none}.call{padding:0 14px}}
+@media(hover:hover){.btn.p:hover{background:#1F8DAE}.btn.g:hover{background:var(--deep);color:#fff}.call:hover{background:var(--sea)}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.js .bar::after{transform:scaleX(0)}}
+</style>
+</head>
+<body>
+<div class="banner"><b>Prijedlog stranice</b> za SUKI. Tekstovi su složeni s vašeg profila i mijenjaju se po dogovoru, a fotografije vaših ugradnji dodajemo kad ih pošaljete. Izradio Azzurro Digital.</div>
+<header><div class="nav">
+ <a class="brand" href="#top">SUKI<small>Klima uređaji, Vodice</small></a>
+ <a class="call" href="tel:+38598720367" aria-label="Nazovite 098 720 367"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span class="t">098 720 367</span></a>
+</div></header>
+
+<main id="top">
+<section class="hero">
+ <div class="wrap hg">
+  <div>
+  <h1>Montaža i servis klima uređaja u Vodicama</h1>
+  <p class="lead">Ugrađujemo split i multisplit klime u kuće, apartmane i poslovne prostore, od konzole i cijevi do vakumiranja i podešavanja. Čistimo i servisiramo postojeće uređaje prije sezone.</p>
+  <div class="cta"><a class="btn p" href="#upit">Pošaljite upit</a><a class="btn g" href="tel:+38598720367">Nazovite 098 720 367</a></div>
+  </div>
+  <div class="temp" data-io aria-hidden="true">
+   <span class="deg h">36<sup>°</sup></span><div class="bar"></div><span class="deg c">24<sup>°</sup></span>
+   <div class="tcap"><span>Srpanj vani</span><span>Apartman unutra</span></div>
+  </div>
+ </div>
+</section>
+
+<section style="padding-top:0">
+ <div class="wrap">
+  <h2>Ugradnja i servis iz jedne ruke</h2>
+  <div class="two">
+   <div class="panel">
+    <h3>Montaža klima uređaja</h3>
+    <p>Za novi objekt ili zamjenu stare klime. Instalaciju pripremamo tako da uređaj radi tiho i bez gubitka energije.</p>
+    <ul><li>Split i multisplit uređaji</li><li>Inverter sustavi s manjom potrošnjom</li><li>Priprema instalacija u zidu ili nadžbukno</li><li>Bakrene cijevi, električni priključak i odvod kondenzata</li><li>Vakumiranje i podešavanje prije puštanja u rad</li></ul>
+   </div>
+   <div class="panel serv">
+    <h3>Servis i čišćenje</h3>
+    <p>Čista klima hladi bolje, troši manje i ne širi neugodne mirise ni alergene.</p>
+    <ul><li>Čišćenje unutarnje i vanjske jedinice</li><li>Dezinfekcija isparivača i filtera</li><li>Provjera i nadopuna rashladnog sredstva</li><li>Pregled instalacija i električnih spojeva</li><li>Otklanjanje kvarova</li></ul>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="where">
+ <div class="wrap">
+  <h2>Kuće, apartmani i lokali na šibenskoj rivijeri</h2>
+  <p class="intro">Sjedište nam je u Vodicama. Područje na koje dolazimo upisat ćemo ovdje točno kako vi radite.</p>
+  <div class="places"><span>Vodice</span><span>Srima</span><span>Tribunj</span><span>Pirovac</span><span>Šibenik</span><span>Okolica po dogovoru</span></div>
+  <div class="types">
+   <div><b>Apartmani</b><span>Klima u svakoj jedinici, ugrađena i servisirana prije dolaska prvih gostiju.</span></div>
+   <div><b>Obiteljske kuće</b><span>Multisplit sustav s jednom vanjskom jedinicom za više prostorija.</span></div>
+   <div><b>Poslovni prostori</b><span>Uredi, trgovine i lokali, s rokom koji ne zaustavlja posao.</span></div>
+   <div><b>Novogradnje i adaptacije</b><span>Instalacije pripremljene dok su zidovi još otvoreni.</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="quote">
+ <div class="wrap">
+  <div class="stars" aria-label="Ocjena 5 od 5">★★★★★</div>
+  <blockquote>„Odgovoran, pristojan, dođe u točno zakazano vrijeme. Posao je napravio savršeno.”</blockquote>
+  <cite>Sanjin Dukić, recenzija na moja-djelatnost.hr</cite>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <h2>Od upita do hladne sobe</h2>
+  <div class="steps">
+   <div class="step"><h3>Upit</h3><p>Javite broj prostorija i mjesto, telefonom ili kroz obrazac.</p></div>
+   <div class="step"><h3>Pregled</h3><p>Dođemo pogledati prostor i predložimo uređaj i snagu.</p></div>
+   <div class="step"><h3>Ponuda</h3><p>Dobivate cijenu za uređaj i ugradnju, s terminom.</p></div>
+   <div class="step"><h3>Ugradnja</h3><p>Montiramo, puštamo u rad i pokažemo kako se upravlja.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="ask" id="upit">
+ <div class="wrap">
+  <h2>Pošaljite upit</h2>
+  <div class="cols">
+   <form id="frm" novalidate data-to="sukivodice@gmail.com" data-subject="Upit za klimu — SUKI">
+    <div class="pair">
+     <div class="field"><label for="ime">Ime i prezime</label><input id="ime" autocomplete="name" data-label="Ime"></div>
+     <div class="field"><label for="tel">Telefon</label><input id="tel" type="tel" inputmode="tel" autocomplete="tel" data-label="Telefon"></div>
+    </div>
+    <div class="pair">
+     <div class="field"><label for="usl">Što trebate</label><select id="usl" data-label="Usluga"><option>Nova ugradnja</option><option>Zamjena stare klime</option><option>Servis i čišćenje</option><option>Kvar</option></select></div>
+     <div class="field"><label for="obj">Vrsta prostora</label><select id="obj" data-label="Prostor"><option>Apartman</option><option>Kuća</option><option>Stan</option><option>Poslovni prostor</option></select></div>
+    </div>
+    <div class="field"><label id="rl">Broj prostorija za klimatizaciju</label>
+     <div class="rooms" role="group" aria-labelledby="rl"><button type="button" id="minus" aria-label="Manje prostorija">−</button><output id="rooms" data-label="Broj prostorija">2</output><button type="button" id="plus" aria-label="Više prostorija">+</button><small>npr. 3 apartmana = 3</small></div>
+    </div>
+    <div class="field"><label for="mj">Mjesto</label><input id="mj" placeholder="npr. Vodice, Srima" data-label="Mjesto"></div>
+    <div class="field"><label for="nap">Napomena</label><textarea id="nap" placeholder="npr. klime trebaju biti gotove prije 1. lipnja" data-label="Napomena"></textarea></div>
+    <button class="btn p" type="submit">Pošalji upit</button>
+    <p class="note">Obrazac otvara vaš program za e-poštu s već ispunjenim upitom.</p>
+   </form>
+   <div class="card">
+    <a href="tel:+38598720367"><b>Telefon</b><span>098 720 367</span></a>
+    <a href="mailto:sukivodice@gmail.com"><b>E-pošta</b><span>sukivodice@gmail.com</span></a>
+    <div><b>Adresa</b><span>Ante Poljička 60, 22211 Vodice</span></div>
+    <div><b>Radno vrijeme</b><span>Ponedjeljak do petak, prema dogovoru</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div class="fg">
+   <div><h4>SUKI</h4><p>Montaža split i multisplit klima uređaja, inverter sustavi, servis i čišćenje. Vodice.</p></div>
+   <div><h4>Kontakt</h4><p><a href="tel:+38598720367">098 720 367</a><br><a href="mailto:sukivodice@gmail.com">sukivodice@gmail.com</a></p></div>
+   <div><h4>Adresa</h4><p>Ante Poljička 60<br>22211 Vodice</p></div>
+  </div>
+  <div class="big" aria-hidden="true">SUKI</div>
+  <p class="credit"><span>Izrada</span><a href="https://www.azzurrodigital.hr" target="_blank" rel="noopener"><img src="https://azzurrodigital.github.io/demo/zare-gradnja/azzurro-digital.png" alt="Azzurro Digital" width="640" height="169"></a></p>
+ </div>
+</footer>
+<script>
+(function(){
+ document.documentElement.classList.add('js');
+ var t=document.querySelector('[data-io]');
+ if('IntersectionObserver' in window){var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.disconnect()}})},{threshold:.4});io.observe(t)}else t.classList.add('in');
+ var o=document.getElementById('rooms'),n=2;
+ function set(v){n=Math.max(1,Math.min(20,v));o.value=n;o.textContent=n}
+ document.getElementById('minus').onclick=function(){set(n-1)};
+ document.getElementById('plus').onclick=function(){set(n+1)};
+ var f=document.getElementById('frm');
+ f.addEventListener('submit',function(e){e.preventDefault();var l=[];
+  [].forEach.call(f.querySelectorAll('[data-label]'),function(el){var v=(el.value||el.textContent||'').trim();if(v)l.push(el.getAttribute('data-label')+': '+v)});
+  location.href='mailto:'+f.dataset.to+'?subject='+encodeURIComponent(f.dataset.subject)+'&body='+encodeURIComponent(l.join('\n'));});
+})();
+</script>
+</body>
+</html>

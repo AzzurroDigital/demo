@@ -97,9 +97,15 @@ header.sm .logo small{opacity:0;max-height:0;margin-top:0}
 .dark{background:var(--navy);color:#fff;border-top-color:var(--navy)}
 .sec.alt{background:var(--paper2)}
 .tmp{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--mute);margin-top:14px;max-width:70ch;line-height:1.6}
-.partners{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.pslot{display:grid;place-items:center;min-height:104px;border:1.5px dashed #AEBBD0;border-radius:var(--r);font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);background:var(--paper2)}
-@media(min-width:760px){.partners{grid-template-columns:repeat(4,1fr)}}
+.partners{list-style:none;margin:clamp(26px,3.4vw,46px) 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.plogo{min-width:0;overflow:hidden;display:grid;place-items:center;aspect-ratio:3/2;padding:clamp(14px,2.2vw,26px);background:#fff;border:1px solid var(--line);border-radius:var(--r);transition:border-color .25s,box-shadow .25s,transform .25s}
+.plogo{position:relative;--pp:clamp(14px,2.2vw,26px)}
+.plogo img{position:absolute;left:var(--pp);top:var(--pp);width:calc(100% - 2*var(--pp));height:calc(100% - 2*var(--pp));object-fit:contain}
+@media(min-width:560px){.partners{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:820px){.partners{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}}
+@media(min-width:1120px){.partners{grid-template-columns:repeat(6,minmax(0,1fr))}}
+@media(hover:hover) and (pointer:fine){.plogo:hover{border-color:var(--navy);box-shadow:0 10px 26px rgba(3,69,155,.12);transform:translateY(-3px)}}
+@media(prefers-reduced-motion:reduce){.plogo{transition:none}.plogo:hover{transform:none}}
 .dark p{color:#D6E1F4}
 .two{display:grid;gap:clamp(30px,4vw,56px)}
 .sechead .mono{display:block;margin-bottom:16px}
@@ -332,20 +338,33 @@ input:focus-visible,textarea:focus-visible{outline:2px solid var(--navy);outline
 </section>
 
 <section class="sec" id="partneri">
- <div class="shell two">
-  <div class="sechead">
-   <span class="mono acc reveal" data-hr="Partneri" data-de="Partner" data-en="Partners">Partneri</span>
-   <h2 class="reveal split" data-hr="Poslovni partneri" data-de="Geschäftspartner" data-en="Business partners">Poslovni partneri</h2>
-  </div>
-  <div>
-   <div class="partners">
-    <div class="pslot reveal" data-hr="Logo partnera" data-de="Partnerlogo" data-en="Partner logo">Logo partnera</div>
-    <div class="pslot reveal" style="--i:1" data-hr="Logo partnera" data-de="Partnerlogo" data-en="Partner logo">Logo partnera</div>
-    <div class="pslot reveal" style="--i:2" data-hr="Logo partnera" data-de="Partnerlogo" data-en="Partner logo">Logo partnera</div>
-    <div class="pslot reveal" style="--i:3" data-hr="Logo partnera" data-de="Partnerlogo" data-en="Partner logo">Logo partnera</div>
-   </div>
-   <p class="tmp reveal" data-hr="Ovdje dolaze logotipi ili nazivi tvrtki s kojima radite, po vašem popisu." data-de="Hier kommen Logos oder Namen der Firmen, mit denen Sie arbeiten, nach Ihrer Liste." data-en="Logos or names of the companies you work with go here, from your list.">Ovdje dolaze logotipi ili nazivi tvrtki s kojima radite, po vašem popisu.</p>
-  </div>
+ <div class="shell">
+  <span class="mono acc reveal" data-hr="Partneri" data-de="Partner" data-en="Partners">Partneri</span>
+  <h2 class="reveal split" style="margin-top:16px" data-hr="Naše stranke i partneri" data-de="Unsere Kunden und Partner" data-en="Our clients and partners">Naše stranke i partneri</h2>
+  <ul class="partners">
+    <li class="plogo reveal" style="--i:0"><img src="partneri/rofa.webp" alt="ROFA Industrial Automation Group" width="520" height="238" loading="lazy" decoding="async"></li>
+    <li class="plogo reveal" style="--i:1"><img src="partneri/rofa-lehmer.webp" alt="ROFA-LEHMER Förderanlagen GmbH" width="520" height="117" loading="lazy" decoding="async"></li>
+    <li class="plogo reveal" style="--i:2"><img src="partneri/pro-monting.webp" alt="PRO monting" width="520" height="218" loading="lazy" decoding="async"></li>
+    <li class="plogo reveal" style="--i:3"><img src="partneri/franke.webp" alt="Franke GmbH" width="520" height="113" loading="lazy" decoding="async"></li>
+    <li class="plogo reveal" style="--i:4"><img src="partneri/dete.webp" alt="DETE Surface Technology Group" width="520" height="229" loading="lazy" decoding="async"></li>
+    <li class="plogo reveal" style="--i:5"><img src="partneri/mp-ptuj.webp" alt="MP Ptuj d.o.o." width="520" height="209" loading="lazy" decoding="async"></li>
+    <li class="plogo reveal" style="--i:0"><img src="partneri/niedermair-frey.webp" alt="Niedermair &amp; Frey GmbH" width="520" height="254" loading="lazy" decoding="async"></li>
+    <li class="plogo reveal" style="--i:1"><img src="partneri/magna.webp" alt="Magna" width="520" height="106" loading="lazy" decoding="async"></li>
+    <li class="plogo reveal" style="--i:2"><img src="partneri/emg.webp" alt="EMG" width="520" height="171" loading="lazy" decoding="async"></li>
+    <li class="plogo reveal" style="--i:3"><img src="partneri/dtp.webp" alt="DTP Industrial Montage" width="520" height="161" loading="lazy" decoding="async"></li>
+    <li class="plogo reveal" style="--i:4"><img src="partneri/rappresentanze.webp" alt="Rappresentanze industriali" width="459" height="300" loading="lazy" decoding="async"></li>
+    <li class="plogo reveal" style="--i:5"><img src="partneri/evobus.webp" alt="EvoBus" width="520" height="238" loading="lazy" decoding="async"></li>
+    <li class="plogo reveal" style="--i:0"><img src="partneri/werk3.webp" alt="Werk 3" width="301" height="300" loading="lazy" decoding="async"></li>
+    <li class="plogo reveal" style="--i:1"><img src="partneri/reinhold-becker.webp" alt="Reinhold Becker Oberflächentechnik" width="520" height="271" loading="lazy" decoding="async"></li>
+    <li class="plogo reveal" style="--i:2"><img src="partneri/mercedes-kecskemet.webp" alt="Mercedes-Benz Gyár Kecskemét" width="520" height="193" loading="lazy" decoding="async"></li>
+    <li class="plogo reveal" style="--i:3"><img src="partneri/daf.webp" alt="DAF" width="520" height="144" loading="lazy" decoding="async"></li>
+    <li class="plogo reveal" style="--i:4"><img src="partneri/mercedes-benz.webp" alt="Mercedes-Benz" width="520" height="300" loading="lazy" decoding="async"></li>
+    <li class="plogo reveal" style="--i:5"><img src="partneri/bmw-dingolfing.webp" alt="BMW Group Werk Dingolfing" width="520" height="287" loading="lazy" decoding="async"></li>
+    <li class="plogo reveal" style="--i:0"><img src="partneri/muller.webp" alt="Müller Logistikzentrum Ulm Nord" width="520" height="102" loading="lazy" decoding="async"></li>
+    <li class="plogo reveal" style="--i:1"><img src="partneri/epc-mont.webp" alt="EPC Mont d.o.o." width="520" height="73" loading="lazy" decoding="async"></li>
+    <li class="plogo reveal" style="--i:2"><img src="partneri/more.webp" alt="MORE d.o.o., Kuštani" width="482" height="300" loading="lazy" decoding="async"></li>
+    <li class="plogo reveal" style="--i:3"><img src="partneri/din-novoselec.webp" alt="DIN Novoselec" width="520" height="135" loading="lazy" decoding="async"></li>
+  </ul>
  </div>
 </section>
 

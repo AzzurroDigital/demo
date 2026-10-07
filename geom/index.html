@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Geodet Gorski kotar — GEOM d.o.o., Gerovo i Delnice</title>
+<meta name="description" content="GEOM d.o.o.: geodetske usluge u Gorskom kotaru. Parcelacija i dioba zemljišta, geodetska situacija, iskolčenje građevina, evidentiranje zgrada u katastru. Gerovo i Delnice.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#173A2E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+ --fir:#173A2E; --fir2:#21503F; --moss:#6E8B5E; --paper:#F4F1EA; --card:#FBFAF6; --line:#D9D3C4; --ink:#1C2420; --mute:#5C665F;
+ --stake:#D2502C; --stakelo:#F6DDD3;
+ --pad:clamp(20px,5vw,72px);
+ --serif:"Fraunces",Georgia,serif;
+ --sans:"Public Sans",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+ --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);font-size:17.5px;line-height:1.6;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 var(--pad)}
+:focus-visible{outline:2px solid var(--stake);outline-offset:3px}
+h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.05;letter-spacing:-.01em}
+h2{font-size:clamp(32px,4.2vw,50px)}
+section{padding:clamp(56px,8vw,104px) 0}
+.banner{background:var(--ink);color:#A9B3AC;font-size:12.5px;text-align:center;padding:9px var(--pad);padding-top:calc(9px + env(safe-area-inset-top,0px))}
+.banner b{color:#fff;font-weight:600}
+header{position:sticky;top:0;z-index:50;background:rgba(244,241,234,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:16px;max-width:1160px;margin:0 auto;padding:12px var(--pad)}
+.brand{text-decoration:none;line-height:1.05;display:flex;align-items:center;gap:11px}
+.brand .mk{width:34px;height:34px;flex-shrink:0}
+.brand b{display:block;font-family:var(--serif);font-weight:700;font-size:23px;letter-spacing:.02em}
+.brand small{font-size:12.5px;color:var(--mute)}
+.call{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;background:var(--fir);color:#fff;text-decoration:none;font-weight:600;font-size:15px;white-space:nowrap}
+.call svg{width:16px;height:16px}
+
+/* hero with contour lines */
+.hero{position:relative;overflow:hidden;background:var(--fir);color:#fff;padding:clamp(48px,8vw,104px) 0 clamp(56px,8vw,112px)}
+.hero .topo{position:absolute;inset:0;width:100%;height:100%;opacity:.22;pointer-events:none}
+.hero .wrap{position:relative}
+.coord{font-family:var(--mono);font-size:13px;color:#A9C2B3;letter-spacing:.04em}
+.hero h1{font-size:clamp(46px,7.4vw,96px);max-width:12ch;margin-top:14px}
+.hero h1 em{font-style:normal;color:#F2B49F}
+.lead{color:#D3DED7;font-size:clamp(17px,1.5vw,20px);max-width:48ch;margin-top:22px}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;min-height:50px;padding:0 24px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;border:1.5px solid transparent;font-family:inherit;cursor:pointer}
+.btn.p{background:var(--stake);color:#fff}
+.btn.g{border-color:rgba(255,255,255,.55);color:#fff;background:transparent}
+.btn.d{border-color:var(--fir);color:var(--fir);background:transparent}
+
+/* situation picker — the one loud element */
+.pick{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pick .intro{color:var(--mute);max-width:56ch;margin-top:12px}
+.sits{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin-top:30px}
+.sit{display:flex;gap:12px;align-items:flex-start;text-align:left;padding:16px 16px 16px 14px;min-height:64px;border-radius:12px;border:1.5px solid var(--line);background:#fff;font:inherit;font-size:16px;font-weight:600;color:var(--ink);cursor:pointer;transition:border-color .2s,background .2s,box-shadow .2s}
+.sit .pin{width:22px;height:22px;flex-shrink:0;margin-top:1px;color:var(--moss);transition:color .2s,transform .2s}
+.sit:hover{border-color:var(--moss)}
+.sit[aria-pressed="true"]{border-color:var(--stake);background:var(--stakelo);box-shadow:0 0 0 3px rgba(210,80,44,.12)}
+.sit[aria-pressed="true"] .pin{color:var(--stake);transform:translateY(-2px)}
+.res{margin-top:22px;border-radius:14px;background:var(--fir);color:#fff;padding:clamp(22px,3vw,34px);display:grid;gap:18px}
+.res[hidden]{display:none}
+.res .k{font-family:var(--mono);font-size:12.5px;color:#A9C2B3;letter-spacing:.05em;text-transform:uppercase}
+.res h3{font-size:clamp(26px,3vw,36px);margin-top:4px}
+.res p{color:#D3DED7;max-width:62ch;margin-top:8px}
+.res ul{list-style:none;display:grid;gap:6px;margin-top:10px}
+.res li{display:flex;gap:10px;color:#E7EEE9}
+.res li::before{content:"";width:7px;height:7px;border-radius:50%;background:#F2B49F;margin-top:10px;flex-shrink:0}
+.res .go{display:flex;flex-wrap:wrap;gap:10px}
+.hint{color:var(--mute);font-size:15px;margin-top:16px}
+
+/* services */
+.svc h2+p{color:var(--mute);max-width:56ch;margin-top:12px}
+.grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:34px}
+@media(min-width:620px){.grid{grid-template-columns:1fr 1fr}}@media(min-width:960px){.grid{grid-template-columns:repeat(3,1fr)}}
+.grid div{background:var(--paper);padding:24px 22px}
+.grid h3{font-size:22px}
+.grid p{color:var(--mute);font-size:16px;margin-top:8px}
+
+/* area */
+.area{background:var(--fir2);color:#fff}
+.area p{color:#D3DED7;max-width:58ch;margin-top:12px}
+.towns{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.towns span{padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.28);font-size:15px}
+
+/* steps */
+.steps{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:26px;margin-top:34px;counter-reset:s}
+.steps li{counter-increment:s;border-top:2px solid var(--fir);padding-top:16px}
+.steps li::before{content:"0" counter(s);font-family:var(--mono);font-size:13px;color:var(--stake)}
+.steps h3{font-size:24px;margin-top:6px}
+.steps p{color:var(--mute);font-size:16px;margin-top:6px}
+
+/* offices */
+.off{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:34px}
+.office{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.office iframe{display:block;width:100%;height:240px;border:0;filter:saturate(.75)}
+.office div{padding:20px 22px}
+.office h3{font-size:24px}
+.office p{color:var(--mute);margin-top:6px}
+
+/* form */
+.ask{background:var(--card);border-top:1px solid var(--line)}
+.cols{display:grid;gap:clamp(26px,4vw,56px);margin-top:30px}
+@media(min-width:900px){.cols{grid-template-columns:1.5fr 1fr}}
+form{display:grid;gap:16px}
+.pair{display:grid;gap:16px}
+@media(min-width:620px){.pair{grid-template-columns:1fr 1fr}}
+.field label{display:block;font-weight:600;font-size:15px;margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;min-height:50px;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;background:#fff;font:inherit;font-size:16px;color:var(--ink)}
+.field textarea{min-height:120px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--fir);outline:none}
+.parcel{font-family:var(--mono)}
+.note{color:var(--mute);font-size:14px}
+.card{display:grid;gap:2px;align-content:start}
+.card>*{display:block;padding:16px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.card b{display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);font-weight:600}
+.card span{font-size:19px;font-weight:600}
+
+footer{background:var(--ink);color:#A9B3AC;padding:48px 0 calc(32px + env(safe-area-inset-bottom,0px))}
+.fg{display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+footer h4{color:#fff;font-family:var(--serif);font-size:20px;margin-bottom:8px}
+footer p{font-size:15px}
+footer a{text-decoration:none}
+.credit{display:flex;align-items:center;gap:12px;margin-top:36px;padding-top:22px;border-top:1px solid #34403A;font-size:13px}
+.credit img{height:26px;width:auto;opacity:.85}
+@media(max-width:560px){.call .t{display:none}.call{padding:0 14px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="banner"><b>Prijedlog stranice</b> za GEOM d.o.o. Tekstovi su složeni prema javno dostupnim podacima i mijenjaju se po dogovoru, a fotografije s terena dodajemo kad ih pošaljete. Izradio Azzurro Digital.</div>
+<header><div class="nav">
+ <a class="brand" href="#top" aria-label="GEOM d.o.o., početak stranice">
+  <svg class="mk" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="16" fill="#173A2E"/><path d="M17 6v22M6 17h22" stroke="#F4F1EA" stroke-width="1.6"/><circle cx="17" cy="17" r="5" fill="none" stroke="#D2502C" stroke-width="2"/></svg>
+  <span><b>GEOM</b><small>Geodetske usluge, Gorski kotar</small></span>
+ </a>
+ <a class="call" href="tel:+38598610910" aria-label="Nazovite 098 610 910"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span class="t">098 610 910</span></a>
+</div></header>
+
+<main id="top">
+<section class="hero">
+ <svg class="topo" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true" fill="none" stroke="#fff" stroke-width="1.2">
+  <path d="M-20 420C120 360 240 450 380 400S640 300 780 340 1040 440 1220 380"/>
+  <path d="M-20 380C130 320 250 410 390 362S650 262 790 300 1050 400 1220 340"/>
+  <path d="M-20 340C140 282 260 370 400 324S660 224 800 260 1060 360 1220 300"/>
+  <path d="M-20 300C150 244 270 330 410 286S670 186 810 220 1070 320 1220 260"/>
+  <path d="M-20 260C160 206 280 290 420 248S680 148 820 180 1080 280 1220 220"/>
+  <path d="M-20 220C170 168 290 250 430 210S690 110 830 140 1090 240 1220 180"/>
+  <path d="M-20 180C180 130 300 210 440 172S700 72 840 100 1100 200 1220 140"/>
+  <path d="M-20 140C190 92 310 170 450 134S710 34 850 60 1110 160 1220 100"/>
+  <path d="M-20 470C110 410 230 500 370 450S630 350 770 390 1030 490 1220 430"/>
+  <path d="M-20 520C100 460 220 550 360 500S620 400 760 440 1020 540 1220 480"/>
+  <ellipse cx="860" cy="300" rx="110" ry="46"/><ellipse cx="860" cy="300" rx="64" ry="24"/><ellipse cx="860" cy="300" rx="24" ry="8"/>
+ </svg>
+ <div class="wrap">
+  <p class="coord">45°31′ N · 14°39′ E · Gerovo · Delnice</p>
+  <h1>Geodet za <em>Gorski kotar</em></h1>
+  <p class="lead">Parcelacija i dioba zemljišta, geodetska situacija za projekt, iskolčenje građevina i upis zgrada u katastar. Uredi u Gerovu i Delnicama, izlazimo na teren u cijelom Gorskom kotaru.</p>
+  <div class="cta"><a class="btn p" href="#sto-trebam">Koji elaborat trebam?</a><a class="btn g" href="tel:+38598610910">Nazovite 098 610 910</a></div>
+ </div>
+</section>
+
+<section class="pick" id="sto-trebam">
+ <div class="wrap">
+  <h2>Što trebate napraviti?</h2>
+  <p class="intro">Odaberite svoju situaciju. Pokazat ćemo koji se elaborat obično radi i što je dobro pripremiti, a konačno vam to potvrdimo kad pogledamo česticu.</p>
+  <div class="sits" id="sits">
+   <button type="button" class="sit" aria-pressed="false" data-k="gradnja"><svg class="pin" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Gradim kuću ili pomoćni objekt</button>
+   <button type="button" class="sit" aria-pressed="false" data-k="dioba"><svg class="pin" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Dijelim zemljište ili prodajem dio čestice</button>
+   <button type="button" class="sit" aria-pressed="false" data-k="upis"><svg class="pin" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Kuća postoji, ali nije upisana u katastar</button>
+   <button type="button" class="sit" aria-pressed="false" data-k="meda"><svg class="pin" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Nisam siguran gdje mi je međa</button>
+   <button type="button" class="sit" aria-pressed="false" data-k="sum"><svg class="pin" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Imam šumu ili livadu i ne znam stanje u katastru</button>
+  </div>
+  <div class="res" id="res" hidden aria-live="polite">
+   <div>
+    <p class="k" id="rk">Obično se radi</p>
+    <h3 id="rh"></h3>
+    <p id="rp"></p>
+   </div>
+   <div>
+    <p class="k">Dobro je pripremiti</p>
+    <ul id="rl"></ul>
+   </div>
+   <div class="go"><a class="btn p" href="#upit" id="rgo">Pošaljite upit za ovo</a><a class="btn g" href="tel:+38598610910">Nazovite</a></div>
+  </div>
+  <p class="hint">Ne vidite svoju situaciju? Opišite je u upitu ili nazovite, pa vam kažemo što treba.</p>
+ </div>
+</section>
+
+<section class="svc">
+ <div class="wrap">
+  <h2>Usluge</h2>
+  <p>Stručni geodetski poslovi za vlasnike čestica, investitore i projektante.</p>
+  <div class="grid">
+   <div><h3>Parcelacija i dioba</h3><p>Dioba zemljišta među vlasnicima, odvajanje dijela čestice za prodaju ili gradnju.</p></div>
+   <div><h3>Geodetska situacija</h3><p>Snimka stvarnog stanja terena kao podloga za projekt i građevinsku dozvolu.</p></div>
+   <div><h3>Iskolčenje građevina</h3><p>Prenošenje projektiranog položaja zgrade na teren prije početka gradnje.</p></div>
+   <div><h3>Evidentiranje zgrada</h3><p>Elaborat za upis postojeće ili novoizgrađene zgrade u katastar.</p></div>
+   <div><h3>Međe</h3><p>Iskolčenje i obilježavanje međa prema katastarskom planu.</p></div>
+   <div><h3>Geodetski elaborati</h3><p>Ostali elaborati katastra zemljišta prema potrebi i dogovoru.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="area">
+ <div class="wrap">
+  <h2>Gdje radimo</h2>
+  <p>Iz Gerova i Delnica pokrivamo Gorski kotar. Za udaljenije lokacije javite se telefonom, pa dogovorimo termin izlaska na teren.</p>
+  <div class="towns"><span>Čabar</span><span>Gerovo</span><span>Prezid</span><span>Delnice</span><span>Brod Moravice</span><span>Skrad</span><span>Lokve</span><span>Fužine</span><span>Mrkopalj</span><span>Ravna Gora</span><span>Vrbovsko</span></div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <h2>Kako teče posao</h2>
+  <ol class="steps">
+   <li><h3>Upit</h3><p>Pošaljete katastarsku općinu, broj čestice i što trebate.</p></li>
+   <li><h3>Provjera</h3><p>Pregledamo stanje u katastru i zemljišnoj knjizi i javimo cijenu.</p></li>
+   <li><h3>Teren</h3><p>Dogovorimo termin i obavimo izmjeru na čestici.</p></li>
+   <li><h3>Elaborat</h3><p>Izradimo elaborat i predamo ga na pregled i provedbu.</p></li>
+  </ol>
+ </div>
+</section>
+
+<section style="padding-top:0">
+ <div class="wrap">
+  <h2>Uredi</h2>
+  <div class="off">
+   <div class="office">
+    <iframe title="Karta: Žrtava fašizma 26, Gerovo" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=%C5%BDrtava%20fa%C5%A1izma%2026%2C%2051304%20Gerovo&amp;z=15&amp;output=embed"></iframe>
+    <div><h3>Gerovo</h3><p>Žrtava fašizma 26<br>51304 Gerovo</p></div>
+   </div>
+   <div class="office">
+    <iframe title="Karta: Supilova 20, Delnice" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Supilova%2020%2C%2051300%20Delnice&amp;z=15&amp;output=embed"></iframe>
+    <div><h3>Delnice</h3><p>Supilova 20<br>51300 Delnice<br><a href="tel:+38551812413">051 812 413</a></p></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="ask" id="upit">
+ <div class="wrap">
+  <h2>Pošaljite upit za česticu</h2>
+  <div class="cols">
+   <form id="frm" novalidate data-to="geomgerovo@gmail.com" data-subject="Upit za geodetske usluge — GEOM">
+    <div class="pair">
+     <div class="field"><label for="ime">Ime i prezime</label><input id="ime" autocomplete="name" data-label="Ime"></div>
+     <div class="field"><label for="tel">Telefon</label><input id="tel" type="tel" inputmode="tel" autocomplete="tel" data-label="Telefon"></div>
+    </div>
+    <div class="field"><label for="usl">Što trebate</label>
+     <select id="usl" data-label="Usluga">
+      <option value="">Odaberite</option>
+      <option>Geodetska situacija za projekt</option>
+      <option>Parcelacija ili dioba zemljišta</option>
+      <option>Evidentiranje zgrade u katastru</option>
+      <option>Iskolčenje građevine</option>
+      <option>Iskolčenje ili obilježavanje međe</option>
+      <option>Provjera stanja čestice</option>
+      <option>Nešto drugo</option>
+     </select></div>
+    <div class="pair">
+     <div class="field"><label for="ko">Katastarska općina</label><input id="ko" class="parcel" placeholder="npr. Gerovo" data-label="Katastarska općina"></div>
+     <div class="field"><label for="kc">Broj čestice</label><input id="kc" class="parcel" placeholder="npr. 1234/2" data-label="Broj čestice"></div>
+    </div>
+    <div class="field"><label for="opis">Kratki opis</label><textarea id="opis" placeholder="npr. želimo odvojiti dio livade uz cestu za gradnju kuće" data-label="Opis"></textarea></div>
+    <button class="btn p" type="submit">Pošalji upit</button>
+    <p class="note">Obrazac otvara vaš program za e-poštu s već ispunjenim upitom. Broj čestice piše u posjedovnom listu ili na <a href="https://oss.uredjenazemlja.hr" target="_blank" rel="noopener">oss.uredjenazemlja.hr</a>.</p>
+   </form>
+   <div class="card">
+    <a href="tel:+38598610910"><b>Mobitel</b><span>098 610 910</span></a>
+    <a href="tel:+38551812413"><b>Ured Delnice</b><span>051 812 413</span></a>
+    <a href="mailto:geomgerovo@gmail.com"><b>E-pošta</b><span>geomgerovo@gmail.com</span></a>
+    <div><b>Kontakt osoba</b><span>Andreja Vrus Markovčić, dipl. ing. geod.</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div class="fg">
+   <div><h4>GEOM d.o.o.</h4><p>Geodetske usluge u Gorskom kotaru: parcelacija, geodetska situacija, iskolčenje, evidentiranje zgrada.</p></div>
+   <div><h4>Kontakt</h4><p><a href="tel:+38598610910">098 610 910</a><br><a href="tel:+38551812413">051 812 413</a><br><a href="mailto:geomgerovo@gmail.com">geomgerovo@gmail.com</a></p></div>
+   <div><h4>Uredi</h4><p>Žrtava fašizma 26, Gerovo<br>Supilova 20, Delnice</p></div>
+  </div>
+  <p class="credit"><span>Izrada</span><a href="https://www.azzurrodigital.hr" target="_blank" rel="noopener"><img src="https://azzurrodigital.github.io/demo/zare-gradnja/azzurro-digital.png" alt="Azzurro Digital" width="640" height="169"></a></p>
+ </div>
+</footer>
+<script>
+(function(){
+ var D={
+  gradnja:{h:'Geodetska situacija, zatim iskolčenje',p:'Za projekt i građevinsku dozvolu treba snimka stvarnog stanja terena. Kad dozvola stigne, prije iskopa prenosimo položaj kuće na teren.',l:['Broj čestice i katastarsku općinu','Kontakt projektanta, ako ga već imate','Izvadak iz zemljišne knjige, ako ga imate'],u:'Geodetska situacija za projekt'},
+  dioba:{h:'Parcelacijski elaborat',p:'Čestica se dijeli na nove čestice prema dogovoru vlasnika ili kupca i prodavatelja. Prije izmjere provjeravamo stanje u katastru i zemljišnoj knjizi.',l:['Broj čestice i katastarsku općinu','Okvirnu skicu kako želite podijeliti','Podatke svih suvlasnika'],u:'Parcelacija ili dioba zemljišta'},
+  upis:{h:'Elaborat za evidentiranje zgrade',p:'Postojeća zgrada izmjeri se na terenu i upisuje u katastarski plan, što je obično preduvjet za upis u zemljišnu knjigu.',l:['Broj čestice i katastarsku općinu','Akt o gradnji ili legalizaciji, ako postoji','Približnu godinu izgradnje'],u:'Evidentiranje zgrade u katastru'},
+  meda:{h:'Iskolčenje međe',p:'Prema katastarskom planu prenosimo granicu čestice na teren i obilježavamo lomne točke, da znate točno dokle je vaše.',l:['Broj čestice i katastarsku općinu','Kontakt susjeda, ako će biti prisutan','Stare skice ili elaborate, ako ih imate'],u:'Iskolčenje ili obilježavanje međe'},
+  sum:{h:'Provjera stanja čestice',p:'Provjerimo što piše u katastru i zemljišnoj knjizi i odgovara li to stanju na terenu, pa predložimo što je dalje potrebno.',l:['Broj čestice ili barem naziv mjesta','Posjedovni list, ako ga imate'],u:'Provjera stanja čestice'}
+ };
+ var bs=[].slice.call(document.querySelectorAll('.sit')),res=document.getElementById('res'),cur=null;
+ bs.forEach(function(b){b.addEventListener('click',function(){
+  bs.forEach(function(x){x.setAttribute('aria-pressed','false')});
+  b.setAttribute('aria-pressed','true');cur=D[b.dataset.k];
+  document.getElementById('rh').textContent=cur.h;document.getElementById('rp').textContent=cur.p;
+  var ul=document.getElementById('rl');ul.innerHTML='';cur.l.forEach(function(t){var li=document.createElement('li');li.textContent=t;ul.appendChild(li)});
+  res.hidden=false;});});
+ document.getElementById('rgo').addEventListener('click',function(){if(cur){var s=document.getElementById('usl');for(var i=0;i<s.options.length;i++){if(s.options[i].text===cur.u){s.selectedIndex=i}}}});
+ var f=document.getElementById('frm');
+ f.addEventListener('submit',function(e){e.preventDefault();var l=[];
+  [].forEach.call(f.querySelectorAll('[data-label]'),function(el){var v=(el.value||'').trim();if(v)l.push(el.getAttribute('data-label')+': '+v)});
+  location.href='mailto:'+f.dataset.to+'?subject='+encodeURIComponent(f.dataset.subject)+'&body='+encodeURIComponent(l.join('\n'));});
+})();
+</script>
+</body>
+</html>

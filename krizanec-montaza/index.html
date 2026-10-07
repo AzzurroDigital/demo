@@ -139,6 +139,14 @@ header.sm .logo small{opacity:0;max-height:0;margin-top:0}
 .shots figure:first-child{grid-column:span 2}
 .shots figure img{aspect-ratio:3/4}
 .shots figure:first-child img{aspect-ratio:4/5}
+.shots.mix figure{grid-column:span 2}
+.shots.mix figure:not(:first-child) img{aspect-ratio:3/2}
+.shots.wide figure:first-child img{aspect-ratio:3/2}
+.proj{margin-top:clamp(44px,5.5vw,76px)}
+.proj:first-of-type{margin-top:clamp(34px,4vw,56px)}
+.proj .shots{margin-top:18px}
+.projhead{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 20px;padding-top:18px;border-top:1px solid var(--line)}
+.projhead .mono{color:var(--mute)}
 figure{margin:0;overflow:hidden;background:var(--navy-d);position:relative}
 figure img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;transition:transform .8s var(--ease)}
 figcaption{position:absolute;left:0;bottom:0;right:0;padding:14px;font-family:var(--mono);font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;color:#fff;background:linear-gradient(to top,rgba(2,40,96,.88),rgba(2,40,96,0))}
@@ -214,15 +222,22 @@ input:focus-visible,textarea:focus-visible{outline:2px solid var(--navy);outline
  .pair{grid-template-columns:1fr 1fr}
  .row{grid-template-columns:64px minmax(0,1.05fr) minmax(0,1.25fr);gap:22px;padding:28px 0;align-items:start}
  .idx{grid-row:auto;padding-top:5px}
- .shots{grid-template-columns:repeat(3,1fr)}
+ .shots{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .shots figure:first-child{grid-column:auto}
+ .shots figure:first-child img{aspect-ratio:3/4}
+ .shots.wide{grid-template-columns:repeat(4,minmax(0,1fr))}
+ .shots.wide figure:first-child{grid-column:span 2}
+ .shots.wide figure:first-child img{position:absolute;inset:0;height:100%;aspect-ratio:auto}
+ .shots.mix{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .shots.mix figure{grid-column:auto}
+ .shots.mix figure:first-child{grid-row:span 2}
+ .shots.mix figure:not(:first-child) img{position:absolute;inset:0;height:100%;aspect-ratio:auto}
  .herofoot{grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:40px}
 }
 @media(min-width:1000px){
  .two{grid-template-columns:300px minmax(0,1fr);gap:72px;align-items:start}
  .sechead{position:sticky;top:112px}
- .shots{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
- .shots figure:first-child{grid-column:auto}
- .shots figure:first-child img{aspect-ratio:3/4}
+ .shots{gap:14px}
  .cols{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:56px;align-items:start}
  .fgrid{grid-template-columns:2fr 1fr 1fr;gap:48px}
 }
@@ -330,10 +345,37 @@ input:focus-visible,textarea:focus-visible{outline:2px solid var(--navy);outline
  <div class="shell">
   <span class="mono acc reveal" data-hr="Projekti" data-de="Projekte" data-en="Projects">Projekti</span>
   <h2 class="reveal split" style="margin-top:16px" data-hr="S naših montaža" data-de="Von unseren Montagen" data-en="From our jobs">S naših montaža</h2>
-  <div class="shots">
-   <figure class="reveal"><img src="projekt-2.webp" alt="Monter Križanec-montaže radi akumulatorskim alatom unutar čelične konstrukcije" width="900" height="1200" loading="lazy" decoding="async"><figcaption data-hr="Mehanička montaža" data-de="Mechanische Montage" data-en="Mechanical assembly">Mehanička montaža</figcaption></figure>
-   <figure class="reveal" style="--i:1"><img src="projekt-1.webp" alt="Ekipa Križanec-montaže postavlja lančanu transportnu liniju u proizvodnoj hali" width="900" height="1200" loading="lazy" decoding="async"><figcaption data-hr="Montaža transportne linije" data-de="Montage einer Förderanlage" data-en="Conveyor line installation">Montaža transportne linije</figcaption></figure>
-   <figure class="reveal" style="--i:2"><img src="projekt-3.webp" alt="Dvojica montera sastavljaju aluminijsku ogradu uz transportnu liniju" width="900" height="1200" loading="lazy" decoding="async"><figcaption data-hr="Montaža ograde" data-de="Geländermontage" data-en="Railing installation">Montaža ograde</figcaption></figure>
+  <div class="proj">
+   <div class="projhead reveal"><h3 data-hr="Godišnje održavanje" data-de="Jährliche Wartung" data-en="Annual maintenance">Godišnje održavanje</h3><span class="mono">Mercedes-Benz Werk Mannheim · 2025</span></div>
+   <div class="shots mix">
+    <figure class="reveal"><img src="mannheim-1.webp" alt="Motor s dijelovima obojenima u različite boje, na transportnom postolju" width="1050" height="1400" loading="lazy" decoding="async"></figure>
+    <figure class="reveal" style="--i:1"><img src="mannheim-2.webp" alt="Dvojica montera uz motor na transportnom postolju u pogonu" width="1350" height="900" loading="lazy" decoding="async"></figure>
+    <figure class="reveal" style="--i:2"><img src="mannheim-3.webp" alt="Valjkasti transporter s pneumatskim cilindrima i lančanim pogonom" width="1350" height="900" loading="lazy" decoding="async"></figure>
+   </div>
+  </div>
+  <div class="proj">
+   <div class="projhead reveal"><h3>Mercedes-Benz Werk 2/1</h3><span class="mono">Rastatt</span></div>
+   <div class="shots wide">
+    <figure class="reveal"><img src="rastatt-1.webp" alt="Hala s nizom industrijskih robota na postoljima tijekom montaže linije" width="1600" height="900" loading="lazy" decoding="async"></figure>
+    <figure class="reveal" style="--i:1"><img src="rastatt-2.webp" alt="Vertikalni podizač sa žutom nosivom platformom u proizvodnoj hali" width="900" height="1200" loading="lazy" decoding="async"></figure>
+    <figure class="reveal" style="--i:2"><img src="rastatt-3.webp" alt="Stezna naprava na stupovima usidrenima u pod hale" width="900" height="1200" loading="lazy" decoding="async"></figure>
+   </div>
+  </div>
+  <div class="proj">
+   <div class="projhead reveal"><h3 data-hr="Montaža solarnih panela" data-de="Installation von Sonnenkollektoren" data-en="Solar panel installation">Montaža solarnih panela</h3></div>
+   <div class="shots">
+    <figure class="reveal"><img src="solar-1.webp" alt="Dvojica montera s pojasevima postavljaju solarne panele na krov hale" width="900" height="1200" loading="lazy" decoding="async"></figure>
+    <figure class="reveal" style="--i:1"><img src="solar-2.webp" alt="Postavljeni solarni paneli na krovu zgrade" width="900" height="1200" loading="lazy" decoding="async"></figure>
+    <figure class="reveal" style="--i:2"><img src="solar-3.webp" alt="Tehnički kanal s cijevima i kabelskim policama" width="900" height="1200" loading="lazy" decoding="async"></figure>
+   </div>
+  </div>
+  <div class="proj">
+   <div class="projhead reveal"><h3 data-hr="Ostale montaže" data-de="Weitere Montagen" data-en="Other jobs">Ostale montaže</h3></div>
+   <div class="shots">
+    <figure class="reveal"><img src="projekt-2.webp" alt="Monter Križanec-montaže radi akumulatorskim alatom unutar čelične konstrukcije" width="900" height="1200" loading="lazy" decoding="async"><figcaption data-hr="Mehanička montaža" data-de="Mechanische Montage" data-en="Mechanical assembly">Mehanička montaža</figcaption></figure>
+    <figure class="reveal" style="--i:1"><img src="projekt-1.webp" alt="Ekipa Križanec-montaže postavlja lančanu transportnu liniju u proizvodnoj hali" width="900" height="1200" loading="lazy" decoding="async"><figcaption data-hr="Montaža transportne linije" data-de="Montage einer Förderanlage" data-en="Conveyor line installation">Montaža transportne linije</figcaption></figure>
+    <figure class="reveal" style="--i:2"><img src="projekt-3.webp" alt="Dvojica montera sastavljaju aluminijsku ogradu uz transportnu liniju" width="900" height="1200" loading="lazy" decoding="async"><figcaption data-hr="Montaža ograde" data-de="Geländermontage" data-en="Railing installation">Montaža ograde</figcaption></figure>
+   </div>
   </div>
  </div>
 </section>

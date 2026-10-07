@@ -135,7 +135,10 @@ header.sm .logo small{opacity:0;max-height:0;margin-top:0}
 .keys span:last-child::after{content:""}
 
 /* gallery */
-.shots{display:grid;gap:10px;margin-top:clamp(34px,4vw,56px)}
+.shots{display:grid;gap:10px;margin-top:clamp(34px,4vw,56px);grid-template-columns:repeat(2,minmax(0,1fr))}
+.shots figure:first-child{grid-column:span 2}
+.shots figure img{aspect-ratio:3/4}
+.shots figure:first-child img{aspect-ratio:4/5}
 figure{margin:0;overflow:hidden;background:var(--navy-d);position:relative}
 figure img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;transition:transform .8s var(--ease)}
 figcaption{position:absolute;left:0;bottom:0;right:0;padding:14px;font-family:var(--mono);font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;color:#fff;background:linear-gradient(to top,rgba(2,40,96,.88),rgba(2,40,96,0))}
@@ -217,10 +220,9 @@ input:focus-visible,textarea:focus-visible{outline:2px solid var(--navy);outline
 @media(min-width:1000px){
  .two{grid-template-columns:300px minmax(0,1fr);gap:72px;align-items:start}
  .sechead{position:sticky;top:112px}
- .shots{grid-template-columns:1.45fr 1fr}
- .shots figure:first-child{grid-row:span 2}
+ .shots{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+ .shots figure:first-child{grid-column:auto}
  .shots figure:first-child img{aspect-ratio:3/4}
- .shots figure:not(:first-child) img{height:100%;aspect-ratio:auto}
  .cols{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:56px;align-items:start}
  .fgrid{grid-template-columns:2fr 1fr 1fr;gap:48px}
 }
@@ -328,11 +330,10 @@ input:focus-visible,textarea:focus-visible{outline:2px solid var(--navy);outline
  <div class="shell">
   <span class="mono acc reveal" data-hr="Projekti" data-de="Projekte" data-en="Projects">Projekti</span>
   <h2 class="reveal split" style="margin-top:16px" data-hr="S naših montaža" data-de="Von unseren Montagen" data-en="From our jobs">S naših montaža</h2>
-  <p class="tmp reveal" data-hr="Privremene fotografije. Ovdje dolaze slike vaših projekata, s nazivom posla i lokacijom." data-de="Vorläufige Fotos. Hier kommen Bilder Ihrer Projekte, mit Auftrag und Standort." data-en="Placeholder photos. Pictures of your projects go here, with the job and location.">Privremene fotografije. Ovdje dolaze slike vaših projekata, s nazivom posla i lokacijom.</p>
   <div class="shots">
-   <figure class="reveal"><img src="montaza-1.webp" alt="Provjera niveliranja stroja libelom" width="800" height="600" loading="lazy" decoding="async"><figcaption data-hr="Pozicioniranje i niveliranje" data-de="Positionieren und Nivellieren" data-en="Positioning and levelling">Pozicioniranje i niveliranje</figcaption></figure>
-   <figure class="reveal" style="--i:1"><img src="montaza-2.webp" alt="Pritezanje prirubnice momentnim ključem" width="800" height="600" loading="lazy" decoding="async"><figcaption data-hr="Mehanički spojevi" data-de="Mechanische Verbindungen" data-en="Mechanical connections">Mehanički spojevi</figcaption></figure>
-   <figure class="reveal" style="--i:2"><img src="montaza-3.webp" alt="Rastavljena linija pripremljena za transport" width="800" height="600" loading="lazy" decoding="async"><figcaption data-hr="Priprema za transport" data-de="Transportvorbereitung" data-en="Preparation for transport">Priprema za transport</figcaption></figure>
+   <figure class="reveal"><img src="projekt-2.webp" alt="Monter Križanec-montaže radi akumulatorskim alatom unutar čelične konstrukcije" width="900" height="1200" loading="lazy" decoding="async"><figcaption data-hr="Mehanička montaža" data-de="Mechanische Montage" data-en="Mechanical assembly">Mehanička montaža</figcaption></figure>
+   <figure class="reveal" style="--i:1"><img src="projekt-1.webp" alt="Ekipa Križanec-montaže postavlja lančanu transportnu liniju u proizvodnoj hali" width="900" height="1200" loading="lazy" decoding="async"><figcaption data-hr="Montaža transportne linije" data-de="Montage einer Förderanlage" data-en="Conveyor line installation">Montaža transportne linije</figcaption></figure>
+   <figure class="reveal" style="--i:2"><img src="projekt-3.webp" alt="Dvojica montera sastavljaju aluminijsku ogradu uz transportnu liniju" width="900" height="1200" loading="lazy" decoding="async"><figcaption data-hr="Montaža ograde" data-de="Geländermontage" data-en="Railing installation">Montaža ograde</figcaption></figure>
   </div>
  </div>
 </section>

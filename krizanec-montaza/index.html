@@ -142,6 +142,11 @@ header.sm .logo small{opacity:0;max-height:0;margin-top:0}
 .shots.mix figure{grid-column:span 2}
 .shots.mix figure:not(:first-child) img{aspect-ratio:3/2}
 .shots.wide figure:first-child img{aspect-ratio:3/2}
+.shots.pair figure{grid-column:span 2}
+.shots.pair figure:first-child img{aspect-ratio:3/2}
+.shots.pair figure:last-child img{aspect-ratio:4/5}
+.shots.duo figure{grid-column:auto}
+.shots.duo figure img{aspect-ratio:3/4}
 .proj{margin-top:clamp(44px,5.5vw,76px)}
 .proj:first-of-type{margin-top:clamp(34px,4vw,56px)}
 .proj .shots{margin-top:18px}
@@ -228,6 +233,12 @@ input:focus-visible,textarea:focus-visible{outline:2px solid var(--navy);outline
  .shots.wide{grid-template-columns:repeat(4,minmax(0,1fr))}
  .shots.wide figure:first-child{grid-column:span 2}
  .shots.wide figure:first-child img{position:absolute;inset:0;height:100%;aspect-ratio:auto}
+ .shots.pair{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .shots.pair figure{grid-column:auto}
+ .shots.pair figure:first-child{grid-column:span 2}
+ .shots.pair figure:first-child img{position:absolute;inset:0;height:100%;aspect-ratio:auto}
+ .shots.pair figure:last-child img{aspect-ratio:3/4}
+ .shots.duo{grid-template-columns:repeat(2,minmax(0,1fr));max-width:820px}
  .shots.mix{grid-template-columns:repeat(2,minmax(0,1fr))}
  .shots.mix figure{grid-column:auto}
  .shots.mix figure:first-child{grid-row:span 2}
@@ -347,10 +358,9 @@ input:focus-visible,textarea:focus-visible{outline:2px solid var(--navy);outline
   <h2 class="reveal split" style="margin-top:16px" data-hr="S naših montaža" data-de="Von unseren Montagen" data-en="From our jobs">S naših montaža</h2>
   <div class="proj">
    <div class="projhead reveal"><h3 data-hr="Godišnje održavanje" data-de="Jährliche Wartung" data-en="Annual maintenance">Godišnje održavanje</h3><span class="mono">Mercedes-Benz Werk Mannheim · 2025</span></div>
-   <div class="shots mix">
-    <figure class="reveal"><img src="mannheim-1.webp" alt="Motor s dijelovima obojenima u različite boje, na transportnom postolju" width="1050" height="1400" loading="lazy" decoding="async"></figure>
-    <figure class="reveal" style="--i:1"><img src="mannheim-2.webp" alt="Dvojica montera uz motor na transportnom postolju u pogonu" width="1350" height="900" loading="lazy" decoding="async"></figure>
-    <figure class="reveal" style="--i:2"><img src="mannheim-3.webp" alt="Valjkasti transporter s pneumatskim cilindrima i lančanim pogonom" width="1350" height="900" loading="lazy" decoding="async"></figure>
+   <div class="shots pair">
+    <figure class="reveal"><img src="mannheim-3.webp" alt="Valjkasti transporter s pneumatskim cilindrima i lančanim pogonom" width="1350" height="900" loading="lazy" decoding="async"></figure>
+    <figure class="reveal" style="--i:1"><img src="mannheim-1.webp" alt="Motor s dijelovima obojenima u različite boje, na transportnom postolju" width="1050" height="1400" loading="lazy" decoding="async"></figure>
    </div>
   </div>
   <div class="proj">
@@ -371,10 +381,9 @@ input:focus-visible,textarea:focus-visible{outline:2px solid var(--navy);outline
   </div>
   <div class="proj">
    <div class="projhead reveal"><h3 data-hr="Ostale montaže" data-de="Weitere Montagen" data-en="Other jobs">Ostale montaže</h3></div>
-   <div class="shots">
+   <div class="shots duo">
     <figure class="reveal"><img src="projekt-2.webp" alt="Monter Križanec-montaže radi akumulatorskim alatom unutar čelične konstrukcije" width="900" height="1200" loading="lazy" decoding="async"><figcaption data-hr="Mehanička montaža" data-de="Mechanische Montage" data-en="Mechanical assembly">Mehanička montaža</figcaption></figure>
     <figure class="reveal" style="--i:1"><img src="projekt-1.webp" alt="Ekipa Križanec-montaže postavlja lančanu transportnu liniju u proizvodnoj hali" width="900" height="1200" loading="lazy" decoding="async"><figcaption data-hr="Montaža transportne linije" data-de="Montage einer Förderanlage" data-en="Conveyor line installation">Montaža transportne linije</figcaption></figure>
-    <figure class="reveal" style="--i:2"><img src="projekt-3.webp" alt="Dvojica montera sastavljaju aluminijsku ogradu uz transportnu liniju" width="900" height="1200" loading="lazy" decoding="async"><figcaption data-hr="Montaža ograde" data-de="Geländermontage" data-en="Railing installation">Montaža ograde</figcaption></figure>
    </div>
   </div>
  </div>

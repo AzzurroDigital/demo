@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Jadranska plovidba — pomorski prijevoz građevinskog materijala</title>
+<meta name="description" content="Jadranska plovidba d.o.o. s Pašmana. Pomorski prijevoz građevinskog materijala, cementa i kamena svih frakcija, paletizirano i rasuto, po cijelom Jadranu. Od 2013.">
+<meta name="theme-color" content="#0b1f2e">
+<style>
+:root{--ink:#0b1f2e;--sea:#0f4c6b;--foam:#f3f1ec;--sand:#e7e1d4;--mute:#5d6b75;--line:rgba(11,31,46,.12);--acc:#d9a441}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font:17px/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text","Inter","Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--foam);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.shell{width:min(1180px,100% - 40px);margin-inline:auto}
+h1,h2,h3{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter",Arial,sans-serif;letter-spacing:-.025em;line-height:1.04;font-weight:700}
+h1{font-size:clamp(44px,9vw,104px)}
+h2{font-size:clamp(34px,5.6vw,64px)}
+h3{font-size:21px;letter-spacing:-.01em}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--sea)}
+/* nav */
+.nav{position:fixed;inset:0 0 auto;z-index:20;transition:background .3s,backdrop-filter .3s}
+.nav.s{background:rgba(243,241,236,.82);backdrop-filter:saturate(180%) blur(18px);-webkit-backdrop-filter:saturate(180%) blur(18px);border-bottom:1px solid var(--line)}
+.nav .shell{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;letter-spacing:-.01em;color:#fff;transition:color .3s}
+.nav.s .brand{color:var(--ink)}
+.brand svg{width:26px;height:26px}
+.callbtn{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 16px;border-radius:99px;background:#fff;color:var(--ink);font-weight:600;font-size:15px;text-decoration:none}
+.nav.s .callbtn{background:var(--ink);color:#fff}
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.06);animation:dz 14s ease-out forwards}
+@keyframes dz{to{transform:scale(1)}}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,31,46,.35) 0%,rgba(11,31,46,0) 30%,rgba(11,31,46,.15) 55%,rgba(11,31,46,.86) 100%)}
+.hero .shell{position:relative;z-index:2;padding:0 0 clamp(40px,8vh,90px)}
+.hero .eyebrow{color:#cfe3ee}
+.hero h1{margin:14px 0 18px;max-width:11ch}
+.hero p{font-size:clamp(18px,2.2vw,22px);max-width:34ch;color:#e6eef3}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 24px;border-radius:99px;font-weight:600;text-decoration:none;font-size:16px}
+.btn.w{background:#fff;color:var(--ink)}
+.btn.o{border:1px solid rgba(255,255,255,.5);color:#fff}
+.btn.d{background:var(--ink);color:#fff}
+/* facts */
+.facts{background:var(--ink);color:#fff}
+.facts ul{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.12)}
+.facts li{background:var(--ink);padding:26px 4px 26px 0}
+.facts b{display:block;font-size:clamp(28px,4vw,44px);letter-spacing:-.03em;line-height:1}
+.facts span{display:block;margin-top:8px;color:#9fb4c1;font-size:14px}
+@media(min-width:820px){.facts ul{grid-template-columns:repeat(4,1fr)}.facts li{padding:38px 20px}}
+/* sections */
+.sec{padding:clamp(80px,12vw,150px) 0}
+.lead{font-size:clamp(19px,2.2vw,24px);color:var(--mute);max-width:40ch;margin-top:20px;letter-spacing:-.01em}
+.cargo{display:grid;gap:14px;margin-top:48px}
+@media(min-width:820px){.cargo{grid-template-columns:1.2fr 1fr;grid-template-rows:auto auto}}
+.card{position:relative;border-radius:26px;overflow:hidden;background:#fff;min-height:340px;display:flex;align-items:flex-end;color:#fff}
+.card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,31,46,0) 40%,rgba(11,31,46,.82))}
+.card div{position:relative;z-index:2;padding:26px}
+.card p{color:#dce7ee;margin-top:6px;max-width:34ch}
+@media(min-width:820px){.card.big{grid-row:span 2;min-height:640px}}
+.plain{background:var(--sand);color:var(--ink);align-items:stretch}
+.plain:after{display:none}
+.plain div{display:flex;flex-direction:column;justify-content:space-between;gap:30px;width:100%}
+.plain ul{list-style:none;display:grid;gap:10px}
+.plain li{display:flex;gap:12px;align-items:baseline;font-weight:600;font-size:18px;border-top:1px solid var(--line);padding-top:12px}
+.plain li i{font-style:normal;color:var(--sea);font-size:13px;font-weight:700;min-width:22px}
+/* route */
+.route{background:#fff}
+.steps{list-style:none;margin-top:52px;display:grid;gap:0;counter-reset:s}
+.steps li{display:grid;grid-template-columns:56px 1fr;gap:6px 16px;padding:26px 0;border-top:1px solid var(--line)}
+.steps li:before{counter-increment:s;content:"0" counter(s);font-weight:700;color:var(--sea);font-size:15px;padding-top:3px}
+.steps p{grid-column:2;color:var(--mute)}
+@media(min-width:900px){.steps{grid-template-columns:repeat(4,1fr);gap:28px}.steps li{grid-template-columns:1fr;border-top:2px solid var(--ink)}.steps p{grid-column:1}}
+/* split */
+.split{display:grid;gap:40px;align-items:center}
+@media(min-width:900px){.split{grid-template-columns:1fr 1fr;gap:70px}}
+.split figure{border-radius:26px;overflow:hidden}
+.ticks{list-style:none;margin-top:28px;display:grid;gap:14px}
+.ticks li{padding-left:30px;position:relative}
+.ticks li:before{content:"";position:absolute;left:0;top:.5em;width:14px;height:2px;background:var(--acc)}
+/* contact */
+.contact{background:var(--ink);color:#fff}
+.contact .eyebrow{color:#9fc6da}
+.contact .lead{color:#a9bbc6}
+.cgrid{display:grid;gap:36px;margin-top:48px}
+@media(min-width:900px){.cgrid{grid-template-columns:1.2fr 1fr;gap:60px}}
+form{display:grid;gap:12px}
+.row{display:grid;gap:12px}
+@media(min-width:600px){.row{grid-template-columns:1fr 1fr}}
+label{display:block;font-size:13px;color:#9fb4c1;margin-bottom:6px}
+input,select,textarea{width:100%;font:inherit;font-size:16px;color:#fff;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:14px 16px;outline:none;-webkit-appearance:none;appearance:none}
+select option{color:#000}
+textarea{min-height:120px;resize:vertical}
+input:focus,select:focus,textarea:focus{border-color:#9fc6da;background:rgba(255,255,255,.1)}
+form .btn{border:0;cursor:pointer;margin-top:6px;background:#fff;color:var(--ink);width:100%}
+.cl{display:block;text-decoration:none;padding:20px 0;border-top:1px solid rgba(255,255,255,.14)}
+.cl b{display:block;font-size:13px;font-weight:600;color:#9fb4c1;letter-spacing:.06em;text-transform:uppercase}
+.cl span{display:block;font-size:clamp(20px,2.6vw,28px);font-weight:600;letter-spacing:-.02em;margin-top:4px;word-break:break-word}
+footer{background:#071520;color:#7f95a3;font-size:14px;padding:34px 0 calc(34px + env(safe-area-inset-bottom))}
+footer .shell{display:flex;flex-wrap:wrap;gap:10px 30px;justify-content:space-between}
+/* sticky mobile call */
+.sticky{position:fixed;left:16px;right:16px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:30;display:flex;gap:10px;transform:translateY(140%);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.sticky.on{transform:none}
+.sticky a{flex:1;height:52px;border-radius:99px;display:flex;align-items:center;justify-content:center;font-weight:600;text-decoration:none;box-shadow:0 10px 30px rgba(11,31,46,.25)}
+.sticky .a{background:var(--ink);color:#fff}.sticky .b{background:#fff;color:var(--ink)}
+@media(min-width:900px){.sticky{display:none}}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.hero img{animation:none}}
+</style>
+</head>
+<body>
+<header class="nav" id="nav"><div class="shell">
+ <a class="brand" href="#top"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h24l-3 6H7z"/><path d="M9 20v-6h10v6M19 14l4 6"/><path d="M2 29c2 0 3-1 5-1s3 1 5 1 3-1 5-1 3 1 5 1 3-1 5-1 3 1 3 1"/></svg>Jadranska plovidba</a>
+ <a class="callbtn" href="tel:+385912254561">Nazovite</a>
+</div></header>
+
+<main id="top">
+<section class="hero">
+ <img src="jp-hero.webp" alt="Teretni brod s paletama cementa plovi između dalmatinskih otoka" width="1920" height="1080" fetchpriority="high">
+ <div class="shell">
+  <p class="eyebrow">Pašman · od 2013.</p>
+  <h1>Teret preko mora, na vrijeme.</h1>
+  <p>Pomorski prijevoz građevinskog materijala, cementa i kamena, paletizirano i rasuto, po cijelom Jadranu.</p>
+  <div class="cta"><a class="btn w" href="#upit">Zatražite prijevoz</a><a class="btn o" href="tel:+385912254561">091 225 4561</a></div>
+ </div>
+</section>
+
+<section class="facts"><div class="shell"><ul>
+ <li><b>2013.</b><span>na moru s Pašmana</span></li>
+ <li><b>0–24</b><span>svaki dan u tjednu</span></li>
+ <li><b>Jadran</b><span>prijevoz po cijeloj obali i otocima</span></li>
+ <li><b>A+</b><span>bonitetna ocjena 2025.</span></li>
+</ul></div></section>
+
+<section class="sec" id="teret"><div class="shell">
+ <p class="eyebrow rv">Što prevozimo</p>
+ <h2 class="rv">Sve što gradilište na otoku treba.</h2>
+ <p class="lead rv">Kad cesta završi na obali, materijal ide brodom. Dovozimo ga od luke ukrcaja do mjesta gdje se gradi.</p>
+ <div class="cargo">
+  <article class="card big rv"><img src="jp-pallets.webp" alt="Iskrcaj paleta s cementom na otočnom molu" width="1200" height="900" loading="lazy"><div><h3>Paletizirani teret</h3><p>Cement, blokovi, crijep i ostali materijal na paletama, od ukrcaja do iskrcaja.</p></div></article>
+  <article class="card rv"><img src="jp-stone.webp" alt="Vreće s kamenim agregatom na palubi broda" width="1200" height="900" loading="lazy"><div><h3>Kamen svih frakcija</h3><p>Rasuto ili u vrećama, za gradnju, nasipavanje i uređenje.</p></div></article>
+  <article class="card plain rv"><div><h3>Prevozimo</h3><ul><li><i>01</i>Građevinski materijal</li><li><i>02</i>Cement</li><li><i>03</i>Kamen svih frakcija</li><li><i>04</i>Paletizirani i rasuti teret</li></ul></div></article>
+ </div>
+</div></section>
+
+<section class="sec route"><div class="shell">
+ <p class="eyebrow rv">Kako ide</p>
+ <h2 class="rv">Od poziva do iskrcaja.</h2>
+ <ol class="steps">
+  <li class="rv"><h3>Upit</h3><p>Javite što prevozite, koliko i gdje.</p></li>
+  <li class="rv"><h3>Dogovor</h3><p>Dogovaramo termin i luku ukrcaja.</p></li>
+  <li class="rv"><h3>Ukrcaj</h3><p>Teret se ukrcava na brod i osigurava za plovidbu.</p></li>
+  <li class="rv"><h3>Isporuka</h3><p>Iskrcaj na odredištu, na otoku ili na obali.</p></li>
+ </ol>
+</div></section>
+
+<section class="sec"><div class="shell split">
+ <figure class="rv"><img src="jp-aerial.webp" alt="Pogled iz zraka na teretni brod u kanalu između otoka" width="1200" height="900" loading="lazy"></figure>
+ <div>
+  <p class="eyebrow rv">Zadarska županija i dalje</p>
+  <h2 class="rv">S otoka, za cijeli Jadran.</h2>
+  <p class="lead rv">Sjedište nam je u Mrljanima na Pašmanu, a teret vozimo po cijeloj obali i otocima Jadrana.</p>
+  <ul class="ticks rv"><li>Dostupni 0–24, svaki dan u tjednu</li><li>Teret paletiziran ili rasut</li><li>Za tvrtke, građevinare i privatne investitore</li></ul>
+ </div>
+</div></section>
+
+<section class="sec contact" id="upit"><div class="shell">
+ <p class="eyebrow rv">Upit za prijevoz</p>
+ <h2 class="rv">Recite nam što i kamo.</h2>
+ <p class="lead rv">Pošaljite upit ili nazovite. Odgovaramo s terminom i ponudom.</p>
+ <div class="cgrid">
+  <form id="f" class="rv" data-to="jadranskaplovidba@gmail.com" novalidate>
+   <div class="row"><div><label for="n">Ime ili tvrtka</label><input id="n" autocomplete="name"></div><div><label for="t">Telefon</label><input id="t" type="tel" inputmode="tel" autocomplete="tel"></div></div>
+   <div class="row"><div><label for="c">Vrsta tereta</label><select id="c"><option>Građevinski materijal na paletama</option><option>Cement</option><option>Kamen (rasuto)</option><option>Kamen u vrećama</option><option>Ostalo</option></select></div><div><label for="r">Relacija</label><input id="r" placeholder="npr. Biograd – Pašman"></div></div>
+   <div><label for="m">Količina i napomena</label><textarea id="m" placeholder="Količina, željeni termin, mjesto iskrcaja"></textarea></div>
+   <button class="btn" type="submit">Pošalji upit</button>
+  </form>
+  <div class="rv">
+   <a class="cl" href="tel:+385912254561"><b>Telefon</b><span>091 225 4561</span></a>
+   <a class="cl" href="mailto:jadranskaplovidba@gmail.com"><b>E-mail</b><span>jadranskaplovidba@gmail.com</span></a>
+   <a class="cl" href="https://maps.google.com/?q=43.9648313,15.3584385" target="_blank" rel="noopener"><b>Sjedište</b><span>Mrljane 1, 23264 Mrljane</span></a>
+   <div class="cl"><b>Dostupnost</b><span>0–24, pon – ned</span></div>
+  </div>
+ </div>
+</div></section>
+</main>
+
+<footer><div class="shell"><span>© Jadranska plovidba d.o.o. · Mrljane, Pašman</span><span>Izrada: Azzurro Digital</span></div></footer>
+
+<div class="sticky" id="st"><a class="a" href="tel:+385912254561">Nazovite</a><a class="b" href="#upit">Upit</a></div>
+
+<script>
+const nav=document.getElementById('nav'),st=document.getElementById('st');
+addEventListener('scroll',()=>{const y=scrollY;nav.classList.toggle('s',y>40);st.classList.toggle('on',y>innerHeight*.7&&y<document.body.scrollHeight-innerHeight*1.6)},{passive:true});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+document.getElementById('f').addEventListener('submit',e=>{e.preventDefault();const g=id=>document.getElementById(id).value.trim();
+const body=['Ime/tvrtka: '+g('n'),'Telefon: '+g('t'),'Teret: '+g('c'),'Relacija: '+g('r'),'Napomena: '+g('m')].join('\n');
+location.href='mailto:'+e.target.dataset.to+'?subject='+encodeURIComponent('Upit za prijevoz')+'&body='+encodeURIComponent(body)});
+</script>
+</body>
+</html>

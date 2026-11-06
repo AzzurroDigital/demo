@@ -1,0 +1,23 @@
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+/css/*
+  Cache-Control: public, max-age=31536000, immutable
+/js/*
+  Cache-Control: public, max-age=31536000, immutable
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+/img/*
+  Cache-Control: public, max-age=604800
+/index.html
+  Cache-Control: no-cache
+/
+  Cache-Control: no-cache
+/media-kit.pdf
+  Cache-Control: public, max-age=3600
+  Content-Disposition: inline; filename="Azzurro_LED_media_kit.pdf"
+/cjenik.pdf
+  Cache-Control: public, max-age=3600
+  Content-Disposition: inline; filename="Azzurro_LED_cjenik.pdf"

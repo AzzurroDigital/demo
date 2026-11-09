@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#1335d6">
+<meta name="theme-color" content="#ffffff">
 <title>Led Granula · Led iz Privlake</title>
 <meta name="description" content="Proizvodnja i prodaja leda za ugostiteljstvo, medicinu i druge djelatnosti. Privlaka kraj Zadra, od 2010. Pon – Sub, 8 – 24 h.">
 <meta name="robots" content="noindex">
@@ -14,229 +14,174 @@
 @font-face{font-family:IT;font-weight:500;src:url(f/intertight-normal-500-latin.woff2) format("woff2")}
 @font-face{font-family:IT;font-weight:600;src:url(f/intertight-normal-600-latin-ext.woff2) format("woff2");unicode-range:U+0100-02AF,U+1E00-1EFF}
 @font-face{font-family:IT;font-weight:600;src:url(f/intertight-normal-600-latin.woff2) format("woff2")}
-:root{
- --blue:#1335d6;--blue2:#0f2bb0;--ice:#e9f0ff;--paper:#f6f6f3;--ink:#0e1013;--grey:#686b70;--rule:#dcdcd6;
- --land:cubic-bezier(.1,.75,.15,1);--whip:cubic-bezier(.85,0,.15,1);--std:cubic-bezier(.2,0,0,1)
-}
+:root{--blue:#0b3fd9;--red:#e2231a;--ink:#0a1424;--paper:#fff;--mist:#eef3f6;--grey:#5f6b78;
+ --land:cubic-bezier(.1,.75,.15,1);--std:cubic-bezier(.2,0,0,1)}
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--paper);color:var(--ink);font-family:IT,Helvetica,Arial,sans-serif;font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
-.w{width:min(1200px,100% - 32px);margin-inline:auto}
-.lbl{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--grey)}
+.w{width:min(1180px,100% - 32px);margin-inline:auto}
 
-/* HERO */
-.hero{background:var(--blue);color:#fff;min-height:100svh;display:flex;flex-direction:column;position:relative;overflow:hidden}
-.top{display:flex;justify-content:space-between;align-items:center;height:64px;font-size:15px}
-.top b{font-weight:600;letter-spacing:.04em}
-.top a{border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:8px 16px;font-weight:500;transition:background .2s var(--std),color .2s var(--std)}
-.top a:hover{background:#fff;color:var(--blue)}
-.hero .main{flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:28px}
-.word{font-weight:600;letter-spacing:-.075em;line-height:.76;font-size:clamp(130px,39vw,520px);margin-left:-.05em;display:flex}
-.word span{display:inline-block;transform:translateY(0)}
-.sub{display:grid;gap:18px;margin-top:26px;padding-top:16px;border-top:1px solid rgba(255,255,255,.35)}
-.sub p{font-size:clamp(20px,2.3vw,28px);line-height:1.2;letter-spacing:-.015em;max-width:620px}
-.facts{display:grid;grid-template-columns:repeat(3,auto);gap:4px 26px;font-size:14px;justify-content:start}
-.facts dt{color:rgba(255,255,255,.65)}
-.facts dd{font-weight:500}
-.live{display:inline-flex;align-items:center;gap:8px;font-weight:500}
-.live i{width:8px;height:8px;border-radius:50%;background:#fff;opacity:.5}
-.live.open i{background:#5df28f;opacity:1}
+/* top */
+.top{display:flex;justify-content:space-between;align-items:center;height:62px;border-bottom:2px solid var(--ink);font-size:15px}
+.top b{font-weight:600;letter-spacing:.06em}
+.top a{font-weight:500}
+.top a span{color:var(--red)}
 
-/* ORDER SLIP */
-.order{padding:80px 0}
-.oh{display:grid;gap:12px;margin-bottom:34px}
-.oh h2{font-size:clamp(34px,5.4vw,64px);font-weight:600;letter-spacing:-.045em;line-height:1}
-.oh p{color:var(--grey);max-width:520px}
-.og{display:grid;gap:20px}
-.form{display:grid;gap:26px}
-.field>.lbl{display:block;margin-bottom:10px}
-.seg{display:flex;flex-wrap:wrap;gap:8px}
-.seg button{height:46px;padding:0 18px;border:1px solid var(--ink);border-radius:999px;font-size:16px;font-weight:500;transition:background .18s var(--std),color .18s var(--std)}
-.seg button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
-input{font:inherit;width:100%;height:52px;border:0;border-bottom:1px solid var(--ink);background:transparent;font-size:20px;padding:0 2px;outline:none;border-radius:0}
-input:focus{border-bottom-color:var(--blue);box-shadow:0 1px 0 var(--blue)}
-input::placeholder{color:#a7a9ad}
-
-.slip{background:#fff;border:1px solid var(--ink);padding:24px 22px 22px;position:relative;font-size:16px;align-self:start}
-.slip:before,.slip:after{content:"";position:absolute;left:-1px;right:-1px;height:10px;background:radial-gradient(circle at 5px 0,var(--paper) 4px,transparent 4.5px) 0 0/14px 10px repeat-x}
-.slip:before{top:-1px}
-.slip:after{bottom:-1px;transform:scaleY(-1)}
-.slip h3{font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;display:flex;justify-content:space-between;padding-bottom:12px;border-bottom:1px dashed #b9bbbe}
-.slip dl{display:grid;grid-template-columns:96px 1fr;gap:10px 12px;padding:16px 0;border-bottom:1px dashed #b9bbbe}
-.slip dt{color:var(--grey)}
-.slip dd{font-weight:500;min-height:1.5em;word-break:break-word}
-.slip dd.empty{color:#b3b5b8;font-weight:400}
-.slip dd.flash{animation:flash .6s var(--land)}
-@keyframes flash{from{background:var(--ice)}to{background:transparent}}
-.acts{display:grid;gap:8px;margin-top:18px}
-.btn{display:flex;align-items:center;justify-content:center;height:54px;font-weight:500;font-size:17px;border:1px solid var(--ink);transition:background .18s var(--std),color .18s var(--std),transform .18s var(--std)}
-.btn.p{background:var(--blue);border-color:var(--blue);color:#fff}
-.btn.p:hover{background:var(--blue2)}
+/* bag print hero */
+.hero{position:relative;padding:28px 0 36px;border-bottom:2px solid var(--ink)}
+.stack{font-weight:600;letter-spacing:-.06em;line-height:.84;color:var(--blue);text-transform:uppercase}
+.stack div{display:flex;align-items:baseline;gap:.25em;font-size:clamp(76px,19vw,250px)}
+.stack div:nth-child(n+2){font-size:clamp(34px,8.4vw,112px);color:var(--ink);letter-spacing:-.045em;line-height:.95}
+.stack small{font-size:13px;letter-spacing:.08em;font-weight:500;color:var(--grey);text-transform:none}
+.stamp{position:absolute;right:0;top:34px;width:clamp(104px,18vw,176px);aspect-ratio:1;border:2px solid var(--red);border-radius:50%;color:var(--red);display:grid;place-items:center;text-align:center;font-weight:600;font-size:clamp(11px,1.5vw,15px);line-height:1.15;letter-spacing:.06em;text-transform:uppercase;transform:rotate(-12deg)}
+.stamp b{display:block;font-size:2.3em;letter-spacing:-.03em;line-height:1}
+.lead{display:grid;gap:18px;margin-top:30px}
+.lead p{font-size:clamp(20px,2.3vw,27px);line-height:1.22;letter-spacing:-.015em;max-width:620px}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 26px;font-weight:600;font-size:17px;border:2px solid var(--ink);transition:background .18s var(--std),color .18s var(--std),transform .18s var(--std)}
+.btn.r{background:var(--red);border-color:var(--red);color:#fff}
+.btn.r:hover{background:#c41b13}
+.btn.o:hover{background:var(--ink);color:#fff}
 .btn:active{transform:scale(.98)}
-.btn[aria-disabled=true]{opacity:.45;pointer-events:none}
-.hint{font-size:13px;color:var(--grey);margin-top:10px}
+.live{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:500}
+.live i{width:9px;height:9px;border-radius:50%;background:#b8c0c8}
+.live.open i{background:#18a34a}
 
-/* HOURS */
-.hours{border-top:1px solid var(--ink);padding:56px 0 0}
-.hg{display:grid;gap:30px}
-.week{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
-.d{border-top:3px solid var(--ink);padding-top:8px;font-size:14px}
-.d b{display:block;font-weight:600}
-.d span{color:var(--grey);font-size:13px}
-.d.off{border-top-color:var(--rule)}
-.d.off b{color:var(--grey)}
-.d.now{border-top-color:var(--blue)}
-.d.now b{color:var(--blue)}
-.who{border-top:1px solid var(--ink)}
-.who div{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid var(--rule)}
-.who b{font-weight:500;font-size:20px;letter-spacing:-.01em}
-.who span{color:var(--grey);text-align:right}
+/* uses band */
+.uses{display:grid;border-bottom:2px solid var(--ink)}
+.use{padding:26px 0;border-bottom:1px solid #cdd5dc;display:grid;grid-template-columns:52px 1fr;gap:4px 14px}
+.use:last-child{border-bottom:0}
+.use .n{font-weight:600;color:var(--red);font-size:15px;padding-top:6px}
+.use h3{font-size:clamp(26px,3vw,36px);font-weight:600;letter-spacing:-.035em;line-height:1.05}
+.use p{grid-column:2;color:var(--grey)}
 
-/* FOOT */
-.foot{background:var(--ink);color:#fff;margin-top:80px;padding:56px 0 110px}
-.foot .tel{display:block;font-weight:600;font-size:clamp(44px,10vw,120px);letter-spacing:-.05em;line-height:1;transition:color .2s var(--std)}
-.foot .tel:hover{color:#8fa5ff}
-.fg{display:grid;gap:18px;margin-top:30px;padding-top:20px;border-top:1px solid rgba(255,255,255,.25);font-size:16px}
-.fg .lbl{color:rgba(255,255,255,.55);display:block;margin-bottom:2px}
-.fg a{border-bottom:1px solid rgba(255,255,255,.3)}
-.small{margin-top:40px;font-size:13px;color:rgba(255,255,255,.5);display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+/* declaration box */
+.decl{background:var(--mist);padding:64px 0}
+.dg{display:grid;gap:36px;align-items:start}
+.dg h2{font-size:clamp(34px,5vw,60px);font-weight:600;letter-spacing:-.045em;line-height:1}
+.dg .intro p{color:var(--grey);margin-top:14px;max-width:440px}
+.label{background:#fff;border:3px solid var(--ink);padding:14px 16px 16px;font-size:16px}
+.label h3{font-size:clamp(30px,4vw,42px);font-weight:600;letter-spacing:-.04em;line-height:1;padding-bottom:6px;border-bottom:10px solid var(--ink)}
+.row{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid var(--ink)}
+.row span{color:var(--grey)}
+.row b{font-weight:600;text-align:right}
+.row.thick{border-bottom-width:5px}
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;padding:10px 0;border-bottom:5px solid var(--ink)}
+.days div{text-align:center;font-size:13px;font-weight:600;padding:8px 0;background:var(--ink);color:#fff}
+.days div.off{background:#fff;color:#a3acb5;border:1px dashed #a3acb5}
+.days div.now{background:var(--red)}
+.label .foot{font-size:12px;color:var(--grey);padding-top:10px}
 
-.bar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:grid;grid-template-columns:1fr 1fr;background:var(--paper);border-top:1px solid var(--ink);padding-bottom:env(safe-area-inset-bottom);transform:translateY(100%);transition:transform .45s var(--land)}
-.bar.on{transform:none}
-.bar a{text-align:center;padding:16px 0;font-weight:500}
-.bar a:first-child{background:var(--blue);color:#fff}
+/* end */
+.end{padding:72px 0 40px}
+.end .big{display:block;font-weight:600;font-size:clamp(46px,11vw,138px);letter-spacing:-.055em;line-height:.95;color:var(--blue);transition:color .2s var(--std)}
+.end .big:hover{color:var(--red)}
+.end .eg{display:grid;gap:14px;margin-top:26px;padding-top:18px;border-top:2px solid var(--ink)}
+.end .eg span{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--grey)}
+.end .eg a{border-bottom:1px solid #b9c2ca}
+.copy{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;font-size:13px;color:var(--grey);border-top:1px solid #cdd5dc;padding:16px 0 90px}
 
-/* motion: text cuts on, the word lands once */
-.js .word span{transform:translateY(105%)}
-.js.go .word span{transform:none;transition:transform .9s var(--land)}
-.js.go .word span:nth-child(2){transition-delay:.07s}
-.js.go .word span:nth-child(3){transition-delay:.15s}
-.js .cut{visibility:hidden}
-.js.go .cut{visibility:visible}
-.js .word{overflow:hidden;padding-bottom:.04em}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:grid;grid-template-columns:1fr 1fr;border-top:2px solid var(--ink);background:#fff;padding-bottom:env(safe-area-inset-bottom)}
+.bar a{text-align:center;padding:16px 0;font-weight:600}
+.bar a:first-child{background:var(--red);color:#fff}
+
+/* motion: print-on, one line after another at uneven offsets */
+.js .stack div,.js .stamp,.js .lead{opacity:0}
+.go .stack div{animation:on .01s steps(1) forwards}
+.go .stack div:nth-child(1){animation-delay:.05s}
+.go .stack div:nth-child(2){animation-delay:.18s}
+.go .stack div:nth-child(3){animation-delay:.33s}
+.go .stack div:nth-child(4){animation-delay:.51s}
+.go .lead{animation:on .01s steps(1) .72s forwards}
+.go .stamp{animation:stamp .5s var(--land) .9s forwards}
+@keyframes on{to{opacity:1}}
+@keyframes stamp{0%{opacity:0;transform:rotate(-12deg) scale(1.5)}100%{opacity:1;transform:rotate(-12deg) scale(1)}}
+.js .use{opacity:0;transform:translateY(14px)}
+.use.in{opacity:1;transform:none;transition:opacity .5s var(--std),transform .7s var(--land)}
 
 @media(min-width:900px){
- .sub{grid-template-columns:1fr auto;align-items:end}
- .og{grid-template-columns:1.1fr .9fr;gap:56px}
- .oh{grid-template-columns:1fr 1fr;align-items:end}
- .hg{grid-template-columns:1fr 1fr;gap:56px}
- .fg{grid-template-columns:repeat(3,1fr)}
+ .lead{grid-template-columns:1fr auto;align-items:end}
+ .uses{grid-template-columns:repeat(3,1fr)}
+ .use{border-bottom:0;border-right:1px solid #cdd5dc;padding:30px 24px 30px 0;grid-template-columns:1fr;margin-right:24px}
+ .use:last-child{border-right:0;margin-right:0}
+ .use p{grid-column:1}
+ .use .n{padding-top:0}
+ .dg{grid-template-columns:1fr 440px;gap:64px}
+ .end .eg{grid-template-columns:repeat(3,1fr)}
  .bar{display:none}
- .foot{padding-bottom:56px}
+ .copy{padding-bottom:16px}
 }
-@media(prefers-reduced-motion:reduce){.js .word span{transform:none!important;transition:none!important}.bar{transition:none}}
+@media(prefers-reduced-motion:reduce){.js .stack div,.js .stamp,.js .lead,.js .use{opacity:1!important;transform:rotate(-12deg)}.js .stack div,.js .lead,.js .use{transform:none!important}*{animation:none!important}}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
+<div class="w">
+<header class="top"><b>LED GRANULA</b><a href="tel:+385958013100"><span>●</span> 095 801 3100</a></header>
 
-<header class="hero">
- <div class="w top"><b>LED GRANULA d.o.o.</b><a href="tel:+385958013100">095 801 3100</a></div>
- <div class="w main">
-  <h1 class="word" aria-label="Led"><span>L</span><span>e</span><span>d</span></h1>
-  <div class="sub">
-   <p class="cut">Proizvodimo i prodajemo led u Privlaci od 2010. Za ugostitelje, za medicinu i za sve kojima treba hladno.</p>
-   <dl class="facts cut">
-    <dt>Gdje</dt><dt>Kad</dt><dt>Sada</dt>
-    <dd>Sabunike, Privlaka</dd><dd>Pon – Sub, 8 – 24</dd><dd class="live" id="live"><i></i><span>…</span></dd>
-   </dl>
-  </div>
+<section class="hero">
+ <div class="stack" aria-label="Led, ice, Eis, ghiaccio">
+  <div>Led</div>
+  <div>Ice <small>EN</small></div>
+  <div>Eis <small>DE</small></div>
+  <div>Ghiaccio <small>IT</small></div>
  </div>
-</header>
-
-<main>
-<section class="order" id="narudzba"><div class="w">
- <div class="oh"><div><span class="lbl">Narudžba</span><h2 style="margin-top:10px">Ispunite listić, pošaljite SMS.</h2></div><p>Odaberite za što vam treba led, upišite količinu i kada ga preuzimate. Poruka se složi sama, vi je samo pošaljete.</p></div>
- <div class="og">
-  <div class="form">
-   <div class="field"><span class="lbl">Za</span>
-    <div class="seg" id="za">
-     <button type="button" aria-pressed="true">Ugostiteljstvo</button><button type="button" aria-pressed="false">Medicinu</button><button type="button" aria-pressed="false">Ostalo</button>
-    </div>
-   </div>
-   <label class="field"><span class="lbl">Količina</span><input id="kol" placeholder="npr. 10 vreća" autocomplete="off"></label>
-   <div class="field"><span class="lbl">Preuzimanje</span>
-    <div class="seg" id="kad">
-     <button type="button" aria-pressed="false">Danas</button><button type="button" aria-pressed="true">Sutra</button><button type="button" aria-pressed="false">Dogovor</button>
-    </div>
-   </div>
-   <label class="field"><span class="lbl">Ime ili lokal</span><input id="ime" placeholder="npr. Caffe bar Riva" autocomplete="organization"></label>
-  </div>
-
-  <aside class="slip" aria-live="polite">
-   <h3><span>Narudžbenica</span><span id="dat"></span></h3>
-   <dl>
-    <dt>Za</dt><dd id="o-za">Ugostiteljstvo</dd>
-    <dt>Količina</dt><dd id="o-kol" class="empty">upišite količinu</dd>
-    <dt>Preuzimanje</dt><dd id="o-kad">Sutra</dd>
-    <dt>Naručuje</dt><dd id="o-ime" class="empty">upišite ime</dd>
-   </dl>
-   <div class="acts">
-    <a class="btn p" id="sms" href="sms:+385958013100" aria-disabled="true">Pošalji SMS</a>
-    <a class="btn" href="tel:+385958013100">Ili nazovite 095 801 3100</a>
-   </div>
-   <p class="hint">Preuzimanje u Privlaci, Sabunike 1104.</p>
-  </aside>
- </div>
-</div></section>
-
-<section class="w hours">
- <div class="hg">
-  <div><span class="lbl">Radno vrijeme</span><div class="week" id="week" style="margin-top:14px"></div></div>
-  <div><span class="lbl">Kome prodajemo</span>
-   <div class="who" style="margin-top:14px">
-    <div><b>Ugostiteljstvo</b><span>kafići, restorani, barovi</span></div>
-    <div><b>Medicina</b><span>po dogovoru</span></div>
-    <div><b>Ostali</b><span>javite što trebate</span></div>
-   </div>
+ <div class="stamp" aria-hidden="true"><div>Privlaka<b>2010</b>od godine</div></div>
+ <div class="lead">
+  <p>Proizvodimo i prodajemo led u Privlaci. Za ugostitelje, za medicinu i za sve kojima treba hladno.</p>
+  <div>
+   <div class="live" id="live"><i></i><span>Pon – Sub, 8 – 24 h</span></div>
+   <div class="cta" style="margin-top:12px"><a class="btn r" href="tel:+385958013100">Nazovite i naručite</a><a class="btn o" href="#info">Gdje i kada</a></div>
   </div>
  </div>
 </section>
-</main>
 
-<footer class="foot"><div class="w">
- <span class="lbl" style="color:rgba(255,255,255,.55)">Kontakt</span>
- <a class="tel" href="tel:+385958013100" style="margin-top:8px">095 801 3100</a>
- <div class="fg">
-  <div><span class="lbl">Fiksni</span><a href="tel:+38523236432">023 236 432</a></div>
-  <div><span class="lbl">E-mail</span><a href="mailto:ledgranula@gmail.com">ledgranula@gmail.com</a></div>
-  <div><span class="lbl">Adresa</span><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Sabunike+1104+Privlaka">Sabunike 1104, 23233 Privlaka</a></div>
+<section class="uses" aria-label="Kome prodajemo">
+ <div class="use"><span class="n">01</span><h3>Ugostiteljstvo</h3><p>Kafići, restorani i barovi.</p></div>
+ <div class="use"><span class="n">02</span><h3>Medicina</h3><p>Led za medicinske namjene, po dogovoru.</p></div>
+ <div class="use"><span class="n">03</span><h3>Ostali</h3><p>Javite što trebate i u kojoj količini.</p></div>
+</section>
+</div>
+
+<section class="decl" id="info"><div class="w dg">
+ <div class="intro"><h2>Sve što trebate znati, na jednoj etiketi.</h2><p>Nazovite, recite koliko leda trebate i kada, pa ga preuzmite u Privlaci.</p></div>
+ <div class="label" role="table" aria-label="Podaci">
+  <h3>Led Granula</h3>
+  <div class="row"><span>Proizvođač</span><b>LED GRANULA d.o.o.</b></div>
+  <div class="row"><span>Adresa</span><b>Sabunike 1104, Privlaka</b></div>
+  <div class="row thick"><span>Na tržištu od</span><b>2010.</b></div>
+  <div class="row" style="border-bottom:0"><span>Radno vrijeme</span><b>8 – 24 h</b></div>
+  <div class="days" id="days"></div>
+  <div class="row"><span>Mobitel</span><b><a href="tel:+385958013100">095 801 3100</a></b></div>
+  <div class="row"><span>Fiksni</span><b><a href="tel:+38523236432">023 236 432</a></b></div>
+  <div class="row"><span>E-mail</span><b><a href="mailto:ledgranula@gmail.com">ledgranula@gmail.com</a></b></div>
+  <p class="foot">Čuvati na hladnom. Preuzimanje po dogovoru.</p>
  </div>
- <div class="small"><span>LED GRANULA d.o.o.</span><span>Demo · Azzurro Digital</span></div>
-</div></footer>
+</div></section>
 
-<nav class="bar" id="bar"><a href="#narudzba">Naruči</a><a href="tel:+385958013100">Nazovi</a></nav>
+<div class="w end">
+ <a class="big" href="tel:+385958013100">095 801 3100</a>
+ <div class="eg">
+  <div><span>Fiksni</span><a href="tel:+38523236432">023 236 432</a></div>
+  <div><span>E-mail</span><a href="mailto:ledgranula@gmail.com">ledgranula@gmail.com</a></div>
+  <div><span>Adresa</span><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Sabunike+1104+Privlaka">Sabunike 1104, 23233 Privlaka ↗</a></div>
+ </div>
+</div>
+<div class="w copy"><span>LED GRANULA d.o.o.</span><span>Demo · Azzurro Digital</span></div>
+
+<nav class="bar"><a href="tel:+385958013100">Nazovi</a><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Sabunike+1104+Privlaka">Karta</a></nav>
 
 <script>
 (()=>{
 const z=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Zagreb'}));
-const di=(z.getDay()+6)%7,h=z.getHours();
-const open=di<6&&h>=8;
+const di=(z.getDay()+6)%7,h=z.getHours(),open=di<6&&h>=8;
 const live=document.getElementById('live');
-if(open)live.classList.add('open');
-live.lastChild.textContent=open?'otvoreno':(di===6||(di===5&&h>=24)?'zatvoreno do pon':'otvaramo u 8');
-// week
-const names=['Pon','Uto','Sri','Čet','Pet','Sub','Ned'],wk=document.getElementById('week');
-names.forEach((n,i)=>{const d=document.createElement('div');d.className='d'+(i===6?' off':'')+(i===di?' now':'');d.innerHTML=`<b>${n}</b><span>${i===6?'—':'8–24'}</span>`;wk.appendChild(d)});
-// slip
-document.getElementById('dat').textContent=z.toLocaleDateString('hr-HR',{day:'2-digit',month:'2-digit',year:'numeric'});
-const st={za:'Ugostiteljstvo',kad:'Sutra',kol:'',ime:''};
-const out=k=>document.getElementById('o-'+k);
-const set=(k,v,ph)=>{st[k]=v;const el=out(k);el.textContent=v||ph;el.classList.toggle('empty',!v);el.classList.remove('flash');void el.offsetWidth;el.classList.add('flash');upd()};
-document.querySelectorAll('.seg').forEach(g=>g.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;g.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));set(g.id,b.textContent,'')}));
-document.getElementById('kol').addEventListener('input',e=>set('kol',e.target.value.trim(),'upišite količinu'));
-document.getElementById('ime').addEventListener('input',e=>set('ime',e.target.value.trim(),'upišite ime'));
-const sms=document.getElementById('sms');
-function upd(){const ok=st.kol&&st.ime;sms.setAttribute('aria-disabled',!ok);
- const msg=`Narudžba leda\nZa: ${st.za}\nKoličina: ${st.kol}\nPreuzimanje: ${st.kad}\nNaručuje: ${st.ime}`;
- const sep=/iPhone|iPad|Mac/.test(navigator.userAgent)?'&':'?';
- sms.href='sms:+385958013100'+sep+'body='+encodeURIComponent(msg)}
-upd();
-// one landing for the word, then everything else just cuts on
+if(open){live.classList.add('open');live.lastChild.textContent='Sada otvoreno, do 24 h'}
+else live.lastChild.textContent=di===6?'Danas zatvoreno, otvaramo u ponedjeljak u 8':'Sada zatvoreno, otvaramo u 8 h';
+const d=document.getElementById('days');['Pon','Uto','Sri','Čet','Pet','Sub','Ned'].forEach((n,i)=>{const e=document.createElement('div');e.textContent=n;if(i===6)e.className='off';if(i===di&&i!==6)e.className='now';d.appendChild(e)});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.3});
+document.querySelectorAll('.use').forEach((el,i)=>{el.style.transitionDelay=[0,.07,.15][i]+'s';io.observe(el)});
 requestAnimationFrame(()=>requestAnimationFrame(()=>document.documentElement.classList.add('go')));
-// mobile bar after hero
-const bar=document.getElementById('bar');addEventListener('scroll',()=>bar.classList.toggle('on',scrollY>innerHeight*.7),{passive:true});
 })();
 </script>
 </body>

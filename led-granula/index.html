@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0a1f44">
 <title>Led Granula · Led iz Privlake</title>
-<meta name="description" content="Proizvodnja i prodaja leda za ugostiteljstvo, medicinu i druge djelatnosti. Privlaka kraj Zadra, od 2010. Pon – Sub, 8 – 24 h.">
+<meta name="description" content="Konzumni led za ugostiteljstvo i ribarstvo. Led kocka i led listići. Privlaka, poslovna zona Sabunike.">
 <meta name="robots" content="noindex">
 <style>
 @font-face{font-family:IT;font-weight:400;src:url(f/intertight-normal-400-latin-ext.woff2) format("woff2");unicode-range:U+0100-02AF,U+1E00-1EFF}
@@ -128,10 +128,33 @@ input:focus{border-color:var(--navy);box-shadow:0 0 0 4px rgba(143,220,247,.45)}
 .fg a{border-bottom:1px solid rgba(255,255,255,.25)}
 .copy{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-top:44px;font-size:13px;color:#8fa3bf}
 
-.bar{position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:40;display:grid;grid-template-columns:1fr 56px 1fr;gap:8px;padding:8px;border-radius:18px;background:var(--navy);box-shadow:0 12px 30px rgba(10,31,68,.3);transform:translateY(150%);transition:transform .6s var(--land)}
+.bar{position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:40;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px;border-radius:18px;background:var(--navy);box-shadow:0 12px 30px rgba(10,31,68,.3);transform:translateY(150%);transition:transform .6s var(--land)}
 .bar.on{transform:none}
 .bar a{height:48px;padding:0}
 
+.lc{background:#fff;border-radius:28px;padding:18px;width:min(84vw,440px);box-shadow:0 30px 70px rgba(0,0,0,.35);transform:rotate(-3deg)}
+.lc img{width:100%;height:auto;display:block;border-radius:16px}
+.js .lc{opacity:0;transform:translateY(40px) rotate(-8deg) scale(.92)}
+.go .lc{opacity:1;transform:rotate(-3deg);transition:opacity .5s var(--std) .3s,transform 1.3s var(--land) .3s;animation:bob 6s ease-in-out 1.8s infinite}
+@keyframes bob{50%{transform:rotate(-1.5deg) translateY(-8px)}}
+.prods{display:grid;gap:14px}
+.prod{background:var(--navy);color:#fff;border-radius:22px;padding:26px;position:relative;overflow:hidden;transition:transform .45s var(--land)}
+.prod:hover{transform:translateY(-4px)}
+.prod .tag{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ice2)}
+.prod h3{font-size:30px;letter-spacing:-.035em;font-weight:600;margin:10px 0 2px}
+.prod b{font-size:clamp(46px,6vw,64px);letter-spacing:-.05em;color:var(--ice);line-height:1}
+.prod svg{position:absolute;right:-14px;bottom:-14px;width:120px;height:120px;opacity:.14}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:12px 20px;font-weight:500;font-size:17px;transition:transform .35s var(--land),background .2s,color .2s}
+.chip:hover{background:var(--navy);color:#fff;transform:translateY(-2px)}
+.seasons{display:grid;gap:14px}
+.season{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.season.cur{background:var(--navy);border-color:var(--navy);color:#fff}
+.season span{font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--grey)}
+.season.cur span{color:var(--ice2)}
+.season h3{font-size:30px;letter-spacing:-.035em;font-weight:600}
+.season b{font-size:clamp(40px,5vw,58px);letter-spacing:-.05em;font-weight:600}
+@media(min-width:900px){.prods{grid-template-columns:repeat(3,1fr)}.seasons{grid-template-columns:1fr 1fr}}
 /* reveals */
 .js .rv{opacity:0;transform:translateY(22px)}
 .rv.in{opacity:1;transform:none;transition:opacity .6s var(--std),transform .9s var(--land)}
@@ -146,7 +169,7 @@ input:focus{border-color:var(--navy);box-shadow:0 0 0 4px rgba(143,220,247,.45)}
  .sh{grid-template-columns:1fr 1fr;align-items:end}
  .cards{grid-template-columns:repeat(3,1fr)}
  .og{grid-template-columns:1.1fr .9fr;gap:40px}
- .fg{grid-template-columns:repeat(4,1fr)}
+ .fg{grid-template-columns:repeat(3,1fr)}
  .bar{display:none}
  .foot{padding-bottom:60px}
 }
@@ -157,8 +180,8 @@ input:focus{border-color:var(--navy);box-shadow:0 0 0 4px rgba(143,220,247,.45)}
 <body>
 
 <nav class="top" id="nav"><div class="w">
- <a class="brand" href="#"><svg viewBox="0 0 40 40"><path d="M20 3 35 11.5v17L20 37 5 28.5v-17z" fill="#132d5c"/><path d="M20 3 35 11.5 20 20 5 11.5z" fill="#c9f0ff"/><path d="M20 20v17L5 28.5v-17z" fill="#8fdcf7"/></svg>LED GRANULA</a>
- <div class="nl"><a href="#za-koga">Za koga</a><a href="#narudzba">Narudžba</a><a href="#vrijeme">Radno vrijeme</a><a href="#kontakt">Kontakt</a></div>
+ <a class="brand" href="#"><img src="img/logo.webp" alt="" width="44" height="35" style="border-radius:8px;background:#fff">LED GRANULA</a>
+ <div class="nl"><a href="#vrste">Vrste leda</a><a href="#za-koga">Za koga</a><a href="#narudzba">Narudžba</a><a href="#vrijeme">Radno vrijeme</a><a href="#kontakt">Kontakt</a></div>
  <a class="btn ice ncall" href="tel:+385958013100">095 801 3100</a>
 </div></nav>
 
@@ -166,43 +189,49 @@ input:focus{border-color:var(--navy);box-shadow:0 0 0 4px rgba(143,220,247,.45)}
  <div class="w hg">
   <div>
    <div class="eb ln">Privlaka · od 2010.</div>
-   <h1 class="ln" style="transition-delay:.08s">Led za vaš šank.<br><span>Iz Privlake.</span></h1>
-   <p class="ln" style="transition-delay:.18s">Proizvodimo i prodajemo led u Privlaci. Za ugostitelje, za medicinu i za sve kojima treba hladno.</p>
+   <h1 class="ln" style="transition-delay:.08s">Konzumni led za <span>ugostiteljstvo i ribarstvo.</span></h1>
+   <p class="ln" style="transition-delay:.18s">Proizvodimo i prodajemo led u poslovnoj zoni Sabunike u Privlaci. Kocke i listići za kafiće, restorane, fešte i ribarske brodove.</p>
    <div class="ctas ln" style="transition-delay:.26s">
     <a class="btn ice" href="#narudzba">Naruči led <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     <a class="btn line" href="tel:+385958013100">Nazovi</a>
-    <a class="btn wa" href="https://wa.me/385958013100" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>WhatsApp</a>
    </div>
-   <div class="status ln" id="status" style="transition-delay:.34s"><i></i><span>Pon – Sub, 8 – 24 h</span></div>
+   <div class="status ln" style="transition-delay:.34s"><i style="background:#8fdcf7"></i><span>Zima 8 – 16 h · Ljeto 8 – 20 h</span></div>
   </div>
-  <div class="cubebox"><svg id="cube" viewBox="-120 -125 240 250" aria-hidden="true"></svg></div>
+  <div class="cubebox"><figure class="lc"><img src="img/logo.webp" alt="Led Granula logo: LED, ICE, GHIACCIO, EIS"></figure></div>
  </div>
 </header>
 
 <div class="w">
  <div class="facts rv">
-  <div><b>2010.</b><span>godina osnivanja</span></div>
-  <div><b>Pon – Sub</b><span>8 – 24 h</span></div>
-  <div><b>Privlaka</b><span>Sabunike 1104</span></div>
-  <div><b>095 801 3100</b><span>narudžbe na telefon</span></div>
+  <div><b>Kocke i listići</b><span>tri vrste leda</span></div>
+  <div><b>8 – 16 h</b><span>zimsko radno vrijeme</span></div>
+  <div><b>8 – 20 h</b><span>ljetno radno vrijeme</span></div>
+  <div><b>Privlaka</b><span>Put Sabunika 11</span></div>
  </div>
 </div>
 
+<section class="sec" id="vrste"><div class="w">
+ <div class="sh"><div><div class="eb d rv">Vrste leda</div><h2 class="rv" style="margin-top:10px">Tri vrste leda.</h2></div><p class="rv">Led kocka i led listići, u tri pakiranja.</p></div>
+ <div class="prods">
+  <article class="prod rv"><span class="tag">Led kocka</span><h3>Kocka</h3><b>5/1</b><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.4"><path d="M12 2 21 7v10l-9 5-9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/></svg></article>
+  <article class="prod rv" style="transition-delay:.08s"><span class="tag">Led listići</span><h3>Listići</h3><b>15/1</b><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.4"><path d="M12 2v20M3.3 7l17.4 10M20.7 7 3.3 17"/></svg></article>
+  <article class="prod rv" style="transition-delay:.16s"><span class="tag">Led listići</span><h3>Listići</h3><b>30/1</b><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.4"><path d="M12 2v20M3.3 7l17.4 10M20.7 7 3.3 17"/></svg></article>
+ </div>
+</div></section>
+
 <section class="sec" id="za-koga"><div class="w">
- <div class="sh"><div><div class="eb d rv">Za koga</div><h2 class="rv" style="margin-top:10px">Led za svakog kome treba hladno.</h2></div><p class="rv">Javite koliko leda trebate i za kada, a ostalo dogovorimo telefonom.</p></div>
- <div class="cards">
-  <article class="card rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M6 3h12l-1.5 17a1 1 0 0 1-1 1h-7a1 1 0 0 1-1-1z"/><path d="M8.5 9h3v3h-3zM12.5 12h3v3h-3z"/></svg></div><div><h3>Ugostiteljstvo</h3><p>Kafići, restorani i barovi.</p></div></article>
-  <article class="card rv" style="transition-delay:.08s"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M12 8v8M8 12h8"/></svg></div><div><h3>Medicina</h3><p>Led za medicinske namjene, po dogovoru.</p></div></article>
-  <article class="card rv" style="transition-delay:.16s"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3 20 7.5v9L12 21 4 16.5v-9z"/><path d="M4 7.5 12 12l8-4.5M12 12v9"/></svg></div><div><h3>Ostali</h3><p>Javite što trebate i u kojoj količini.</p></div></article>
+ <div class="sh"><div><div class="eb d rv">Za koga</div><h2 class="rv" style="margin-top:10px">Gdje god treba hladno.</h2></div><p class="rv">Led za ugostitelje, događaje, trgovine i ribare.</p></div>
+ <div class="chips rv">
+  <span class="chip">Kafići</span><span class="chip">Barovi</span><span class="chip">Restorani</span><span class="chip">Domjenci</span><span class="chip">Sale za vjenčanja</span><span class="chip">Festivali</span><span class="chip">Fešte</span><span class="chip">Marketi</span><span class="chip">Ribarski brodovi</span>
  </div>
 </div></section>
 
 <section class="sec" id="narudzba"><div class="w">
- <div class="sh"><div><div class="eb d rv">Narudžba</div><h2 class="rv" style="margin-top:10px">Ispunite listić, pošaljite poruku.</h2></div><p class="rv">Odaberite za što vam treba led, upišite količinu i kada ga preuzimate. Poruka se složi sama.</p></div>
+ <div class="sh"><div><div class="eb d rv">Narudžba</div><h2 class="rv" style="margin-top:10px">Ispunite listić, pošaljite SMS.</h2></div><p class="rv">Odaberite vrstu leda, upišite količinu i kada ga preuzimate. Poruka se složi sama.</p></div>
  <div class="og">
   <div class="form rv">
-   <div class="field"><span class="l">Za</span><div class="seg" id="za"><button type="button" aria-pressed="true">Ugostiteljstvo</button><button type="button" aria-pressed="false">Medicinu</button><button type="button" aria-pressed="false">Ostalo</button></div></div>
-   <label class="field"><span class="l">Količina</span><input id="kol" placeholder="npr. 10 vreća" autocomplete="off"></label>
+   <div class="field"><span class="l">Vrsta leda</span><div class="seg" id="za"><button type="button" aria-pressed="true">Led kocka 5/1</button><button type="button" aria-pressed="false">Led listići 15/1</button><button type="button" aria-pressed="false">Led listići 30/1</button></div></div>
+   <label class="field"><span class="l">Količina</span><input id="kol" placeholder="npr. 10" autocomplete="off"></label>
    <div class="field"><span class="l">Preuzimanje</span><div class="seg" id="kad"><button type="button" aria-pressed="false">Danas</button><button type="button" aria-pressed="true">Sutra</button><button type="button" aria-pressed="false">Po dogovoru</button></div></div>
    <label class="field"><span class="l">Ime ili lokal</span><input id="ime" placeholder="npr. Caffe bar Riva" autocomplete="organization"></label>
   </div>
@@ -211,82 +240,60 @@ input:focus{border-color:var(--navy);box-shadow:0 0 0 4px rgba(143,220,247,.45)}
    <div class="slipwrap" id="slipwrap"><aside class="slip" aria-live="polite">
     <h3><span>Narudžbenica</span><span id="dat"></span></h3>
     <dl>
-     <dt>Za</dt><dd id="o-za">Ugostiteljstvo</dd>
+     <dt>Vrsta</dt><dd id="o-za">Led kocka 5/1</dd>
      <dt>Količina</dt><dd id="o-kol" class="e">upišite količinu</dd>
      <dt>Preuzimanje</dt><dd id="o-kad">Sutra</dd>
      <dt>Naručuje</dt><dd id="o-ime" class="e">upišite ime</dd>
     </dl>
-    <div class="acts"><a class="btn wa" id="wa" href="https://wa.me/385958013100" target="_blank" rel="noopener" aria-disabled="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>Pošalji na WhatsApp</a><a class="btn navy" id="sms" href="sms:+385958013100" aria-disabled="true">Pošalji SMS</a><a class="btn" style="border:1.5px solid var(--line)" href="tel:+385958013100">Ili nazovite 095 801 3100</a></div>
-    <p class="hint">Preuzimanje u Privlaci, Sabunike 1104.</p>
+    <div class="acts"><a class="btn navy" id="sms" href="sms:+385958013100" aria-disabled="true">Pošalji SMS</a><a class="btn" style="border:1.5px solid var(--line)" href="tel:+385958013100">Ili nazovite 095 801 3100</a></div>
+    <p class="hint">Preuzimanje u Privlaci, Put Sabunika 11, poslovna zona Sabunike.</p>
    </aside></div>
   </div>
  </div>
 </div></section>
 
 <section class="sec" id="vrijeme"><div class="w">
- <div class="sh"><div><div class="eb d rv">Radno vrijeme</div><h2 class="rv" style="margin-top:10px">Šest dana u tjednu, do ponoći.</h2></div><p class="rv">Ponedjeljak – subota od 8 do 24 h. Nedjeljom zatvoreno.</p></div>
- <div class="week" id="week"></div>
+ <div class="sh"><div><div class="eb d rv">Radno vrijeme</div><h2 class="rv" style="margin-top:10px">Zimi do 16, ljeti do 20.</h2></div><p class="rv">Ljeti radimo dulje, kad leda treba najviše.</p></div>
+ <div class="seasons">
+  <div class="season rv" id="zima"><div><span>Zima</span><h3>Zimsko radno vrijeme</h3></div><b>8 – 16</b></div>
+  <div class="season rv" id="ljeto" style="transition-delay:.08s"><div><span>Ljeto</span><h3>Ljetno radno vrijeme</h3></div><b>8 – 20</b></div>
+ </div>
 </div></section>
 
 <footer class="foot" id="kontakt"><div class="w">
  <div class="eb">Kontakt</div>
  <a class="big" href="tel:+385958013100">095 801 3100</a>
  <div class="fg">
-  <div><span>Fiksni</span><a href="tel:+38523236432">023 236 432</a></div>
-  <div><span>WhatsApp</span><a href="https://wa.me/385958013100" target="_blank" rel="noopener">095 801 3100</a></div>
+  <div><span>Mobitel</span><a href="tel:+385958013100">095 801 3100</a></div>
   <div><span>E-mail</span><a href="mailto:ledgranula@gmail.com">ledgranula@gmail.com</a></div>
-  <div><span>Adresa</span><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Sabunike+1104+Privlaka">Sabunike 1104, 23233 Privlaka ↗</a></div>
+  <div><span>Adresa</span><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Put+Sabunika+11+Privlaka">Put Sabunika 11, poslovna zona Sabunike, Privlaka ↗</a></div>
  </div>
  <div class="copy"><span>LED GRANULA d.o.o.</span><span>Demo · Azzurro Digital</span></div>
 </div></footer>
 
-<div class="bar" id="bar"><a class="btn ice" href="#narudzba">Naruči</a><a class="btn wa" href="https://wa.me/385958013100" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></a><a class="btn line" href="tel:+385958013100">Nazovi</a></div>
+<div class="bar" id="bar"><a class="btn ice" href="#narudzba">Naruči</a><a class="btn line" href="tel:+385958013100">Nazovi</a></div>
 
 <script>
 (()=>{
 const rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
-// --- brand cube made of granules ---
-const svg=document.getElementById('cube'),NS='http://www.w3.org/2000/svg',N=6,S=100,dots=[];
-const c30=Math.cos(Math.PI/6),s30=.5;
-const faces=[
- {o:[0,-S],u:[c30,s30],v:[-c30,s30],fill:'#c9f0ff'},      // top
- {o:[-c30*S,-S*s30],u:[c30,s30],v:[0,1],fill:'#8fdcf7'},  // left
- {o:[0,0],u:[c30,-s30],v:[0,1],fill:'#3d6fb3'}            // right
-];
-faces.forEach((f,fi)=>{for(let i=0;i<N;i++)for(let j=0;j<N;j++){
- const a=(i+.5)/N*S,b=(j+.5)/N*S;
- const x=f.o[0]+f.u[0]*a+f.v[0]*b, y=f.o[1]+f.u[1]*a+f.v[1]*b;
- const c=document.createElementNS(NS,'circle');c.setAttribute('cx',x.toFixed(1));c.setAttribute('cy',y.toFixed(1));c.setAttribute('r',6.2);c.setAttribute('fill',f.fill);
- const ang=Math.random()*Math.PI*2,dist=90+Math.random()*120;
- c.style.transform=`translate(${(Math.cos(ang)*dist).toFixed(1)}px,${(Math.sin(ang)*dist).toFixed(1)}px) scale(.2)`;c.style.opacity=0;c.style.transformBox='fill-box';c.style.transformOrigin='center';
- c.style.transitionDelay=(.25+fi*.12+(i+j)*.035+Math.random()*.08).toFixed(3)+'s';
- svg.appendChild(c);dots.push(c)}});
-// subtle glint: one random granule brightens now and then (idle life)
-function glint(){const d=dots[Math.floor(Math.random()*dots.length)];d.animate([{fill:d.getAttribute('fill')},{fill:'#ffffff'},{fill:d.getAttribute('fill')}],{duration:900,easing:'cubic-bezier(.2,0,0,1)'});}
-// --- live status ---
-const z=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Zagreb'}));
-const di=(z.getDay()+6)%7,h=z.getHours(),open=di<6&&h>=8;
-const st=document.getElementById('status');
-if(open){st.classList.add('open');st.lastChild.textContent='Sada otvoreno · do 24 h'}else st.lastChild.textContent=di===6?'Danas zatvoreno · otvaramo u ponedjeljak u 8':'Sada zatvoreno · otvaramo u 8 h';
-// --- week ---
-const wk=document.getElementById('week');['Pon','Uto','Sri','Čet','Pet','Sub','Ned'].forEach((n,i)=>{const d=document.createElement('div');d.className='day'+(i===6?' off':'')+(i===di?' now':'');d.style.transitionDelay=([0,.04,.09,.15,.22,.3,.39][i])+'s';d.innerHTML=`<b>${n}</b><span>${i===6?'zatvoreno':'8 – 24'}</span>`;wk.appendChild(d)});
 // --- slip ---
+const z=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Zagreb'}));document.getElementById('zima').classList.toggle('cur',[10,11,0,1,2,3].includes(z.getMonth()));document.getElementById('ljeto').classList.toggle('cur',![10,11,0,1,2,3].includes(z.getMonth()));
 document.getElementById('dat').textContent=z.toLocaleDateString('hr-HR',{day:'2-digit',month:'2-digit',year:'numeric'});
-const s={za:'Ugostiteljstvo',kad:'Sutra',kol:'',ime:''},o=k=>document.getElementById('o-'+k);
+const s={za:'Led kocka 5/1',kad:'Sutra',kol:'',ime:''},o=k=>document.getElementById('o-'+k);
 const set=(k,v,ph)=>{s[k]=v;const e=o(k);e.textContent=v||ph;e.classList.toggle('e',!v);e.classList.remove('f');void e.offsetWidth;e.classList.add('f');upd()};
 document.querySelectorAll('.seg').forEach(g=>g.addEventListener('click',ev=>{const b=ev.target.closest('button');if(!b)return;g.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));set(g.id,b.textContent,'')}));
 document.getElementById('kol').addEventListener('input',e=>set('kol',e.target.value.trim(),'upišite količinu'));
 document.getElementById('ime').addEventListener('input',e=>set('ime',e.target.value.trim(),'upišite ime'));
 const sms=document.getElementById('sms');
-function upd(){const ok=s.kol&&s.ime;sms.setAttribute('aria-disabled',!ok);const m=`Narudžba leda\nZa: ${s.za}\nKoličina: ${s.kol}\nPreuzimanje: ${s.kad}\nNaručuje: ${s.ime}`;document.getElementById('wa').setAttribute('aria-disabled',!ok);document.getElementById('wa').href='https://wa.me/385958013100?text='+encodeURIComponent(m);sms.href='sms:+385958013100'+(/iPhone|iPad|Mac/.test(navigator.userAgent)?'&':'?')+'body='+encodeURIComponent(m)}upd();
+function upd(){const ok=s.kol&&s.ime;sms.setAttribute('aria-disabled',!ok);const m=`Narudžba leda\nVrsta: ${s.za}\nKoličina: ${s.kol}\nPreuzimanje: ${s.kad}\nNaručuje: ${s.ime}`;sms.href='sms:+385958013100'+(/iPhone|iPad|Mac/.test(navigator.userAgent)?'&':'?')+'body='+encodeURIComponent(m)}upd();
 // --- reveals ---
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.2,rootMargin:'0px 0px -6% 0px'});
-document.querySelectorAll('.rv,#week,#slipwrap').forEach(el=>io.observe(el));
+document.querySelectorAll('.rv,#slipwrap').forEach(el=>io.observe(el));
 // --- nav + bar ---
 const nav=document.getElementById('nav'),bar=document.getElementById('bar');
 addEventListener('scroll',()=>{nav.classList.toggle('s',scrollY>30);bar.classList.toggle('on',scrollY>innerHeight*.6)},{passive:true});
 // --- start ---
-requestAnimationFrame(()=>requestAnimationFrame(()=>{document.documentElement.classList.add('go');dots.forEach(d=>{d.style.transform='none';d.style.opacity=1});if(!rm)setTimeout(()=>setInterval(glint,700),2600)}));
+requestAnimationFrame(()=>requestAnimationFrame(()=>{document.documentElement.classList.add('go')}));
 })();
 </script>
 </body>

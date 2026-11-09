@@ -235,7 +235,9 @@ input:focus{border-color:var(--navy);box-shadow:0 0 0 4px rgba(143,220,247,.45)}
  <div class="og">
   <div class="form rv">
    <div class="field"><span class="l">Vrsta i količina</span><div class="qty"><div class="qr" data-n="Led kocka 5/1"><span>Led kocka 5/1</span><div class="st"><button type="button" data-d="-1" aria-label="Manje">−</button><input inputmode="numeric" value="0" aria-label="Količina Led kocka 5/1"><button type="button" data-d="1" aria-label="Više">+</button></div></div><div class="qr" data-n="Led listići 15/1"><span>Led listići 15/1</span><div class="st"><button type="button" data-d="-1" aria-label="Manje">−</button><input inputmode="numeric" value="0" aria-label="Količina Led listići 15/1"><button type="button" data-d="1" aria-label="Više">+</button></div></div><div class="qr" data-n="Led listići 30/1"><span>Led listići 30/1</span><div class="st"><button type="button" data-d="-1" aria-label="Manje">−</button><input inputmode="numeric" value="0" aria-label="Količina Led listići 30/1"><button type="button" data-d="1" aria-label="Više">+</button></div></div></div><span class="l" style="margin-top:6px;text-transform:none;letter-spacing:0;opacity:.7">Možete kombinirati više vrsta u istoj narudžbi.</span></div>
-   <div class="field"><span class="l">Preuzimanje</span><div class="seg" id="kad"><button type="button" aria-pressed="false">Danas</button><button type="button" aria-pressed="true">Sutra</button><button type="button" aria-pressed="false">Po dogovoru</button></div></div>
+   <div class="field"><span class="l">Način</span><div class="seg" id="nac"><button type="button" aria-pressed="true">Preuzimam sam</button><button type="button" aria-pressed="false">Dostava</button></div></div>
+   <label class="field" id="adrf" hidden><span class="l">Adresa dostave</span><input id="adr" placeholder="npr. Obala kneza Branimira 1, Zadar" autocomplete="street-address"></label>
+   <div class="field"><span class="l"><span id="kadl">Preuzimanje</span></span><div class="seg" id="kad"><button type="button" aria-pressed="false">Danas</button><button type="button" aria-pressed="true">Sutra</button><button type="button" aria-pressed="false">Po dogovoru</button></div></div>
    <label class="field"><span class="l">Ime ili lokal</span><input id="ime" placeholder="npr. Caffe bar Riva" autocomplete="organization"></label>
   </div>
   <div>
@@ -244,11 +246,12 @@ input:focus{border-color:var(--navy);box-shadow:0 0 0 4px rgba(143,220,247,.45)}
     <h3><span>Narudžbenica</span><span id="dat"></span></h3>
     <dl>
      <dt>Led</dt><dd id="o-kol" class="e">odaberite količinu</dd>
-     <dt>Preuzimanje</dt><dd id="o-kad">Sutra</dd>
+     <dt>Način</dt><dd id="o-nac">Preuzimam sam</dd>
+     <dt id="kadt">Preuzimanje</dt><dd id="o-kad">Sutra</dd>
      <dt>Naručuje</dt><dd id="o-ime" class="e">upišite ime</dd>
     </dl>
     <div class="acts"><a class="btn navy" id="sms" href="sms:+385958013100" aria-disabled="true">Pošalji SMS</a><a class="btn wa" id="wa" href="https://wa.me/385958013100?text=Pozdrav%2C%20zanima%20me%20narud%C5%BEba%20leda." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.4-.3z"/></svg>Pošalji na WhatsApp</a><a class="btn" style="border:1.5px solid var(--line)" href="tel:+385958013100">Ili nazovite 095 801 3100</a></div>
-    <p class="hint">Preuzimanje u Privlaci, Put Sabunika 11, poslovna zona Sabunike.</p>
+    <p class="hint">Preuzimanje u Privlaci, Put Sabunika 11, poslovna zona Sabunike, ili dostava na vašu adresu.</p>
    </aside></div>
   </div>
  </div>
@@ -282,10 +285,11 @@ const rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
 // --- slip ---
 const z=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Zagreb'}));document.getElementById('zima').classList.toggle('cur',[10,11,0,1,2,3].includes(z.getMonth()));document.getElementById('ljeto').classList.toggle('cur',![10,11,0,1,2,3].includes(z.getMonth()));
 document.getElementById('dat').textContent=z.toLocaleDateString('hr-HR',{day:'2-digit',month:'2-digit',year:'numeric'});
-const s={kad:'Sutra',ime:''},o=k=>document.getElementById('o-'+k),q={};
+const s={kad:'Sutra',ime:'',nac:'Preuzimam sam',adr:''},o=k=>document.getElementById('o-'+k),q={};
 const flash=e=>{e.classList.remove('f');void e.offsetWidth;e.classList.add('f')};
 const set=(k,v,ph)=>{s[k]=v;const e=o(k);e.textContent=v||ph;e.classList.toggle('e',!v);flash(e);upd()};
-document.querySelectorAll('.seg').forEach(g=>g.addEventListener('click',ev=>{const b=ev.target.closest('button');if(!b)return;g.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));set(g.id,b.textContent,'')}));
+document.querySelectorAll('.seg').forEach(g=>g.addEventListener('click',ev=>{const b=ev.target.closest('button');if(!b)return;g.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));set(g.id,b.textContent,'');if(g.id==='nac'){const d=b.textContent==='Dostava';document.getElementById('adrf').hidden=!d;document.getElementById('kadl').textContent=document.getElementById('kadt').textContent=d?'Dostava':'Preuzimanje';o('nac').textContent=d?(s.adr||'Dostava'):'Preuzimam sam'}}));
+document.getElementById('adr').addEventListener('input',e=>{s.adr=e.target.value.trim();o('nac').textContent=s.adr?'Dostava, '+s.adr:'Dostava';upd()});
 const lines=()=>Object.entries(q).filter(([,v])=>v>0).map(([n,v])=>v+' × '+n);
 function items(){const l=lines(),e=o('kol');e.innerHTML=l.length?l.join('<br>'):'odaberite količinu';e.classList.toggle('e',!l.length);flash(e);upd()}
 document.querySelectorAll('.qr').forEach(r=>{const n=r.dataset.n,i=r.querySelector('input');q[n]=0;
@@ -294,7 +298,7 @@ document.querySelectorAll('.qr').forEach(r=>{const n=r.dataset.n,i=r.querySelect
  i.addEventListener('input',()=>put(i.value.replace(/\D/g,'')));i.addEventListener('focus',()=>i.select())});
 document.getElementById('ime').addEventListener('input',e=>set('ime',e.target.value.trim(),'upišite ime'));
 const sms=document.getElementById('sms');
-function upd(){const l=lines(),ok=l.length&&s.ime;sms.setAttribute('aria-disabled',!ok);const m=`Narudžba leda\n${l.join('\n')}\nPreuzimanje: ${s.kad}\nNaručuje: ${s.ime}`;sms.href='sms:+385958013100'+(/iPhone|iPad|Mac/.test(navigator.userAgent)?'&':'?')+'body='+encodeURIComponent(m);const w=document.getElementById('wa');if(w)w.href='https://wa.me/385958013100?text='+encodeURIComponent(m)}upd();
+function upd(){const l=lines(),d=s.nac==='Dostava',ok=l.length&&s.ime&&(!d||s.adr);sms.setAttribute('aria-disabled',!ok);const m=`Narudžba leda\n${l.join('\n')}\n${d?'Dostava: '+s.kad+(s.adr?', '+s.adr:''):'Preuzimanje: '+s.kad}\nNaručuje: ${s.ime}`;sms.href='sms:+385958013100'+(/iPhone|iPad|Mac/.test(navigator.userAgent)?'&':'?')+'body='+encodeURIComponent(m);const w=document.getElementById('wa');if(w)w.href='https://wa.me/385958013100?text='+encodeURIComponent(m)}upd();
 // --- reveals ---
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.2,rootMargin:'0px 0px -6% 0px'});
 document.querySelectorAll('.rv,#slipwrap').forEach(el=>io.observe(el));

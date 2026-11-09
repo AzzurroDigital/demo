@@ -2,180 +2,324 @@
 <html lang="hr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#06141c">
 <title>Led Granula · Proizvodnja i prodaja leda · Privlaka</title>
 <meta name="description" content="Proizvodnja i prodaja leda za ugostiteljstvo, medicinu i druge djelatnosti. Privlaka kraj Zadra, od 2010.">
 <meta name="robots" content="noindex">
 <style>
+@font-face{font-family:IS;src:url(f/instrumentserif-italic-400-latin-ext.woff2) format("woff2");font-style:italic;unicode-range:U+0100-02AF,U+1E00-1EFF}
+@font-face{font-family:IS;src:url(f/instrumentserif-italic-400-latin.woff2) format("woff2");font-style:italic}
 @font-face{font-family:IS;src:url(f/instrumentserif-normal-400-latin-ext.woff2) format("woff2");unicode-range:U+0100-02AF,U+1E00-1EFF}
 @font-face{font-family:IS;src:url(f/instrumentserif-normal-400-latin.woff2) format("woff2")}
-@font-face{font-family:IS;font-style:italic;src:url(f/instrumentserif-italic-400-latin-ext.woff2) format("woff2");unicode-range:U+0100-02AF,U+1E00-1EFF}
-@font-face{font-family:IS;font-style:italic;src:url(f/instrumentserif-italic-400-latin.woff2) format("woff2")}
 @font-face{font-family:IT;font-weight:400;src:url(f/intertight-normal-400-latin-ext.woff2) format("woff2");unicode-range:U+0100-02AF,U+1E00-1EFF}
 @font-face{font-family:IT;font-weight:400;src:url(f/intertight-normal-400-latin.woff2) format("woff2")}
 @font-face{font-family:IT;font-weight:500;src:url(f/intertight-normal-500-latin-ext.woff2) format("woff2");unicode-range:U+0100-02AF,U+1E00-1EFF}
 @font-face{font-family:IT;font-weight:500;src:url(f/intertight-normal-500-latin.woff2) format("woff2")}
-:root{--ice:#f3f7f9;--frost:#e3edf1;--ink:#0b2230;--mu:#5d7380;--ac:#3f8fb0;--line:#cfdde3;--r:26px}
+@font-face{font-family:IT;font-weight:600;src:url(f/intertight-normal-600-latin-ext.woff2) format("woff2");unicode-range:U+0100-02AF,U+1E00-1EFF}
+@font-face{font-family:IT;font-weight:600;src:url(f/intertight-normal-600-latin.woff2) format("woff2")}
+:root{--deep:#06141c;--deep2:#0b2430;--ice:#eef6f9;--frost:#dcebf1;--mu:#6b8592;--mu2:#9db6c2;--ac:#8fe3ff;--ac2:#3a9cc2;--line:rgba(255,255,255,.12);--lineL:#cfdfe6;--ease:cubic-bezier(.16,1,.3,1)}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--ice);color:var(--ink);font-family:IT,system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--deep);color:var(--ice);font-family:IT,system-ui,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
-.w{width:min(1240px,100% - 40px);margin-inline:auto}
-.eb{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mu)}
-.serif{font-family:IS,Georgia,serif;font-weight:400;letter-spacing:-.02em;line-height:.95}
-.serif em{font-style:italic;color:var(--ac)}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 24px;border-radius:999px;font-weight:500;font-size:16px;transition:transform .25s,background .25s}
-.btn.p{background:var(--ink);color:var(--ice)}
-.btn.g{border:1px solid var(--line);background:rgba(255,255,255,.6);backdrop-filter:blur(8px)}
-.btn:hover{transform:translateY(-2px)}
-nav{position:fixed;inset:0 0 auto;z-index:20;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
-nav.s{background:rgba(243,247,249,.82);backdrop-filter:blur(16px);border-color:var(--line)}
-nav .w{display:flex;justify-content:space-between;align-items:center;height:70px}
-.logo{display:flex;align-items:center;gap:12px;font-weight:500;letter-spacing:.02em}
-.logo svg{width:28px;height:28px}
-.links{display:none;gap:30px;font-size:15px;color:var(--mu)}
-.links a:hover{color:var(--ink)}
+em{font-family:IS,Georgia,serif;font-style:italic;font-weight:400;letter-spacing:-.01em}
+.w{width:min(1280px,100% - 40px);margin-inline:auto}
+.eb{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--mu2);display:inline-flex;align-items:center;gap:10px}
+.eb i{width:6px;height:6px;border-radius:50%;background:var(--ac);box-shadow:0 0 12px var(--ac)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:54px;padding:0 26px;border-radius:999px;font-weight:500;font-size:16px;transition:transform .4s var(--ease),background .3s,color .3s;white-space:nowrap}
+.btn svg{width:18px;height:18px;transition:transform .4s var(--ease)}
+.btn:hover svg{transform:translateX(3px) rotate(-8deg)}
+.btn.p{background:var(--ice);color:var(--deep)}
+.btn.p:hover{background:var(--ac)}
+.btn.g{border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.btn:active{transform:scale(.97)}
+
+/* intro frost */
+.intro{position:fixed;inset:0;z-index:100;background:var(--deep);display:grid;place-items:center;pointer-events:none;animation:introOut 1s var(--ease) 1.25s forwards}
+.intro svg{width:70px;height:70px}
+.intro path{stroke:var(--ac);stroke-width:1.2;fill:none;stroke-dasharray:120;stroke-dashoffset:120;animation:draw 1.1s var(--ease) forwards}
+.intro path:nth-child(2){animation-delay:.15s}.intro path:nth-child(3){animation-delay:.3s}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes introOut{to{clip-path:circle(0% at 50% 50%);opacity:0}}
+.intro{clip-path:circle(150% at 50% 50%)}
+
+/* nav */
+nav{position:fixed;top:12px;left:12px;right:12px;z-index:50;display:flex;justify-content:space-between;align-items:center;height:58px;padding:0 8px 0 18px;border-radius:999px;transition:background .4s,border-color .4s,transform .5s var(--ease);border:1px solid transparent}
+nav.s{background:rgba(6,20,28,.62);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border-color:var(--line)}
+nav.h{transform:translateY(-90px)}
+.logo{display:flex;align-items:center;gap:10px;font-weight:600;font-size:14px;letter-spacing:.14em}
+.logo svg{width:24px;height:24px}
+.nl{display:none;gap:4px}
+.nl a{padding:9px 16px;border-radius:999px;font-size:14px;color:var(--mu2);transition:.3s}
+.nl a:hover{color:var(--ice);background:rgba(255,255,255,.07)}
+.nav-c{height:42px;padding:0 18px;font-size:14px}
+
 /* hero */
-.hero{padding:130px 0 40px}
-.hero h1{font-size:clamp(64px,15vw,210px);margin:20px 0 0}
-.hero-g{display:grid;gap:26px;margin-top:34px;align-items:end}
-.hero p{max-width:470px;font-size:19px;color:var(--mu)}
-.ctas{display:flex;flex-wrap:wrap;gap:12px}
-.hero-img{margin-top:44px;border-radius:var(--r);overflow:hidden;aspect-ratio:16/9;position:relative}
-.hero-img img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 2.4s cubic-bezier(.2,.7,.2,1)}
-.hero-img.in img{transform:scale(1)}
-.chip{position:absolute;left:18px;bottom:18px;background:rgba(243,247,249,.85);backdrop-filter:blur(10px);border-radius:999px;padding:9px 16px;font-size:14px}
-/* facts */
-.facts{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line);margin-top:56px}
-.facts div{padding:24px 0 6px}
-.facts b{display:block;font-family:IS,serif;font-weight:400;font-size:44px;line-height:1}
-.facts span{font-size:14px;color:var(--mu)}
-/* uses */
-.sec{padding:120px 0}
-.sec h2{font-size:clamp(46px,8vw,104px);margin:18px 0 52px;max-width:900px}
-.uses{display:grid;gap:14px}
-.u{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px;position:relative;overflow:hidden;min-height:250px;display:flex;flex-direction:column;justify-content:space-between}
-.u .i{font-family:IS,serif;font-size:22px;color:var(--ac);font-style:italic}
-.u h3{font-family:IS,serif;font-weight:400;font-size:40px;line-height:1;margin-bottom:10px}
-.u p{color:var(--mu);font-size:16px}
-.u.ph{padding:0;min-height:380px;color:#fff;border:0}
-.u.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.u.ph .cap{position:relative;margin-top:auto;padding:28px;background:linear-gradient(transparent,rgba(11,34,48,.75))}
-.u.ph p{color:rgba(255,255,255,.85)}
-/* boats */
-.boats{background:var(--ink);color:var(--ice);border-radius:36px;margin:0 12px;padding:110px 0;overflow:hidden}
-.boats .g{display:grid;gap:40px;align-items:center}
-.boats .eb{color:#8fb0c0}
-.boats h2{font-size:clamp(46px,8vw,104px);margin:18px 0 22px}
-.boats h2 em{color:#9fd3ea}
-.boats p{color:#b6c8d1;max-width:440px;margin-bottom:30px}
-.boats .btn.p{background:var(--ice);color:var(--ink)}
-.boats .im{border-radius:var(--r);overflow:hidden;aspect-ratio:4/5}
-.boats .im img{width:100%;height:100%;object-fit:cover}
-/* order */
-.steps{display:grid;gap:0;border-top:1px solid var(--line)}
-.st{display:grid;grid-template-columns:70px 1fr;gap:16px;padding:28px 0;border-bottom:1px solid var(--line)}
-.st span{font-family:IS,serif;font-style:italic;font-size:30px;color:var(--ac);line-height:1}
-.st h3{font-weight:500;font-size:21px;margin-bottom:4px}
-.st p{color:var(--mu)}
-/* contact */
-.ct{padding:0 0 120px}
-.cbox{background:linear-gradient(160deg,#fff,var(--frost));border:1px solid var(--line);border-radius:36px;padding:44px 26px;display:grid;gap:36px;position:relative;overflow:hidden}
-.cbox h2{font-size:clamp(50px,9vw,120px)}
-.cbox dl dt{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mu);margin-top:22px}
-.cbox dl dt:first-child{margin-top:0}
-.cbox dl dd{font-size:21px;margin-top:4px}
-.cbox dl dd a{border-bottom:1px solid var(--line)}
-footer{border-top:1px solid var(--line);padding:28px 0 100px;font-size:14px;color:var(--mu)}
-footer .w{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
-.fab{position:fixed;left:16px;right:16px;bottom:16px;z-index:30;display:flex;gap:10px}
-.fab a{flex:1;justify-content:center;box-shadow:0 10px 30px rgba(11,34,48,.18)}
-.rv{opacity:0;transform:translateY(26px);transition:opacity .9s,transform .9s cubic-bezier(.2,.7,.2,1)}
+.hero{position:relative;height:100svh;min-height:640px;overflow:hidden;display:flex;align-items:flex-end}
+.hero .bg{position:absolute;inset:-6%;background:url(img/hero.webp) center/cover;filter:saturate(.9) brightness(.72);transform:scale(1.15);animation:kb 18s ease-out 1.2s forwards}
+@keyframes kb{to{transform:scale(1)}}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,20,28,.55) 0%,rgba(6,20,28,.05) 35%,rgba(6,20,28,.35) 65%,var(--deep) 100%)}
+#frost{position:absolute;inset:0;z-index:1;pointer-events:none}
+.hero .w{position:relative;z-index:2;padding-bottom:clamp(28px,6vh,64px)}
+.h1{font-weight:600;font-size:clamp(68px,17vw,260px);line-height:.82;letter-spacing:-.065em;margin:18px 0 22px}
+.h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.h1 .ln span{display:inline-block;transform:translateY(105%);animation:up 1.2s var(--ease) forwards}
+.h1 .ln:nth-child(2) span{animation-delay:.12s}
+.h1 em{font-weight:400;color:var(--ac);letter-spacing:-.04em}
+@keyframes up{to{transform:none}}
+.hero .row{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:flex-end;justify-content:space-between}
+.hero p{max-width:420px;color:#cfe0e7;font-size:18px}
+.ctas{display:flex;gap:10px;flex-wrap:wrap}
+.d1{opacity:0;transform:translateY(16px);animation:fin 1s var(--ease) forwards}
+@keyframes fin{to{opacity:1;transform:none}}
+.scroll{position:absolute;right:20px;bottom:28px;z-index:2;writing-mode:vertical-rl;font-size:11px;letter-spacing:.22em;color:var(--mu2);display:none;align-items:center;gap:12px}
+.scroll:after{content:"";width:1px;height:50px;background:linear-gradient(var(--ac),transparent);animation:drip 2s ease-in-out infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* statement */
+.st{padding:clamp(100px,16vw,200px) 0 clamp(70px,10vw,140px);position:relative}
+.big{font-size:clamp(34px,6.2vw,92px);line-height:1.02;letter-spacing:-.04em;font-weight:500;max-width:1150px}
+.big .wd{opacity:.14;transition:opacity .5s}
+.big .wd.on{opacity:1}
+.big em{color:var(--ac)}
+
+/* cube */
+.cubewrap{display:grid;gap:50px;align-items:center;margin-top:clamp(60px,9vw,120px)}
+.scene{perspective:900px;height:300px;display:grid;place-items:center;position:relative}
+.scene:before{content:"";position:absolute;width:260px;height:60px;bottom:10px;border-radius:50%;background:radial-gradient(rgba(143,227,255,.35),transparent 70%);filter:blur(10px)}
+.cube{width:150px;height:150px;position:relative;transform-style:preserve-3d;animation:spin 14s linear infinite}
+.cube div{position:absolute;inset:0;border-radius:18px;border:1px solid rgba(220,245,255,.55);background:linear-gradient(135deg,rgba(220,245,255,.30),rgba(143,227,255,.06) 55%,rgba(255,255,255,.18));box-shadow:inset 0 0 40px rgba(255,255,255,.25)}
+.cube div:after{content:"";position:absolute;left:14%;top:12%;width:40%;height:22%;border-radius:40%;background:linear-gradient(rgba(255,255,255,.55),transparent);filter:blur(2px)}
+.cube .f1{transform:translateZ(75px)}.cube .f2{transform:rotateY(180deg) translateZ(75px)}
+.cube .f3{transform:rotateY(90deg) translateZ(75px)}.cube .f4{transform:rotateY(-90deg) translateZ(75px)}
+.cube .f5{transform:rotateX(90deg) translateZ(75px)}.cube .f6{transform:rotateX(-90deg) translateZ(75px)}
+@keyframes spin{from{transform:rotateX(-22deg) rotateY(0)}to{transform:rotateX(-22deg) rotateY(360deg)}}
+.stats{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
+.stats div{padding:26px 0;border-bottom:1px solid var(--line)}
+.stats div:nth-child(odd){padding-right:16px;border-right:1px solid var(--line)}
+.stats div:nth-child(even){padding-left:20px}
+.stats b{display:block;font-weight:500;font-size:clamp(40px,6vw,64px);letter-spacing:-.05em;line-height:1}
+.stats span{font-size:13px;color:var(--mu2)}
+
+/* uses (light) */
+.uses{background:var(--ice);color:var(--deep);border-radius:36px 36px 0 0;padding:clamp(80px,11vw,140px) 0 clamp(70px,9vw,120px);position:relative;z-index:2}
+.uses .eb{color:var(--mu)}
+.uses .eb i{background:var(--ac2);box-shadow:none}
+.sh{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:44px}
+.sh h2{font-size:clamp(46px,8.5vw,120px);line-height:.9;letter-spacing:-.055em;font-weight:500;margin-top:16px}
+.sh h2 em{color:var(--ac2)}
+.sh p{max-width:340px;color:var(--mu)}
+.rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 20px 8px;margin:0 -20px;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.card{flex:0 0 82%;scroll-snap-align:start;border-radius:28px;overflow:hidden;position:relative;aspect-ratio:3/4;background:var(--deep);color:var(--ice);transform:translateY(40px);opacity:0;transition:transform 1.1s var(--ease),opacity 1.1s}
+.card.in{transform:none;opacity:1}
+.card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.card:hover img{transform:scale(1.06)}
+.card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,20,28,0) 35%,rgba(6,20,28,.85))}
+.card .in2{position:absolute;inset:auto 0 0 0;padding:26px;z-index:1}
+.card .n{position:absolute;top:22px;left:24px;z-index:1;font-size:12px;letter-spacing:.2em;color:#d6ecf4}
+.card h3{font-size:34px;letter-spacing:-.04em;font-weight:500;line-height:1;margin-bottom:8px}
+.card p{color:#c6dbe3;font-size:15px}
+.card.solid{background:linear-gradient(160deg,#0f3242,#06141c)}
+.card.solid:after{display:none}
+.card.solid .glow{position:absolute;width:260px;height:260px;right:-60px;top:-60px;border-radius:50%;background:radial-gradient(rgba(143,227,255,.45),transparent 65%);filter:blur(10px);animation:float 8s ease-in-out infinite}
+@keyframes float{50%{transform:translate(-30px,40px)}}
+.card.frosty{background:linear-gradient(160deg,#dff1f8,#b9dbe8);color:var(--deep)}
+.card.frosty:after{display:none}
+.card.frosty p{color:#3f5a66}.card.frosty .n{color:var(--ac2)}
+.card.frosty .flake{position:absolute;top:50%;left:50%;width:160px;translate:-50% -70%;opacity:.55;animation:rot 30s linear infinite}
+@keyframes rot{to{rotate:360deg}}
+
+/* process (light continues) */
+.proc{background:var(--ice);color:var(--deep);padding:0 0 clamp(90px,12vw,160px);position:relative;z-index:2}
+.steps{display:grid;gap:14px;counter-reset:s}
+.step{background:#fff;border:1px solid var(--lineL);border-radius:28px;padding:28px;display:flex;gap:20px;align-items:flex-start;transition:transform .5s var(--ease),box-shadow .5s;opacity:0;transform:translateY(30px)}
+.step.in{opacity:1;transform:none;transition:opacity 1s,transform 1s var(--ease)}
+.step:hover{box-shadow:0 20px 50px rgba(6,20,28,.08)}
+.step .k{flex:none;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:var(--deep);color:var(--ac);font-weight:500}
+.step h3{font-size:22px;font-weight:500;letter-spacing:-.02em;margin-bottom:4px}
+.step p{color:var(--mu);font-size:16px}
+
+/* cta */
+.cta{position:relative;padding:clamp(110px,15vw,200px) 0;overflow:hidden;text-align:center;margin-top:-36px;padding-top:calc(clamp(110px,15vw,200px) + 36px)}
+.cta .bg{position:absolute;inset:0;background:url(img/bags.webp) center/cover;opacity:.22;filter:saturate(.6)}
+.cta:before{content:"";position:absolute;inset:0;background:radial-gradient(60% 60% at 50% 50%,rgba(143,227,255,.14),transparent 70%),linear-gradient(var(--deep),rgba(6,20,28,.4) 40%,var(--deep))}
+.cta .w{position:relative}
+.cta h2{font-size:clamp(56px,12vw,180px);line-height:.85;letter-spacing:-.065em;font-weight:500;margin:22px 0 34px}
+.cta h2 em{color:var(--ac)}
+.phone{display:inline-flex;align-items:center;gap:14px;font-size:clamp(28px,5vw,54px);letter-spacing:-.03em;font-weight:500;padding:18px 34px;border-radius:999px;background:var(--ice);color:var(--deep);position:relative;transition:transform .4s var(--ease)}
+.phone:before{content:"";position:absolute;inset:-6px;border-radius:999px;border:1px solid var(--ac);animation:ring 2.4s ease-out infinite;opacity:0}
+@keyframes ring{0%{opacity:.8;transform:scale(.96)}100%{opacity:0;transform:scale(1.12)}}
+.phone:hover{transform:scale(1.03)}
+.alt{margin-top:22px;color:var(--mu2);font-size:15px}
+.alt a{color:var(--ice);border-bottom:1px solid var(--line)}
+
+/* info */
+.info{padding:0 0 60px}
+.ig{display:grid;gap:12px}
+.box{border:1px solid var(--line);border-radius:26px;padding:26px;background:rgba(255,255,255,.03);transition:background .4s,border-color .4s}
+.box:hover{background:rgba(143,227,255,.06);border-color:rgba(143,227,255,.35)}
+.box dt{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mu2);margin-bottom:10px}
+.box dd{font-size:20px;letter-spacing:-.01em}
+.box dd small{display:block;color:var(--mu2);font-size:14px;margin-top:4px}
+.map{display:block;border-radius:26px;overflow:hidden;position:relative;min-height:200px;border:1px solid var(--line);background:linear-gradient(135deg,#0d2b38,#071a23)}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.map span{position:absolute;left:22px;bottom:20px;font-size:15px;display:flex;gap:8px;align-items:center}
+.pin{position:absolute;left:58%;top:42%;width:14px;height:14px;border-radius:50%;background:var(--ac);box-shadow:0 0 0 6px rgba(143,227,255,.2)}
+.pin:after{content:"";position:absolute;inset:-6px;border-radius:50%;border:1px solid var(--ac);animation:ring 2.2s ease-out infinite}
+footer{border-top:1px solid var(--line);padding:26px 0 120px;font-size:13px;color:var(--mu2)}
+footer .w{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
+
+/* dock (mobile) */
+.dock{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:60;display:flex;gap:8px;padding:8px;border-radius:999px;background:rgba(6,20,28,.7);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid var(--line);transform:translateY(140%);transition:transform .6s var(--ease)}
+.dock.on{transform:none}
+.dock a{flex:1;height:48px}
+
+.rv{opacity:0;transform:translateY(30px);transition:opacity 1s,transform 1.1s var(--ease)}
 .rv.in{opacity:1;transform:none}
-@media(min-width:900px){
- .links{display:flex}
- .hero-g{grid-template-columns:1.3fr 1fr}
- .hero-g .ctas{justify-content:flex-end}
- .facts{grid-template-columns:repeat(4,1fr)}
- .uses{grid-template-columns:1.2fr 1fr 1fr}
- .u.ph{grid-row:span 2}
- .boats{margin:0 24px}
- .boats .g{grid-template-columns:1fr 1fr}
- .steps{grid-template-columns:repeat(3,1fr);gap:30px;border:0}
- .st{grid-template-columns:1fr;border-top:1px solid var(--line);border-bottom:0}
- .cbox{grid-template-columns:1.2fr 1fr;padding:70px}
- .fab{display:none}
- footer{padding-bottom:28px}
+
+@media(min-width:760px){
+ .card{flex-basis:46%}
 }
-@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}*{transition:none!important}}
+@media(min-width:1000px){
+ nav{left:24px;right:24px;top:18px}
+ .nl{display:flex}
+ .scroll{display:flex}
+ .cubewrap{grid-template-columns:1fr 1fr}
+ .scene{height:380px}
+ .cube{width:190px;height:190px}
+ .cube .f1{transform:translateZ(95px)}.cube .f2{transform:rotateY(180deg) translateZ(95px)}
+ .cube .f3{transform:rotateY(90deg) translateZ(95px)}.cube .f4{transform:rotateY(-90deg) translateZ(95px)}
+ .cube .f5{transform:rotateX(90deg) translateZ(95px)}.cube .f6{transform:rotateX(-90deg) translateZ(95px)}
+ .rail{overflow:visible;margin:0;padding:0;display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:16px}
+ .card{aspect-ratio:auto;min-height:520px}
+ .card:nth-child(2){transition-delay:.1s}.card:nth-child(3){transition-delay:.2s}
+ .steps{grid-template-columns:repeat(3,1fr);gap:16px}
+ .step{flex-direction:column;padding:34px;min-height:250px}
+ .step:nth-child(2){transition-delay:.1s}.step:nth-child(3){transition-delay:.2s}
+ .ig{grid-template-columns:repeat(3,1fr)}
+ .map{grid-column:span 3;min-height:260px}
+ .dock{display:none}
+ footer{padding-bottom:26px}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.rv,.card,.step,.d1{opacity:1;transform:none}.h1 .ln span{transform:none}.intro{display:none}.big .wd{opacity:1}}
 </style>
 </head>
 <body>
-<nav id="nav"><div class="w">
- <a class="logo" href="#"><svg viewBox="0 0 28 28" fill="none" stroke="#0b2230" stroke-width="1.6"><path d="M14 2 25 8.5v11L14 26 3 19.5v-11z"/><path d="M14 2v24M3 8.5l22 11M25 8.5 3 19.5" opacity=".35"/></svg>LED GRANULA</a>
- <div class="links"><a href="#led">Led</a><a href="#narudzba">Narudžba</a><a href="#kontakt">Kontakt</a></div>
- <a class="btn p" style="padding:11px 18px;font-size:15px" href="tel:+385958013100">095 801 3100</a>
-</div></nav>
+<div class="intro" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M32 4v56"/><path d="M8 18l48 28"/><path d="M56 18L8 46"/></svg></div>
 
-<header class="hero"><div class="w">
- <div class="eb rv">Privlaka, Zadarska županija · od 2010.</div>
- <h1 class="serif rv">Led iz <em>Privlake.</em></h1>
- <div class="hero-g">
-  <p class="rv">Proizvodimo i prodajemo led za ugostiteljstvo, medicinu i druge djelatnosti.</p>
-  <div class="ctas rv"><a class="btn p" href="tel:+385958013100">Naručite led</a><a class="btn g" href="#led">Za koga</a></div>
- </div>
- <div class="hero-img rv"><img src="img/hero.webp" alt="Kristalno čiste kocke leda"><div class="chip">Pon – Sub, 8 – 24 h</div></div>
- <div class="facts">
-  <div class="rv"><b>2010.</b><span>godina osnivanja</span></div>
-  <div class="rv"><b>8 – 24</b><span>radno vrijeme, pon – sub</span></div>
-  <div class="rv"><b>Led</b><span>vlastita proizvodnja</span></div>
-  <div class="rv"><b>Privlaka</b><span>Sabunike, kraj Zadra</span></div>
- </div>
-</div></header>
+<nav id="nav">
+ <a class="logo" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="#8fe3ff" stroke-width="1.4"><path d="M12 2v20M3.3 7l17.4 10M20.7 7 3.3 17"/><path d="M12 2 9.5 4.5M12 2l2.5 2.5M12 22l-2.5-2.5M12 22l2.5-2.5" /></svg>LED GRANULA</a>
+ <div class="nl"><a href="#led">Za koga</a><a href="#narudzba">Narudžba</a><a href="#kontakt">Kontakt</a></div>
+ <a class="btn p nav-c" href="tel:+385958013100">Nazovite</a>
+</nav>
 
-<section class="sec" id="led"><div class="w">
- <div class="eb rv">Led</div>
- <h2 class="serif rv">Za šank, za ambulantu, <em>za posao.</em></h2>
- <div class="uses">
-  <div class="u ph rv"><img src="img/bar.webp" alt="Usitnjeni led na šanku uz more" loading="lazy"><div class="cap"><h3>Ugostiteljstvo</h3><p>Led za kafiće, restorane i barove.</p></div></div>
-  <div class="u rv"><span class="i">01</span><div><h3>Medicina</h3><p>Led za medicinske namjene, po dogovoru.</p></div></div>
-  <div class="u rv"><span class="i">02</span><div><h3>Druge djelatnosti</h3><p>Javite što trebate i koliko.</p></div></div>
-  <div class="u ph rv" style="grid-column:span 1;min-height:250px"><img src="img/bags.webp" alt="Vrećice leda u škrinji" loading="lazy"><div class="cap"><h3 style="font-size:32px">Uvijek spreman</h3><p>Led spreman za preuzimanje.</p></div></div>
-  <div class="u rv" style="background:var(--ink);color:var(--ice);border-color:var(--ink)"><span class="i" style="color:#9fd3ea">Od 2010.</span><div><h3>Iz Privlake</h3><p style="color:#b6c8d1">Proizvodnja leda na Sabunikama, kraj Nina i Zadra.</p></div></div>
+<header class="hero">
+ <div class="bg"></div>
+ <canvas id="frost"></canvas>
+ <div class="w">
+  <div class="eb d1" style="animation-delay:1.5s"><i></i>Privlaka · Zadarska županija · od 2010.</div>
+  <h1 class="h1"><span class="ln"><span style="animation-delay:1.45s">Led iz</span></span><span class="ln"><span style="animation-delay:1.58s"><em>Privlake.</em></span></span></h1>
+  <div class="row">
+   <p class="d1" style="animation-delay:1.8s">Proizvodimo i prodajemo led za ugostiteljstvo, medicinu i druge djelatnosti.</p>
+   <div class="ctas d1" style="animation-delay:1.95s">
+    <a class="btn p" href="tel:+385958013100">Naručite led <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="btn g" href="#led">Za koga</a>
+   </div>
+  </div>
+ </div>
+ <div class="scroll">SKROLAJ</div>
+</header>
+
+<section class="st"><div class="w">
+ <div class="eb rv"><i></i>O nama</div>
+ <p class="big" id="big" style="margin-top:22px">Od 2010. u Privlaci proizvodimo led. Za šank, za ambulantu i za svaki posao kojem treba <em>hladno</em>, točno onda kad treba.</p>
+ <div class="cubewrap">
+  <div class="scene rv" aria-hidden="true"><div class="cube"><div class="f1"></div><div class="f2"></div><div class="f3"></div><div class="f4"></div><div class="f5"></div><div class="f6"></div></div></div>
+  <div class="stats">
+   <div class="rv"><b data-count="2010">2010</b><span>godina osnivanja</span></div>
+   <div class="rv"><b>16+</b><span>godina rada</span></div>
+   <div class="rv"><b>8–24</b><span>radno vrijeme, pon – sub</span></div>
+   <div class="rv"><b>3</b><span>vrste kupaca: ugostitelji, medicina, ostali</span></div>
+  </div>
  </div>
 </div></section>
 
+<section class="uses" id="led"><div class="w">
+ <div class="sh">
+  <div><div class="eb rv"><i></i>Za koga</div><h2 class="rv">Led za<br><em>svaki posao.</em></h2></div>
+  <p class="rv">Proizvodnja je u Privlaci, na Sabunikama. Javite koliko leda trebate i za kada.</p>
+ </div>
+ <div class="rail">
+  <article class="card"><img src="img/bar.webp" alt="Usitnjeni led na šanku uz more" loading="lazy"><span class="n">01</span><div class="in2"><h3>Ugostiteljstvo</h3><p>Kafići, restorani i barovi. Led za pića, šank i hlađenje.</p></div></article>
+  <article class="card frosty"><svg class="flake" viewBox="0 0 64 64" fill="none" stroke="#3a9cc2" stroke-width="1.2"><path d="M32 4v56M8 18l48 28M56 18 8 46"/><path d="M32 4l-5 5M32 4l5 5M32 60l-5-5M32 60l5-5M8 18l7 0M8 18l3 6M56 46l-7 0M56 46l-3-6M56 18l-7 0M56 18l-3 6M8 46l7 0M8 46l3-6"/></svg><span class="n">02</span><div class="in2"><h3>Medicina</h3><p>Led za medicinske namjene, po dogovoru.</p></div></article>
+  <article class="card solid"><div class="glow"></div><span class="n">03</span><div class="in2"><h3>Druge djelatnosti</h3><p>Trebate led za nešto drugo? Nazovite pa dogovorimo količinu i preuzimanje.</p></div></article>
+ </div>
+</div></section>
 
-<section class="sec" id="narudzba"><div class="w">
- <div class="eb rv">Narudžba</div>
- <h2 class="serif rv">Jedan poziv <em>i led je vaš.</em></h2>
+<section class="proc" id="narudzba"><div class="w">
+ <div class="sh"><div><div class="eb rv"><i></i>Narudžba</div><h2 class="rv">Tri koraka<br><em>do leda.</em></h2></div></div>
  <div class="steps">
-  <div class="st rv"><span>i.</span><div><h3>Nazovite</h3><p>095 801 3100 ili 023 236 432, od ponedjeljka do subote, 8 – 24 h.</p></div></div>
-  <div class="st rv"><span>ii.</span><div><h3>Recite količinu</h3><p>Koliko leda trebate i za kada.</p></div></div>
-  <div class="st rv"><span>iii.</span><div><h3>Preuzmite</h3><p>Dogovorimo preuzimanje u Privlaci.</p></div></div>
+  <div class="step"><span class="k">01</span><div><h3>Nazovite</h3><p>095 801 3100 ili 023 236 432, pon – sub od 8 do 24 h.</p></div></div>
+  <div class="step"><span class="k">02</span><div><h3>Recite količinu</h3><p>Koliko leda trebate i za kada.</p></div></div>
+  <div class="step"><span class="k">03</span><div><h3>Preuzmite</h3><p>Dogovorimo preuzimanje u Privlaci.</p></div></div>
  </div>
 </div></section>
 
-<section class="ct" id="kontakt"><div class="w">
- <div class="cbox rv">
-  <div><div class="eb">Kontakt</div><h2 class="serif" style="margin-top:16px">Hladno, <em>na vrijeme.</em></h2></div>
-  <dl>
-   <dt>Telefon</dt><dd><a href="tel:+385958013100">095 801 3100</a> · <a href="tel:+38523236432">023 236 432</a></dd>
-   <dt>E-mail</dt><dd><a href="mailto:ledgranula@gmail.com">ledgranula@gmail.com</a></dd>
-   <dt>Adresa</dt><dd>Sabunike 1104, 23233 Privlaka</dd>
-   <dt>Radno vrijeme</dt><dd>Pon – Sub, 8 – 24 h</dd>
-   <dd style="margin-top:22px"><a class="btn g" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Sabunike+1104+Privlaka" style="border-bottom:1px solid var(--line)">Otvori u Google Maps</a></dd>
-  </dl>
- </div>
+<section class="cta" id="kontakt"><div class="bg"></div><div class="w">
+ <div class="eb rv"><i></i>Kontakt</div>
+ <h2 class="rv">Treba vam<br><em>led?</em></h2>
+ <a class="phone rv" href="tel:+385958013100">095 801 3100</a>
+ <p class="alt rv">ili <a href="tel:+38523236432">023 236 432</a> · <a href="mailto:ledgranula@gmail.com">ledgranula@gmail.com</a></p>
+</div></section>
+
+<section class="info"><div class="w">
+ <dl class="ig">
+  <div class="box rv"><dt>Adresa</dt><dd>Sabunike 1104<small>23233 Privlaka</small></dd></div>
+  <div class="box rv"><dt>Radno vrijeme</dt><dd>Pon – Sub, 8 – 24 h<small>Nedjeljom zatvoreno</small></dd></div>
+  <div class="box rv"><dt>E-mail</dt><dd><a href="mailto:ledgranula@gmail.com">ledgranula@gmail.com</a><small>Za upite i narudžbe</small></dd></div>
+  <a class="map rv" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Sabunike+1104+Privlaka">
+   <svg viewBox="0 0 800 260" preserveAspectRatio="xMidYMid slice" fill="none" stroke="rgba(143,227,255,.16)" stroke-width="1"><path d="M0 200 C120 170 200 210 300 160 S470 90 560 120 700 60 800 80"/><path d="M0 230 C140 200 220 240 320 190 S480 120 580 150 720 90 800 110"/><path d="M0 170 C100 140 210 180 290 130 S460 60 540 90 690 30 800 50"/><path d="M0 140 C110 110 200 150 280 100 S450 30 530 60 680 0 800 20"/></svg>
+   <i class="pin"></i><span>Otvori u Google Maps <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+  </a>
+ </dl>
 </div></section>
 
 <footer><div class="w"><span>LED GRANULA d.o.o. · Sabunike 1104, 23233 Privlaka</span><span>Demo · Azzurro Digital</span></div></footer>
-<div class="fab"><a class="btn p" href="tel:+385958013100">Nazovi</a><a class="btn g" href="#kontakt">Kontakt</a></div>
+
+<div class="dock" id="dock"><a class="btn p" href="tel:+385958013100">Nazovi</a><a class="btn g" href="#kontakt">Kontakt</a></div>
+
 <script>
-const nav=document.getElementById('nav');addEventListener('scroll',()=>nav.classList.toggle('s',scrollY>30),{passive:true});
-const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+(()=>{
+const rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+// nav hide/show + dock
+const nav=document.getElementById('nav'),dock=document.getElementById('dock');let ly=0;
+addEventListener('scroll',()=>{const y=scrollY;nav.classList.toggle('s',y>40);nav.classList.toggle('h',y>ly&&y>400);dock.classList.toggle('on',y>innerHeight*.6);ly=y},{passive:true});
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15,rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.rv,.card,.step').forEach(el=>io.observe(el));
+// statement words light up on scroll
+const big=document.getElementById('big');
+const walk=n=>{[...n.childNodes].forEach(c=>{if(c.nodeType===3){const f=document.createDocumentFragment();c.textContent.split(/(\s+)/).forEach(t=>{if(/^\s+$/.test(t)||!t)f.append(t);else{const s=document.createElement('span');s.className='wd';s.textContent=t;f.append(s)}});c.replaceWith(f)}else if(c.nodeType===1){c.classList.add('wd')}})};
+walk(big);const wds=[...big.querySelectorAll('.wd')];
+const lit=()=>{const r=big.getBoundingClientRect(),p=Math.min(Math.max((innerHeight*.85-r.top)/(r.height+innerHeight*.35),0),1),n=Math.round(p*wds.length);wds.forEach((w,i)=>w.classList.toggle('on',i<n))};
+addEventListener('scroll',lit,{passive:true});lit();
+// counters
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;cio.unobserve(e.target);const el=e.target,to=+el.dataset.count,from=to>100?to-40:0,t0=performance.now();(function f(t){const u=Math.min((t-t0)/1600,1),v=Math.round(from+(to-from)*(1-Math.pow(1-u,4)));el.textContent=v;if(u<1)requestAnimationFrame(f)})(t0)}),{threshold:.6});
+document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+// frost particles in hero
+const cv=document.getElementById('frost'),cx=cv.getContext('2d');let W,H,P=[],run=true;
+const size=()=>{const d=Math.min(devicePixelRatio||1,2);W=cv.clientWidth;H=cv.clientHeight;cv.width=W*d;cv.height=H*d;cx.setTransform(d,0,0,d,0,0)};
+size();addEventListener('resize',size);
+const N=innerWidth<700?38:80;
+for(let i=0;i<N;i++)P.push({x:Math.random(),y:Math.random(),r:Math.random()*1.8+.4,s:Math.random()*.00035+.0001,d:Math.random()*Math.PI*2,a:Math.random()*.5+.2});
+new IntersectionObserver(e=>run=e[0].isIntersecting).observe(cv);
+(function loop(){if(run&&!rm){cx.clearRect(0,0,W,H);for(const p of P){p.y-=p.s;p.d+=.01;p.x+=Math.sin(p.d)*.0003;if(p.y<-.02){p.y=1.02;p.x=Math.random()}cx.beginPath();cx.arc(p.x*W,p.y*H,p.r,0,7);cx.fillStyle=`rgba(210,240,255,${p.a})`;cx.shadowColor='rgba(143,227,255,.9)';cx.shadowBlur=8;cx.fill()}}requestAnimationFrame(loop)})();
+// parallax hero bg
+const hb=document.querySelector('.hero .bg');addEventListener('scroll',()=>{if(scrollY<innerHeight)hb.style.translate=`0 ${scrollY*.25}px`},{passive:true});
+})();
 </script>
 </body>
 </html>

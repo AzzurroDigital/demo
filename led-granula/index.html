@@ -195,6 +195,7 @@ input:focus{border-color:var(--navy);box-shadow:0 0 0 4px rgba(143,220,247,.45)}
    <div class="ctas ln" style="transition-delay:.26s">
     <a class="btn ice" href="#narudzba">Naruči led <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     <a class="btn line" href="tel:+385958013100">Nazovi</a>
+    <a class="btn line" href="https://wa.me/385958013100?text=Pozdrav%2C%20zanima%20me%20narud%C5%BEba%20leda." target="_blank" rel="noopener">WhatsApp</a>
    </div>
    <div class="status ln" style="transition-delay:.34s"><i style="background:#8fdcf7"></i><span>Zima 8 – 16 h · Ljeto 8 – 20 h</span></div>
   </div>
@@ -246,7 +247,7 @@ input:focus{border-color:var(--navy);box-shadow:0 0 0 4px rgba(143,220,247,.45)}
      <dt>Preuzimanje</dt><dd id="o-kad">Sutra</dd>
      <dt>Naručuje</dt><dd id="o-ime" class="e">upišite ime</dd>
     </dl>
-    <div class="acts"><a class="btn navy" id="sms" href="sms:+385958013100" aria-disabled="true">Pošalji SMS</a><a class="btn" style="border:1.5px solid var(--line)" href="tel:+385958013100">Ili nazovite 095 801 3100</a></div>
+    <div class="acts"><a class="btn navy" id="sms" href="sms:+385958013100" aria-disabled="true">Pošalji SMS</a><a class="btn" style="border:1.5px solid var(--line)" id="wa" href="https://wa.me/385958013100?text=Pozdrav%2C%20zanima%20me%20narud%C5%BEba%20leda." target="_blank" rel="noopener">Pošalji na WhatsApp</a><a class="btn" style="border:1.5px solid var(--line)" href="tel:+385958013100">Ili nazovite 095 801 3100</a></div>
     <p class="hint">Preuzimanje u Privlaci, Put Sabunika 11, poslovna zona Sabunike.</p>
    </aside></div>
   </div>
@@ -266,13 +267,14 @@ input:focus{border-color:var(--navy);box-shadow:0 0 0 4px rgba(143,220,247,.45)}
  <a class="big" href="tel:+385958013100">095 801 3100</a>
  <div class="fg">
   <div><span>Mobitel</span><a href="tel:+385958013100">095 801 3100</a></div>
+  <div><span>WhatsApp</span><a href="https://wa.me/385958013100?text=Pozdrav%2C%20zanima%20me%20narud%C5%BEba%20leda." target="_blank" rel="noopener">Pošalji poruku</a></div>
   <div><span>E-mail</span><a href="mailto:ledgranula@gmail.com">ledgranula@gmail.com</a></div>
   <div><span>Adresa</span><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Put+Sabunika+11+Privlaka">Put Sabunika 11, poslovna zona Sabunike, Privlaka ↗</a></div>
  </div>
  <div class="copy"><span>LED GRANULA d.o.o.</span><span>Demo · Azzurro Digital</span></div>
 </div></footer>
 
-<div class="bar" id="bar"><a class="btn ice" href="#narudzba">Naruči</a><a class="btn line" href="tel:+385958013100">Nazovi</a></div>
+<div class="bar" id="bar"><a class="btn ice" href="#narudzba">Naruči</a><a class="btn line" href="tel:+385958013100">Nazovi</a><a class="btn line" href="https://wa.me/385958013100?text=Pozdrav%2C%20zanima%20me%20narud%C5%BEba%20leda." target="_blank" rel="noopener">WhatsApp</a></div>
 
 <script>
 (()=>{
@@ -286,7 +288,7 @@ document.querySelectorAll('.seg').forEach(g=>g.addEventListener('click',ev=>{con
 document.getElementById('kol').addEventListener('input',e=>set('kol',e.target.value.trim(),'upišite količinu'));
 document.getElementById('ime').addEventListener('input',e=>set('ime',e.target.value.trim(),'upišite ime'));
 const sms=document.getElementById('sms');
-function upd(){const ok=s.kol&&s.ime;sms.setAttribute('aria-disabled',!ok);const m=`Narudžba leda\nVrsta: ${s.za}\nKoličina: ${s.kol}\nPreuzimanje: ${s.kad}\nNaručuje: ${s.ime}`;sms.href='sms:+385958013100'+(/iPhone|iPad|Mac/.test(navigator.userAgent)?'&':'?')+'body='+encodeURIComponent(m)}upd();
+function upd(){const ok=s.kol&&s.ime;sms.setAttribute('aria-disabled',!ok);const m=`Narudžba leda\nVrsta: ${s.za}\nKoličina: ${s.kol}\nPreuzimanje: ${s.kad}\nNaručuje: ${s.ime}`;sms.href='sms:+385958013100'+(/iPhone|iPad|Mac/.test(navigator.userAgent)?'&':'?')+'body='+encodeURIComponent(m);const w=document.getElementById('wa');if(w)w.href='https://wa.me/385958013100?text='+encodeURIComponent(m)}upd();
 // --- reveals ---
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.2,rootMargin:'0px 0px -6% 0px'});
 document.querySelectorAll('.rv,#slipwrap').forEach(el=>io.observe(el));

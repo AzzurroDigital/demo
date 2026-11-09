@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#f3f3ef">
-<title>Led Granula · Proizvodnja i prodaja leda · Privlaka</title>
-<meta name="description" content="Proizvodnja i prodaja leda za ugostiteljstvo, medicinu i druge djelatnosti. Privlaka kraj Zadra, od 2010.">
+<meta name="theme-color" content="#1335d6">
+<title>Led Granula · Led iz Privlake</title>
+<meta name="description" content="Proizvodnja i prodaja leda za ugostiteljstvo, medicinu i druge djelatnosti. Privlaka kraj Zadra, od 2010. Pon – Sub, 8 – 24 h.">
 <meta name="robots" content="noindex">
 <style>
 @font-face{font-family:IT;font-weight:400;src:url(f/intertight-normal-400-latin-ext.woff2) format("woff2");unicode-range:U+0100-02AF,U+1E00-1EFF}
@@ -14,165 +14,229 @@
 @font-face{font-family:IT;font-weight:500;src:url(f/intertight-normal-500-latin.woff2) format("woff2")}
 @font-face{font-family:IT;font-weight:600;src:url(f/intertight-normal-600-latin-ext.woff2) format("woff2");unicode-range:U+0100-02AF,U+1E00-1EFF}
 @font-face{font-family:IT;font-weight:600;src:url(f/intertight-normal-600-latin.woff2) format("woff2")}
-:root{--paper:#f3f3ef;--ink:#111214;--grey:#6d6f72;--rule:#d6d6d0;--blue:#1d4ed8}
+:root{
+ --blue:#1335d6;--blue2:#0f2bb0;--ice:#e9f0ff;--paper:#f6f6f3;--ink:#0e1013;--grey:#686b70;--rule:#dcdcd6;
+ --land:cubic-bezier(.1,.75,.15,1);--whip:cubic-bezier(.85,0,.15,1);--std:cubic-bezier(.2,0,0,1)
+}
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--paper);color:var(--ink);font-family:IT,Helvetica,Arial,sans-serif;font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-img{display:block;max-width:100%}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .w{width:min(1200px,100% - 32px);margin-inline:auto}
-.rule{border-top:1px solid var(--ink)}
-.lbl{font-size:13px;color:var(--grey)}
-u{text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .3s}
-a:hover u{background-size:100% 1px}
+.lbl{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--grey)}
 
-header{display:flex;justify-content:space-between;align-items:center;height:64px;font-size:15px}
-header b{font-weight:600;letter-spacing:.02em}
-header .tel{font-weight:500}
+/* HERO */
+.hero{background:var(--blue);color:#fff;min-height:100svh;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.top{display:flex;justify-content:space-between;align-items:center;height:64px;font-size:15px}
+.top b{font-weight:600;letter-spacing:.04em}
+.top a{border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:8px 16px;font-weight:500;transition:background .2s var(--std),color .2s var(--std)}
+.top a:hover{background:#fff;color:var(--blue)}
+.hero .main{flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:28px}
+.word{font-weight:600;letter-spacing:-.075em;line-height:.76;font-size:clamp(130px,39vw,520px);margin-left:-.05em;display:flex}
+.word span{display:inline-block;transform:translateY(0)}
+.sub{display:grid;gap:18px;margin-top:26px;padding-top:16px;border-top:1px solid rgba(255,255,255,.35)}
+.sub p{font-size:clamp(20px,2.3vw,28px);line-height:1.2;letter-spacing:-.015em;max-width:620px}
+.facts{display:grid;grid-template-columns:repeat(3,auto);gap:4px 26px;font-size:14px;justify-content:start}
+.facts dt{color:rgba(255,255,255,.65)}
+.facts dd{font-weight:500}
+.live{display:inline-flex;align-items:center;gap:8px;font-weight:500}
+.live i{width:8px;height:8px;border-radius:50%;background:#fff;opacity:.5}
+.live.open i{background:#5df28f;opacity:1}
 
-.hero{padding:6vw 0 0}
-.mark{font-weight:600;font-size:clamp(96px,27vw,360px);line-height:.78;letter-spacing:-.07em;margin-left:-.04em}
-.mark span{color:var(--blue)}
-.lead{display:grid;gap:24px;margin-top:28px;padding-top:18px;border-top:1px solid var(--ink)}
-.lead p{font-size:clamp(20px,2.4vw,28px);line-height:1.25;letter-spacing:-.015em;max-width:640px}
-.status{display:inline-flex;align-items:center;gap:8px;font-size:15px}
-.status i{width:8px;height:8px;border-radius:50%;background:#9a9a96}
-.status.open i{background:#16a34a}
-.call{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 22px;background:var(--ink);color:var(--paper);border-radius:4px;font-weight:500;margin-top:14px}
-.call:hover{background:var(--blue)}
+/* ORDER SLIP */
+.order{padding:80px 0}
+.oh{display:grid;gap:12px;margin-bottom:34px}
+.oh h2{font-size:clamp(34px,5.4vw,64px);font-weight:600;letter-spacing:-.045em;line-height:1}
+.oh p{color:var(--grey);max-width:520px}
+.og{display:grid;gap:20px}
+.form{display:grid;gap:26px}
+.field>.lbl{display:block;margin-bottom:10px}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.seg button{height:46px;padding:0 18px;border:1px solid var(--ink);border-radius:999px;font-size:16px;font-weight:500;transition:background .18s var(--std),color .18s var(--std)}
+.seg button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+input{font:inherit;width:100%;height:52px;border:0;border-bottom:1px solid var(--ink);background:transparent;font-size:20px;padding:0 2px;outline:none;border-radius:0}
+input:focus{border-bottom-color:var(--blue);box-shadow:0 1px 0 var(--blue)}
+input::placeholder{color:#a7a9ad}
 
-.photo{margin-top:40px;aspect-ratio:21/9;overflow:hidden;background:#ddd}
-.photo img{width:100%;height:100%;object-fit:cover;filter:grayscale(.35) contrast(1.05);clip-path:inset(0 0 100% 0);transition:clip-path 1.2s cubic-bezier(.7,0,.2,1)}
-.photo.in img{clip-path:inset(0)}
-.cap{display:flex;justify-content:space-between;margin-top:8px;font-size:13px;color:var(--grey)}
+.slip{background:#fff;border:1px solid var(--ink);padding:24px 22px 22px;position:relative;font-size:16px;align-self:start}
+.slip:before,.slip:after{content:"";position:absolute;left:-1px;right:-1px;height:10px;background:radial-gradient(circle at 5px 0,var(--paper) 4px,transparent 4.5px) 0 0/14px 10px repeat-x}
+.slip:before{top:-1px}
+.slip:after{bottom:-1px;transform:scaleY(-1)}
+.slip h3{font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;display:flex;justify-content:space-between;padding-bottom:12px;border-bottom:1px dashed #b9bbbe}
+.slip dl{display:grid;grid-template-columns:96px 1fr;gap:10px 12px;padding:16px 0;border-bottom:1px dashed #b9bbbe}
+.slip dt{color:var(--grey)}
+.slip dd{font-weight:500;min-height:1.5em;word-break:break-word}
+.slip dd.empty{color:#b3b5b8;font-weight:400}
+.slip dd.flash{animation:flash .6s var(--land)}
+@keyframes flash{from{background:var(--ice)}to{background:transparent}}
+.acts{display:grid;gap:8px;margin-top:18px}
+.btn{display:flex;align-items:center;justify-content:center;height:54px;font-weight:500;font-size:17px;border:1px solid var(--ink);transition:background .18s var(--std),color .18s var(--std),transform .18s var(--std)}
+.btn.p{background:var(--blue);border-color:var(--blue);color:#fff}
+.btn.p:hover{background:var(--blue2)}
+.btn:active{transform:scale(.98)}
+.btn[aria-disabled=true]{opacity:.45;pointer-events:none}
+.hint{font-size:13px;color:var(--grey);margin-top:10px}
 
-section{padding:72px 0 0}
-h2{font-size:clamp(28px,4vw,44px);font-weight:500;letter-spacing:-.03em;line-height:1.05}
-.head{display:grid;gap:10px;padding-bottom:22px}
+/* HOURS */
+.hours{border-top:1px solid var(--ink);padding:56px 0 0}
+.hg{display:grid;gap:30px}
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.d{border-top:3px solid var(--ink);padding-top:8px;font-size:14px}
+.d b{display:block;font-weight:600}
+.d span{color:var(--grey);font-size:13px}
+.d.off{border-top-color:var(--rule)}
+.d.off b{color:var(--grey)}
+.d.now{border-top-color:var(--blue)}
+.d.now b{color:var(--blue)}
+.who{border-top:1px solid var(--ink)}
+.who div{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid var(--rule)}
+.who b{font-weight:500;font-size:20px;letter-spacing:-.01em}
+.who span{color:var(--grey);text-align:right}
 
-.list{border-top:1px solid var(--ink)}
-.row{display:grid;grid-template-columns:44px 1fr;gap:4px 12px;padding:22px 0;border-bottom:1px solid var(--rule)}
-.row .n{font-size:14px;color:var(--grey);padding-top:5px}
-.row h3{font-size:clamp(22px,2.6vw,30px);font-weight:500;letter-spacing:-.02em}
-.row p{grid-column:2;color:var(--grey)}
+/* FOOT */
+.foot{background:var(--ink);color:#fff;margin-top:80px;padding:56px 0 110px}
+.foot .tel{display:block;font-weight:600;font-size:clamp(44px,10vw,120px);letter-spacing:-.05em;line-height:1;transition:color .2s var(--std)}
+.foot .tel:hover{color:#8fa5ff}
+.fg{display:grid;gap:18px;margin-top:30px;padding-top:20px;border-top:1px solid rgba(255,255,255,.25);font-size:16px}
+.fg .lbl{color:rgba(255,255,255,.55);display:block;margin-bottom:2px}
+.fg a{border-bottom:1px solid rgba(255,255,255,.3)}
+.small{margin-top:40px;font-size:13px;color:rgba(255,255,255,.5);display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
 
-.hours{border-top:1px solid var(--ink)}
-.day{display:grid;grid-template-columns:44px 1fr 92px;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--rule);font-size:15px}
-.day.today{font-weight:600}
-.bar{position:relative;height:10px;background:#e4e4de}
-.bar s{position:absolute;top:0;bottom:0;left:33.333%;right:0;background:var(--ink)}
-.day.closed .bar s{display:none}
-.bar em{position:absolute;top:-5px;bottom:-5px;width:2px;background:var(--blue)}
-.day .t{text-align:right;color:var(--grey)}
-.day.today .t{color:var(--ink)}
-.scale{display:grid;grid-template-columns:44px 1fr 92px;gap:12px;font-size:12px;color:var(--grey);padding-top:6px}
-.scale div{display:flex;justify-content:space-between}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:grid;grid-template-columns:1fr 1fr;background:var(--paper);border-top:1px solid var(--ink);padding-bottom:env(safe-area-inset-bottom);transform:translateY(100%);transition:transform .45s var(--land)}
+.bar.on{transform:none}
+.bar a{text-align:center;padding:16px 0;font-weight:500}
+.bar a:first-child{background:var(--blue);color:#fff}
 
-.steps{display:grid;border-top:1px solid var(--ink)}
-.step{padding:22px 0;border-bottom:1px solid var(--rule)}
-.step b{display:block;font-weight:500;font-size:20px;margin-bottom:4px}
-.step span{color:var(--grey)}
+/* motion: text cuts on, the word lands once */
+.js .word span{transform:translateY(105%)}
+.js.go .word span{transform:none;transition:transform .9s var(--land)}
+.js.go .word span:nth-child(2){transition-delay:.07s}
+.js.go .word span:nth-child(3){transition-delay:.15s}
+.js .cut{visibility:hidden}
+.js.go .cut{visibility:visible}
+.js .word{overflow:hidden;padding-bottom:.04em}
 
-.contact{padding:72px 0 0}
-.big{display:block;font-weight:600;font-size:clamp(44px,10vw,132px);letter-spacing:-.05em;line-height:.95;padding:18px 0 22px;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
-.big:hover{color:var(--blue)}
-.cgrid{display:grid;gap:22px;padding:24px 0 40px}
-.cgrid div{font-size:17px}
-.cgrid .lbl{display:block;margin-bottom:4px}
-footer{border-top:1px solid var(--rule);padding:18px 0 96px;font-size:13px;color:var(--grey);display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px}
-
-.sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;border-top:1px solid var(--ink);background:var(--paper);padding-bottom:env(safe-area-inset-bottom)}
-.sticky a{flex:1;text-align:center;padding:16px 0;font-weight:500;font-size:16px}
-.sticky a:first-child{background:var(--ink);color:var(--paper)}
-
-.fade{opacity:0;transform:translateY(12px);transition:opacity .7s,transform .7s}
-.fade.in{opacity:1;transform:none}
-
-@media(min-width:860px){
- .lead{grid-template-columns:1fr auto;align-items:end}
- .lead .r{text-align:right}
- .head{grid-template-columns:1fr 2fr;align-items:end}
- .row{grid-template-columns:80px 1fr 1fr;align-items:baseline}
- .row p{grid-column:3}
- .two{display:grid;grid-template-columns:1fr 1fr;gap:64px}
- .steps{grid-template-columns:repeat(3,1fr);gap:24px;border-top:0}
- .step{border-top:1px solid var(--ink);border-bottom:0}
- .cgrid{grid-template-columns:repeat(3,1fr)}
- .sticky{display:none}
- footer{padding-bottom:18px}
+@media(min-width:900px){
+ .sub{grid-template-columns:1fr auto;align-items:end}
+ .og{grid-template-columns:1.1fr .9fr;gap:56px}
+ .oh{grid-template-columns:1fr 1fr;align-items:end}
+ .hg{grid-template-columns:1fr 1fr;gap:56px}
+ .fg{grid-template-columns:repeat(3,1fr)}
+ .bar{display:none}
+ .foot{padding-bottom:56px}
 }
-@media(prefers-reduced-motion:reduce){.fade{opacity:1;transform:none}.photo img{clip-path:none;transition:none}}
+@media(prefers-reduced-motion:reduce){.js .word span{transform:none!important;transition:none!important}.bar{transition:none}}
 </style>
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-<div class="w">
- <header class="rule-b"><b>LED GRANULA</b><a class="tel" href="tel:+385958013100"><u>095 801 3100</u></a></header>
-</div>
+
+<header class="hero">
+ <div class="w top"><b>LED GRANULA d.o.o.</b><a href="tel:+385958013100">095 801 3100</a></div>
+ <div class="w main">
+  <h1 class="word" aria-label="Led"><span>L</span><span>e</span><span>d</span></h1>
+  <div class="sub">
+   <p class="cut">Proizvodimo i prodajemo led u Privlaci od 2010. Za ugostitelje, za medicinu i za sve kojima treba hladno.</p>
+   <dl class="facts cut">
+    <dt>Gdje</dt><dt>Kad</dt><dt>Sada</dt>
+    <dd>Sabunike, Privlaka</dd><dd>Pon – Sub, 8 – 24</dd><dd class="live" id="live"><i></i><span>…</span></dd>
+   </dl>
+  </div>
+ </div>
+</header>
 
 <main>
-<div class="w hero">
- <div class="mark">Led<span>.</span></div>
- <div class="lead">
-  <p>Proizvodimo i prodajemo led u Privlaci od 2010. Za ugostitelje, za medicinu i za sve kojima treba hladno.</p>
-  <div class="r">
-   <div class="status" id="status"><i></i><span>Pon – Sub, 8 – 24 h</span></div><br>
-   <a class="call" href="tel:+385958013100">Nazovite i naručite</a>
+<section class="order" id="narudzba"><div class="w">
+ <div class="oh"><div><span class="lbl">Narudžba</span><h2 style="margin-top:10px">Ispunite listić, pošaljite SMS.</h2></div><p>Odaberite za što vam treba led, upišite količinu i kada ga preuzimate. Poruka se složi sama, vi je samo pošaljete.</p></div>
+ <div class="og">
+  <div class="form">
+   <div class="field"><span class="lbl">Za</span>
+    <div class="seg" id="za">
+     <button type="button" aria-pressed="true">Ugostiteljstvo</button><button type="button" aria-pressed="false">Medicinu</button><button type="button" aria-pressed="false">Ostalo</button>
+    </div>
+   </div>
+   <label class="field"><span class="lbl">Količina</span><input id="kol" placeholder="npr. 10 vreća" autocomplete="off"></label>
+   <div class="field"><span class="lbl">Preuzimanje</span>
+    <div class="seg" id="kad">
+     <button type="button" aria-pressed="false">Danas</button><button type="button" aria-pressed="true">Sutra</button><button type="button" aria-pressed="false">Dogovor</button>
+    </div>
+   </div>
+   <label class="field"><span class="lbl">Ime ili lokal</span><input id="ime" placeholder="npr. Caffe bar Riva" autocomplete="organization"></label>
   </div>
- </div>
- <figure class="photo fade" id="photo"><img src="img/hero.webp" alt="Kocke leda"></figure>
- <div class="cap"><span>Sabunike, Privlaka</span><span>Zadarska županija</span></div>
-</div>
 
-<section><div class="w">
- <div class="head"><span class="lbl">Za koga</span><h2>Led prodajemo svima kojima treba, a najviše ovima.</h2></div>
- <div class="list">
-  <div class="row fade"><span class="n">01</span><h3>Ugostiteljstvo</h3><p>Kafići, restorani i barovi.</p></div>
-  <div class="row fade"><span class="n">02</span><h3>Medicina</h3><p>Led za medicinske namjene, po dogovoru.</p></div>
-  <div class="row fade"><span class="n">03</span><h3>Ostali</h3><p>Javite što vam treba i u kojoj količini.</p></div>
+  <aside class="slip" aria-live="polite">
+   <h3><span>Narudžbenica</span><span id="dat"></span></h3>
+   <dl>
+    <dt>Za</dt><dd id="o-za">Ugostiteljstvo</dd>
+    <dt>Količina</dt><dd id="o-kol" class="empty">upišite količinu</dd>
+    <dt>Preuzimanje</dt><dd id="o-kad">Sutra</dd>
+    <dt>Naručuje</dt><dd id="o-ime" class="empty">upišite ime</dd>
+   </dl>
+   <div class="acts">
+    <a class="btn p" id="sms" href="sms:+385958013100" aria-disabled="true">Pošalji SMS</a>
+    <a class="btn" href="tel:+385958013100">Ili nazovite 095 801 3100</a>
+   </div>
+   <p class="hint">Preuzimanje u Privlaci, Sabunike 1104.</p>
+  </aside>
  </div>
 </div></section>
 
-<section><div class="w two">
- <div>
-  <div class="head" style="grid-template-columns:1fr"><span class="lbl">Radno vrijeme</span><h2>Kad smo tu.</h2></div>
-  <div class="hours" id="hours"></div>
-  <div class="scale"><span></span><div><span>0</span><span>8</span><span>16</span><span>24</span></div><span></span></div>
- </div>
- <div>
-  <div class="head" style="grid-template-columns:1fr"><span class="lbl">Narudžba</span><h2>Kako naručiti.</h2></div>
-  <div class="steps" style="grid-template-columns:1fr;gap:0;border-top:1px solid var(--ink)">
-   <div class="step fade" style="border-top:0;border-bottom:1px solid var(--rule)"><b>1. Nazovite</b><span>095 801 3100 ili 023 236 432.</span></div>
-   <div class="step fade" style="border-top:0;border-bottom:1px solid var(--rule)"><b>2. Recite koliko i za kada</b><span>Dogovorimo količinu i termin.</span></div>
-   <div class="step fade" style="border-top:0;border-bottom:1px solid var(--rule)"><b>3. Preuzmite u Privlaci</b><span>Sabunike 1104.</span></div>
+<section class="w hours">
+ <div class="hg">
+  <div><span class="lbl">Radno vrijeme</span><div class="week" id="week" style="margin-top:14px"></div></div>
+  <div><span class="lbl">Kome prodajemo</span>
+   <div class="who" style="margin-top:14px">
+    <div><b>Ugostiteljstvo</b><span>kafići, restorani, barovi</span></div>
+    <div><b>Medicina</b><span>po dogovoru</span></div>
+    <div><b>Ostali</b><span>javite što trebate</span></div>
+   </div>
   </div>
  </div>
-</div></section>
-
-<div class="w contact">
- <span class="lbl">Kontakt</span>
- <a class="big" href="tel:+385958013100">095 801 3100</a>
- <div class="cgrid">
-  <div><span class="lbl">Fiksni</span><a href="tel:+38523236432"><u>023 236 432</u></a></div>
-  <div><span class="lbl">E-mail</span><a href="mailto:ledgranula@gmail.com"><u>ledgranula@gmail.com</u></a></div>
-  <div><span class="lbl">Adresa</span><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Sabunike+1104+Privlaka"><u>Sabunike 1104, 23233 Privlaka</u> ↗</a></div>
- </div>
- <footer><span>LED GRANULA d.o.o.</span><span>Demo · Azzurro Digital</span></footer>
-</div>
+</section>
 </main>
 
-<div class="sticky"><a href="tel:+385958013100">Nazovi</a><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Sabunike+1104+Privlaka">Karta</a></div>
+<footer class="foot"><div class="w">
+ <span class="lbl" style="color:rgba(255,255,255,.55)">Kontakt</span>
+ <a class="tel" href="tel:+385958013100" style="margin-top:8px">095 801 3100</a>
+ <div class="fg">
+  <div><span class="lbl">Fiksni</span><a href="tel:+38523236432">023 236 432</a></div>
+  <div><span class="lbl">E-mail</span><a href="mailto:ledgranula@gmail.com">ledgranula@gmail.com</a></div>
+  <div><span class="lbl">Adresa</span><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Sabunike+1104+Privlaka">Sabunike 1104, 23233 Privlaka</a></div>
+ </div>
+ <div class="small"><span>LED GRANULA d.o.o.</span><span>Demo · Azzurro Digital</span></div>
+</div></footer>
+
+<nav class="bar" id="bar"><a href="#narudzba">Naruči</a><a href="tel:+385958013100">Nazovi</a></nav>
 
 <script>
 (()=>{
-const days=['Pon','Uto','Sri','Čet','Pet','Sub','Ned'];
-const now=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Zagreb'}));
-const di=(now.getDay()+6)%7, h=now.getHours()+now.getMinutes()/60;
-const box=document.getElementById('hours');
-days.forEach((d,i)=>{const c=i===6,row=document.createElement('div');row.className='day'+(c?' closed':'')+(i===di?' today':'');
-row.innerHTML=`<span>${d}</span><div class="bar"><s></s>${i===di?`<em style="left:${(h/24*100).toFixed(2)}%"></em>`:''}</div><span class="t">${c?'zatvoreno':'8 – 24'}</span>`;box.appendChild(row)});
-const open=di<6&&h>=8;const st=document.getElementById('status');
-if(open){st.classList.add('open');st.lastChild.textContent='Sada otvoreno, do 24 h'}else{st.lastChild.textContent=di===6||(di===5&&h>=24)?'Sada zatvoreno, otvaramo u ponedjeljak u 8':'Sada zatvoreno, otvaramo u 8 h'}
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.2});
-document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+const z=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Zagreb'}));
+const di=(z.getDay()+6)%7,h=z.getHours();
+const open=di<6&&h>=8;
+const live=document.getElementById('live');
+if(open)live.classList.add('open');
+live.lastChild.textContent=open?'otvoreno':(di===6||(di===5&&h>=24)?'zatvoreno do pon':'otvaramo u 8');
+// week
+const names=['Pon','Uto','Sri','Čet','Pet','Sub','Ned'],wk=document.getElementById('week');
+names.forEach((n,i)=>{const d=document.createElement('div');d.className='d'+(i===6?' off':'')+(i===di?' now':'');d.innerHTML=`<b>${n}</b><span>${i===6?'—':'8–24'}</span>`;wk.appendChild(d)});
+// slip
+document.getElementById('dat').textContent=z.toLocaleDateString('hr-HR',{day:'2-digit',month:'2-digit',year:'numeric'});
+const st={za:'Ugostiteljstvo',kad:'Sutra',kol:'',ime:''};
+const out=k=>document.getElementById('o-'+k);
+const set=(k,v,ph)=>{st[k]=v;const el=out(k);el.textContent=v||ph;el.classList.toggle('empty',!v);el.classList.remove('flash');void el.offsetWidth;el.classList.add('flash');upd()};
+document.querySelectorAll('.seg').forEach(g=>g.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;g.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));set(g.id,b.textContent,'')}));
+document.getElementById('kol').addEventListener('input',e=>set('kol',e.target.value.trim(),'upišite količinu'));
+document.getElementById('ime').addEventListener('input',e=>set('ime',e.target.value.trim(),'upišite ime'));
+const sms=document.getElementById('sms');
+function upd(){const ok=st.kol&&st.ime;sms.setAttribute('aria-disabled',!ok);
+ const msg=`Narudžba leda\nZa: ${st.za}\nKoličina: ${st.kol}\nPreuzimanje: ${st.kad}\nNaručuje: ${st.ime}`;
+ const sep=/iPhone|iPad|Mac/.test(navigator.userAgent)?'&':'?';
+ sms.href='sms:+385958013100'+sep+'body='+encodeURIComponent(msg)}
+upd();
+// one landing for the word, then everything else just cuts on
+requestAnimationFrame(()=>requestAnimationFrame(()=>document.documentElement.classList.add('go')));
+// mobile bar after hero
+const bar=document.getElementById('bar');addEventListener('scroll',()=>bar.classList.toggle('on',scrollY>innerHeight*.7),{passive:true});
 })();
 </script>
 </body>

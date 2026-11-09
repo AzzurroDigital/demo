@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Led Granula · Proizvodnja leda i najam brodova · Privlaka</title>
+<meta name="description" content="Proizvodnja i prodaja leda za ugostiteljstvo, medicinu i druge djelatnosti, te najam brodova. Privlaka kraj Zadra, od 2010.">
+<meta name="robots" content="noindex">
+<style>
+@font-face{font-family:IS;src:url(f/instrumentserif-normal-400-latin-ext.woff2) format("woff2");unicode-range:U+0100-02AF,U+1E00-1EFF}
+@font-face{font-family:IS;src:url(f/instrumentserif-normal-400-latin.woff2) format("woff2")}
+@font-face{font-family:IS;font-style:italic;src:url(f/instrumentserif-italic-400-latin-ext.woff2) format("woff2");unicode-range:U+0100-02AF,U+1E00-1EFF}
+@font-face{font-family:IS;font-style:italic;src:url(f/instrumentserif-italic-400-latin.woff2) format("woff2")}
+@font-face{font-family:IT;font-weight:400;src:url(f/intertight-normal-400-latin-ext.woff2) format("woff2");unicode-range:U+0100-02AF,U+1E00-1EFF}
+@font-face{font-family:IT;font-weight:400;src:url(f/intertight-normal-400-latin.woff2) format("woff2")}
+@font-face{font-family:IT;font-weight:500;src:url(f/intertight-normal-500-latin-ext.woff2) format("woff2");unicode-range:U+0100-02AF,U+1E00-1EFF}
+@font-face{font-family:IT;font-weight:500;src:url(f/intertight-normal-500-latin.woff2) format("woff2")}
+:root{--ice:#f3f7f9;--frost:#e3edf1;--ink:#0b2230;--mu:#5d7380;--ac:#3f8fb0;--line:#cfdde3;--r:26px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ice);color:var(--ink);font-family:IT,system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.w{width:min(1240px,100% - 40px);margin-inline:auto}
+.eb{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mu)}
+.serif{font-family:IS,Georgia,serif;font-weight:400;letter-spacing:-.02em;line-height:.95}
+.serif em{font-style:italic;color:var(--ac)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 24px;border-radius:999px;font-weight:500;font-size:16px;transition:transform .25s,background .25s}
+.btn.p{background:var(--ink);color:var(--ice)}
+.btn.g{border:1px solid var(--line);background:rgba(255,255,255,.6);backdrop-filter:blur(8px)}
+.btn:hover{transform:translateY(-2px)}
+nav{position:fixed;inset:0 0 auto;z-index:20;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+nav.s{background:rgba(243,247,249,.82);backdrop-filter:blur(16px);border-color:var(--line)}
+nav .w{display:flex;justify-content:space-between;align-items:center;height:70px}
+.logo{display:flex;align-items:center;gap:12px;font-weight:500;letter-spacing:.02em}
+.logo svg{width:28px;height:28px}
+.links{display:none;gap:30px;font-size:15px;color:var(--mu)}
+.links a:hover{color:var(--ink)}
+/* hero */
+.hero{padding:130px 0 40px}
+.hero h1{font-size:clamp(64px,15vw,210px);margin:20px 0 0}
+.hero-g{display:grid;gap:26px;margin-top:34px;align-items:end}
+.hero p{max-width:470px;font-size:19px;color:var(--mu)}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.hero-img{margin-top:44px;border-radius:var(--r);overflow:hidden;aspect-ratio:16/9;position:relative}
+.hero-img img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 2.4s cubic-bezier(.2,.7,.2,1)}
+.hero-img.in img{transform:scale(1)}
+.chip{position:absolute;left:18px;bottom:18px;background:rgba(243,247,249,.85);backdrop-filter:blur(10px);border-radius:999px;padding:9px 16px;font-size:14px}
+/* facts */
+.facts{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line);margin-top:56px}
+.facts div{padding:24px 0 6px}
+.facts b{display:block;font-family:IS,serif;font-weight:400;font-size:44px;line-height:1}
+.facts span{font-size:14px;color:var(--mu)}
+/* uses */
+.sec{padding:120px 0}
+.sec h2{font-size:clamp(46px,8vw,104px);margin:18px 0 52px;max-width:900px}
+.uses{display:grid;gap:14px}
+.u{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px;position:relative;overflow:hidden;min-height:250px;display:flex;flex-direction:column;justify-content:space-between}
+.u .i{font-family:IS,serif;font-size:22px;color:var(--ac);font-style:italic}
+.u h3{font-family:IS,serif;font-weight:400;font-size:40px;line-height:1;margin-bottom:10px}
+.u p{color:var(--mu);font-size:16px}
+.u.ph{padding:0;min-height:380px;color:#fff;border:0}
+.u.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.u.ph .cap{position:relative;margin-top:auto;padding:28px;background:linear-gradient(transparent,rgba(11,34,48,.75))}
+.u.ph p{color:rgba(255,255,255,.85)}
+/* boats */
+.boats{background:var(--ink);color:var(--ice);border-radius:36px;margin:0 12px;padding:110px 0;overflow:hidden}
+.boats .g{display:grid;gap:40px;align-items:center}
+.boats .eb{color:#8fb0c0}
+.boats h2{font-size:clamp(46px,8vw,104px);margin:18px 0 22px}
+.boats h2 em{color:#9fd3ea}
+.boats p{color:#b6c8d1;max-width:440px;margin-bottom:30px}
+.boats .btn.p{background:var(--ice);color:var(--ink)}
+.boats .im{border-radius:var(--r);overflow:hidden;aspect-ratio:4/5}
+.boats .im img{width:100%;height:100%;object-fit:cover}
+/* order */
+.steps{display:grid;gap:0;border-top:1px solid var(--line)}
+.st{display:grid;grid-template-columns:70px 1fr;gap:16px;padding:28px 0;border-bottom:1px solid var(--line)}
+.st span{font-family:IS,serif;font-style:italic;font-size:30px;color:var(--ac);line-height:1}
+.st h3{font-weight:500;font-size:21px;margin-bottom:4px}
+.st p{color:var(--mu)}
+/* contact */
+.ct{padding:0 0 120px}
+.cbox{background:linear-gradient(160deg,#fff,var(--frost));border:1px solid var(--line);border-radius:36px;padding:44px 26px;display:grid;gap:36px;position:relative;overflow:hidden}
+.cbox h2{font-size:clamp(50px,9vw,120px)}
+.cbox dl dt{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mu);margin-top:22px}
+.cbox dl dt:first-child{margin-top:0}
+.cbox dl dd{font-size:21px;margin-top:4px}
+.cbox dl dd a{border-bottom:1px solid var(--line)}
+footer{border-top:1px solid var(--line);padding:28px 0 100px;font-size:14px;color:var(--mu)}
+footer .w{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+.fab{position:fixed;left:16px;right:16px;bottom:16px;z-index:30;display:flex;gap:10px}
+.fab a{flex:1;justify-content:center;box-shadow:0 10px 30px rgba(11,34,48,.18)}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s,transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media(min-width:900px){
+ .links{display:flex}
+ .hero-g{grid-template-columns:1.3fr 1fr}
+ .hero-g .ctas{justify-content:flex-end}
+ .facts{grid-template-columns:repeat(4,1fr)}
+ .uses{grid-template-columns:1.2fr 1fr 1fr}
+ .u.ph{grid-row:span 2}
+ .boats{margin:0 24px}
+ .boats .g{grid-template-columns:1fr 1fr}
+ .steps{grid-template-columns:repeat(3,1fr);gap:30px;border:0}
+ .st{grid-template-columns:1fr;border-top:1px solid var(--line);border-bottom:0}
+ .cbox{grid-template-columns:1.2fr 1fr;padding:70px}
+ .fab{display:none}
+ footer{padding-bottom:28px}
+}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}*{transition:none!important}}
+</style>
+</head>
+<body>
+<nav id="nav"><div class="w">
+ <a class="logo" href="#"><svg viewBox="0 0 28 28" fill="none" stroke="#0b2230" stroke-width="1.6"><path d="M14 2 25 8.5v11L14 26 3 19.5v-11z"/><path d="M14 2v24M3 8.5l22 11M25 8.5 3 19.5" opacity=".35"/></svg>LED GRANULA</a>
+ <div class="links"><a href="#led">Led</a><a href="#brodovi">Najam brodova</a><a href="#narudzba">Narudžba</a><a href="#kontakt">Kontakt</a></div>
+ <a class="btn p" style="padding:11px 18px;font-size:15px" href="tel:+385958013100">095 801 3100</a>
+</div></nav>
+
+<header class="hero"><div class="w">
+ <div class="eb rv">Privlaka, Zadarska županija · od 2010.</div>
+ <h1 class="serif rv">Led iz <em>Privlake.</em></h1>
+ <div class="hero-g">
+  <p class="rv">Proizvodimo i prodajemo led za ugostiteljstvo, medicinu i druge djelatnosti. Ljeti iznajmljujemo i brodove.</p>
+  <div class="ctas rv"><a class="btn p" href="tel:+385958013100">Naručite led</a><a class="btn g" href="#brodovi">Najam brodova</a></div>
+ </div>
+ <div class="hero-img rv"><img src="img/hero.webp" alt="Kristalno čiste kocke leda"><div class="chip">Pon – Sub, 8 – 24 h</div></div>
+ <div class="facts">
+  <div class="rv"><b>2010.</b><span>godina osnivanja</span></div>
+  <div class="rv"><b>8 – 24</b><span>radno vrijeme, pon – sub</span></div>
+  <div class="rv"><b>Led</b><span>vlastita proizvodnja</span></div>
+  <div class="rv"><b>Brodovi</b><span>najam za turiste</span></div>
+ </div>
+</div></header>
+
+<section class="sec" id="led"><div class="w">
+ <div class="eb rv">Led</div>
+ <h2 class="serif rv">Za šank, za ambulantu, <em>za posao.</em></h2>
+ <div class="uses">
+  <div class="u ph rv"><img src="img/bar.webp" alt="Usitnjeni led na šanku uz more" loading="lazy"><div class="cap"><h3>Ugostiteljstvo</h3><p>Led za kafiće, restorane i barove.</p></div></div>
+  <div class="u rv"><span class="i">01</span><div><h3>Medicina</h3><p>Led za medicinske namjene, po dogovoru.</p></div></div>
+  <div class="u rv"><span class="i">02</span><div><h3>Druge djelatnosti</h3><p>Javite što trebate i koliko.</p></div></div>
+  <div class="u ph rv" style="grid-column:span 1;min-height:250px"><img src="img/bags.webp" alt="Vrećice leda u škrinji" loading="lazy"><div class="cap"><h3 style="font-size:32px">Uvijek spreman</h3><p>Led spreman za preuzimanje.</p></div></div>
+  <div class="u rv" style="background:var(--ink);color:var(--ice);border-color:var(--ink)"><span class="i" style="color:#9fd3ea">Od 2010.</span><div><h3>Iz Privlake</h3><p style="color:#b6c8d1">Proizvodnja leda na Sabunikama, kraj Nina i Zadra.</p></div></div>
+ </div>
+</div></section>
+
+<section class="boats" id="brodovi"><div class="w g">
+ <div class="rv">
+  <div class="eb">Najam brodova</div>
+  <h2 class="serif">Plićak, pijesak, <em>vaš brod.</em></h2>
+  <p>Iznajmljujemo brodove za turiste, iz Privlake.</p>
+  <a class="btn p" href="tel:+385958013100">Upit za najam</a>
+ </div>
+ <div class="im rv"><img src="img/boat.webp" alt="Brodica u tirkiznom plićaku" loading="lazy"></div>
+</div></section>
+
+<section class="sec" id="narudzba"><div class="w">
+ <div class="eb rv">Narudžba</div>
+ <h2 class="serif rv">Jedan poziv <em>i led je vaš.</em></h2>
+ <div class="steps">
+  <div class="st rv"><span>i.</span><div><h3>Nazovite</h3><p>095 801 3100 ili 023 236 432, od ponedjeljka do subote, 8 – 24 h.</p></div></div>
+  <div class="st rv"><span>ii.</span><div><h3>Recite količinu</h3><p>Koliko leda trebate i za kada.</p></div></div>
+  <div class="st rv"><span>iii.</span><div><h3>Preuzmite</h3><p>Dogovorimo preuzimanje u Privlaci.</p></div></div>
+ </div>
+</div></section>
+
+<section class="ct" id="kontakt"><div class="w">
+ <div class="cbox rv">
+  <div><div class="eb">Kontakt</div><h2 class="serif" style="margin-top:16px">Hladno, <em>na vrijeme.</em></h2></div>
+  <dl>
+   <dt>Telefon</dt><dd><a href="tel:+385958013100">095 801 3100</a> · <a href="tel:+38523236432">023 236 432</a></dd>
+   <dt>E-mail</dt><dd><a href="mailto:ledgranula@gmail.com">ledgranula@gmail.com</a></dd>
+   <dt>Adresa</dt><dd>Sabunike 1104, 23233 Privlaka</dd>
+   <dt>Radno vrijeme</dt><dd>Pon – Sub, 8 – 24 h</dd>
+   <dd style="margin-top:22px"><a class="btn g" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Sabunike+1104+Privlaka" style="border-bottom:1px solid var(--line)">Otvori u Google Maps</a></dd>
+  </dl>
+ </div>
+</div></section>
+
+<footer><div class="w"><span>LED GRANULA d.o.o. · Sabunike 1104, 23233 Privlaka</span><span>Demo · Azzurro Digital</span></div></footer>
+<div class="fab"><a class="btn p" href="tel:+385958013100">Nazovi</a><a class="btn g" href="#brodovi">Brodovi</a></div>
+<script>
+const nav=document.getElementById('nav');addEventListener('scroll',()=>nav.classList.toggle('s',scrollY>30),{passive:true});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

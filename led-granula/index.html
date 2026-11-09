@@ -33,6 +33,7 @@ h2{font-size:clamp(34px,5.4vw,62px);font-weight:600;letter-spacing:-.045em;line-
 .btn.line:hover{background:rgba(255,255,255,.08)}
 .btn.navy{background:var(--navy);color:#fff}
 .btn.navy:hover{background:var(--navy2);transform:translateY(-2px)}
+.btn.wa{background:#25d366;color:#06321a}.btn.wa:hover{background:#1fc05c;transform:translateY(-2px)}
 .btn:active{transform:scale(.98)}
 
 /* nav */
@@ -127,9 +128,9 @@ input:focus{border-color:var(--navy);box-shadow:0 0 0 4px rgba(143,220,247,.45)}
 .fg a{border-bottom:1px solid rgba(255,255,255,.25)}
 .copy{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-top:44px;font-size:13px;color:#8fa3bf}
 
-.bar{position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:40;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px;border-radius:18px;background:var(--navy);box-shadow:0 12px 30px rgba(10,31,68,.3);transform:translateY(150%);transition:transform .6s var(--land)}
+.bar{position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:40;display:grid;grid-template-columns:1fr 56px 1fr;gap:8px;padding:8px;border-radius:18px;background:var(--navy);box-shadow:0 12px 30px rgba(10,31,68,.3);transform:translateY(150%);transition:transform .6s var(--land)}
 .bar.on{transform:none}
-.bar a{height:48px}
+.bar a{height:48px;padding:0}
 
 /* reveals */
 .js .rv{opacity:0;transform:translateY(22px)}
@@ -145,7 +146,7 @@ input:focus{border-color:var(--navy);box-shadow:0 0 0 4px rgba(143,220,247,.45)}
  .sh{grid-template-columns:1fr 1fr;align-items:end}
  .cards{grid-template-columns:repeat(3,1fr)}
  .og{grid-template-columns:1.1fr .9fr;gap:40px}
- .fg{grid-template-columns:repeat(3,1fr)}
+ .fg{grid-template-columns:repeat(4,1fr)}
  .bar{display:none}
  .foot{padding-bottom:60px}
 }
@@ -170,6 +171,7 @@ input:focus{border-color:var(--navy);box-shadow:0 0 0 4px rgba(143,220,247,.45)}
    <div class="ctas ln" style="transition-delay:.26s">
     <a class="btn ice" href="#narudzba">Naruči led <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     <a class="btn line" href="tel:+385958013100">Nazovi</a>
+    <a class="btn wa" href="https://wa.me/385958013100" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>WhatsApp</a>
    </div>
    <div class="status ln" id="status" style="transition-delay:.34s"><i></i><span>Pon – Sub, 8 – 24 h</span></div>
   </div>
@@ -196,7 +198,7 @@ input:focus{border-color:var(--navy);box-shadow:0 0 0 4px rgba(143,220,247,.45)}
 </div></section>
 
 <section class="sec" id="narudzba"><div class="w">
- <div class="sh"><div><div class="eb d rv">Narudžba</div><h2 class="rv" style="margin-top:10px">Ispunite listić, pošaljite SMS.</h2></div><p class="rv">Odaberite za što vam treba led, upišite količinu i kada ga preuzimate. Poruka se složi sama.</p></div>
+ <div class="sh"><div><div class="eb d rv">Narudžba</div><h2 class="rv" style="margin-top:10px">Ispunite listić, pošaljite poruku.</h2></div><p class="rv">Odaberite za što vam treba led, upišite količinu i kada ga preuzimate. Poruka se složi sama.</p></div>
  <div class="og">
   <div class="form rv">
    <div class="field"><span class="l">Za</span><div class="seg" id="za"><button type="button" aria-pressed="true">Ugostiteljstvo</button><button type="button" aria-pressed="false">Medicinu</button><button type="button" aria-pressed="false">Ostalo</button></div></div>
@@ -214,7 +216,7 @@ input:focus{border-color:var(--navy);box-shadow:0 0 0 4px rgba(143,220,247,.45)}
      <dt>Preuzimanje</dt><dd id="o-kad">Sutra</dd>
      <dt>Naručuje</dt><dd id="o-ime" class="e">upišite ime</dd>
     </dl>
-    <div class="acts"><a class="btn navy" id="sms" href="sms:+385958013100" aria-disabled="true">Pošalji SMS</a><a class="btn" style="border:1.5px solid var(--line)" href="tel:+385958013100">Ili nazovite 095 801 3100</a></div>
+    <div class="acts"><a class="btn wa" id="wa" href="https://wa.me/385958013100" target="_blank" rel="noopener" aria-disabled="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>Pošalji na WhatsApp</a><a class="btn navy" id="sms" href="sms:+385958013100" aria-disabled="true">Pošalji SMS</a><a class="btn" style="border:1.5px solid var(--line)" href="tel:+385958013100">Ili nazovite 095 801 3100</a></div>
     <p class="hint">Preuzimanje u Privlaci, Sabunike 1104.</p>
    </aside></div>
   </div>
@@ -231,13 +233,14 @@ input:focus{border-color:var(--navy);box-shadow:0 0 0 4px rgba(143,220,247,.45)}
  <a class="big" href="tel:+385958013100">095 801 3100</a>
  <div class="fg">
   <div><span>Fiksni</span><a href="tel:+38523236432">023 236 432</a></div>
+  <div><span>WhatsApp</span><a href="https://wa.me/385958013100" target="_blank" rel="noopener">095 801 3100</a></div>
   <div><span>E-mail</span><a href="mailto:ledgranula@gmail.com">ledgranula@gmail.com</a></div>
   <div><span>Adresa</span><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Sabunike+1104+Privlaka">Sabunike 1104, 23233 Privlaka ↗</a></div>
  </div>
  <div class="copy"><span>LED GRANULA d.o.o.</span><span>Demo · Azzurro Digital</span></div>
 </div></footer>
 
-<div class="bar" id="bar"><a class="btn ice" href="#narudzba">Naruči</a><a class="btn line" href="tel:+385958013100">Nazovi</a></div>
+<div class="bar" id="bar"><a class="btn ice" href="#narudzba">Naruči</a><a class="btn wa" href="https://wa.me/385958013100" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></a><a class="btn line" href="tel:+385958013100">Nazovi</a></div>
 
 <script>
 (()=>{
@@ -275,7 +278,7 @@ document.querySelectorAll('.seg').forEach(g=>g.addEventListener('click',ev=>{con
 document.getElementById('kol').addEventListener('input',e=>set('kol',e.target.value.trim(),'upišite količinu'));
 document.getElementById('ime').addEventListener('input',e=>set('ime',e.target.value.trim(),'upišite ime'));
 const sms=document.getElementById('sms');
-function upd(){const ok=s.kol&&s.ime;sms.setAttribute('aria-disabled',!ok);const m=`Narudžba leda\nZa: ${s.za}\nKoličina: ${s.kol}\nPreuzimanje: ${s.kad}\nNaručuje: ${s.ime}`;sms.href='sms:+385958013100'+(/iPhone|iPad|Mac/.test(navigator.userAgent)?'&':'?')+'body='+encodeURIComponent(m)}upd();
+function upd(){const ok=s.kol&&s.ime;sms.setAttribute('aria-disabled',!ok);const m=`Narudžba leda\nZa: ${s.za}\nKoličina: ${s.kol}\nPreuzimanje: ${s.kad}\nNaručuje: ${s.ime}`;document.getElementById('wa').setAttribute('aria-disabled',!ok);document.getElementById('wa').href='https://wa.me/385958013100?text='+encodeURIComponent(m);sms.href='sms:+385958013100'+(/iPhone|iPad|Mac/.test(navigator.userAgent)?'&':'?')+'body='+encodeURIComponent(m)}upd();
 // --- reveals ---
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.2,rootMargin:'0px 0px -6% 0px'});
 document.querySelectorAll('.rv,#week,#slipwrap').forEach(el=>io.observe(el));

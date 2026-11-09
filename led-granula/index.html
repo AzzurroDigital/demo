@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#0a1f44">
 <title>Led Granula · Led iz Privlake</title>
 <meta name="description" content="Proizvodnja i prodaja leda za ugostiteljstvo, medicinu i druge djelatnosti. Privlaka kraj Zadra, od 2010. Pon – Sub, 8 – 24 h.">
 <meta name="robots" content="noindex">
@@ -14,174 +14,276 @@
 @font-face{font-family:IT;font-weight:500;src:url(f/intertight-normal-500-latin.woff2) format("woff2")}
 @font-face{font-family:IT;font-weight:600;src:url(f/intertight-normal-600-latin-ext.woff2) format("woff2");unicode-range:U+0100-02AF,U+1E00-1EFF}
 @font-face{font-family:IT;font-weight:600;src:url(f/intertight-normal-600-latin.woff2) format("woff2")}
-:root{--blue:#0b3fd9;--red:#e2231a;--ink:#0a1424;--paper:#fff;--mist:#eef3f6;--grey:#5f6b78;
- --land:cubic-bezier(.1,.75,.15,1);--std:cubic-bezier(.2,0,0,1)}
+:root{--navy:#0a1f44;--navy2:#132d5c;--ice:#c9f0ff;--ice2:#8fdcf7;--paper:#f4f8fa;--ink:#0a1f44;--grey:#5b6b80;--line:#d4e0e8;
+ --land:cubic-bezier(.1,.75,.15,1);--whip:cubic-bezier(.85,0,.15,1);--std:cubic-bezier(.2,0,0,1)}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--paper);color:var(--ink);font-family:IT,Helvetica,Arial,sans-serif;font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:IT,Helvetica,Arial,sans-serif;font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .w{width:min(1180px,100% - 32px);margin-inline:auto}
-
-/* top */
-.top{display:flex;justify-content:space-between;align-items:center;height:62px;border-bottom:2px solid var(--ink);font-size:15px}
-.top b{font-weight:600;letter-spacing:.06em}
-.top a{font-weight:500}
-.top a span{color:var(--red)}
-
-/* bag print hero */
-.hero{position:relative;padding:28px 0 36px;border-bottom:2px solid var(--ink)}
-.stack{font-weight:600;letter-spacing:-.06em;line-height:.84;color:var(--blue);text-transform:uppercase}
-.stack div{display:flex;align-items:baseline;gap:.25em;font-size:clamp(76px,19vw,250px)}
-.stack div:nth-child(n+2){font-size:clamp(34px,8.4vw,112px);color:var(--ink);letter-spacing:-.045em;line-height:.95}
-.stack small{font-size:13px;letter-spacing:.08em;font-weight:500;color:var(--grey);text-transform:none}
-.stamp{position:absolute;right:0;top:34px;width:clamp(104px,18vw,176px);aspect-ratio:1;border:2px solid var(--red);border-radius:50%;color:var(--red);display:grid;place-items:center;text-align:center;font-weight:600;font-size:clamp(11px,1.5vw,15px);line-height:1.15;letter-spacing:.06em;text-transform:uppercase;transform:rotate(-12deg)}
-.stamp b{display:block;font-size:2.3em;letter-spacing:-.03em;line-height:1}
-.lead{display:grid;gap:18px;margin-top:30px}
-.lead p{font-size:clamp(20px,2.3vw,27px);line-height:1.22;letter-spacing:-.015em;max-width:620px}
-.cta{display:flex;flex-wrap:wrap;gap:10px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 26px;font-weight:600;font-size:17px;border:2px solid var(--ink);transition:background .18s var(--std),color .18s var(--std),transform .18s var(--std)}
-.btn.r{background:var(--red);border-color:var(--red);color:#fff}
-.btn.r:hover{background:#c41b13}
-.btn.o:hover{background:var(--ink);color:#fff}
+.eb{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--ice2)}
+.eb.d{color:#2a7fb0}
+h2{font-size:clamp(34px,5.4vw,62px);font-weight:600;letter-spacing:-.045em;line-height:1}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 26px;border-radius:14px;font-weight:600;font-size:17px;transition:transform .35s var(--land),background .2s var(--std),box-shadow .35s var(--land)}
+.btn svg{width:18px;height:18px}
+.btn.ice{background:var(--ice);color:var(--navy)}
+.btn.ice:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(143,220,247,.35)}
+.btn.line{border:1.5px solid rgba(255,255,255,.35);color:#fff}
+.btn.line:hover{background:rgba(255,255,255,.08)}
+.btn.navy{background:var(--navy);color:#fff}
+.btn.navy:hover{background:var(--navy2);transform:translateY(-2px)}
 .btn:active{transform:scale(.98)}
-.live{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:500}
-.live i{width:9px;height:9px;border-radius:50%;background:#b8c0c8}
-.live.open i{background:#18a34a}
 
-/* uses band */
-.uses{display:grid;border-bottom:2px solid var(--ink)}
-.use{padding:26px 0;border-bottom:1px solid #cdd5dc;display:grid;grid-template-columns:52px 1fr;gap:4px 14px}
-.use:last-child{border-bottom:0}
-.use .n{font-weight:600;color:var(--red);font-size:15px;padding-top:6px}
-.use h3{font-size:clamp(26px,3vw,36px);font-weight:600;letter-spacing:-.035em;line-height:1.05}
-.use p{grid-column:2;color:var(--grey)}
+/* nav */
+nav.top{position:fixed;inset:0 0 auto;z-index:30;transition:background .3s var(--std),box-shadow .3s var(--std)}
+nav.top.s{background:rgba(10,31,68,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(255,255,255,.08)}
+nav .w{display:flex;justify-content:space-between;align-items:center;height:68px;color:#fff}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:.08em;font-size:15px}
+.brand svg{width:30px;height:30px}
+.nl{display:none;gap:28px;font-size:15px;color:rgba(255,255,255,.75)}
+.nl a:hover{color:#fff}
+.ncall{height:42px;padding:0 16px;border-radius:12px;font-size:15px}
 
-/* declaration box */
-.decl{background:var(--mist);padding:64px 0}
-.dg{display:grid;gap:36px;align-items:start}
-.dg h2{font-size:clamp(34px,5vw,60px);font-weight:600;letter-spacing:-.045em;line-height:1}
-.dg .intro p{color:var(--grey);margin-top:14px;max-width:440px}
-.label{background:#fff;border:3px solid var(--ink);padding:14px 16px 16px;font-size:16px}
-.label h3{font-size:clamp(30px,4vw,42px);font-weight:600;letter-spacing:-.04em;line-height:1;padding-bottom:6px;border-bottom:10px solid var(--ink)}
-.row{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid var(--ink)}
-.row span{color:var(--grey)}
-.row b{font-weight:600;text-align:right}
-.row.thick{border-bottom-width:5px}
-.days{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;padding:10px 0;border-bottom:5px solid var(--ink)}
-.days div{text-align:center;font-size:13px;font-weight:600;padding:8px 0;background:var(--ink);color:#fff}
-.days div.off{background:#fff;color:#a3acb5;border:1px dashed #a3acb5}
-.days div.now{background:var(--red)}
-.label .foot{font-size:12px;color:var(--grey);padding-top:10px}
+/* hero */
+.hero{background:var(--navy);color:#fff;position:relative;overflow:hidden;padding:110px 0 64px}
+.hero:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:48px;background:var(--paper);clip-path:polygon(0 100%,100% 100%,100% 0)}
+.hg{display:grid;gap:30px;align-items:center;position:relative;z-index:1}
+.hero h1{font-size:clamp(50px,9vw,112px);font-weight:600;letter-spacing:-.055em;line-height:.92;margin:16px 0 22px}
+.hero h1 span{color:var(--ice)}
+.hero p{font-size:clamp(18px,1.8vw,21px);color:#c4d3e6;max-width:470px}
+.ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.status{display:inline-flex;align-items:center;gap:9px;margin-top:22px;font-size:15px;color:#c4d3e6;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.06)}
+.status i{width:8px;height:8px;border-radius:50%;background:#7f8ea3}
+.status.open i{background:#4ade80;box-shadow:0 0 0 0 rgba(74,222,128,.6);animation:pulse 2.4s var(--std) infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(74,222,128,0)}100%{box-shadow:0 0 0 0 rgba(74,222,128,0)}}
+.cubebox{display:grid;place-items:center}
+#cube{width:min(78vw,430px);height:auto;overflow:visible}
+#cube circle{transition:transform 1.1s var(--land),opacity .6s var(--std)}
 
-/* end */
-.end{padding:72px 0 40px}
-.end .big{display:block;font-weight:600;font-size:clamp(46px,11vw,138px);letter-spacing:-.055em;line-height:.95;color:var(--blue);transition:color .2s var(--std)}
-.end .big:hover{color:var(--red)}
-.end .eg{display:grid;gap:14px;margin-top:26px;padding-top:18px;border-top:2px solid var(--ink)}
-.end .eg span{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--grey)}
-.end .eg a{border-bottom:1px solid #b9c2ca}
-.copy{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;font-size:13px;color:var(--grey);border-top:1px solid #cdd5dc;padding:16px 0 90px}
+/* facts */
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:-20px;position:relative;z-index:2}
+.facts div{background:#fff;padding:20px 18px}
+.facts b{display:block;font-size:clamp(24px,3vw,34px);letter-spacing:-.04em;font-weight:600;line-height:1.05}
+.facts span{font-size:14px;color:var(--grey)}
 
-.bar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:grid;grid-template-columns:1fr 1fr;border-top:2px solid var(--ink);background:#fff;padding-bottom:env(safe-area-inset-bottom)}
-.bar a{text-align:center;padding:16px 0;font-weight:600}
-.bar a:first-child{background:var(--red);color:#fff}
+/* uses */
+.sec{padding:90px 0 0}
+.sh{display:grid;gap:12px;margin-bottom:34px}
+.sh p{color:var(--grey);max-width:460px}
+.cards{display:grid;gap:14px}
+.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px;display:flex;flex-direction:column;gap:18px;transition:transform .45s var(--land),box-shadow .45s var(--land),border-color .3s}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(10,31,68,.08);border-color:#b9d3e2}
+.ic{width:56px;height:56px;border-radius:16px;background:var(--ice);display:grid;place-items:center}
+.ic svg{width:28px;height:28px;stroke:var(--navy);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:26px;letter-spacing:-.03em;font-weight:600;line-height:1.1}
+.card p{color:var(--grey)}
 
-/* motion: print-on, one line after another at uneven offsets */
-.js .stack div,.js .stamp,.js .lead{opacity:0}
-.go .stack div{animation:on .01s steps(1) forwards}
-.go .stack div:nth-child(1){animation-delay:.05s}
-.go .stack div:nth-child(2){animation-delay:.18s}
-.go .stack div:nth-child(3){animation-delay:.33s}
-.go .stack div:nth-child(4){animation-delay:.51s}
-.go .lead{animation:on .01s steps(1) .72s forwards}
-.go .stamp{animation:stamp .5s var(--land) .9s forwards}
-@keyframes on{to{opacity:1}}
-@keyframes stamp{0%{opacity:0;transform:rotate(-12deg) scale(1.5)}100%{opacity:1;transform:rotate(-12deg) scale(1)}}
-.js .use{opacity:0;transform:translateY(14px)}
-.use.in{opacity:1;transform:none;transition:opacity .5s var(--std),transform .7s var(--land)}
+/* order */
+.og{display:grid;gap:22px;align-items:start}
+.form{background:#fff;border:1px solid var(--line);border-radius:22px;padding:24px;display:grid;gap:22px}
+.field .l{display:block;font-size:13px;font-weight:600;color:var(--grey);margin-bottom:9px}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.seg button{height:44px;padding:0 16px;border-radius:12px;border:1.5px solid var(--line);font-weight:500;transition:all .2s var(--std)}
+.seg button:hover{border-color:var(--navy)}
+.seg button[aria-pressed=true]{background:var(--navy);border-color:var(--navy);color:#fff}
+input{font:inherit;width:100%;height:52px;border:1.5px solid var(--line);border-radius:12px;padding:0 14px;font-size:17px;outline:none;transition:border-color .2s,box-shadow .2s;background:#fff;color:var(--ink)}
+input:focus{border-color:var(--navy);box-shadow:0 0 0 4px rgba(143,220,247,.45)}
+.slipwrap{overflow:hidden;padding-top:10px;margin-top:-10px}
+.slot{height:8px;border-radius:8px;background:var(--navy);position:relative;z-index:2;margin:0 -4px -4px}
+.slip{background:#fff;border-radius:0 0 6px 6px;padding:22px 22px 20px;box-shadow:0 18px 40px rgba(10,31,68,.08);position:relative}
+.slip:after{content:"";position:absolute;left:0;right:0;bottom:-8px;height:8px;background:radial-gradient(circle at 6px 0,#fff 6px,transparent 6.5px) 0 0/12px 8px repeat-x}
+.js .slip{transform:translateY(-102%)}
+.slipwrap.in .slip{transform:none;transition:transform 1.2s var(--land)}
+.slip h3{display:flex;justify-content:space-between;font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding-bottom:12px;border-bottom:1px dashed #b7c6d3}
+.slip dl{display:grid;grid-template-columns:100px 1fr;gap:10px;padding:16px 0;border-bottom:1px dashed #b7c6d3}
+.slip dt{color:var(--grey)}
+.slip dd{font-weight:600;word-break:break-word}
+.slip dd.e{color:#a9b6c3;font-weight:400}
+.slip dd.f{animation:fl .7s var(--land)}
+@keyframes fl{from{background:var(--ice)}to{background:transparent}}
+.acts{display:grid;gap:8px;margin-top:18px}
+.btn[aria-disabled=true]{opacity:.4;pointer-events:none}
+.hint{font-size:13px;color:var(--grey);margin-top:10px}
+
+/* hours */
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.day{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 4px;text-align:center}
+.day b{display:block;font-size:15px}
+.day span{font-size:12px;color:var(--grey)}
+.day.off{background:transparent;border-style:dashed;color:#9aa8b6}
+.day.now{background:var(--navy);border-color:var(--navy);color:#fff}
+.day.now span{color:var(--ice)}
+.js .day{opacity:0;transform:translateY(10px)}
+.week.in .day{opacity:1;transform:none;transition:opacity .4s var(--std),transform .7s var(--land)}
+
+/* foot */
+.foot{background:var(--navy);color:#fff;margin-top:100px;padding:80px 0 110px;position:relative}
+.foot:before{content:"";position:absolute;left:0;right:0;top:-1px;height:48px;background:var(--paper);clip-path:polygon(0 0,100% 0,0 100%)}
+.foot .big{display:inline-block;font-size:clamp(46px,10vw,124px);font-weight:600;letter-spacing:-.055em;line-height:1;margin:14px 0 30px;transition:color .2s}
+.foot .big:hover{color:var(--ice)}
+.fg{display:grid;gap:18px;padding-top:22px;border-top:1px solid rgba(255,255,255,.15)}
+.fg span{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8fa3bf;margin-bottom:3px}
+.fg a{border-bottom:1px solid rgba(255,255,255,.25)}
+.copy{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-top:44px;font-size:13px;color:#8fa3bf}
+
+.bar{position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:40;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px;border-radius:18px;background:var(--navy);box-shadow:0 12px 30px rgba(10,31,68,.3);transform:translateY(150%);transition:transform .6s var(--land)}
+.bar.on{transform:none}
+.bar a{height:48px}
+
+/* reveals */
+.js .rv{opacity:0;transform:translateY(22px)}
+.rv.in{opacity:1;transform:none;transition:opacity .6s var(--std),transform .9s var(--land)}
+.js .hero .ln{opacity:0;transform:translateY(26px)}
+.go .hero .ln{opacity:1;transform:none;transition:opacity .5s var(--std),transform 1s var(--land)}
 
 @media(min-width:900px){
- .lead{grid-template-columns:1fr auto;align-items:end}
- .uses{grid-template-columns:repeat(3,1fr)}
- .use{border-bottom:0;border-right:1px solid #cdd5dc;padding:30px 24px 30px 0;grid-template-columns:1fr;margin-right:24px}
- .use:last-child{border-right:0;margin-right:0}
- .use p{grid-column:1}
- .use .n{padding-top:0}
- .dg{grid-template-columns:1fr 440px;gap:64px}
- .end .eg{grid-template-columns:repeat(3,1fr)}
+ .nl{display:flex}
+ .hero{padding:140px 0 90px}
+ .hg{grid-template-columns:1.1fr .9fr}
+ .facts{grid-template-columns:repeat(4,1fr)}
+ .sh{grid-template-columns:1fr 1fr;align-items:end}
+ .cards{grid-template-columns:repeat(3,1fr)}
+ .og{grid-template-columns:1.1fr .9fr;gap:40px}
+ .fg{grid-template-columns:repeat(3,1fr)}
  .bar{display:none}
- .copy{padding-bottom:16px}
+ .foot{padding-bottom:60px}
 }
-@media(prefers-reduced-motion:reduce){.js .stack div,.js .stamp,.js .lead,.js .use{opacity:1!important;transform:rotate(-12deg)}.js .stack div,.js .lead,.js .use{transform:none!important}*{animation:none!important}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.js .rv,.js .hero .ln,.js .day{opacity:1;transform:none}.js .slip{transform:none}}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-<div class="w">
-<header class="top"><b>LED GRANULA</b><a href="tel:+385958013100"><span>●</span> 095 801 3100</a></header>
 
-<section class="hero">
- <div class="stack" aria-label="Led, ice, Eis, ghiaccio">
-  <div>Led</div>
-  <div>Ice <small>EN</small></div>
-  <div>Eis <small>DE</small></div>
-  <div>Ghiaccio <small>IT</small></div>
- </div>
- <div class="stamp" aria-hidden="true"><div>Privlaka<b>2010</b>od godine</div></div>
- <div class="lead">
-  <p>Proizvodimo i prodajemo led u Privlaci. Za ugostitelje, za medicinu i za sve kojima treba hladno.</p>
+<nav class="top" id="nav"><div class="w">
+ <a class="brand" href="#"><svg viewBox="0 0 40 40"><path d="M20 3 35 11.5v17L20 37 5 28.5v-17z" fill="#132d5c"/><path d="M20 3 35 11.5 20 20 5 11.5z" fill="#c9f0ff"/><path d="M20 20v17L5 28.5v-17z" fill="#8fdcf7"/></svg>LED GRANULA</a>
+ <div class="nl"><a href="#za-koga">Za koga</a><a href="#narudzba">Narudžba</a><a href="#vrijeme">Radno vrijeme</a><a href="#kontakt">Kontakt</a></div>
+ <a class="btn ice ncall" href="tel:+385958013100">095 801 3100</a>
+</div></nav>
+
+<header class="hero">
+ <div class="w hg">
   <div>
-   <div class="live" id="live"><i></i><span>Pon – Sub, 8 – 24 h</span></div>
-   <div class="cta" style="margin-top:12px"><a class="btn r" href="tel:+385958013100">Nazovite i naručite</a><a class="btn o" href="#info">Gdje i kada</a></div>
+   <div class="eb ln">Privlaka · od 2010.</div>
+   <h1 class="ln" style="transition-delay:.08s">Led za vaš šank.<br><span>Iz Privlake.</span></h1>
+   <p class="ln" style="transition-delay:.18s">Proizvodimo i prodajemo led u Privlaci. Za ugostitelje, za medicinu i za sve kojima treba hladno.</p>
+   <div class="ctas ln" style="transition-delay:.26s">
+    <a class="btn ice" href="#narudzba">Naruči led <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="btn line" href="tel:+385958013100">Nazovi</a>
+   </div>
+   <div class="status ln" id="status" style="transition-delay:.34s"><i></i><span>Pon – Sub, 8 – 24 h</span></div>
   </div>
+  <div class="cubebox"><svg id="cube" viewBox="-120 -125 240 250" aria-hidden="true"></svg></div>
  </div>
-</section>
+</header>
 
-<section class="uses" aria-label="Kome prodajemo">
- <div class="use"><span class="n">01</span><h3>Ugostiteljstvo</h3><p>Kafići, restorani i barovi.</p></div>
- <div class="use"><span class="n">02</span><h3>Medicina</h3><p>Led za medicinske namjene, po dogovoru.</p></div>
- <div class="use"><span class="n">03</span><h3>Ostali</h3><p>Javite što trebate i u kojoj količini.</p></div>
-</section>
+<div class="w">
+ <div class="facts rv">
+  <div><b>2010.</b><span>godina osnivanja</span></div>
+  <div><b>Pon – Sub</b><span>8 – 24 h</span></div>
+  <div><b>Privlaka</b><span>Sabunike 1104</span></div>
+  <div><b>095 801 3100</b><span>narudžbe na telefon</span></div>
+ </div>
 </div>
 
-<section class="decl" id="info"><div class="w dg">
- <div class="intro"><h2>Sve što trebate znati, na jednoj etiketi.</h2><p>Nazovite, recite koliko leda trebate i kada, pa ga preuzmite u Privlaci.</p></div>
- <div class="label" role="table" aria-label="Podaci">
-  <h3>Led Granula</h3>
-  <div class="row"><span>Proizvođač</span><b>LED GRANULA d.o.o.</b></div>
-  <div class="row"><span>Adresa</span><b>Sabunike 1104, Privlaka</b></div>
-  <div class="row thick"><span>Na tržištu od</span><b>2010.</b></div>
-  <div class="row" style="border-bottom:0"><span>Radno vrijeme</span><b>8 – 24 h</b></div>
-  <div class="days" id="days"></div>
-  <div class="row"><span>Mobitel</span><b><a href="tel:+385958013100">095 801 3100</a></b></div>
-  <div class="row"><span>Fiksni</span><b><a href="tel:+38523236432">023 236 432</a></b></div>
-  <div class="row"><span>E-mail</span><b><a href="mailto:ledgranula@gmail.com">ledgranula@gmail.com</a></b></div>
-  <p class="foot">Čuvati na hladnom. Preuzimanje po dogovoru.</p>
+<section class="sec" id="za-koga"><div class="w">
+ <div class="sh"><div><div class="eb d rv">Za koga</div><h2 class="rv" style="margin-top:10px">Led za svakog kome treba hladno.</h2></div><p class="rv">Javite koliko leda trebate i za kada, a ostalo dogovorimo telefonom.</p></div>
+ <div class="cards">
+  <article class="card rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M6 3h12l-1.5 17a1 1 0 0 1-1 1h-7a1 1 0 0 1-1-1z"/><path d="M8.5 9h3v3h-3zM12.5 12h3v3h-3z"/></svg></div><div><h3>Ugostiteljstvo</h3><p>Kafići, restorani i barovi.</p></div></article>
+  <article class="card rv" style="transition-delay:.08s"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M12 8v8M8 12h8"/></svg></div><div><h3>Medicina</h3><p>Led za medicinske namjene, po dogovoru.</p></div></article>
+  <article class="card rv" style="transition-delay:.16s"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3 20 7.5v9L12 21 4 16.5v-9z"/><path d="M4 7.5 12 12l8-4.5M12 12v9"/></svg></div><div><h3>Ostali</h3><p>Javite što trebate i u kojoj količini.</p></div></article>
  </div>
 </div></section>
 
-<div class="w end">
+<section class="sec" id="narudzba"><div class="w">
+ <div class="sh"><div><div class="eb d rv">Narudžba</div><h2 class="rv" style="margin-top:10px">Ispunite listić, pošaljite SMS.</h2></div><p class="rv">Odaberite za što vam treba led, upišite količinu i kada ga preuzimate. Poruka se složi sama.</p></div>
+ <div class="og">
+  <div class="form rv">
+   <div class="field"><span class="l">Za</span><div class="seg" id="za"><button type="button" aria-pressed="true">Ugostiteljstvo</button><button type="button" aria-pressed="false">Medicinu</button><button type="button" aria-pressed="false">Ostalo</button></div></div>
+   <label class="field"><span class="l">Količina</span><input id="kol" placeholder="npr. 10 vreća" autocomplete="off"></label>
+   <div class="field"><span class="l">Preuzimanje</span><div class="seg" id="kad"><button type="button" aria-pressed="false">Danas</button><button type="button" aria-pressed="true">Sutra</button><button type="button" aria-pressed="false">Po dogovoru</button></div></div>
+   <label class="field"><span class="l">Ime ili lokal</span><input id="ime" placeholder="npr. Caffe bar Riva" autocomplete="organization"></label>
+  </div>
+  <div>
+   <div class="slot" aria-hidden="true"></div>
+   <div class="slipwrap" id="slipwrap"><aside class="slip" aria-live="polite">
+    <h3><span>Narudžbenica</span><span id="dat"></span></h3>
+    <dl>
+     <dt>Za</dt><dd id="o-za">Ugostiteljstvo</dd>
+     <dt>Količina</dt><dd id="o-kol" class="e">upišite količinu</dd>
+     <dt>Preuzimanje</dt><dd id="o-kad">Sutra</dd>
+     <dt>Naručuje</dt><dd id="o-ime" class="e">upišite ime</dd>
+    </dl>
+    <div class="acts"><a class="btn navy" id="sms" href="sms:+385958013100" aria-disabled="true">Pošalji SMS</a><a class="btn" style="border:1.5px solid var(--line)" href="tel:+385958013100">Ili nazovite 095 801 3100</a></div>
+    <p class="hint">Preuzimanje u Privlaci, Sabunike 1104.</p>
+   </aside></div>
+  </div>
+ </div>
+</div></section>
+
+<section class="sec" id="vrijeme"><div class="w">
+ <div class="sh"><div><div class="eb d rv">Radno vrijeme</div><h2 class="rv" style="margin-top:10px">Šest dana u tjednu, do ponoći.</h2></div><p class="rv">Ponedjeljak – subota od 8 do 24 h. Nedjeljom zatvoreno.</p></div>
+ <div class="week" id="week"></div>
+</div></section>
+
+<footer class="foot" id="kontakt"><div class="w">
+ <div class="eb">Kontakt</div>
  <a class="big" href="tel:+385958013100">095 801 3100</a>
- <div class="eg">
+ <div class="fg">
   <div><span>Fiksni</span><a href="tel:+38523236432">023 236 432</a></div>
   <div><span>E-mail</span><a href="mailto:ledgranula@gmail.com">ledgranula@gmail.com</a></div>
   <div><span>Adresa</span><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Sabunike+1104+Privlaka">Sabunike 1104, 23233 Privlaka ↗</a></div>
  </div>
-</div>
-<div class="w copy"><span>LED GRANULA d.o.o.</span><span>Demo · Azzurro Digital</span></div>
+ <div class="copy"><span>LED GRANULA d.o.o.</span><span>Demo · Azzurro Digital</span></div>
+</div></footer>
 
-<nav class="bar"><a href="tel:+385958013100">Nazovi</a><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Sabunike+1104+Privlaka">Karta</a></nav>
+<div class="bar" id="bar"><a class="btn ice" href="#narudzba">Naruči</a><a class="btn line" href="tel:+385958013100">Nazovi</a></div>
 
 <script>
 (()=>{
+const rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+// --- brand cube made of granules ---
+const svg=document.getElementById('cube'),NS='http://www.w3.org/2000/svg',N=6,S=100,dots=[];
+const c30=Math.cos(Math.PI/6),s30=.5;
+const faces=[
+ {o:[0,-S],u:[c30,s30],v:[-c30,s30],fill:'#c9f0ff'},      // top
+ {o:[-c30*S,-S*s30],u:[c30,s30],v:[0,1],fill:'#8fdcf7'},  // left
+ {o:[0,0],u:[c30,-s30],v:[0,1],fill:'#3d6fb3'}            // right
+];
+faces.forEach((f,fi)=>{for(let i=0;i<N;i++)for(let j=0;j<N;j++){
+ const a=(i+.5)/N*S,b=(j+.5)/N*S;
+ const x=f.o[0]+f.u[0]*a+f.v[0]*b, y=f.o[1]+f.u[1]*a+f.v[1]*b;
+ const c=document.createElementNS(NS,'circle');c.setAttribute('cx',x.toFixed(1));c.setAttribute('cy',y.toFixed(1));c.setAttribute('r',6.2);c.setAttribute('fill',f.fill);
+ const ang=Math.random()*Math.PI*2,dist=90+Math.random()*120;
+ c.style.transform=`translate(${(Math.cos(ang)*dist).toFixed(1)}px,${(Math.sin(ang)*dist).toFixed(1)}px) scale(.2)`;c.style.opacity=0;c.style.transformBox='fill-box';c.style.transformOrigin='center';
+ c.style.transitionDelay=(.25+fi*.12+(i+j)*.035+Math.random()*.08).toFixed(3)+'s';
+ svg.appendChild(c);dots.push(c)}});
+// subtle glint: one random granule brightens now and then (idle life)
+function glint(){const d=dots[Math.floor(Math.random()*dots.length)];d.animate([{fill:d.getAttribute('fill')},{fill:'#ffffff'},{fill:d.getAttribute('fill')}],{duration:900,easing:'cubic-bezier(.2,0,0,1)'});}
+// --- live status ---
 const z=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Zagreb'}));
 const di=(z.getDay()+6)%7,h=z.getHours(),open=di<6&&h>=8;
-const live=document.getElementById('live');
-if(open){live.classList.add('open');live.lastChild.textContent='Sada otvoreno, do 24 h'}
-else live.lastChild.textContent=di===6?'Danas zatvoreno, otvaramo u ponedjeljak u 8':'Sada zatvoreno, otvaramo u 8 h';
-const d=document.getElementById('days');['Pon','Uto','Sri','Čet','Pet','Sub','Ned'].forEach((n,i)=>{const e=document.createElement('div');e.textContent=n;if(i===6)e.className='off';if(i===di&&i!==6)e.className='now';d.appendChild(e)});
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.3});
-document.querySelectorAll('.use').forEach((el,i)=>{el.style.transitionDelay=[0,.07,.15][i]+'s';io.observe(el)});
-requestAnimationFrame(()=>requestAnimationFrame(()=>document.documentElement.classList.add('go')));
+const st=document.getElementById('status');
+if(open){st.classList.add('open');st.lastChild.textContent='Sada otvoreno · do 24 h'}else st.lastChild.textContent=di===6?'Danas zatvoreno · otvaramo u ponedjeljak u 8':'Sada zatvoreno · otvaramo u 8 h';
+// --- week ---
+const wk=document.getElementById('week');['Pon','Uto','Sri','Čet','Pet','Sub','Ned'].forEach((n,i)=>{const d=document.createElement('div');d.className='day'+(i===6?' off':'')+(i===di?' now':'');d.style.transitionDelay=([0,.04,.09,.15,.22,.3,.39][i])+'s';d.innerHTML=`<b>${n}</b><span>${i===6?'zatvoreno':'8 – 24'}</span>`;wk.appendChild(d)});
+// --- slip ---
+document.getElementById('dat').textContent=z.toLocaleDateString('hr-HR',{day:'2-digit',month:'2-digit',year:'numeric'});
+const s={za:'Ugostiteljstvo',kad:'Sutra',kol:'',ime:''},o=k=>document.getElementById('o-'+k);
+const set=(k,v,ph)=>{s[k]=v;const e=o(k);e.textContent=v||ph;e.classList.toggle('e',!v);e.classList.remove('f');void e.offsetWidth;e.classList.add('f');upd()};
+document.querySelectorAll('.seg').forEach(g=>g.addEventListener('click',ev=>{const b=ev.target.closest('button');if(!b)return;g.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));set(g.id,b.textContent,'')}));
+document.getElementById('kol').addEventListener('input',e=>set('kol',e.target.value.trim(),'upišite količinu'));
+document.getElementById('ime').addEventListener('input',e=>set('ime',e.target.value.trim(),'upišite ime'));
+const sms=document.getElementById('sms');
+function upd(){const ok=s.kol&&s.ime;sms.setAttribute('aria-disabled',!ok);const m=`Narudžba leda\nZa: ${s.za}\nKoličina: ${s.kol}\nPreuzimanje: ${s.kad}\nNaručuje: ${s.ime}`;sms.href='sms:+385958013100'+(/iPhone|iPad|Mac/.test(navigator.userAgent)?'&':'?')+'body='+encodeURIComponent(m)}upd();
+// --- reveals ---
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.2,rootMargin:'0px 0px -6% 0px'});
+document.querySelectorAll('.rv,#week,#slipwrap').forEach(el=>io.observe(el));
+// --- nav + bar ---
+const nav=document.getElementById('nav'),bar=document.getElementById('bar');
+addEventListener('scroll',()=>{nav.classList.toggle('s',scrollY>30);bar.classList.toggle('on',scrollY>innerHeight*.6)},{passive:true});
+// --- start ---
+requestAnimationFrame(()=>requestAnimationFrame(()=>{document.documentElement.classList.add('go');dots.forEach(d=>{d.style.transform='none';d.style.opacity=1});if(!rm)setTimeout(()=>setInterval(glint,700),2600)}));
 })();
 </script>
 </body>

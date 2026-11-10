@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TG Gradnja — završni građevinski radovi, Škrljevo</title>
+<meta name="description" content="TG Gradnja d.o.o., Škrljevo: završni građevinski radovi na novogradnjama i obnovama na riječkom području.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f1ec;--ink:#1d1f22;--mute:#5b5f66;--line:#d9d5cc;--accent:#c4582b;--accent-ink:#ffffff;--card:#ffffff;--dark:#202428}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{font-family:Inter,system-ui,sans-serif;font-size:17px;line-height:1.6;color:var(--ink);background:var(--bg)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:10;background:rgba(243,241,236,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.mark{font-family:Archivo,sans-serif;font-weight:800;font-size:20px;letter-spacing:.02em;text-decoration:none;display:flex;align-items:center;gap:10px}
+.mark span.sq{display:inline-grid;place-items:center;width:34px;height:34px;background:var(--dark);color:#fff;border-radius:8px;font-size:15px}
+nav a{text-decoration:none;font-weight:500;font-size:15px;margin-left:22px;color:var(--mute)}
+nav a:hover{color:var(--ink)}
+@media (max-width:720px){nav a:not(.btn){display:none}}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:999px;background:var(--accent);color:var(--accent-ink)!important;font-weight:600;text-decoration:none;border:0;font-size:16px;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ink)!important;border:1.5px solid var(--ink)}
+nav .btn{min-height:40px;padding:0 18px;margin-left:16px;font-size:15px}
+.hero{padding:72px 0 56px}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:Archivo,sans-serif;font-weight:800;font-size:clamp(38px,8vw,76px);line-height:1.02;letter-spacing:-.02em;margin:14px 0 20px}
+.lead{font-size:clamp(18px,2.4vw,21px);color:var(--mute);max-width:640px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.hero-band{margin-top:48px;display:grid;grid-template-columns:repeat(12,1fr);gap:10px;height:200px}
+.hero-band div{border-radius:16px;background:var(--dark)}
+.hero-band div:nth-child(1){grid-column:span 5;background:linear-gradient(135deg,#2a2f35,#3d4249)}
+.hero-band div:nth-child(2){grid-column:span 4;background:repeating-linear-gradient(90deg,#d9d5cc 0 2px,#e8e4dc 2px 22px)}
+.hero-band div:nth-child(3){grid-column:span 3;background:var(--accent)}
+@media (max-width:600px){.hero-band{height:120px}}
+section{padding:64px 0;border-top:1px solid var(--line)}
+h2{font-family:Archivo,sans-serif;font-weight:800;font-size:clamp(28px,5vw,44px);line-height:1.1;letter-spacing:-.01em;margin-bottom:14px}
+.sub{color:var(--mute);max-width:620px;margin-bottom:34px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:760px){.split{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px}
+.card h3{font-family:Archivo,sans-serif;font-size:24px;margin-bottom:8px}
+.card .tag{display:inline-block;font-size:13px;font-weight:600;color:var(--accent);margin-bottom:12px;letter-spacing:.08em;text-transform:uppercase}
+.card ul{list-style:none;margin-top:16px}
+.card li{padding:11px 0;border-top:1px solid var(--line)}
+.note{font-size:14px;color:var(--mute);margin-top:18px}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media (max-width:760px){.gallery{grid-template-columns:repeat(2,1fr)}}
+.ph{aspect-ratio:4/3;border-radius:16px;border:1.5px dashed #b9b3a7;display:flex;align-items:flex-end;padding:14px;font-size:14px;color:var(--mute);background:linear-gradient(160deg,#ebe7df,#f6f4ef)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:s}
+@media (max-width:760px){.steps{grid-template-columns:1fr}}
+.step{counter-increment:s;padding-top:18px;border-top:3px solid var(--ink)}
+.step::before{content:"0" counter(s);font-family:Archivo,sans-serif;font-weight:800;font-size:15px;color:var(--accent)}
+.step h3{font-family:Archivo,sans-serif;font-size:20px;margin:8px 0 6px}
+.contact{background:var(--dark);color:#f1efe9;border-top:0}
+.contact .sub{color:#b9bcc2}
+form{display:grid;gap:14px;max-width:560px}
+label{font-size:14px;font-weight:500}
+input,textarea,select{width:100%;font:inherit;font-size:16px;padding:14px 16px;border-radius:14px;border:1px solid #444a52;background:#2a2f35;color:#fff;margin-top:6px}
+textarea{min-height:120px}
+.mailto{margin-top:26px;font-size:16px}
+.mailto a{color:#fff}
+footer{padding:26px 0 90px;font-size:13px;color:var(--mute)}
+.sticky{position:fixed;left:16px;right:16px;bottom:16px;z-index:20;display:none}
+@media (max-width:720px){.sticky{display:flex}.sticky .btn{flex:1;box-shadow:0 10px 30px rgba(0,0,0,.25)}}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+.nojs .reveal{opacity:1;transform:none}
+</style>
+</head>
+<body class="nojs">
+<header>
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="TG Gradnja, početak"><span class="sq">TG</span>TG Gradnja</a>
+    <nav aria-label="Glavna navigacija">
+      <a href="#novogradnje">Novogradnje</a>
+      <a href="#obnove">Obnove</a>
+      <a href="#radovi">Radovi</a>
+      <a class="btn" href="#upit">Pošaljite upit</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <p class="eyebrow">Škrljevo · riječko područje</p>
+    <h1>Završni radovi na novogradnjama i obnovama.</h1>
+    <p class="lead">TG Gradnja d.o.o. preuzima završne građevinske radove na novogradnjama i obnovama na riječkom području. Pošaljite opis posla i dogovorit ćemo izlazak na gradilište.</p>
+    <div class="cta">
+      <a class="btn" href="#upit">Pošaljite upit</a>
+      <a class="btn ghost" href="#radovi">Pogledajte radove</a>
+    </div>
+    <div class="hero-band" aria-hidden="true"><div></div><div></div><div></div></div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <h2 class="reveal">Dvije vrste posla, dva puta do upita.</h2>
+      <p class="sub reveal">Novogradnje i obnove stoje odvojeno, svaka sa svojim popisom radova i fotografijama, pa investitor i vlasnik stana odmah vide ono što ih zanima.</p>
+      <div class="split">
+        <article class="card reveal" id="novogradnje">
+          <span class="tag">Novogradnje</span>
+          <h3>Za investitore i izvođače</h3>
+          <p>Završni radovi na novim stambenim i poslovnim objektima.</p>
+          <ul>
+            <li>Popis radova koje preuzimate</li>
+            <li>Primjer: unutarnji završni radovi</li>
+            <li>Primjer: radovi prije primopredaje</li>
+          </ul>
+          <p class="note">Stavke su primjer rasporeda; upisujemo vaš točan popis.</p>
+        </article>
+        <article class="card reveal" id="obnove">
+          <span class="tag">Obnove</span>
+          <h3>Za vlasnike stanova i kuća</h3>
+          <p>Završni radovi pri obnovi postojećih prostora.</p>
+          <ul>
+            <li>Popis radova koje preuzimate</li>
+            <li>Primjer: obnova stana</li>
+            <li>Primjer: obnova kuće</li>
+          </ul>
+          <p class="note">Stavke su primjer rasporeda; upisujemo vaš točan popis.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="radovi">
+    <div class="wrap">
+      <h2 class="reveal">Završeni radovi</h2>
+      <p class="sub reveal">Ovdje dolaze vaše fotografije završenih radova, odvojeno za novogradnje i obnove. Najbolje rade fotografije prije i poslije.</p>
+      <div class="gallery">
+        <div class="ph reveal">Novogradnja · fotografija 1</div>
+        <div class="ph reveal">Novogradnja · fotografija 2</div>
+        <div class="ph reveal">Novogradnja · fotografija 3</div>
+        <div class="ph reveal">Obnova · prije</div>
+        <div class="ph reveal">Obnova · poslije</div>
+        <div class="ph reveal">Obnova · detalj</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 class="reveal">Kako ide suradnja</h2>
+      <div class="steps">
+        <div class="step reveal"><h3>Upit</h3><p>Opišete posao, lokaciju i željeni rok, po mogućnosti s fotografijom.</p></div>
+        <div class="step reveal"><h3>Izlazak na gradilište</h3><p>Dogovaramo obilazak i pregled onoga što treba napraviti.</p></div>
+        <div class="step reveal"><h3>Ponuda i izvedba</h3><p>Dobivate ponudu, a nakon dogovora krećemo s radovima.</p></div>
+      </div>
+      <p class="note">Koraci su prijedlog; prilagođavamo ih vašem načinu rada.</p>
+    </div>
+  </section>
+
+  <section class="contact" id="upit">
+    <div class="wrap">
+      <h2>Pošaljite upit</h2>
+      <p class="sub">Škrljevo i riječko područje.</p>
+      <form onsubmit="event.preventDefault();this.querySelector('p.ok').hidden=false;">
+        <div><label for="ime">Ime i prezime</label><input id="ime" name="ime" autocomplete="name"></div>
+        <div><label for="kontakt">Telefon ili e-mail</label><input id="kontakt" name="kontakt"></div>
+        <div><label for="vrsta">Vrsta posla</label><select id="vrsta" name="vrsta"><option>Novogradnja</option><option>Obnova</option></select></div>
+        <div><label for="opis">Opis posla i lokacija</label><textarea id="opis" name="opis"></textarea></div>
+        <button class="btn" type="submit">Pošalji upit</button>
+        <p class="ok" hidden>Ovo je primjer obrasca, upit se ne šalje.</p>
+      </form>
+      <p class="mailto">E-mail: <a href="mailto:tggradnjadoo@gmail.com">tggradnjadoo@gmail.com</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>TG Gradnja d.o.o. · Škrljevo</p>
+    <p>Primjer izradio Azzurro Digital — nije objavljena stranica tvrtke.</p>
+  </div>
+</footer>
+
+<div class="sticky"><a class="btn" href="#upit">Pošaljite upit</a></div>
+
+<script>
+document.body.classList.remove('nojs');
+(function(){var els=document.querySelectorAll('.reveal');
+if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}})},{threshold:.12});
+els.forEach(function(e){io.observe(e)});})();
+</script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Kavana Palace — Food &amp; Drink · Providurova palača, Zadar</title>
+<meta name="description" content="Kavana Palace u Providurovoj palači u Zadru. Doručak, jela i piće uz pogled na crkvu sv. Šime.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#f7f3ec">
+<link rel="icon" href="../kavana-palace/logo.svg" type="image/svg+xml">
+<link rel="preload" as="font" type="font/woff2" href="f/jost-latin.woff2" crossorigin>
+<link rel="preload" as="image" href="../kavana-palace/kp-bar.webp" fetchpriority="high">
+<style>
+@font-face{font-family:'Jost';font-style:normal;font-weight:300 600;font-display:swap;src:url(f/jost-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Jost';font-style:normal;font-weight:300 600;font-display:swap;src:url(f/jost-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Instrument Serif';font-style:italic;font-weight:400;font-display:swap;src:url(../kavana-palace/f/instrumentserif-italic-400-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Instrument Serif';font-style:italic;font-weight:400;font-display:swap;src:url(../kavana-palace/f/instrumentserif-italic-400-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+:root{--bg:#f7f3ec;--c2:#ece4d5;--ink:#1c1613;--ox:#a61b20;--gold:#8a7a52;--mute:#72665a;--line:rgba(28,22,19,.13);--r:22px;--gap:8px;--pad:12px;
+ --land:cubic-bezier(.1,.75,.15,1);--std:cubic-bezier(.2,0,0,1);--bar:60px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:calc(var(--bar) + 14px)}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.5 'Jost',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--ox);outline-offset:3px;border-radius:10px}
+.it{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;color:var(--ox);letter-spacing:0}
+.lab{font-size:11.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.wrap{width:min(1340px,100% - 2*var(--pad));margin-inline:auto}
+
+/* bar */
+.bar{position:fixed;inset:0 0 auto 0;z-index:30;height:var(--bar);background:var(--bg);transition:transform .5s var(--std),box-shadow .3s}
+.bar.hide{transform:translateY(-110%)}.bar.s{box-shadow:0 1px 0 var(--line)}
+.bar .wrap{height:100%;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:11px;font-weight:400;font-size:18px;letter-spacing:-.005em}
+.brand img{height:24px;width:auto}
+.bar nav{display:none;gap:30px;font-size:15px}
+.bar nav a{position:relative;padding:8px 0}
+.bar nav a:after{content:"";position:absolute;left:0;right:0;bottom:3px;height:1px;background:var(--ox);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--std)}
+.bar nav a:hover:after{transform:scaleX(1)}
+.br{display:flex;align-items:center;gap:30px}
+.pill{display:inline-flex;align-items:center;height:42px;padding:0 20px;border-radius:99px;background:var(--ox);color:#fff;font-weight:500;font-size:15px;transition:background .3s,transform .3s var(--std)}
+.pill:hover{background:#b8262b}.pill:active{transform:scale(.97)}
+
+/* cells: every block is a shelf compartment */
+.grid{display:grid;gap:var(--gap)}
+.c{position:relative;border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;padding:18px;min-height:132px;isolation:isolate}
+.c.soft{background:var(--c2)}.c.ox{background:var(--ox);color:#fff}.c.ink{background:var(--ink);color:var(--bg)}
+.c.ox .lab{color:#f1c9c4}.c.ink .lab{color:#c9b98e}
+.c.ph{padding:0;background:var(--c2)}
+.c.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.12);transition:transform 1.8s var(--land)}
+.c.in.ph img,.go .hero .c.ph img{transform:none}
+a.c{transition:background .35s}
+a.c.soft:hover{background:#e4dac8}a.c.ox:hover{background:#b8262b}a.c.ink:hover{background:#2b221d}
+.c .big{font-weight:300;font-size:clamp(25px,6.6vw,34px);line-height:1.04;letter-spacing:-.025em}
+.c .sm{font-size:15px;opacity:.78}
+.ch{position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:50%;border:1px solid currentColor;display:grid;place-items:center;font-size:17px;opacity:.9;transition:transform .45s var(--std),background .3s,color .3s}
+a.c:hover .ch{transform:translateX(4px)}
+.c.ox .ch{background:#fff;color:var(--ox);border-color:#fff}
+
+/* lights on */
+.hero .c,.hero .ttl>*{opacity:0;transform:translateY(14px) scale(.975)}
+.go .hero .c,.go .hero .ttl>*{opacity:1;transform:none;transition:opacity .8s var(--std) var(--d,0s),transform 1s var(--land) var(--d,0s),background .35s}
+.rv,.vis .c,.card{opacity:0;transform:translateY(18px)}
+.rv.in,.vis .c.in,.card.in{opacity:1;transform:none;transition:opacity .9s var(--std) var(--d,0s),transform 1s var(--land) var(--d,0s),background .35s}
+
+/* hero */
+.hero{padding-top:calc(var(--bar) + 6px);grid-template-columns:1fr 1fr}
+.ttl{grid-column:1/-1;padding:14px 6px 20px;display:flex;flex-direction:column;gap:14px}
+h1{font-weight:300;font-size:clamp(40px,11.4vw,62px);line-height:.98;letter-spacing:-.04em}
+h1 .it{font-size:1.06em}
+.ttl p{color:var(--mute);max-width:32ch;font-size:17.5px}
+.ttl p.lab{color:var(--gold);max-width:none;font-size:11.5px}
+.h-bar{grid-column:1/-1;aspect-ratio:1/.8}
+.h-bar img{object-position:50% 24%}
+.go .hero .h-bar img{animation:drift 26s ease-in-out 2s infinite alternate}
+@keyframes drift{to{transform:scale(1.07)}}
+.h-cta,.h-menu{min-height:156px}
+.h-adr{grid-column:1/-1}
+.h-view{aspect-ratio:1}
+.h-logo{align-items:center;justify-content:center;padding:14px}
+.h-logo img{width:min(62%,150px);height:auto}
+
+/* shelf */
+.shelf{height:46px;margin:clamp(46px,7vw,90px) 0 0;border-bottom:1.5px solid var(--ox);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='46' viewBox='0 0 72 46'%3E%3Cg fill='%23a61b20'%3E%3Cpath d='M9 2h4v9c0 2 3 3 3 6v25a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V17c0-3 3-4 3-6z'/%3E%3Cpath opacity='.55' d='M33 2h4v9c0 2 3 3 3 6v25a2 2 0 0 1-2 2h-6a2 2 0 0 1-2-2V17c0-3 3-4 3-6z'/%3E%3Cpath opacity='.8' d='M57 2h4v9c0 2 3 3 3 6v25a2 2 0 0 1-2 2h-6a2 2 0 0 1-2-2V17c0-3 3-4 3-6z'/%3E%3C/g%3E%3C/svg%3E") repeat-x left bottom/72px 46px;clip-path:inset(0 100% 0 0);transition:clip-path 2.2s var(--std)}
+.shelf.in{clip-path:inset(0)}
+
+section{scroll-margin-top:calc(var(--bar) + 14px)}
+.sec{padding:clamp(54px,8vw,110px) 0 0}
+h2{font-weight:300;font-size:clamp(32px,7.8vw,58px);line-height:1.02;letter-spacing:-.035em;margin-top:14px;max-width:19ch}
+.cards{display:grid;grid-auto-flow:column;grid-auto-columns:78%;gap:var(--gap);margin:30px calc(-1*var(--pad)) 0;padding:0 var(--pad) 6px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.cards::-webkit-scrollbar{display:none}
+.card{scroll-snap-align:start}
+.card .c{aspect-ratio:4/5;min-height:0}
+.card .n{display:block;margin-top:14px;font-size:12px;font-weight:500;letter-spacing:.2em;color:var(--gold)}
+.card b{display:block;font-weight:400;font-size:23px;letter-spacing:-.015em;line-height:1.1;margin-top:4px}
+.card p{color:var(--mute);font-size:16px;margin-top:6px;max-width:32ch}
+.card:hover .c img{transform:scale(1.05)}
+
+/* menu */
+.menu{background:var(--c2);border-radius:28px;padding:26px 16px 22px;margin-top:clamp(54px,8vw,110px)}
+.menu h2{margin-top:10px}
+.tabs{position:sticky;top:calc(var(--bar) + 8px);z-index:6;display:inline-flex;margin-top:20px;padding:4px;border-radius:99px;background:var(--bg);box-shadow:0 0 0 6px var(--c2)}
+.bar.hide~main .tabs{top:10px}
+.tabs .ind{position:absolute;top:4px;left:0;height:44px;width:var(--w,0);border-radius:99px;background:var(--ink);transform:translateX(var(--x,0));transition:transform .5s var(--land),width .5s var(--land),height .5s var(--land)}
+.tabs button{position:relative;font:400 16px 'Jost',sans-serif;border:0;background:none;color:var(--mute);height:44px;padding:0 18px;border-radius:99px;cursor:pointer;transition:color .3s}
+.tabs button[aria-selected=true]{color:var(--bg)}
+.panel{display:none;margin-top:20px}.panel.on{display:block}
+.grp{margin-top:28px}.grp:first-child{margin-top:0}
+.grp h3{font-size:11.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);padding-bottom:10px}
+.dish{padding:14px 0;border-top:1px solid var(--line)}
+.panel.on .dish{animation:rise .6s var(--land) both}
+.panel.on .dish:nth-child(2){animation-delay:.04s}.panel.on .dish:nth-child(3){animation-delay:.09s}.panel.on .dish:nth-child(4){animation-delay:.13s}.panel.on .dish:nth-child(5){animation-delay:.18s}.panel.on .dish:nth-child(n+6){animation-delay:.22s}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}}
+.dish b{display:block;font-weight:400;font-size:20px;line-height:1.2;letter-spacing:-.01em}
+.dish i{display:block;font-style:normal;color:var(--mute);font-size:14.5px;margin-top:2px}
+.note{margin-top:18px;color:var(--mute);font-size:14.5px}
+
+/* visit */
+.vis{grid-template-columns:1fr 1fr;margin-top:clamp(54px,8vw,110px)}
+.v-ph{grid-column:1/-1;aspect-ratio:1/1.05}
+.v-adr,.v-cta{grid-column:1/-1;min-height:170px}
+.v-cta .tel{font-weight:300;font-size:clamp(36px,10.5vw,46px);line-height:1;letter-spacing:-.03em;white-space:nowrap}
+.v-ig .big,.v-logo .big{font-size:20px;letter-spacing:-.01em;font-weight:400}
+.v-logo{align-items:center;justify-content:center;text-align:center;gap:10px}
+.v-logo img{width:min(56%,120px);height:auto}
+.v-logo .it{font-size:22px}
+
+footer{padding:34px 0 calc(104px + env(safe-area-inset-bottom));color:var(--mute);font-size:14px;display:flex;flex-wrap:wrap;gap:6px 24px;justify-content:space-between}
+
+.dock{position:fixed;left:50%;bottom:calc(12px + env(safe-area-inset-bottom));z-index:40;display:flex;gap:6px;padding:6px;border-radius:99px;background:var(--ink);box-shadow:0 16px 36px rgba(28,22,19,.3);transform:translate(-50%,170%);transition:transform .55s var(--std)}
+.dock.on{transform:translate(-50%,0)}
+.dock a{height:50px;padding:0 22px;border-radius:99px;display:flex;align-items:center;font-weight:500;font-size:16px;color:var(--bg)}
+.dock a.p{background:var(--ox);color:#fff;padding:0 30px}
+
+@media(min-width:640px){
+ :root{--gap:10px;--pad:20px}
+ .hero{grid-template-columns:repeat(4,1fr)}
+ .h-bar{grid-column:1/3;grid-row:2/5;aspect-ratio:auto;min-height:520px}
+ .h-cta{grid-column:3/5}.h-menu{grid-column:3}.h-logo{grid-column:4}
+ .h-adr{grid-column:3/5}.h-view{display:none}
+ .cards{grid-auto-flow:row;grid-template-columns:repeat(3,1fr);overflow:visible;margin:36px 0 0;padding:0}
+ .menu{padding:36px 30px}
+ .vis{grid-template-columns:repeat(4,1fr)}
+ .v-ph{grid-column:1/3;grid-row:1/4;aspect-ratio:auto;min-height:480px}
+ .v-adr,.v-cta{grid-column:3/5}
+}
+@media(min-width:1000px){
+ :root{--bar:72px;--gap:12px;--pad:28px;--r:26px}
+ .bar nav{display:flex}
+ .hero{grid-template-columns:repeat(12,1fr);grid-template-rows:1fr 1fr .78fr;height:calc(100svh - 12px);min-height:660px;max-height:900px}
+ .h-bar{grid-column:1/5;grid-row:1/4;min-height:0}
+ .ttl{grid-column:5/11;grid-row:1/3;justify-content:center;padding:10px 34px;gap:20px}
+ h1{font-size:clamp(52px,5.5vw,88px)}
+ .ttl p{font-size:19px}
+ .h-logo{grid-column:11/13;grid-row:1}
+ .h-view{display:flex;grid-column:11/13;grid-row:2;aspect-ratio:auto}
+ .h-cta{grid-column:5/8;grid-row:3}.h-menu{grid-column:8/10;grid-row:3}.h-adr{grid-column:10/13;grid-row:3}
+ .c{padding:22px}.c .big{font-size:clamp(26px,2.3vw,36px)}
+ .ch{top:18px;right:18px}
+ .menu{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px;padding:56px 56px 50px;border-radius:34px}
+ .mh{position:sticky;top:calc(var(--bar) + 30px);align-self:start}
+ .tabs{position:relative;top:auto;display:flex;flex-direction:column;align-items:flex-start;gap:2px;margin-top:34px;padding:0 0 0 20px;border-radius:0;background:none;box-shadow:none}
+ .tabs .ind{top:0;left:0;width:2px;height:var(--h,0);border-radius:2px;background:var(--ox);transform:translateY(var(--y,0))}
+ .tabs button{height:auto;padding:6px 0;font-weight:300;font-size:34px;letter-spacing:-.025em;border-radius:6px}
+ .tabs button[aria-selected=true]{color:var(--ink)}
+ .tabs button:hover{color:var(--ink)}
+ .panel{margin-top:0}
+ .dish b{font-size:22px}
+ .vis{grid-template-columns:repeat(12,1fr);grid-template-rows:1fr 1fr;height:min(78vh,720px);min-height:560px}
+ .v-ph{grid-column:1/5;grid-row:1/3;min-height:0}
+ .v-adr{grid-column:5/10;grid-row:1}.v-ig{grid-column:10/13;grid-row:1}
+ .v-cta{grid-column:5/10;grid-row:2}.v-logo{grid-column:10/13;grid-row:2}
+ .v-adr .big{font-size:clamp(34px,3.4vw,54px)}
+ .v-cta .tel{font-size:clamp(48px,5vw,80px)}
+ footer{padding-bottom:40px}
+ .dock{display:none}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.hero .c,.hero .ttl>*,.rv,.vis .c,.card{opacity:1;transform:none}.c.ph img{transform:none}.shelf{clip-path:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="bar" id="bar"><div class="wrap">
+ <a class="brand" href="#top" aria-label="Kavana Palace"><img src="../kavana-palace/logo.svg#svgView(viewBox(196,270,202,170))" alt="" width="202" height="170">Kavana Palace</a>
+ <div class="br"><nav aria-label="Glavna navigacija"><a href="#prostor">Prostor</a><a href="#jelovnik">Jelovnik</a><a href="#posjet">Posjet</a></nav>
+ <a class="pill" href="tel:+385977302662">Rezerviraj</a></div>
+</div></header>
+
+<main class="wrap" id="top">
+<section class="hero grid">
+ <div class="ttl">
+  <p class="lab" style="--d:.1s">Providurova palača · Zadar</p>
+  <h1 style="--d:.18s">Food <span class="it">&amp;</span> Drink u Providurovoj palači.</h1>
+  <p style="--d:.3s">Doručak, jela i piće uz pogled na crkvu sv. Šime.</p>
+ </div>
+ <div class="c ph h-bar"><img src="../kavana-palace/kp-bar.webp" alt="Šank Kavane Palace pod kamenim svodom Providurove palače" width="900" height="1600" fetchpriority="high"></div>
+ <a class="c ox h-cta" href="tel:+385977302662" style="--d:.34s"><span class="lab">Rezervacije</span><span class="big">Rezervirajte stol</span><span class="ch" aria-hidden="true">→</span></a>
+ <a class="c ink h-menu" href="#jelovnik" style="--d:.42s"><span class="lab">Food &amp; Drink</span><span class="big">Jelovnik</span><span class="ch" aria-hidden="true">→</span></a>
+ <a class="c soft h-adr" href="https://maps.google.com/?q=Kavana+Palace,+Poljana+%C5%A0ime+Budini%C4%87a+1,+Zadar" target="_blank" rel="noopener" style="--d:.52s"><span class="lab">Adresa</span><span class="big">Poljana Šime Budinića&nbsp;1</span><span class="ch" aria-hidden="true">→</span></a>
+ <div class="c ph h-view" style="--d:.6s"><img src="../kavana-palace/kp-pogled.webp" alt="Pogled kroz prozor kavane na crkvu sv. Šime" width="900" height="1200"></div>
+ <div class="c soft h-logo" style="--d:.24s"><img src="../kavana-palace/logo.svg" alt="Kavana Palace, Food &amp; Drink" width="275" height="308"></div>
+</section>
+
+<div class="shelf rv" aria-hidden="true"></div>
+
+<section class="sec" id="prostor">
+ <p class="lab rv">Uživajte i osjetite povijest koja vas okružuje</p>
+ <h2 class="rv">Ovdje su providuri donosili odluke koje su oblikovale Zadar. Danas tu pijete <span class="it">kavu.</span></h2>
+ <div class="cards">
+  <article class="card"><div class="c ph"><img src="../kavana-palace/kp-pogled.webp" alt="Pogled kroz prozor kavane na crkvu sv. Šime" width="900" height="1200" loading="lazy"></div><span class="n">01</span><b>Pogled na sv. Šimu</b><p>Crkva preko puta, ravno kroz velike prozore palače.</p></article>
+  <article class="card" style="--d:.1s"><div class="c ph"><img src="../kavana-palace/kp-bar.webp" alt="Šank pod kamenim svodom palače" width="900" height="1600" loading="lazy" style="object-position:50% 90%"></div><span class="n">02</span><b>Šank pod svodom</b><p>Providurova palača, nekad sjedište mletačkog providura, upravitelja Dalmacije.</p></article>
+  <article class="card" style="--d:.22s"><div class="c ph"><img src="../kavana-palace/kp-terasa.webp" alt="Vino na terasi ispred palače" width="900" height="1200" loading="lazy"></div><span class="n">03</span><b>Terasa na poljani</b><p>Spoj tradicionalnog i modernog, u kulturnom središtu Zadra.</p></article>
+ </div>
+</section>
+
+<section class="menu" id="jelovnik">
+ <div class="mh">
+  <p class="lab">Jelovnik</p>
+  <h2 id="mh">Food <span class="it">&amp;</span> Drink</h2>
+  <div class="tabs" role="tablist" aria-label="Jelovnik"><span class="ind" aria-hidden="true"></span><button role="tab" aria-selected="true" data-t="d">Doručak</button><button role="tab" aria-selected="false" data-t="j" tabindex="-1">Jela</button><button role="tab" aria-selected="false" data-t="s" tabindex="-1">Sokovi</button></div>
+ </div>
+ <div>
+  <div class="panel on" id="p-d" role="tabpanel"><div class="dish"><b>Granola, svježe voće, jogurt</b><i>Granola, fresh fruit, yogurt</i></div><div class="dish"><b>Crni kruh, pršut, mozzarella, pesto</b><i>Black bread, prosciutto, mozzarella, pesto</i></div><div class="dish"><b>Avokado, tost, med, grejp, pečeno jaje</b><i>Avocado, toast, honey, grapefruit, fried egg</i></div><div class="dish"><b>Dimljeni losos, krem sir s vlascem, brioche</b><i>Smoked salmon, chive cream cheese, brioche</i></div><div class="dish"><b>Brioche, šunka, mozzarella, kajgana</b><i>Brioche, ham, mozzarella, scrambled eggs</i></div><div class="dish"><b>Tost, džem od rajčice, burrata, pršut</b><i>Toast, tomato jam, burrata, prosciutto</i></div></div>
+  <div class="panel" id="p-j" role="tabpanel"><div class="grp"><h3>Za stol</h3><div class="dish"><b>Selekcija pršuta i sireva</b><i>Selection of prosciutto and cheeses</i></div></div><div class="grp"><h3>Predjela</h3><div class="dish"><b>Tartarski biftek, pinjoli, cikla</b><i>Steak tartare, pine nuts, beetroot</i></div><div class="dish"><b>Tataki tuna, wasabi majoneza</b><i>Tataki tuna, wasabi mayonnaise</i></div></div><div class="grp"><h3>Salate</h3><div class="dish"><b>Burrata, reducirani aceto, orasi</b><i>Burrata, reduced aceto, walnuts</i></div><div class="dish"><b>Hobotnica, grašak pire</b><i>Octopus, pea purée</i></div></div><div class="grp"><h3>Tjestenina i rižoto</h3><div class="dish"><b>Biftek, tartufi, tjestenina</b><i>Beefsteak, truffles, pasta</i></div><div class="dish"><b>Kozice, bisque, rižoto</b><i>Prawns, bisque, risotto</i></div></div><div class="grp"><h3>Glavna jela</h3><div class="dish"><b>Filet tune, grilana palenta</b><i>Tuna fillet, grilled polenta</i></div><div class="dish"><b>Teleći steak, umak od zelenog papra</b><i>Veal steak, green pepper sauce</i></div></div></div>
+  <div class="panel" id="p-s" role="tabpanel"><div class="grp"><h3>Cijeđeni sokovi</h3><div class="dish"><b>Vitamin</b><i>Naranča, mrkva, jabuka, limun</i></div><div class="dish"><b>Wake up</b><i>Naranča, limun</i></div><div class="dish"><b>Garden</b><i>Jabuka, naranča, mrkva</i></div><div class="dish"><b>Exotic</b><i>Jabuka, naranča, ananas</i></div><div class="dish"><b>Antioxidant</b><i>Naranča, grejp, mrkva</i></div><div class="dish"><b>Classic</b><i>Naranča</i></div></div></div>
+  <p class="note">Izbor s jelovnika. Cijeli jelovnik u kavani.</p>
+ </div>
+</section>
+
+<section class="vis grid" id="posjet">
+ <div class="c ph v-ph"><img src="../kavana-palace/kp-ulaz.webp" alt="Ulaz u Kavanu Palace s osvijetljenim šankom" width="900" height="1200" loading="lazy"></div>
+ <a class="c soft v-adr" href="https://maps.google.com/?q=Kavana+Palace,+Poljana+%C5%A0ime+Budini%C4%87a+1,+Zadar" target="_blank" rel="noopener" style="--d:.08s"><span class="lab">Posjet</span><span class="big">Poljana Šime Budinića&nbsp;1</span><span class="sm">Providurova palača, 23000 Zadar</span><span class="ch" aria-hidden="true">→</span></a>
+ <a class="c ox v-cta" href="tel:+385977302662" style="--d:.16s"><span class="lab">Rezervirajte stol</span><span class="tel">097 730 2662</span><span class="ch" aria-hidden="true">→</span></a>
+ <a class="c ink v-ig" href="https://www.instagram.com/kavanapalace/" target="_blank" rel="noopener" style="--d:.26s"><span class="lab">Instagram</span><span class="big">@kavanapalace</span><span class="ch" aria-hidden="true">→</span></a>
+ <div class="c soft v-logo" style="--d:.34s"><img src="../kavana-palace/logo.svg" alt="Kavana Palace" width="275" height="308" loading="lazy"><span class="it">Palace to be.</span></div>
+</section>
+
+<footer><span>Kavana Palace · Providurova palača, Zadar</span><span>Prijedlog stranice: Azzurro Digital</span></footer>
+</main>
+
+<nav class="dock" id="dock" aria-label="Brze akcije"><a href="#jelovnik">Jelovnik</a><a class="p" href="tel:+385977302662">Rezerviraj</a></nav>
+
+<script>
+(()=>{
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const bar=$('#bar'),dock=$('#dock');let ly=0;
+requestAnimationFrame(()=>requestAnimationFrame(()=>document.documentElement.classList.add('go')));
+const onS=()=>{const y=scrollY,h=document.body.scrollHeight-innerHeight;bar.classList.toggle('s',y>20);if(y>innerHeight*.5&&y>ly+4)bar.classList.add('hide');else if(y<ly-4||y<innerHeight*.5)bar.classList.remove('hide');ly=y;dock.classList.toggle('on',y>innerHeight*.6&&y<h-innerHeight*.45)};
+addEventListener('scroll',onS,{passive:true});onS();
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{rootMargin:'0px 0px -8% 0px'});
+$$('.rv,.vis .c,.card').forEach(el=>io.observe(el));
+const tabsEl=$('.tabs'),tabs=$$('.tabs button'),mh=$('#mh');
+const mark=b=>{const s=tabsEl.style;s.setProperty('--x',b.offsetLeft+'px');s.setProperty('--w',b.offsetWidth+'px');s.setProperty('--y',b.offsetTop+'px');s.setProperty('--h',b.offsetHeight+'px')};
+const pick=b=>{tabs.forEach(x=>{x.setAttribute('aria-selected',x===b);x.tabIndex=x===b?0:-1});$$('.panel').forEach(p=>p.classList.toggle('on',p.id==='p-'+b.dataset.t));mark(b);if(mh.getBoundingClientRect().bottom<0)mh.scrollIntoView({block:'start'})};
+tabs.forEach((b,i)=>{b.addEventListener('click',()=>pick(b));b.addEventListener('keydown',e=>{const d=(e.key==='ArrowRight'||e.key==='ArrowDown')?1:(e.key==='ArrowLeft'||e.key==='ArrowUp')?-1:0;if(d){e.preventDefault();const n=tabs[(i+d+tabs.length)%tabs.length];n.focus();pick(n)}})});
+const fit=()=>mark(tabs.find(b=>b.getAttribute('aria-selected')==='true'));fit();addEventListener('resize',fit);if(document.fonts)document.fonts.ready.then(fit);
+})();
+</script>
+</body>
+</html>

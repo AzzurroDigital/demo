@@ -297,6 +297,59 @@ body:before{content:"";position:fixed;inset:0;z-index:100;pointer-events:none;op
 @media(max-width:760px){body:before{display:none}}
 @media(prefers-reduced-motion:reduce){.intro{display:none}.arch.rv .am,.fpat.rv,.hcard{clip-path:none}.hin .chip,.hrow,.arch.rv figcaption{opacity:1}}
 .menu{padding:clamp(64px,9vw,120px) 0}
+
+/* === v5: redesign by the laws === */
+.word{font-size:clamp(84px,calc(16vw + 28px),230px)}
+/* facts right under the hero: where, call, online */
+.facts{padding:6px 0 0}
+.fgrid{display:grid}
+.fact{display:grid;grid-template-columns:1fr auto;align-items:center;column-gap:14px;padding:15px 4px;border-bottom:1px solid var(--line);min-height:64px}
+.fact small{grid-column:1;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-t)}
+.fact span:not(.go){grid-column:1;font-size:17px;font-weight:500}
+.go{width:40px;height:40px;flex:none;border-radius:50%;background:var(--bone2);display:grid;place-items:center;transition:background .3s,color .3s,transform .4s var(--std)}
+.fact .go{grid-column:2;grid-row:1/3}
+.fact:hover .go,.igrow:hover .go{background:var(--esp);color:#fff;transform:translateX(3px)}
+.fact.rv:nth-child(2){transition-delay:.07s}.fact.rv:nth-child(3){transition-delay:.18s}
+@media(min-width:760px){.fgrid{grid-template-columns:1.35fr 1fr 1fr;column-gap:40px}.fact{padding:24px 0}.fact span:not(.go){font-size:19px}}
+/* space: one thought, three arches, each fact sits with its picture */
+.space{padding:clamp(70px,10vw,140px) 0}
+.space h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,5vw,72px);line-height:1;letter-spacing:-.03em;max-width:17ch;margin-top:16px}
+.space h2 em{color:var(--ox)}
+.space .arow{margin-top:clamp(40px,6vw,84px)}
+.arch figcaption{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;align-items:baseline}
+.arch figcaption b{font-weight:400;font-size:clamp(21px,2vw,28px);line-height:1.05}
+.arch figcaption p{grid-column:2;font-family:var(--sans);font-size:14px;line-height:1.45;letter-spacing:0;color:var(--mute);max-width:30ch}
+/* menu: grouped lists, tabs stay in reach */
+.menu.dark{overflow:clip}
+.menu.dark:before{display:none}
+.mhead{display:block;scroll-margin-top:84px}
+.seg{position:sticky;top:76px;z-index:5;margin-top:24px;transition:top .4s var(--std)}
+.nav.hide~main .seg{top:12px}
+.menu.dark .seg{background:#2c231c;box-shadow:0 12px 30px rgba(0,0,0,.35)}
+.plist.panel.on{display:block;margin-top:26px}
+@media(min-width:860px){.plist.panel.on{columns:2;column-gap:72px}}
+.mgroup{break-inside:avoid;margin-bottom:30px}
+.mgroup h3{font:600 11px var(--sans);letter-spacing:.2em;text-transform:uppercase;color:#e9c98c;padding-bottom:12px}
+.menu.dark .dish{display:block;break-inside:avoid;padding:16px 0}
+.menu.dark .dish b{display:block;font-family:var(--serif);font-weight:400;line-height:1.1;letter-spacing:-.015em}
+.menu.dark .dish i{display:block;margin-top:4px;font-size:13.5px}
+/* visit: one clear ending */
+.visit{padding:clamp(60px,9vw,120px) 0 12px}
+.vcard{gap:26px}
+.vsub{color:var(--mute);margin-top:12px}
+.vact{display:flex;flex-wrap:wrap;gap:10px}
+.btn.out{border:1px solid rgba(22,17,13,.2);color:var(--esp)}
+.btn.out .ar{background:var(--bone2)}
+.vtel{font-family:var(--serif);font-size:clamp(34px,3.6vw,48px);line-height:1;letter-spacing:-.02em;align-self:flex-start;border-bottom:1px solid transparent;transition:border-color .3s}
+.vtel:hover{border-color:var(--ox)}
+.igrow{display:flex;align-items:center;gap:14px;padding-top:22px;border-top:1px solid var(--line);margin-top:auto}
+.igrow .ring{width:52px;height:52px;flex:none}.igrow .ring svg{width:30px}
+.igrow b{display:block;font-weight:600}.igrow .h{display:block;color:var(--mute);font-size:13.5px}
+.igrow .go{margin-left:auto}
+.igt{display:none;gap:6px;margin-left:auto}.igt img{width:52px;height:52px;border-radius:10px;object-fit:cover}
+@media(min-width:520px){.igt{display:flex}.igrow .go{margin-left:0}}
+@media(min-width:860px){.vimg{min-height:560px}}
+@media(max-width:859px){.vimg{min-height:0;aspect-ratio:4/5}}
 </style>
 </head>
 <body>
@@ -341,93 +394,48 @@ body:before{content:"";position:fixed;inset:0;z-index:100;pointer-events:none;op
   <h1><span class="wordclip"><span class="word"><span>Palace</span></span></span><span class="wordclip"><span class="word"><span><em>to&nbsp;be.</em></span></span></span></h1>
   <div class="hrow">
    <p><b>Food &amp; Drink u Providurovoj palači.</b> Doručak, jela i piće uz pogled na crkvu sv. Šime.</p>
-   <div class="hcta"><a class="btn ox big" href="tel:+385977302662">Rezervirajte stol <span class="ar">→</span></a><a class="btn big" style="color:#f3eee6;border:1px solid rgba(255,255,255,.28)" href="#jelovnik">Jelovnik</a></div>
+   <div class="hcta"><a class="btn ox big" href="tel:+385977302662">Rezervirajte stol <span class="ar">→</span></a><a class="btn big line" href="#jelovnik">Jelovnik</a></div>
   </div>
  </div>
 </div></section>
 
-<section class="statement" id="prostor"><div class="wrap">
- <p class="kicker rv">Uživajte i osjetite povijest koja vas okružuje</p>
- <h2 class="rv" style="margin-top:18px">Ovdje su providuri donosili odluke koje su oblikovale Zadar. Danas tu pijete <em class="it">kavu.</em></h2>
- <div class="meta">
-  <div class="rv"><b>Providur</b><span>Providurova palača, nekad sjedište mletačkog providura, upravitelja Dalmacije.</span></div>
-  <div class="rv"><b>sv. Šime</b><span>Crkva preko puta, ravno kroz velike prozore palače.</span></div>
-  <div class="rv"><b class="it">#palacetobe</b><span>Spoj tradicionalnog i modernog, u kulturnom središtu Zadra.</span></div>
- </div>
+<section class="facts" aria-label="Brzi kontakt"><div class="wrap fgrid">
+ <a class="fact rv" href="https://maps.google.com/?q=Kavana+Palace,+Poljana+%C5%A0ime+Budini%C4%87a+1,+Zadar" target="_blank" rel="noopener"><small>Adresa</small><span>Poljana Šime Budinića 1, Zadar</span><span class="go" aria-hidden="true">→</span></a>
+ <a class="fact rv" href="tel:+385977302662"><small>Rezervacije</small><span>097 730 2662</span><span class="go" aria-hidden="true">→</span></a>
+ <a class="fact rv" href="https://www.instagram.com/kavanapalace/" target="_blank" rel="noopener"><small>Instagram</small><span>@kavanapalace</span><span class="go" aria-hidden="true">→</span></a>
 </div></section>
 
-<section class="arcade" aria-label="Prostor"><div class="wrap">
+<section class="space" id="prostor"><div class="wrap">
+ <p class="kicker rv">Uživajte i osjetite povijest koja vas okružuje</p>
+ <h2 class="rv">Ovdje su providuri donosili odluke koje su oblikovale Zadar. Danas tu pijete <em class="it">kavu.</em></h2>
  <div class="arow">
-  <figure class="arch rv"><div class="am"><img src="kp-pogled.webp" alt="Pogled kroz prozor kavane na crkvu sv. Šime" width="900" height="1200" loading="lazy"></div><figcaption><span>I</span>Pogled na sv. Šimu</figcaption></figure>
-  <figure class="arch tall rv"><div class="am"><img src="kp-bar.webp" alt="Šank pod kamenim svodom palače" width="900" height="1600" loading="lazy" style="object-position:50% 30%"></div><figcaption><span>II</span>Šank pod svodom</figcaption></figure>
-  <figure class="arch rv"><div class="am"><img src="kp-terasa.webp" alt="Vino na terasi ispred palače" width="900" height="1200" loading="lazy"></div><figcaption><span>III</span>Terasa na poljani</figcaption></figure>
+  <figure class="arch rv"><div class="am"><img src="kp-pogled.webp" alt="Pogled kroz prozor kavane na crkvu sv. Šime" width="900" height="1200" loading="lazy"></div><figcaption><span>I</span><b>Pogled na sv. Šimu</b><p>Crkva preko puta, ravno kroz velike prozore palače.</p></figcaption></figure>
+  <figure class="arch tall rv"><div class="am"><img src="kp-bar.webp" alt="Šank pod kamenim svodom palače" width="900" height="1600" loading="lazy" style="object-position:50% 30%"></div><figcaption><span>II</span><b>Šank pod svodom</b><p>Providurova palača, nekad sjedište mletačkog providura, upravitelja Dalmacije.</p></figcaption></figure>
+  <figure class="arch rv"><div class="am"><img src="kp-terasa.webp" alt="Vino na terasi ispred palače" width="900" height="1200" loading="lazy"></div><figcaption><span>III</span><b>Terasa na poljani</b><p>Spoj tradicionalnog i modernog, u kulturnom središtu Zadra.</p></figcaption></figure>
  </div>
- <blockquote class="pull rv"><p>Dok sjedite kod nas, sjedite u prostoru koji je bio <em>središte moći</em> starog Zadra.</p><cite>— Kavana Palace</cite></blockquote>
 </div></section>
 
 <section class="menu dark" id="jelovnik"><div class="wrap">
- <div class="mhead">
-  <div><p class="kicker rv">Jelovnik</p><h2 class="rv" style="margin-top:14px">Food <em class="it">&amp;</em> Drink</h2></div>
-  <div class="seg rv" role="tablist" aria-label="Jelovnik"><span class="ind" aria-hidden="true"></span>
-   <button role="tab" aria-selected="true" data-t="d">Doručak</button><button role="tab" aria-selected="false" data-t="j">Jela</button><button role="tab" aria-selected="false" data-t="s">Sokovi</button>
-  </div>
+ <div class="mhead"><p class="kicker rv">Jelovnik</p><h2 class="rv" style="margin-top:14px">Food <em class="it">&amp;</em> Drink</h2></div>
+ <div class="seg" role="tablist" aria-label="Jelovnik"><span class="ind" aria-hidden="true"></span>
+  <button role="tab" aria-selected="true" data-t="d">Doručak</button><button role="tab" aria-selected="false" data-t="j">Jela</button><button role="tab" aria-selected="false" data-t="s">Sokovi</button>
  </div>
- <div class="mgrid panel on" id="p-d">
-  <div class="dish"><span class="n">01</span><b>Granola, svježe voće, jogurt</b><i>Granola, fresh fruit, yogurt</i></div>
-  <div class="dish"><span class="n">02</span><b>Crni kruh, pršut, mozzarella, pesto</b><i>Black bread, prosciutto, mozzarella, pesto</i></div>
-  <div class="dish"><span class="n">03</span><b>Avokado, tost, med, grejp, pečeno jaje</b><i>Avocado, toast, honey, grapefruit, fried egg</i></div>
-  <div class="dish"><span class="n">04</span><b>Dimljeni losos, krem sir s vlascem, brioche</b><i>Smoked salmon, chive cream cheese, brioche</i></div>
-  <div class="dish"><span class="n">05</span><b>Brioche, šunka, mozzarella, kajgana</b><i>Brioche, ham, mozzarella, scrambled eggs</i></div>
-  <div class="dish"><span class="n">06</span><b>Tost, džem od rajčice, burrata, pršut</b><i>Toast, tomato jam, burrata, prosciutto</i></div>
- </div>
- <div class="mgrid panel" id="p-j">
-  <div class="dish"><span class="n">Za stol</span><b>Selekcija pršuta i sireva</b><i>Selection of prosciutto and cheeses</i></div>
-  <div class="dish"><span class="n">Predjelo</span><b>Tartarski biftek, pinjoli, cikla</b><i>Steak tartare, pine nuts, beetroot</i></div>
-  <div class="dish"><span class="n">Predjelo</span><b>Tataki tuna, wasabi majoneza</b><i>Tataki tuna, wasabi mayonnaise</i></div>
-  <div class="dish"><span class="n">Salata</span><b>Burrata, reducirani aceto, orasi</b><i>Burrata, reduced aceto, walnuts</i></div>
-  <div class="dish"><span class="n">Tjestenina</span><b>Biftek, tartufi, tjestenina</b><i>Beefsteak, truffles, pasta</i></div>
-  <div class="dish"><span class="n">Rižoto</span><b>Kozice, bisque, rižoto</b><i>Prawns, bisque, risotto</i></div>
-  <div class="dish"><span class="n">Glavno</span><b>Filet tune, grilana palenta</b><i>Tuna fillet, grilled polenta</i></div>
-  <div class="dish"><span class="n">Glavno</span><b>Teleći steak, umak od zelenog papra</b><i>Veal steak, green pepper sauce</i></div>
-  <div class="dish"><span class="n">Salata</span><b>Hobotnica, grašak pire</b><i>Octopus, pea purée</i></div>
- </div>
- <div class="mgrid panel" id="p-s">
-  <div class="dish"><span class="n">Cijeđeni</span><b>Vitamin</b><i>Naranča, mrkva, jabuka, limun</i></div>
-  <div class="dish"><span class="n">Cijeđeni</span><b>Wake up</b><i>Naranča, limun</i></div>
-  <div class="dish"><span class="n">Cijeđeni</span><b>Garden</b><i>Jabuka, naranča, mrkva</i></div>
-  <div class="dish"><span class="n">Cijeđeni</span><b>Exotic</b><i>Jabuka, naranča, ananas</i></div>
-  <div class="dish"><span class="n">Cijeđeni</span><b>Antioxidant</b><i>Naranča, grejp, mrkva</i></div>
-  <div class="dish"><span class="n">Cijeđeni</span><b>Classic</b><i>Naranča</i></div>
- </div>
+ <div class="plist panel on" id="p-d" role="tabpanel"><div class="dish"><b>Granola, svježe voće, jogurt</b><i>Granola, fresh fruit, yogurt</i></div><div class="dish"><b>Crni kruh, pršut, mozzarella, pesto</b><i>Black bread, prosciutto, mozzarella, pesto</i></div><div class="dish"><b>Avokado, tost, med, grejp, pečeno jaje</b><i>Avocado, toast, honey, grapefruit, fried egg</i></div><div class="dish"><b>Dimljeni losos, krem sir s vlascem, brioche</b><i>Smoked salmon, chive cream cheese, brioche</i></div><div class="dish"><b>Brioche, šunka, mozzarella, kajgana</b><i>Brioche, ham, mozzarella, scrambled eggs</i></div><div class="dish"><b>Tost, džem od rajčice, burrata, pršut</b><i>Toast, tomato jam, burrata, prosciutto</i></div></div>
+ <div class="plist panel" id="p-j" role="tabpanel"><div class="mgroup"><h3>Za stol</h3><div class="dish"><b>Selekcija pršuta i sireva</b><i>Selection of prosciutto and cheeses</i></div></div><div class="mgroup"><h3>Predjela</h3><div class="dish"><b>Tartarski biftek, pinjoli, cikla</b><i>Steak tartare, pine nuts, beetroot</i></div><div class="dish"><b>Tataki tuna, wasabi majoneza</b><i>Tataki tuna, wasabi mayonnaise</i></div></div><div class="mgroup"><h3>Salate</h3><div class="dish"><b>Burrata, reducirani aceto, orasi</b><i>Burrata, reduced aceto, walnuts</i></div><div class="dish"><b>Hobotnica, grašak pire</b><i>Octopus, pea purée</i></div></div><div class="mgroup"><h3>Tjestenina i rižoto</h3><div class="dish"><b>Biftek, tartufi, tjestenina</b><i>Beefsteak, truffles, pasta</i></div><div class="dish"><b>Kozice, bisque, rižoto</b><i>Prawns, bisque, risotto</i></div></div><div class="mgroup"><h3>Glavna jela</h3><div class="dish"><b>Filet tune, grilana palenta</b><i>Tuna fillet, grilled polenta</i></div><div class="dish"><b>Teleći steak, umak od zelenog papra</b><i>Veal steak, green pepper sauce</i></div></div></div>
+ <div class="plist panel" id="p-s" role="tabpanel"><div class="mgroup"><h3>Cijeđeni sokovi</h3><div class="dish"><b>Vitamin</b><i>Naranča, mrkva, jabuka, limun</i></div><div class="dish"><b>Wake up</b><i>Naranča, limun</i></div><div class="dish"><b>Garden</b><i>Jabuka, naranča, mrkva</i></div><div class="dish"><b>Exotic</b><i>Jabuka, naranča, ananas</i></div><div class="dish"><b>Antioxidant</b><i>Naranča, grejp, mrkva</i></div><div class="dish"><b>Classic</b><i>Naranča</i></div></div></div>
  <p class="mnote">Izbor s jelovnika. Cijeli jelovnik u kavani.</p>
 </div></section>
 
-<section class="ig" id="instagram"><div class="wrap"><div class="igbox rv">
- <div class="ighead">
-  <div class="igp"><div class="ring"><div><svg viewBox="196 270 200 84" aria-hidden="true"><use href="#lg"/></svg></div></div><div><b>kavanapalace</b><span>Food &amp; Drink · Providurova palača, Zadar</span></div></div>
-  <a class="btn line" href="https://www.instagram.com/kavanapalace/" target="_blank" rel="noopener">Pratite nas <span class="ar">↗</span></a>
- </div>
- <div class="iggrid">
-  <a href="https://www.instagram.com/kavanapalace/" target="_blank" rel="noopener"><img src="kp-ig3.webp" alt="Pogled na sv. Šimu" width="600" height="600" loading="lazy"></a>
-  <a href="https://www.instagram.com/kavanapalace/" target="_blank" rel="noopener"><img src="kp-bar.webp" alt="Šank pod svodom" width="900" height="1600" loading="lazy"></a>
-  <a href="https://www.instagram.com/kavanapalace/" target="_blank" rel="noopener"><img src="kp-terasa.webp" alt="Terasa" width="900" height="1200" loading="lazy"></a>
-  <a href="https://www.instagram.com/kavanapalace/" target="_blank" rel="noopener"><img src="kp-ig2.webp" alt="Jelovnik Kavane Palace" width="600" height="600" loading="lazy"></a>
-  <a href="https://www.instagram.com/kavanapalace/" target="_blank" rel="noopener"><img src="kp-ig1.webp" alt="Ulaz u kavanu" width="600" height="600" loading="lazy"></a>
-  <a class="iglogo" href="https://www.instagram.com/kavanapalace/" target="_blank" rel="noopener" aria-label="Kavana Palace na Instagramu"><svg viewBox="160 268 275 308" aria-hidden="true"><use href="#lg"/></svg></a>
- </div>
-</div></div></section>
-
 <section class="visit" id="posjet"><div class="wrap vbox">
  <div class="vcard rv">
-  <p class="kicker">Posjet</p>
-  <h2>Poljana Šime <em class="it">Budinića&nbsp;1</em></h2>
-  <div>
-   <a class="vrow" href="tel:+385977302662"><div><small>Rezervacije</small><span>097 730 2662</span></div><span class="go">→</span></a>
-   <a class="vrow" href="https://maps.google.com/?q=Kavana+Palace,+Poljana+%C5%A0ime+Budini%C4%87a+1,+Zadar" target="_blank" rel="noopener"><div><small>Adresa</small><span>Providurova palača, 23000 Zadar</span></div><span class="go">→</span></a>
-   <a class="vrow" href="https://www.instagram.com/kavanapalace/" target="_blank" rel="noopener"><div><small>Instagram</small><span>@kavanapalace</span></div><span class="go">→</span></a>
-  </div>
+  <div><p class="kicker">Posjet</p>
+  <h2 style="margin-top:14px">Poljana Šime <em class="it">Budinića&nbsp;1</em></h2>
+  <p class="vsub">Providurova palača, 23000 Zadar</p></div>
+  <div class="vact"><a class="btn ox big" href="tel:+385977302662">Rezervirajte stol <span class="ar">→</span></a><a class="btn big out" href="https://maps.google.com/?q=Kavana+Palace,+Poljana+%C5%A0ime+Budini%C4%87a+1,+Zadar" target="_blank" rel="noopener">Otvori kartu <span class="ar">↗</span></a></div>
+  <a class="vtel" href="tel:+385977302662">097 730 2662</a>
+  <a class="igrow" href="https://www.instagram.com/kavanapalace/" target="_blank" rel="noopener"><div class="ring"><div><svg viewBox="196 270 200 84" aria-hidden="true"><use href="#lg"/></svg></div></div><div><b>@kavanapalace</b><span class="h">#palacetobe na Instagramu</span></div><div class="igt" aria-hidden="true"><img src="kp-ig3.webp" alt="" width="600" height="600" loading="lazy"><img src="kp-ig2.webp" alt="" width="600" height="600" loading="lazy"><img src="kp-terasa.webp" alt="" width="900" height="1200" loading="lazy"></div><span class="go" aria-hidden="true">→</span></a>
  </div>
- <div class="vimg rv"><img src="kp-bar.webp" style="object-position:50% 40%" alt="Ulaz u Kavanu Palace s osvijetljenim šankom" width="900" height="1200" loading="lazy"></div>
+ <div class="vimg rv"><img src="kp-ulaz.webp" alt="Ulaz u Kavanu Palace s osvijetljenim šankom" width="900" height="1200" loading="lazy"></div>
 </div></section>
 </main>
 
@@ -445,7 +453,7 @@ addEventListener('scroll',()=>{const y=scrollY;nav.classList.toggle('s',y>60);if
 const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{rootMargin:'0px 0px -8% 0px'});document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 const tabs=[...document.querySelectorAll('.seg button')],ind=document.querySelector('.seg .ind');
 const mark=b=>{ind.style.width=b.offsetWidth+'px';ind.style.transform='translateX('+b.offsetLeft+'px)'};
-const pick=b=>{tabs.forEach(x=>{x.setAttribute('aria-selected',x===b);x.tabIndex=x===b?0:-1});document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('on',p.id==='p-'+b.dataset.t));mark(b)};
+const pick=b=>{tabs.forEach(x=>{x.setAttribute('aria-selected',x===b);x.tabIndex=x===b?0:-1});document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('on',p.id==='p-'+b.dataset.t));mark(b);const m=document.querySelector('.mhead');if(m.getBoundingClientRect().bottom<0)m.scrollIntoView({block:'start'})};
 tabs.forEach((b,i)=>{b.addEventListener('click',()=>pick(b));b.addEventListener('keydown',e=>{const d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(d){const n=tabs[(i+d+tabs.length)%tabs.length];n.focus();pick(n)}})});
 const cur=()=>mark(tabs.find(b=>b.getAttribute('aria-selected')==='true'));cur();addEventListener('resize',cur);if(document.fonts)document.fonts.ready.then(cur);
 </script>

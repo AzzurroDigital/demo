@@ -178,6 +178,7 @@ input:focus{border-color:var(--navy);box-shadow:0 0 0 4px rgba(143,220,247,.45)}
 .qty{display:grid;gap:8px}.qr{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 10px 10px 16px;border:1.5px solid var(--line);border-radius:14px;transition:border-color .25s var(--std),background .25s var(--std)}.qr.on{border-color:var(--navy);background:rgba(10,30,70,.04)}.qr>span{font-weight:600}.st{display:flex;align-items:center;gap:4px;flex:none}.st button{width:40px;height:40px;border-radius:10px;border:0;background:var(--navy);color:#fff;font:600 20px/1 inherit;cursor:pointer}.st button:active{transform:scale(.94)}.st input{width:52px;height:40px;text-align:center;border:0;background:transparent;font:600 18px/1 inherit;padding:0}
 .btn.wa{background:#25D366;color:#fff;border:0;gap:8px}.btn.wa:hover{background:#1ebe5b}
 .mn{margin:-4px 0 0;font-size:13px;color:var(--grey)}.mn.bad{color:#b4232c;font-weight:600}
+.prod{padding:0}.pi{aspect-ratio:1/.88;overflow:hidden;background:#0d2a5c}.pi img{width:100%;height:100%;object-fit:cover;transform:scale(1.02);transition:transform .9s var(--land)}.prod:hover .pi img{transform:scale(1.07)}.pb{padding:20px 24px 26px}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -218,9 +219,9 @@ input:focus{border-color:var(--navy);box-shadow:0 0 0 4px rgba(143,220,247,.45)}
 <section class="sec" id="vrste"><div class="w">
  <div class="sh"><div><div class="eb d rv">Vrste leda</div><h2 class="rv" style="margin-top:10px">Tri vrste leda.</h2></div><p class="rv">Puna kocka, koktel kocka i listići u dva pakiranja.</p></div>
  <div class="prods">
-  <article class="prod rv"><span class="tag">Led kocka</span><h3>Puna kocka</h3><b>5/1</b><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.4"><path d="M12 2 21 7v10l-9 5-9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/></svg></article>
-  <article class="prod rv" style="transition-delay:.04s"><span class="tag">Led kocka</span><h3>Koktel kocka</h3><b>5/1</b><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.4"><path d="M12 2 21 7v10l-9 5-9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/></svg></article>
-  <article class="prod rv" style="transition-delay:.08s"><span class="tag">Led listići</span><h3>Listići</h3><b>15/1 · 30/1</b><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.4"><path d="M12 2v20M3.3 7l17.4 10M20.7 7 3.3 17"/></svg></article>
+  <article class="prod rv"><div class="pi"><img src="img/led-puna.webp" alt="Puna kocka leda" width="560" height="560" loading="lazy"></div><div class="pb"><span class="tag">Led kocka</span><h3>Puna kocka</h3><b>5/1</b></div></article>
+  <article class="prod rv" style="transition-delay:.04s"><div class="pi"><img src="img/led-koktel.webp" alt="Koktel kocka leda" width="560" height="560" loading="lazy"></div><div class="pb"><span class="tag">Led kocka</span><h3>Koktel kocka</h3><b>5/1</b></div></article>
+  <article class="prod rv" style="transition-delay:.08s"><div class="pi"><img src="img/led-listici.webp" alt="Led listići" width="560" height="560" loading="lazy"></div><div class="pb"><span class="tag">Led listići</span><h3>Listići</h3><b>15/1 · 30/1</b></div></article>
  </div>
 </div></section>
 

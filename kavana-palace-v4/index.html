@@ -6,7 +6,7 @@
 <title>Kavana Palace — Food &amp; Drink · Providurova palača, Zadar</title>
 <meta name="description" content="Kavana Palace u Providurovoj palači u Zadru. Doručak, jela i piće uz pogled na crkvu sv. Šime.">
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#0e0b09">
+<meta name="theme-color" content="#3a3126">
 <link rel="icon" href="../kavana-palace/logo.svg" type="image/svg+xml">
 <link rel="preload" as="font" type="font/woff2" href="f/corm-normal-latin.woff2" crossorigin>
 <link rel="preload" as="image" href="../kavana-palace/kp-ulaz.webp" fetchpriority="high">
@@ -18,7 +18,7 @@
 @font-face{font-family:'Jost';font-style:normal;font-weight:300 600;font-display:swap;src:url(../kavana-palace-v3/f/jost-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
 @font-face{font-family:'Jost';font-style:normal;font-weight:300 600;font-display:swap;src:url(../kavana-palace-v3/f/jost-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
 
-:root{--bg:#0e0b09;--bg2:#15110e;--iv:#ede6d8;--mu:#a59c8c;--gold:#b9a777;--gl:rgba(185,167,119,.32);--ox:#a61b20;
+:root{--bg:#3a3126;--bg2:#322a20;--iv:#ede6d8;--mu:#bdb4a3;--gold:#cbb985;--gl:rgba(203,185,133,.32);--ox:#a61b20;
  --land:cubic-bezier(.1,.75,.15,1);--std:cubic-bezier(.2,0,0,1);--pad:22px}
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:84px;background:var(--bg)}
@@ -33,7 +33,7 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}ul{list-st
 
 /* bar */
 .bar{position:fixed;inset:0 0 auto 0;z-index:30;height:68px;transition:transform .6s var(--std),background .5s,border-color .5s;border-bottom:1px solid transparent}
-.bar.s{background:rgba(14,11,9,.94);border-color:rgba(185,167,119,.18)}
+.bar.s{background:rgba(58,49,38,.94);border-color:rgba(203,185,133,.18)}
 .bar.hide{transform:translateY(-102%)}
 .bar .wrap{height:100%;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
 .bar nav{display:none;gap:38px}
@@ -47,7 +47,7 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}ul{list-st
 /* buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 30px;border:1px solid var(--gold);font-size:12px;font-weight:400;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);transition:background .45s var(--std),color .45s var(--std)}
 .btn.f{background:var(--gold);color:var(--bg);font-weight:500}
-.btn:hover{background:var(--gold);color:var(--bg)}.btn.f:hover{background:#cdbd90}
+.btn:hover{background:var(--gold);color:var(--bg)}.btn.f:hover{background:#dccb9a}
 .btn:active{transform:scale(.985)}
 
 /* hero */
@@ -55,7 +55,7 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}ul{list-st
 .hero .bgp{position:absolute;inset:0;z-index:-1}
 .hero .bgp img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;transform:scale(1.1);opacity:0;transition:transform 3.2s var(--land),opacity 1.6s ease}
 .go .hero .bgp img{transform:none;opacity:1}
-.hero .bgp:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,11,9,.55) 0,rgba(14,11,9,.1) 22%,rgba(14,11,9,.8) 54%,var(--bg) 96%)}
+.hero .bgp:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(58,49,38,.55) 0,rgba(58,49,38,.1) 22%,rgba(58,49,38,.8) 54%,var(--bg) 96%)}
 .hc{text-align:center;padding:120px var(--pad) 44px}
 .hc>*{opacity:0;transform:translateY(14px);transition:opacity 1.2s ease,transform 1.4s var(--land)}
 .go .hc>*{opacity:1;transform:none}
@@ -68,7 +68,7 @@ h1 em{font-style:italic;color:var(--gold)}
 /* info */
 .info{border-block:1px solid var(--gl);display:grid}
 .info a{display:flex;flex-direction:column;gap:6px;align-items:center;text-align:center;padding:22px 12px;transition:background .5s}
-.info a+a{border-top:1px solid rgba(185,167,119,.16)}
+.info a+a{border-top:1px solid rgba(203,185,133,.16)}
 .info a:hover{background:var(--bg2)}
 .info b{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:23px;line-height:1.2}
 
@@ -97,15 +97,15 @@ h2 em{font-style:italic;color:var(--gold)}
 /* menu */
 #jelovnik{background:var(--bg2)}
 .card{border:1px solid var(--gl);padding:8px;max-width:980px;margin-inline:auto}
-.card .inr{border:1px solid rgba(185,167,119,.16);padding:34px 20px 38px}
-.tabs{position:relative;display:flex;justify-content:center;gap:4px;border-bottom:1px solid rgba(185,167,119,.2);margin-bottom:34px}
+.card .inr{border:1px solid rgba(203,185,133,.16);padding:34px 20px 38px}
+.tabs{position:relative;display:flex;justify-content:center;gap:4px;border-bottom:1px solid rgba(203,185,133,.2);margin-bottom:34px}
 .tabs button{appearance:none;background:none;border:0;color:var(--mu);font:400 11.5px/1 'Jost',sans-serif;letter-spacing:.14em;white-space:nowrap;text-transform:uppercase;padding:18px 9px;min-height:50px;cursor:pointer;transition:color .4s}
 .tabs button[aria-selected=true]{color:var(--iv)}
 .tabs .ul{position:absolute;bottom:-1px;left:0;height:1px;width:40px;background:var(--gold);transition:transform .6s var(--std),width .6s var(--std)}
 .pn{display:none}.pn.on{display:block;animation:pf .9s var(--std)}
 @keyframes pf{from{opacity:0;transform:translateY(10px)}}
 .two{display:grid;gap:0 56px}
-.pn li{padding:16px 0;border-bottom:1px solid rgba(185,167,119,.13);text-align:center}
+.pn li{padding:16px 0;border-bottom:1px solid rgba(203,185,133,.13);text-align:center}
 .pn li b{display:block;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:22px;line-height:1.25}
 .pn li i{display:block;font-style:normal;font-size:13.5px;letter-spacing:.04em;color:var(--mu);margin-top:3px}
 .grp{margin-bottom:22px}
@@ -123,10 +123,10 @@ h2 em{font-style:italic;color:var(--gold)}
 .ig{margin-top:64px;padding-top:44px;border-top:1px solid var(--gl)}
 .ig .tag{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:34px;margin:10px 0 6px}
 .ig a{color:var(--gold);border-bottom:1px solid var(--gl);padding-bottom:2px}
-footer{padding:30px 0 34px;text-align:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#6f675c;border-top:1px solid rgba(185,167,119,.14)}
+footer{padding:30px 0 34px;text-align:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#a1988a;border-top:1px solid rgba(203,185,133,.14)}
 
 /* dock */
-.dock{position:fixed;inset:auto 0 0 0;z-index:40;display:grid;grid-template-columns:1fr 1fr;background:rgba(14,11,9,.97);border-top:1px solid var(--gl);padding-bottom:env(safe-area-inset-bottom);transform:translateY(105%);transition:transform .6s var(--std)}
+.dock{position:fixed;inset:auto 0 0 0;z-index:40;display:grid;grid-template-columns:1fr 1fr;background:rgba(58,49,38,.97);border-top:1px solid var(--gl);padding-bottom:env(safe-area-inset-bottom);transform:translateY(105%);transition:transform .6s var(--std)}
 .dock.on{transform:none}
 .dock a{display:grid;place-items:center;height:62px;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;font-weight:400}
 .dock a:first-child{background:var(--gold);color:var(--bg);font-weight:500}
@@ -134,7 +134,7 @@ footer{padding:30px 0 34px;text-align:center;font-size:12px;letter-spacing:.14em
 
 @media(min-width:700px){
  :root{--pad:40px}
- .info{grid-template-columns:repeat(3,1fr)}.info a{padding:30px 16px}.info a+a{border-top:0;border-left:1px solid rgba(185,167,119,.16)}
+ .info{grid-template-columns:repeat(3,1fr)}.info a{padding:30px 16px}.info a+a{border-top:0;border-left:1px solid rgba(203,185,133,.16)}
  .trip{grid-template-columns:repeat(3,1fr);gap:34px}
  .fr:nth-child(2){margin-top:64px}
  .two{grid-template-columns:1fr 1fr}
@@ -148,7 +148,7 @@ footer{padding:30px 0 34px;text-align:center;font-size:12px;letter-spacing:.14em
  .bar{height:84px}.bar nav{display:flex}.bar .mk img{height:36px}
  .hero{grid-template-columns:1fr minmax(0,46%);align-items:center}
  .hero .bgp{position:relative;grid-column:2;grid-row:1;height:100svh;min-height:680px}
- .hero .bgp:after{background:linear-gradient(90deg,var(--bg) 0,rgba(14,11,9,.25) 34%,rgba(14,11,9,0) 60%),linear-gradient(180deg,rgba(14,11,9,.5) 0,rgba(14,11,9,0) 22%,rgba(14,11,9,0) 80%,var(--bg) 100%)}
+ .hero .bgp:after{background:linear-gradient(90deg,var(--bg) 0,rgba(58,49,38,.25) 34%,rgba(58,49,38,0) 60%),linear-gradient(180deg,rgba(58,49,38,.5) 0,rgba(58,49,38,0) 22%,rgba(58,49,38,0) 80%,var(--bg) 100%)}
  .hc{grid-column:1;grid-row:1;padding:110px 30px 40px 40px}
  h1{font-size:clamp(64px,6.6vw,104px)}
  .trip{gap:56px}
